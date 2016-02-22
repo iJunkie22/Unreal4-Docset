@@ -1,0 +1,2587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UActorComponent</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UActorComponent" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\Components" />
+<meta name="description" content="ActorComponent is the base class for components that define reusable behavior that can be added to different types of Actors." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Components</a></strong> &gt; <span id="crumbs_page_title">UActorComponent</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UActorComponent</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UActorComponent</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="UActorComponentHierarchy/index.html"><p>&#43; 123 derived classes</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/DefaultToInstanced/index.html" >DefaultToInstanced</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/BlueprintType/index.html" >BlueprintType</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Abstract/index.html" >Abstract</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/HideCategories/index.html" >HideCategories&#61;&#40;ComponentReplication&#41;</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meta&#61;&#40;ShortTooltip&#61;&quot;An ActorComponent is a reusable component that can be added to any actor.&quot;&#41;&#41;<br />class UActorComponent :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../Interfaces/IInterface_AssetUserData/index.html" >IInterface_AssetUserData</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>ActorComponent is the base class for components that define reusable behavior that can be added to different types of Actors. ActorComponents that have a transform are known as SceneComponents and those that can be rendered are PrimitiveComponents.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Engine/UAssetUserData/index.html" >UAssetU</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AssetUserData/index.html"><p>AssetUserData</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Array of user data stored with the component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAllowAnyoneToDestroyMe</p>
+	</td>
+	<td class="desc-cell">
+		<p>Can this component be destroyed (via K2_DestroyComponent) by any parent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAllowConcurrentTick</p>
+	</td>
+	<td class="desc-cell">
+		<p>Can we tick this concurrently on other threads?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAutoActivate</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether to the component is activated at creation or must be explicitly activated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAutoRegister</p>
+	</td>
+	<td class="desc-cell">
+		<p>Does this component automatically register with its owner</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bEditableWhenInherited</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsActive</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the component is currently active.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bNetAddressable</p>
+	</td>
+	<td class="desc-cell">
+		<p>Is this component safe to ID over the network by name?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bNeverNeedsRenderUpdate</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, this component never needs a render update.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bPhysicsStateCreated</p>
+	</td>
+	<td class="desc-cell">
+		<p>If the physics state is currently created for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRegistered</p>
+	</td>
+	<td class="desc-cell">
+		<p>Indicates if this ActorComponent is currently registered with a scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRenderStateCreated</p>
+	</td>
+	<td class="desc-cell">
+		<p>If the render state is currently created for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly, Meta" title="Category, EditDefaultsOnly, Meta" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="Replicated" title="Replicated" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bReplicates</p>
+	</td>
+	<td class="desc-cell">
+		<p>Is this component currently replicating? Should the network code consider it for replication? Owning Actor must be replicating first&#33;</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bTickInEditor</p>
+	</td>
+	<td class="desc-cell">
+		<p>Should this component be ticked in the editor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bWantsBeginPlay</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, we call the virtual BeginPlay</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bWantsInitializeComponent</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, we call the virtual InitializeComponent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ComponentTags</p>
+	</td>
+	<td class="desc-cell">
+		<p>Array of tags that can be used for grouping and categorizing. Can also be accessed from scripting.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EComponentCreat...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreationMethod/index.html"><p>CreationMethod</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponent</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PrimaryComponentTick/index.html"><p>PrimaryComponentTick</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Main tick function for the Actor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/UWorld/index.html" >UWorld</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="World/index.html"><p>World</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Pointer to the world that this component is currently registered with.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>UActorComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../CoreUObject/UObject/FObjectInitializer/index.html" >FObjectInitializer</a>&amp; ObjectIn...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Default <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> constructor that takes an optional ObjectInitializer.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Activate/index.html"><nobr><p>Activate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bReset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Trigger/Activation interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> cons...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AdditionalStatObject/index.html"><nobr><p>AdditionalStatObject()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Give a readable name for this component, including asset name if applicable</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddTickPrerequisiteActor/index.html"><nobr><p>AddTickPrerequisiteActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameFramework/AActor/index.html" >AActor</a>&#42; PrerequisiteActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Make this component tick after PrerequisiteActor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddTickPrerequisiteComponent/index.html"><nobr><p>AddTickPrerequisiteComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >UActorComponent</a>&#42; PrerequisiteC...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Make this component tick after PrerequisiteComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyWorldOffset/index.html"><nobr><p>ApplyWorldOffset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; InOffset,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bWorldShift<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by owner actor on position shifting Component should update all relevant data structures to reflect new actor location</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginPlay/index.html"><nobr><p>BeginPlay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>BeginsPlay for the component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CheckForErrors/index.html"><nobr><p>CheckForErrors()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function that gets called from within Map_Check to allow this actor component to check itself for any potential errors and register them with map check dialog.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComponentHasTag/index.html"><nobr><p>ComponentHasTag</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> Tag<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>See if this component contains the supplied tag</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComponentIsInLevel/index.html"><nobr><p>ComponentIsInLevel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/ULevel/index.html" >ULevel</a>&#42; TestLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if this actor is contained by TestLevel.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComponentIsInPersistentLevel/index.html"><nobr><p>ComponentIsInPersistentLevel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bIncludeLevelStreamingPersiste...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>See if this component is in the persistent level</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConditionalTickComponent/index.html"><nobr><p>ConditionalTickComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;enum ELevelTick TickType,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponentTickFunction</a>&amp; ThisT...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Conditionally calls Tick if bRegistered == true and a bunch of other criteria are met</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreatePhysicsState/index.html"><nobr><p>CreatePhysicsState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to create any physics engine information for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateRenderState_Concurrent/index.html"><nobr><p>CreateRenderState_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to create any rendering thread information for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Deactivate/index.html"><nobr><p>Deactivate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deactivates the SceneComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DestroyComponent/index.html"><nobr><p>DestroyComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bPromoteChildren<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Unregister the component, remove it from its outer Actor's Components array and mark for pending kill.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DestroyPhysicsState/index.html"><nobr><p>DestroyPhysicsState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to shut down and physics engine structure for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DestroyRenderState_Concurrent/index.html"><nobr><p>DestroyRenderState_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to shut down any rendering thread structure for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DetermineUCSModifiedProperties/index.html"><nobr><p>DetermineUCSModifiedProperties()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DoDeferredRenderUpdates_Concurre-/index.html"><nobr><p>DoDeferredRenderUpdates_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Uses the bRenderStateDirty/bRenderTransformDirty to perform any necessary work on this component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndPlay/index.html"><nobr><p>EndPlay</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/EEndPlayReason__Type/index.html" >EEndPlayReason::Type</a> EndPlayR...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ends gameplay for this component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetComponentClassCanReplicate/index.html"><nobr><p>GetComponentClassCanReplicate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FActorComponentInstanceData/index.html" >FActorCompon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetComponentInstanceData/index.html"><nobr><p>GetComponentInstanceData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called before we throw away components during RerunConstructionScripts, to cache any data we wish to persist across that operation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/ULevel/index.html" >ULevel</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetComponentLevel/index.html"><nobr><p>GetComponentLevel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return the <a id="content_link" href="../../Engine/ULevel/index.html" >ULevel</a> that this Component is part of.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetIsReplicated/index.html"><nobr><p>GetIsReplicated()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether replication is enabled or not.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMarkedForEndOfFrameUpdateStat-/index.html"><nobr><p>GetMarkedForEndOfFrameUpdateState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENetMode</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNetMode/index.html"><nobr><p>GetNetMode()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwner/index.html"><nobr><p>GetOwner()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="index.html" >UActorComponent</a> inlines.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENetRole</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwnerRole/index.html"><nobr><p>GetOwnerRole()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetReadableName/index.html"><nobr><p>GetReadableName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a readable name for this component, including the asset name if applicable By default this appends a space plus <a id="content_link" href="AdditionalStatObject/index.html" >AdditionalStatObject()</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FSceneInterface/index.html" >FSceneInterf</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetScene/index.html"><nobr><p>GetScene()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetUCSModifiedProperties/index.html"><nobr><p>GetUCSModifiedProperties</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TSet/index.html" >TSet</a>&lt; const <a id="content_link" href="../../../CoreUObject/UObject/UProperty/index.html" >UProperty</a>&#42; >&amp; Mod...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/UWorld/index.html" >UWorld</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWorld/index.html"><nobr><p>GetWorld()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasBeenCreated/index.html"><nobr><p>HasBeenCreated()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasBeenInitialized/index.html"><nobr><p>HasBeenInitialized()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasBegunPlay/index.html"><nobr><p>HasBegunPlay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasValidPhysicsState/index.html"><nobr><p>HasValidPhysicsState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to check that <a id="content_link" href="DestroyPhysicsState/index.html" >DestroyPhysicsState()</a> is working correctly</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitializeComponent/index.html"><nobr><p>InitializeComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initializes the component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvalidateLightingCache/index.html"><nobr><p>InvalidateLightingCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidate lighting cache with default options.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvalidateLightingCacheDetailed/index.html"><nobr><p>InvalidateLightingCacheDetailed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInvalidateBuildEnqueuedLighti...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bTranslationOnly<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when this actor component has moved, allowing it to discard statically cached lighting information.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsActive/index.html"><nobr><p>IsActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether the component is active or not 
+</p><ul><li><p>The active state of the component.
+</p></li></ul>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsBeingDestroyed/index.html"><nobr><p>IsBeingDestroyed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether the component is in the process of being destroyed.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsComponentTickEnabled/index.html"><nobr><p>IsComponentTickEnabled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether this component has tick enabled or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsCreatedByConstructionScript/index.html"><nobr><p>IsCreatedByConstructionScript()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsEditableWhenInherited/index.html"><nobr><p>IsEditableWhenInherited()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsEditorOnly/index.html"><nobr><p>IsEditorOnly()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether this component is an editor-only object or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNetSimulating/index.html"><nobr><p>IsNetSimulating()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns neat role of the owning actor Returns true if we are replicating and not authorative</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsOwnerRunningUs-/index.html"><nobr><p>IsOwnerRunningUserConstructionScript()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../Interfaces/IInterface_AssetUserData/index.html" >IInterface_AssetUserData</a> Interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsOwnerSelected/index.html"><nobr><p>IsOwnerSelected()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether the component's owner is selected.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPhysicsStateCreated/index.html"><nobr><p>IsPhysicsStateCreated()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the physics 'state' (e.g. physx bodies) are created for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsRegistered/index.html"><nobr><p>IsRegistered()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>See if this component is currently registered</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsRenderStateCreated/index.html"><nobr><p>IsRenderStateCreated()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the render 'state' (e.g. scene proxy) is created for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsRenderStateDirty/index.html"><nobr><p>IsRenderStateDirty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsRenderTransformDirty/index.html"><nobr><p>IsRenderTransformDirty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DestroyComponent/index.html"><nobr><p>K2_DestroyComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Object<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Unregister and mark for pending kill a component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkForNeededEndOfFrameRecreate/index.html"><nobr><p>MarkForNeededEndOfFrameRecreate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If we belong to a world, mark this for a deffered update, otherwise do it now.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkForNeededEndOfFrameUpdate/index.html"><nobr><p>MarkForNeededEndOfFrameUpdate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If we belong to a world, mark this for a deffered update, otherwise do it now.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkRenderDynamicDataDirty/index.html"><nobr><p>MarkRenderDynamicDataDirty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Indicate that dynamic data for this component needs to be sent at the end of the frame.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkRenderStateDirty/index.html"><nobr><p>MarkRenderStateDirty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Mark the render state as dirty - will be sent to the render thread at the end of the frame.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkRenderTransformDirty/index.html"><nobr><p>MarkRenderTransformDirty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Marks the transform as dirty - will be sent to the render thread at the end of the frame</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnActorEnableCollisionChanged/index.html"><nobr><p>OnActorEnableCollisionChanged()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on each component when the Actor's bEnableCollisionChanged flag changes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnComponentCreated/index.html"><nobr><p>OnComponentCreated()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a component is created (not loaded)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnComponentDestroyed/index.html"><nobr><p>OnComponentDestroyed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a component is destroyed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRegister/index.html"><nobr><p>OnRegister()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRep_IsActive/index.html"><nobr><p>OnRep_IsActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnUnregister/index.html"><nobr><p>OnUnregister()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a component is unregistered.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreReplication/index.html"><nobr><p>PreReplication</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/IRepChangedPropertyTracker/index.html" >IRepChangedPropertyTracker</a>&amp; Change...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on the component right before replication occurs</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Meta, BlueprintImplementableEvent" title="Meta, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReceiveBeginPlay/index.html"><nobr><p>ReceiveBeginPlay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Blueprint implementable event for when the component is beginning play, called before its Owner's BeginPlay on Actor BeginPlay or when the component is dynamically created if the Actor has already BegunPlay.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Meta, BlueprintImplementableEvent" title="Meta, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReceiveEndPlay/index.html"><nobr><p>ReceiveEndPlay</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/EEndPlayReason__Type/index.html" >EEndPlayReason::Type</a> EndPlayReason<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Blueprint implementable event for when the component ends play, generally via destruction or its Actor's EndPlay.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Meta, BlueprintImplementableEvent" title="Meta, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReceiveTick/index.html"><nobr><p>ReceiveTick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaSeconds<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Event called every frame</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RecreatePhysicsState/index.html"><nobr><p>RecreatePhysicsState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Recreate the physics state right way.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RecreateRenderState_Concurrent/index.html"><nobr><p>RecreateRenderState_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Recreate the render state right away.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterAllComponentTickFunction-/index.html"><nobr><p>RegisterAllComponentTickFunctions</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bRegister<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>When called, will call the virtual call chain to register all of the tick functions Do not override this function or make it virtual</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterComponent/index.html"><nobr><p>RegisterComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Register this component, creating any rendering/physics state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterComponentTickFunctions/index.html"><nobr><p>RegisterComponentTickFunctions</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bRegister<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Virtual call chain to register all tick functions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterComponentWithWorld/index.html"><nobr><p>RegisterComponentWithWorld</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/UWorld/index.html" >UWorld</a>&#42; InWorld<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveTickPrerequisiteActor/index.html"><nobr><p>RemoveTickPrerequisiteActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameFramework/AActor/index.html" >AActor</a>&#42; PrerequisiteActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Remove tick dependency on PrerequisiteActor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveTickPrerequisiteComponent/index.html"><nobr><p>RemoveTickPrerequisiteComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >UActorComponent</a>&#42; PrerequisiteC...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Remove tick dependency on PrerequisiteComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReplicateSubobjects/index.html"><nobr><p>ReplicateSubobjects</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/UActorChannel/index.html" >UActorChannel</a>&#42; Channel,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Net/FOutBunch/index.html" >FOutBunch</a>&#42; Bunch,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FReplicationFlags/index.html" >FReplicationFlags</a>&#42; RepFlags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allows a component to replicate other subobject on the actor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequiresGameThre-/index.html"><nobr><p>RequiresGameThreadEndOfFrameRecreate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if this component requires end of frame recreates to happen from the game thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequiresGameThreadEndOfFrameUpda-/index.html"><nobr><p>RequiresGameThreadEndOfFrameUpdates()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if this component requires end of frame updates to happen from the game thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReregisterComponent/index.html"><nobr><p>ReregisterComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Unregisters and immediately re-registers component. Handles bWillReregister properly.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SendRenderDynamicData_Concurrent/index.html"><nobr><p>SendRenderDynamicData_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to send dynamic data for this component to the rendering thread</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SendRenderTransform_Concurrent/index.html"><nobr><p>SendRenderTransform_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to send a transform update for this component to the rendering thread</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetActive/index.html"><nobr><p>SetActive</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bNewActive,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bReset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets whether the component is active or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetComponentTickEnabled/index.html"><nobr><p>SetComponentTickEnabled</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set this component's tick functions to be enabled or disabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetComponentTickEnabledAsync/index.html"><nobr><p>SetComponentTickEnabledAsync</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Spawns a task on GameThread that will call SetComponentTickEnabled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetIsReplicated/index.html"><nobr><p>SetIsReplicated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool ShouldReplicate<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Enable or disable replication.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetNetAddressable/index.html"><nobr><p>SetNetAddressable()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Networking.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTickableWhenPaused/index.html"><nobr><p>SetTickableWhenPaused</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bTickableWhenPaused<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets whether this component can tick when paused.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTickGroup/index.html"><nobr><p>SetTickGroup</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;ETickingGroup NewTickGroup<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Changes the ticking group for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetupActorComponentTickFunction/index.html"><nobr><p>SetupActorComponentTickFunction</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FTickFunction/index.html" >FTickFunction</a>&#42; TickFunction<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set up a tick function for a component in the standard way.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldActivate/index.html"><nobr><p>ShouldActivate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>"Trigger" related function. Return true if it should activate</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldCreatePhysicsState/index.html"><nobr><p>ShouldCreatePhysicsState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if <a id="content_link" href="CreatePhysicsState/index.html" >CreatePhysicsState()</a> should be called.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldCreateRenderState/index.html"><nobr><p>ShouldCreateRenderState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if CreateRenderState() should be called</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TickComponent/index.html"><nobr><p>TickComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;enum ELevelTick TickType,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponentTickFunction</a>&#42; T...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function called every frame on this ActorComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToggleActive/index.html"><nobr><p>ToggleActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Toggles the active state of the component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UninitializeComponent/index.html"><nobr><p>UninitializeComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Handle this component being Uninitialized.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterComponent/index.html"><nobr><p>UnregisterComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Unregister this component, destroying any rendering/physics state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateComponentToWorld/index.html"><nobr><p>UpdateComponentToWorld</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSkipPhysicsMove,<br />&nbsp;&nbsp;&nbsp;&nbsp;ETeleportType Teleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Recalculate the value of our component to world transform</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from UObject</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginDestroy/index.html"><nobr><p>BeginDestroy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallRemoteFunction/index.html"><nobr><p>CallRemoteFunction</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UFunction</a>&#42; Function,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42; Parms,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FOutParmRec/index.html" >FOutParmRec</a>&#42; OutParms,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FFrame/index.html" >FFrame</a>&#42; Stack<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Call the actor's function remotely</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFunctionCallspace/index.html"><nobr><p>GetFunctionCallspace</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UFunction</a>&#42; Function,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42; Parameters,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FFrame/index.html" >FFrame</a>&#42; Stack<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return the space this function should be called.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLifetimeReplicatedProps/index.html"><nobr><p>GetLifetimeReplicatedProps</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../CoreUObject/UObject/FLifetimeProperty/index.html" >FLifetimeProperty</a> >&amp; OutLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns properties that are replicated for the lifetime of the actor channel</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNameStableForNetworking/index.html"><nobr><p>IsNameStableForNetworking()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>IsNameStableForNetworking means an object can be referred to its path name (relative to outer) over the network</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSupportedForNetworking/index.html"><nobr><p>IsSupportedForNetworking()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>IsSupportedForNetworking means an object can be referenced over the network</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Modify/index.html"><nobr><p>Modify</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bAlwaysMarkDirty<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Note that the object will be modified.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsLoadForClient/index.html"><nobr><p>NeedsLoadForClient()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called during saving to determine the load flags to save with the object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsLoadForServer/index.html"><nobr><p>NeedsLoadForServer()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called during saving to determine the load flags to save with the object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditChangeChainProperty/index.html"><nobr><p>PostEditChangeChainProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FPropertyChangedChainEvent/index.html" >FPropertyChangedChainEvent</a>&amp; Proper...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This alternate version of PostEditChange is called when properties inside structs are modified.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditChangeProperty/index.html"><nobr><p>PostEditChangeProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FPropertyChangedEvent/index.html" >FPropertyChangedEvent</a>&amp; PropertyCha...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a property on this object has been modified externally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditUndo/index.html"><nobr><p>PostEditUndo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after applying a transaction to the object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostInitProperties/index.html"><nobr><p>PostInitProperties()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after the C++ constructor and after the properties have been initialized, including those loaded from config.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostLoad/index.html"><nobr><p>PostLoad()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Do any object-specific cleanup required immediately after loading an object, and immediately after any undo/redo.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostNetReceive/index.html"><nobr><p>PostNetReceive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Always called immediately after properties are received from the remote.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostRename/index.html"><nobr><p>PostRename</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; OldOuter,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> OldName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreEditChange/index.html"><nobr><p>PreEditChange</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UProperty/index.html" >UProperty</a>&#42; PropertyAboutToChan...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This is called when property is about to be modified by InterpPropertyTracks</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreEditUndo/index.html"><nobr><p>PreEditUndo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called before applying a transaction to the object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreNetReceive/index.html"><nobr><p>PreNetReceive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Always called immediately before properties are received from the remote.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Rename/index.html"><nobr><p>Rename</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; NewName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; NewOuter,<br />&nbsp;&nbsp;&nbsp;&nbsp;ERenameFlags Flags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Rename this object to a unique name.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_4');">
+        <p>Overridden from IInterface_AssetUserData</p>
+    </div>
+<div id="functions_4">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddAssetUserData/index.html"><nobr><p>AddAssetUserData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/UAssetUserData/index.html" >UAssetUserData</a>&#42; InUserData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/UAssetUserData/index.html" >UAssetUserDa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAssetUserDataOfClass/index.html"><nobr><p>GetAssetUserDataOfClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../Engine/UAssetUserData/index.html" >UAssetUserData</a> > InUse...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveUserDataOfClass/index.html"><nobr><p>RemoveUserDataOfClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../Engine/UAssetUserData/index.html" >UAssetUserData</a> > InUse...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p><a id="content_link" href="https:///docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Actors/Components/index.html#actorcomponents" >ActorComponent</a>
+</p><p><a id="content_link" href="../USceneComponent/index.html" >USceneComponent</a>
+</p><p><a id="content_link" href="../UPrimitiveComponent/index.html" >UPrimitiveComponent</a></p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;Components&#47;ActorComponent.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

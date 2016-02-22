@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FRawMesh</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FRawMesh" />
+<meta name="crumbs" content="%ROOT%, API, API\Developer, API\Developer\RawMesh" />
+<meta name="description" content="Raw mesh data used to construct optimized runtime rendering streams." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Developer</a></strong> &gt; <strong><a id="content_link" href="../index.html" >RawMesh</a></strong> &gt; <span id="crumbs_page_title">FRawMesh</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FRawMesh</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>struct FRawMesh<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Raw mesh data used to construct optimized runtime rendering streams.
+</p><p>A note on terminology. Information is stored at various frequencies as defined here: Face - A single polygon in the mesh. Currently all code assumes this is a triangle but conceptually any polygon would do. Corner - Each face has N corners. As all faces are currently triangles, N=3. Wedge - Properties stored for each corner of each face. Index with FaceIndex &#42; NumCorners + CornerIndex. Vertex - Properties shared by overlapping wedges of adjacent polygons. Typically these properties relate to position. Index with VertexIndices[WedgeIndex].
+</p><p>Additionally, to ease in backwards compatibility all properties should use only primitive types&#33;</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; int32 ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>FaceMaterialIndices</p>
+	</td>
+	<td class="desc-cell">
+		<p>Material index.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; uint32 ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FaceSmoothingMasks/index.html"><p>FaceSmoothingMasks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Smoothing mask.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; int32 ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MaterialIndexToImportIndex/index.html"><p>MaterialIndexToImportIndex</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Map from material index -> original material index at import time.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Math/FVector/index.html" >FVector</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="VertexPositions/index.html"><p>VertexPositions</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Position in local space.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Math/FColor/index.html" >FColor</a> ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WedgeColors/index.html"><p>WedgeColors</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Color.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; uint32 ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WedgeIndices/index.html"><p>WedgeIndices</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Index of the vertex at this wedge.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Math/FVector/index.html" >FVector</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WedgeTangentX/index.html"><p>WedgeTangentX</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Tangent, U direction.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Math/FVector/index.html" >FVector</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WedgeTangentY/index.html"><p>WedgeTangentY</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Tangent, V direction.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Math/FVector/index.html" >FVector</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WedgeTangentZ/index.html"><p>WedgeTangentZ</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Normal.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WedgeTexCoords/index.html"><p>WedgeTexCoords</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Texture coordinates.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>RAWMESH_API ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CompactMaterialIndices/index.html"><nobr><p>CompactMaterialIndices()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compacts materials by removing any that have no associated triangles.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>RAWMESH_API ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Empty/index.html"><nobr><p>Empty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWedgePosition/index.html"><nobr><p>GetWedgePosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 WedgeIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Helper for getting the position of a wedge.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>RAWMESH_API ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsValid/index.html"><nobr><p>IsValid()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the mesh contains valid information.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>RAWMESH_API ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsValidOrFixable/index.html"><nobr><p>IsValidOrFixable()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the mesh contains valid information or slightly invalid information that we can fix.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >RawMesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Developer&#47;RawMesh&#47;Public&#47;RawMesh.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,906 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FPrimitiveSceneInfo</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FPrimitiveSceneInfo" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Renderer" />
+<meta name="description" content="The renderer's internal state for a single [UPrimitiveComponent](API\Runtime\Engine\Components\UPrimitiveComponent)." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Renderer</a></strong> &gt; <span id="crumbs_page_title">FPrimitiveSceneInfo</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FPrimitiveSceneInfo</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../RenderCore/FDeferredCleanupInterface/index.html"><p>FDeferredCleanupInterface</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FPrimitiveSceneInfo</p></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FPrimitiveSceneInfo : public <a id="content_link" href="../../RenderCore/FDeferredCleanupInterface/index.html" >FDeferredCleanupInterface</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>The renderer's internal state for a single <a id="content_link" href="../../Engine/Components/UPrimitiveComponent/index.html" >UPrimitiveComponent</a>. This has a one to one mapping with <a id="content_link" href="../../Engine/FPrimitiveSceneProxy/index.html" >FPrimitiveSceneProxy</a>, which is in the engine module.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bNeedsCachedReflectionCaptureUpdate</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the primitive is newly registered or moved and CachedReflectionCaptureProxy needs to be updated on the next render.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bVelocityIsSupressed</p>
+	</td>
+	<td class="desc-cell">
+		<p>This primitive has the Motion Blur explicitly disabled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Engine/FReflectionCaptureProxy/index.html" >FReflecti</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedReflectionCaptureProxy/index.html"><p>CachedReflectionCaptureProxy</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Reflection capture proxy that was closest to this primitive, used for the forward shading rendering path.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComponentLastRenderTime/index.html"><p>ComponentLastRenderTime</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Pointer to the primitive's last render time variable, which is written to by the RT and read by the GT.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/HHitProxy/index.html" >HHitProxy</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>DefaultDynamicHitProxy</p>
+	</td>
+	<td class="desc-cell">
+		<p>The hit proxy which is used to represent the primitive's dynamic elements.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FHitProxyId/index.html" >FHitProxyId</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>DefaultDynamicHitProxyId</p>
+	</td>
+	<td class="desc-cell">
+		<p>The ID of the hit proxy which is used to represent the primitive's dynamic elements.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; int32, ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DistanceFieldInstanceIndices/index.html"><p>DistanceFieldInstanceIndices</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Mapping from instance index in this primitive to index in the global distance field object buffers.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Core/Templates/TRefCountPtr/index.html" >TRefCou</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HitProxies/index.html"><p>HitProxies</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The hit proxies used by the primitive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../FIndirectLightingCacheAllocation/index.html" >FIndirect</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IndirectLightingCacheAllocation/index.html"><p>IndirectLightingCacheAllocation</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Caches the primitive's indirect lighting cache allocation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LastRenderTime</p>
+	</td>
+	<td class="desc-cell">
+		<p>Last render time in seconds since level started play.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LastVisibilityChangeTime</p>
+	</td>
+	<td class="desc-cell">
+		<p>Last time that the primitive became visible in seconds since level started play.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FPrimitiveComponentId/index.html" >FPrimitiveCompo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LightingAttachmentRoot/index.html"><p>LightingAttachmentRoot</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The root attachment component id for use with lighting, if valid.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FLightPrimitive...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LightList/index.html"><p>LightList</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The list of lights affecting this primitive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FPrimitiveComponentId/index.html" >FPrimitiveCompo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LODParentComponentId/index.html"><p>LODParentComponentId</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The component id of the LOD parent if valid.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>NumES2DynamicPointLights</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number of dynamic point lights for ES2</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FOctreeElementId/index.html" >FOctreeElementI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OctreeId/index.html"><p>OctreeId</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The identifier for the primitive in Scene->PrimitiveOctree.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FPrimitiveComponentId/index.html" >FPrimitiveCompo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PrimitiveComponentId/index.html"><p>PrimitiveComponentId</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Id for the component this primitive belongs to.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FPrimitiveSceneProxy/index.html" >FPrimitiveScene</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Proxy/index.html"><p>Proxy</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The render proxy for the primitive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FScene &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>Scene</p>
+	</td>
+	<td class="desc-cell">
+		<p>The scene the primitive is in.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TIndirectArray/index.html" >TIndirectArray</a>&lt;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StaticMeshes/index.html"><p>StaticMeshes</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The primitive's static meshes.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FPrimitiveSceneInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Components/UPrimitiveComponent/index.html" >UPrimitiveComponent</a>&#42; InPrimiti...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FScene&#42; InScene<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initialization constructor.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FPrimitiveSceneInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Destructor.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddStaticMeshes/index.html"><nobr><p>AddStaticMeshes</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds the primitive's static meshes to the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddToScene/index.html"><nobr><p>AddToScene</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUpdateStaticDrawLists<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds the primitive to the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyWorldOffset/index.html"><nobr><p>ApplyWorldOffset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> InOffset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Shifts primitive position and all relevant data by an arbitrary delta.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginDeferredUpdateStaticMeshes/index.html"><nobr><p>BeginDeferredUpdateStaticMeshes()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a flag to update the primitive's static meshes before it is next rendered.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConditionalLazyUpdateForRenderin-/index.html"><nobr><p>ConditionalLazyUpdateForRendering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates all lazy data for the rendering.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConditionalUpdateStaticMeshes/index.html"><nobr><p>ConditionalUpdateStaticMeshes</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the primitive's static meshes in the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConditionalUpdateUniformBuffer/index.html"><nobr><p>ConditionalUpdateUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the primitive's uniform buffer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GatherLightingAttachmentGroupPri-/index.html"><nobr><p>GatherLightingAttachmentGroupPrimitives</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="index.html" >FPrimitiveSceneInfo</a>&#42;, ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds an array of all primitive scene info's in this primitive's attachment group.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAttachmentGroupBounds/index.html"><nobr><p>GetAttachmentGroupBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds a cumulative bounding box of this primitive and all the primitives in the same attachment group.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetIndex/index.html"><nobr><p>GetIndex()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the index of the primitive in the scene's primitives array.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMemoryFootprint/index.html"><nobr><p>GetMemoryFootprint()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Size this class uses in bytes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LinkAttachmentGroup/index.html"><nobr><p>LinkAttachmentGroup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds the primitive to the scene's attachment groups.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LinkLODParentComponent/index.html"><nobr><p>LinkLODParentComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set LOD Parent primitive information to the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsLazyUpdateForRendering/index.html"><nobr><p>NeedsLazyUpdateForRendering()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if we need to call ConditionalLazyUpdateForRendering</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsUniformBufferUpdate/index.html"><nobr><p>NeedsUniformBufferUpdate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if we need to call LazyUpdateForRendering</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsUpdateStaticMeshes/index.html"><nobr><p>NeedsUpdateStaticMeshes()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if we need to call ConditionalUpdateStaticMeshes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveFromScene/index.html"><nobr><p>RemoveFromScene</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUpdateStaticDrawLists<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes the primitive from the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveStaticMeshes/index.html"><nobr><p>RemoveStaticMeshes()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes the primitive's static meshes from the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetNeedsUniformBufferUpdate/index.html"><nobr><p>SetNeedsUniformBufferUpdate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInNeedsUniformBufferUpdate<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldRenderVelocity/index.html"><nobr><p>ShouldRenderVelocity</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FViewInfo&amp; View,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCheckVisibility<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the object needs to be rendered in the velocity pass (is not moving like the world, needed for motionblur and TemporalAA)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnlinkAttachmentGroup/index.html"><nobr><p>UnlinkAttachmentGroup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes the primitive from the scene's attachment groups.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnlinkLODParentComponent/index.html"><nobr><p>UnlinkLODParentComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Clear LOD parent primitive information from the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateStaticMeshes/index.html"><nobr><p>UpdateStaticMeshes</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the primitive's static meshes in the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateUniformBuffer/index.html"><nobr><p>UpdateUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the primitive's uniform buffer.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from FDeferredCleanupInterface</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FinishCleanup/index.html"><nobr><p>FinishCleanup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../RenderCore/FDeferredCleanupInterface/index.html" >FDeferredCleanupInterface</a> implementation.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >Renderer</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Renderer&#47;Public&#47;PrimitiveSceneInfo.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

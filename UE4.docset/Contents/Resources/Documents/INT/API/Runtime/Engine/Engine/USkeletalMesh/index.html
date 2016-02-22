@@ -1,0 +1,1702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>USkeletalMesh</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="USkeletalMesh" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\Engine" />
+<meta name="description" content="SkeletalMesh is geometry bound to a hierarchical skeleton of bones which can be animated for the purpose of deforming the mesh." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Engine</a></strong> &gt; <span id="crumbs_page_title">USkeletalMesh</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">USkeletalMesh</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>USkeletalMesh</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UDestructibleMesh/index.html"><p>UDestructibleMesh</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/HideCategories/index.html" >HideCategories&#61;Object</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/MinimalAPI/index.html" >MinimalAPI</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/BlueprintType/index.html" >BlueprintType</a>&#41;<br />class USkeletalMesh :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../Interfaces/IInterface_CollisionDataProvider/index.html" >IInterface_CollisionDataProvider</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../Interfaces/IInterface_AssetUserData/index.html" >IInterface_AssetUserData</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>SkeletalMesh is geometry bound to a hierarchical skeleton of bones which can be animated for the purpose of deforming the mesh. Skeletal Meshes are built up of two parts; a set of polygons composed to make up the surface of the mesh, and a hierarchical skeleton which can be used to animate the polygons. The 3D models, rigging, and animations are created in an external modeling and animation application (3DSMax, Maya, Softimage, etc).</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="instanced, visibleanywhere" title="instanced, visibleanywhere" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../EditorFramework/UAssetImportData/index.html" >UAssetImportDat</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AssetImportData/index.html"><p>AssetImportData</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Importing data and options used for this mesh</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="instanced" title="instanced" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../UAssetUserData/index.html" >UAssetU</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AssetUserData/index.html"><p>AssetUserData</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Array of user data stored with the asset</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bEnablePerPolyCollision/index.html"><p>bEnablePerPolyCollision</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Uses skinned data for collision data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasBeenSimplified</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if this mesh has ever been simplified with Simplygon.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasVertexColors</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether or not the mesh has vertex colors</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../PhysicsEngine/UBodySetup/index.html" >UBodySetup</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BodySetup/index.html"><p>BodySetup</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Physics data for the per poly collision case. In 99% of cases you will not need this and are better off using simple ragdoll collision (physics asset)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" />
+<img alt="duplicatetransient" title="duplicatetransient" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBound</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Bounds/index.html"><p>Bounds</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bUseFullPrecisionUVs</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, use 32 bit UVs. If false, use 16 bit UVs to save memory</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="editfixedsize" title="editfixedsize" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FClothingAssetData/index.html" >FClothi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClothingAssets/index.html"><p>ClothingAssets</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Clothing asset data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>FloorOffset</p>
+	</td>
+	<td class="desc-cell">
+		<p>Height offset for the floor mesh in the editor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="editfixedsize" title="editfixedsize" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LODInfo/index.html"><p>LODInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Struct containing information for each LOD level, such as materials to use, and when use the LOD.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" />
+<img alt="duplicatetransient" title="duplicatetransient" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FSkeletalMaterial/index.html" >FSkelet</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Materials/index.html"><p>Materials</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>List of materials applied to this mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a>, <a id="content_link" href="../../Animation/VertexAnim/UMorphTarget/index.html" >UM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MorphTargetIndexMap/index.html"><p>MorphTargetIndexMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Map of morph target to name</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Animation/VertexAnim/UMorphTarget/index.html" >UMorphT</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MorphTargets/index.html"><p>MorphTargets</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OptimizationSettings/index.html"><p>OptimizationSettings</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Optimization settings used to simplify LODs of this mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="assetregistrysearchable" title="assetregistrysearchable" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../PhysicsEngine/UPhysicsAsset/index.html" >UPhysicsAsset</a> &amp;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PhysicsAsset/index.html"><p>PhysicsAsset</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Physics and collision information used for this <a id="content_link" href="index.html" >USkeletalMesh</a>, set up in PhAT.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Animation/FPreviewAssetAttachContainer/index.html" >FPreviewAssetAt</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreviewAttachedAssetContainer/index.html"><p>PreviewAttachedAssetContainer</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Attached assets component for this mesh</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/Math/FMatrix/index.html" >FMatrix</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RefBasesInvMatrix/index.html"><p>RefBasesInvMatrix</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Reference skeleton precomputed bases.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FReferenceSkeleton/index.html" >FReferenceSkele</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RefSkeleton/index.html"><p>RefSkeleton</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>New Reference skeleton type</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../RenderCore/FRenderCommandFence/index.html" >FRenderCommandF</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseResourcesFence/index.html"><p>ReleaseResourcesFence</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>A fence which is used to keep track of the rendering thread releasing the static mesh resources.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransf</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RetargetBasePose/index.html"><p>RetargetBasePose</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This is buffer that saves pose that is used by retargeting</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SelectedClothingSection</p>
+	</td>
+	<td class="desc-cell">
+		<p>The section currently selected for clothing. need to remember this index for reimporting cloth</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SelectedEditorSection</p>
+	</td>
+	<td class="desc-cell">
+		<p>The section currently selected in the Editor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="assetregistrysearchable, visibleanywhere" title="assetregistrysearchable, visibleanywhere" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Animation/USkeleton/index.html" >USkeleton</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>Skeleton</p>
+	</td>
+	<td class="desc-cell">
+		<p>Skeleton of this skeletal mesh</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TEnumAsByte/index.html" >TEnumAsByte</a>&lt; <a id="content_link" href="../../../Core/Math/EAxis__Type/index.html" >EA</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SkelMirrorAxis/index.html"><p>SkelMirrorAxis</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TEnumAsByte/index.html" >TEnumAsByte</a>&lt; <a id="content_link" href="../../../Core/Math/EAxis__Type/index.html" >EA</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SkelMirrorFlipAxis/index.html"><p>SkelMirrorFlipAxis</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="editfixedsize" title="editfixedsize" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SkelMirrorTable/index.html"><p>SkelMirrorTable</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>List of bones that should be mirrored.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, Meta" title="Category, EditAnywhere, Meta" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StreamingDistanceMultiplier/index.html"><p>StreamingDistanceMultiplier</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITORONLY_DATA.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="instanced, visibleanywhere" title="instanced, visibleanywhere" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../EditorFramework/UThumbnailInfo/index.html" >UThumbnailInfo</a> ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ThumbnailInfo/index.html"><p>ThumbnailInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Information for thumbnail rendering</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddReferencedObjects/index.html"><nobr><p>AddReferencedObjects</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; InThis,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FReferenceCollector/index.html" >FReferenceCollector</a>&amp; Collector<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BuildPhysicsData/index.html"><nobr><p>BuildPhysicsData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Trigger a physics build to ensure per poly collision is created</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalculateInvRefMatrices/index.html"><nobr><p>CalculateInvRefMatrices()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalculateRequiredBones/index.html"><nobr><p>CalculateRequiredBones</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FStaticLODModel/index.html" >FStaticLODModel</a>&amp; LODModel,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FReferenceSkeleton/index.html" >FReferenceSkeleton</a>&amp; RefSkele...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/TMap/index.html" >TMap</a>&lt; FBoneIndexType, FBoneIn...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculate the required bones for a Skeletal Mesh LOD, including possible extra influences</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CopyMirrorTableFrom/index.html"><nobr><p>CopyMirrorTableFrom</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >USkeletalMesh</a>&#42; SrcMesh<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Utility for copying and converting a mirroring table from another <a id="content_link" href="index.html" >USkeletalMesh</a>.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateBodySetup/index.html"><nobr><p>CreateBodySetup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DebugVerifySkeletalMeshLOD/index.html"><nobr><p>DebugVerifySkeletalMeshLOD()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>#if WITH_EDITOR</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ExportMirrorTable/index.html"><nobr><p>ExportMirrorTable</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FBoneMirrorExport/index.html" >FBoneMirrorExport</a> >&amp; Mirro...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Utility for copying and converting a mirroring table from another SkeletalMesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../Animation/VertexAnim/UMorphTarget/index.html" >UM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindMorphTarget/index.html"><nobr><p>FindMorphTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> MorphTargetName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find a named MorphTarget from the MorphSets array in the SkinnedMeshComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../USkeletalMeshSocket/index.html" >US</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindSocket/index.html"><nobr><p>FindSocket</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InSocketName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find a socket object in this SkeletalMesh by name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TA</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetActiveSocketList/index.html"><nobr><p>GetActiveSocketList()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the "active" socket list - all sockets from this mesh plus all non-duplicates from the skeleton Const ref return value as this cannot be modified externally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../PhysicsEngine/UBodySetup/index.html" >UB</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBodySetup/index.html"><nobr><p>GetBodySetup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_APIin...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetClothAssetIndex/index.html"><nobr><p>GetClothAssetIndex</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 SectionIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetClothSectionIndices/index.html"><nobr><p>GetClothSectionIndices</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 AssetIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint32 >&amp; OutSectionIndice...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../Core/Math/FMatrix/index.html" >FM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetComposedRefPoseMatrix/2/index.html"><nobr><p>GetComposedRefPoseMatrix</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InBoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../Core/Math/FMatrix/index.html" >FM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetComposedRefPoseMatrix/1/index.html"><nobr><p>GetComposedRefPoseMatrix</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InBoneName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the component orientation of a bone or socket. Transforms by parent bones.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FSkeletalMeshResource/index.html" >FSkeletalMes</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetImportedResource/index.html"><nobr><p>GetImportedResource()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the default resource for this skeletal mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TA</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMeshOnlySocketList/index.html"><nobr><p>GetMeshOnlySocketList()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the mesh only socket list - this ignores any sockets in the skeleton Return value is a non-const reference so the socket list can be changed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOriginSectionIndicesWithCloth/1/index.html"><nobr><p>GetOriginSectionIndicesWithCloth</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint32 >&amp; OutSectionIndice...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOriginSectionIndicesWithCloth/2/index.html"><nobr><p>GetOriginSectionIndicesWithCloth</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 AssetIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint32 >&amp; OutSectionIndice...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../Core/Math/FMatrix/index.html" >FM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRefPoseMatrix/index.html"><nobr><p>GetRefPoseMatrix</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FSkeletalMeshResource/index.html" >FSkeletalMes</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetResourceForRendering/index.html"><nobr><p>GetResourceForRendering()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the resource to use for rendering.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSortCenterPoint/index.html"><nobr><p>GetSortCenterPoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; OutSortCenter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the center point from which triangles should be sorted, if any.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../FStaticLODModel/index.html" >FS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSourceModel/index.html"><nobr><p>GetSourceModel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the source model for this skeletal mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetStreamingTextureFactor/index.html"><nobr><p>GetStreamingTextureFactor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 RequestedUVIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the scale dependent texture factor used by the texture streaming code.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_APIui...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVertexBufferFlags/index.html"><nobr><p>GetVertexBufferFlags()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Computes flags for building vertex buffers.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasClothSections/index.html"><nobr><p>HasClothSections</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;int AssetIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasClothSectionsInAllLODs/index.html"><nobr><p>HasClothSectionsInAllLODs</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int AssetIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ImportMirrorTable/index.html"><nobr><p>ImportMirrorTable</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FBoneMirrorExport/index.html" >FBoneMirrorExport</a> >&amp; Mirro...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Utility for copying and converting a mirroring table from another SkeletalMesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitBoneMirrorInfo/index.html"><nobr><p>InitBoneMirrorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allocate and initialise bone mirroring table for this skeletal mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitMorphTargets/index.html"><nobr><p>InitMorphTargets()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initialize MorphSets look up table : MorphTargetIndexMap</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitResources/index.html"><nobr><p>InitResources()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initialize the mesh's render resources.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsMappedClothingLOD/index.html"><nobr><p>IsMappedClothingLOD</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 AssetIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSectionUsingCloth/index.html"><nobr><p>IsSectionUsingCloth</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InSectionIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCheckCorrespondingSections<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks whether the provided section is using APEX cloth.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LoadClothCollisionVolumes/index.html"><nobr><p>LoadClothCollisionVolumes</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 AssetIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;physx::apex::NxClothingAsset&#42; ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Moved from ApexClothingUtils because of compile issues</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MirrorTableIsGood/index.html"><nobr><p>MirrorTableIsGood</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; ProblemBones<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Utility for checking that the bone mirroring table of this mesh is good.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../FStaticLODModel/index.html" >FS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreModifyMesh/index.html"><nobr><p>PreModifyMesh()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Copies off the source model for this skeletal mesh if necessary and returns it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterMorphTarget/index.html"><nobr><p>RegisterMorphTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Animation/VertexAnim/UMorphTarget/index.html" >UMorphTarget</a>&#42; MorphTarget<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If name conflicts, it will overwrite the reference</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseCPUResources/index.html"><nobr><p>ReleaseCPUResources()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>#if WITH_EDITOR</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseResources/index.html"><nobr><p>ReleaseResources()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Releases the mesh's render resources.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterMorphTarget/index.html"><nobr><p>UnregisterMorphTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Animation/VertexAnim/UMorphTarget/index.html" >UMorphTarget</a>&#42; MorphTarget<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_APIin...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ValidatePreviewAttachedObjects/index.html"><nobr><p>ValidatePreviewAttachedObjects()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Makes sure all attached objects are valid and removes any that aren't.
+</p><p>NumberOfBrokenAssets</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from UObject</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginDestroy/index.html"><nobr><p>BeginDestroy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAssetRegistryTagMetadata/index.html"><nobr><p>GetAssetRegistryTagMetadata</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a>, <a id="content_link" href="../../../CoreUObject/UObject/UObject/FAssetRegistryTagMetadata/index.html" >FAssetRegistryTagMetad</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gathers a collection of asset registry tag metadata</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAssetRegistryTags/index.html"><nobr><p>GetAssetRegistryTags</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../CoreUObject/UObject/UObject/FAssetRegistryTag/index.html" >FAssetRegistryTag</a> >&amp; OutTa...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDesc/index.html"><nobr><p>GetDesc()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a one line description of an object for viewing in the thumbnail view of the generic browser</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDetailedInfoInternal/index.html"><nobr><p>GetDetailedInfoInternal()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This will return detail info about this specific object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>SIZE_T</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetResourceSize/index.html"><nobr><p>GetResourceSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/EResourceSizeMode__Type/index.html" >EResourceSizeMode::Type</a> Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the size of the object/ resource for display to artists/ LDs in the Editor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsReadyForFinishDestroy/index.html"><nobr><p>IsReadyForFinishDestroy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to check if the object is ready for FinishDestroy.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditChangeProperty/index.html"><nobr><p>PostEditChangeProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FPropertyChangedEvent/index.html" >FPropertyChangedEvent</a>&amp; PropertyCha...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a property on this object has been modified externally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditUndo/index.html"><nobr><p>PostEditUndo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after applying a transaction to the object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostInitProperties/index.html"><nobr><p>PostInitProperties()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after the C++ constructor and after the properties have been initialized, including those loaded from config.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostLoad/index.html"><nobr><p>PostLoad()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Do any object-specific cleanup required immediately after loading an object, and immediately after any undo/redo.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreEditChange/index.html"><nobr><p>PreEditChange</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UProperty/index.html" >UProperty</a>&#42; PropertyAboutToChan...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreSave/index.html"><nobr><p>PreSave()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Presave function.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Serialize/index.html"><nobr><p>Serialize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Serialization/FArchive/index.html" >FArchive</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> serializer.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_4');">
+        <p>Overridden from IInterface_CollisionDataProvider</p>
+    </div>
+<div id="functions_4">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ContainsPhysicsTriMeshData/index.html"><nobr><p>ContainsPhysicsTriMeshData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool InUseAllTriData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Interface for checking if the implementing objects contains triangle mesh collision data </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPhysicsTriMeshData/index.html"><nobr><p>GetPhysicsTriMeshData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Interfaces/FTriMeshCollisionData/index.html" >FTriMeshCollisionData</a>&#42; Collisi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool InUseAllTriData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin Interface_CollisionDataProvider Interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WantsNegXTriMesh/index.html"><nobr><p>WantsNegXTriMesh()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Do we want to create a negative version of this mesh</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_5');">
+        <p>Overridden from IInterface_AssetUserData</p>
+    </div>
+<div id="functions_5">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddAssetUserData/index.html"><nobr><p>AddAssetUserData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UAssetUserData/index.html" >UAssetUserData</a>&#42; InUserData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End Interface_CollisionDataProvider Interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAssetUserDataArray/index.html"><nobr><p>GetAssetUserDataArray()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../UAssetUserData/index.html" >UAssetUserDa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAssetUserDataOfClass/index.html"><nobr><p>GetAssetUserDataOfClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../UAssetUserData/index.html" >UAssetUserData</a> > InUse...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveUserDataOfClass/index.html"><nobr><p>RemoveUserDataOfClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../UAssetUserData/index.html" >UAssetUserData</a> > InUse...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p><a id="content_link" href="../../../../../Engine/Content/Types/SkeletalMeshes/index.html" >Skeletal Meshes</a></p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;Engine&#47;SkeletalMesh.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

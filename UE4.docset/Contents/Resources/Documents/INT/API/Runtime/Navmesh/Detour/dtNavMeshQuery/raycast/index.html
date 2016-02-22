@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>dtNavMeshQuery::raycast</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="dtNavMeshQuery::raycast" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Navmesh, API\Runtime\Navmesh\Detour, API\Runtime\Navmesh\Detour\dtNavMeshQuery" />
+<meta name="description" content="Casts a 'walkability' ray along the surface of the navigation mesh from the start position toward the end position." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Navmesh</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Detour</a></strong> &gt; <strong><a id="content_link" href="../index.html" >dtNavMeshQuery</a></strong> &gt; <span id="crumbs_page_title">dtNavMeshQuery::raycast</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">dtNavMeshQuery::raycast</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>dtStatus raycast<br />&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float &#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float &#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../dtQueryFilter/index.html" >dtQueryFilter</a> &#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float &#42; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;float &#42; hitNormal,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef &#42; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;int &#42; pathCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxPath<br />&#41;<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Casts a 'walkability' ray along the surface of the navigation mesh from the start position toward the end position. 
+</p><p>The status flags for the query.
+</p><p>This method is meant to be used for quick, short distance checks.
+</p><p>If the path array is too small to hold the result, it will be filled as far as possible from the start postion toward the end position.
+</p><p><strong>Using the Hit Parameter (t)</strong>
+</p><p>If the hit parameter is a very high value (FLT_MAX), then the ray has hit the end position. In this case the path represents a valid corridor to the end position and the value of `hitNormal_ is undefined.
+</p><p>If the hit parameter is zero, then the start position is on the wall that was hit and the value of `hitNormal_ is undefined.
+</p><p>If 0 &lt; t &lt; 1.0 then the following applies:
+</p><p>&#42;distanceToHitBorder=distanceToEndPosition&#42;t&#42;hitPoint=startPos+(endPos-startPos)&#42;t&#42;
+</p><p><strong>Use Case Restriction</strong>
+</p><p>The raycast ignores the y-value of the end position. (2D check.) This places significant limits on how it can be used. For example:
+</p><p>Consider a scene where there is a main floor with a second floor balcony that hangs over the main floor. So the first floor mesh extends below the balcony mesh. The start position is somewhere on the first floor. The end position is on the balcony.
+</p><p>The raycast will search toward the end position along the first floor mesh. If it reaches the end position's xz-coordinates it will indicate FLT_MAX (no wall hit), meaning it reached the end position. This is one example of why this method is meant for short distance checks.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'returns');">
+        <p>Returns</p>
+    </div>
+<div id="returns">
+    <p>The status flags for the query.</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'params');">
+        <p>Parameters</p>
+    </div>
+<div id="params">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Parameter</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>startRef</p>
+	</td>
+	<td class="desc-cell">
+		<p>The reference id of the start polygon. </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>startPos</p>
+	</td>
+	<td class="desc-cell">
+		<p>A position within the start polygon representing the start of the ray. [(x, y, z)] </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>endPos</p>
+	</td>
+	<td class="desc-cell">
+		<p>The position to cast the ray toward. [(x, y, z)] </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>t</p>
+	</td>
+	<td class="desc-cell">
+		<p>The hit parameter. (FLT_MAX if no wall hit.) </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>hitNormal</p>
+	</td>
+	<td class="desc-cell">
+		<p>The normal of the nearest wall hit. [(x, y, z)] </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>filter</p>
+	</td>
+	<td class="desc-cell">
+		<p>The polygon filter to apply to the query. </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>path</p>
+	</td>
+	<td class="desc-cell">
+		<p>The reference ids of the visited polygons. [opt] </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>pathCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number of visited polygons. [opt] </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>maxPath</p>
+	</td>
+	<td class="desc-cell">
+		<p>The maximum number of polygons the path array can hold. </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>walkableArea</p>
+	</td>
+	<td class="desc-cell">
+		<p>Specific area that can be visited or 255 to skip it and test all areas. </p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../index.html" >Navmesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Public&#47;Detour&#47;DetourNavMeshQuery.h</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Source</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Private&#47;Detour&#47;DetourNavMeshQuery.cpp</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

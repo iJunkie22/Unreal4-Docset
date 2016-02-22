@@ -1,0 +1,2351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UAbilitySystemComponent</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UAbilitySystemComponent" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\GameplayAbilities" />
+<meta name="description" content="The core ActorComponent for interfacing with the GameplayAbilities System" />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >GameplayAbilities</a></strong> &gt; <span id="crumbs_page_title">UAbilitySystemComponent</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UAbilitySystemComponent</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Engine/Components/UActorComponent/index.html"><p>UActorComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../GameplayTasks/UGameplayTasksComponent/index.html"><p>UGameplayTasksComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UAbilitySystemComponent</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/ClassGroup/index.html" >ClassGroup&#61;AbilitySystem</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/HideCategories/index.html" >HideCategories&#61;&#40;Object, LOD, Lighting, Transform, Sockets, TextureStreaming&#41;</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/EditInlineNew/index.html" >EditInlineNew</a>, Meta&#61;&#40;BlueprintSpawnableComponent&#41;&#41;<br />class UAbilitySystemComponent :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../GameplayTasks/UGameplayTasksComponent/index.html" >UGameplayTasksComponent</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../GameplayTags/IGameplayTagAssetInterface/index.html" >IGameplayTagAssetInterface</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>The core ActorComponent for interfacing with the GameplayAbilities System</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FGenericAbility...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityActivatedCallbacks/index.html"><p>AbilityActivatedCallbacks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>A generic callback anytime an ability is activated (started)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../Abilities/FGameplayAbilityActorInfo/index.html" >FGa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityActorInfo/index.html"><p>AbilityActorInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Cached off data about the owning actor that abilities will need to frequently access (movement component, mesh component, anim instance, etc)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FGenericAbility...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityCommitedCallbacks/index.html"><p>AbilityCommitedCallbacks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>A generic callback anytime an ability is commited (cost/cooldown applied)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FAbilityEnded</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AbilityEndedCallbacks</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FAbilityFailedD...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityFailedCallbacks/index.html"><p>AbilityFailedCallbacks</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGamepl</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityPendingAdds/index.html"><p>AbilityPendingAdds</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGamepl</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityPendingRemoves/index.html"><p>AbilityPendingRemoves</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AbilityScopeLockCount</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../Abilities/FGameplayAbility-/index.html" >FGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityTargetDataMap/index.html"><p>AbilityTargetDataMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Maps from an ability spec to the target data. Used to track replicated data and callbacks</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayAbilitySpecContainer/index.html" >FGameplayAbilit</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActivatableAbilities/index.html"><p>ActivatableAbilities</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The abilities we can activate.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FActiveGameplayCueContainer/index.html" >FActiveGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActiveGameplayCues/index.html"><p>ActiveGameplayCues</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FActiveGameplayEffectsContainer/index.html" >FActiveGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActiveGameplayEffects/index.html"><p>ActiveGameplayEffects</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Contains all of the gameplay effects that are currently active on this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGamepl</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AllReplicatedIns-/index.html"><p>AllReplicatedInstancedAbilities</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Full list of all instance-per-execution gameplay abilities associated with this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AvatarActor</p>
+	</td>
+	<td class="desc-cell">
+		<p>The actor that is the physical representation used for abilities. Can be NULL</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Transient, Replicated" title="Transient, Replicated" width="18" src="./../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BlockedAbilityBindings/index.html"><p>BlockedAbilityBindings</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Tracks abilities that are blocked based on input binding.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayTagCountContainer/index.html" >FGameplayTagCou</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BlockedAbilityTags/index.html"><p>BlockedAbilityTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Abilities with these tags are not able to be activated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GameplayEventTri-/index.html"><p>GameplayEventTriggeredAbilities</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Abilities that are triggered from a gameplay event</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayTagCountContainer/index.html" >FGameplayTagCou</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GameplayTagCountContainer/index.html"><p>GameplayTagCountContainer</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Acceleration map for all gameplay tags (OwnedGameplayTags from GEs and explicit GameplayCueTags)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>GenericCancelInputID</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>GenericConfirmInputID</p>
+	</td>
+	<td class="desc-cell">
+		<p>InputID for binding GenericConfirm/Cancel events</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FAbilityConfirm...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GenericLocalCancelCallbacks/index.html"><p>GenericLocalCancelCallbacks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Generic local callback for generic CancelEvent that any ability can listen to</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FAbilityConfirm...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GenericLocalConf-/index.html"><p>GenericLocalConfirmCallbacks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Generic local callback for generic ConfirmEvent that any ability can listen to</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Abilities/FGameplayAbilityLocalAnimMontage/index.html" >FGameplayAbilit</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LocalAnimMontageInfo/index.html"><p>LocalAnimMontageInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Data structure for montages that were instigated locally (everything if server, predictive if client. replicated if simulated proxy)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OwnedTagTriggeredAbilities/index.html"><p>OwnedTagTriggeredAbilities</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Abilities that are triggered from a tag being added to the owner</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>OwnerActor</p>
+	</td>
+	<td class="desc-cell">
+		<p>The actor that owns this component logically</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="replicatedusing" title="replicatedusing" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Abilities/FGameplayAbilityRepAnimMontage/index.html" >FGameplayAbilit</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RepAnimMontageInfo/index.html"><p>RepAnimMontageInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Data structure for replicating montage info to simulated clients</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../Abilities/AGameplayAbilityTargetActor/index.html" >AGamepl</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SpawnedTargetActors/index.html"><p>SpawnedTargetActors</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>UserAbilityActivationInhibited</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructors');">
+        <p>Destructors</p>
+    </div>
+<div id="destructors">
+    <p>No destructors are accessible with public or protected access.</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityLocalInputPressed/index.html"><nobr><p>AbilityLocalInputPressed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InputID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityLocalInputReleased/index.html"><nobr><p>AbilityLocalInputReleased</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InputID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FSimpleMulti...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityReplicate-/index.html"><nobr><p>AbilityReplicatedEventDelegate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns Generic Replicated Event for a given Ability/PredictionKey pair</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilitySpecInputPressed/index.html"><nobr><p>AbilitySpecInputPressed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on local player always.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilitySpecInputReleased/index.html"><nobr><p>AbilitySpecInputReleased</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on local player always.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FSimpleMulti...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityTargetDat-_1/index.html"><nobr><p>AbilityTargetDataCancelledDelegate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns TargetData Cancelled delegate for a given Ability/PredictionKey pair</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FAbilityTarg...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityTargetDat-/index.html"><nobr><p>AbilityTargetDataSetDelegate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns TargetDataSet delegate for a given Ability/PredictionKey pair</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AnimMontage_Upda-/index.html"><nobr><p>AnimMontage_UpdateReplicatedData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Copy LocalAnimMontageInfo into RepAnimMontageInfo</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BindAbilityActiv-/index.html"><nobr><p>BindAbilityActivationToInputComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Components/UInputComponent/index.html" >UInputComponent</a>&#42; InputComponen...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/FGameplayAbiliyInputBinds/index.html" >FGameplayAbiliyInputBinds</a> BindInfo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BindToInputComponent/index.html"><nobr><p>BindToInputComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Components/UInputComponent/index.html" >UInputComponent</a>&#42; InputComponen...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Input</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallAllReplicate-/index.html"><nobr><p>CallAllReplicatedDelegatesIfSet</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calls any Replicated delegates that have been sent (TargetData or Generic Replicated Events).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallOrAddReplicatedDelegate/index.html"><nobr><p>CallOrAddReplicatedDelegate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSimpleMulticastDelegate::FDelegate...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calls passed in delegate if the Client Event has already been sent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallReplicatedEv-/index.html"><nobr><p>CallReplicatedEventDelegateIfSet</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calls a given Generic Replicated Event delegate if the event has already been sent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallReplicatedTa-/index.html"><nobr><p>CallReplicatedTargetDataDelegatesIfSet</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calls the TargetData Confirm/Cancel events if they have been sent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CancelAbilitySpec/index.html"><nobr><p>CancelAbilitySpec</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ignore<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Cancel a specific ability spec</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CancelAbilityTargetData/index.html"><nobr><p>CancelAbilityTargetData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Cancels the ability target data and calls callbacks</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CheckDurationExpired/index.html"><nobr><p>CheckDurationExpired</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FActiveGameplayEffectHandle/index.html" >FActiveGameplayEffectHandle</a> Handle<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CheckForClearedAbilities/index.html"><nobr><p>CheckForClearedAbilities()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called from ClearAbility, ClearAllAbilities or OnRep.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearActorInfo/index.html"><nobr><p>ClearActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This is called when the actor that is initialized to this system dies, this will clear that actor from this system and <a id="content_link" href="../Abilities/FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearAnimatingAbility/index.html"><nobr><p>ClearAnimatingAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Clear the animating ability that is passed in, if it's still currently animating</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearDebugInstantEffects/index.html"><nobr><p>ClearDebugInstantEffects()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientActivateAbilityFailed/index.html"><nobr><p>ClientActivateAbilityFailed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int16 PredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientActivateAb-/index.html"><nobr><p>ClientActivateAbilitySucceed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientActivateAb-_1/index.html"><nobr><p>ClientActivateAbilitySucceedWithEventData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/FGameplayEventData/index.html" >FGameplayEventData</a> TriggerEventData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientCancelAbility/index.html"><nobr><p>ClientCancelAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientEndAbility/index.html"><nobr><p>ClientEndAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientSetReplicatedEvent/index.html"><nobr><p>ClientSetReplicatedEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Replicates the Generic Replicated Event to the server.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Client, Reliable" title="Client, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClientTryActivateAbility/index.html"><nobr><p>ClientTryActivateAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConfirmAbilityTargetData/index.html"><nobr><p>ConfirmAbilityTargetData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../Abilities/FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHan</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a>&amp; ApplicationTag<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the current target data and calls applicable callbacks</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConsumeAllReplicatedData/index.html"><nobr><p>ConsumeAllReplicatedData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deletes all cached ability client data (Was: ConsumeAbilityTargetData)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConsumeClientRep-/index.html"><nobr><p>ConsumeClientReplicatedTargetData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Consumes cached TargetData from client (only TargetData)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConsumeGenericRe-/index.html"><nobr><p>ConsumeGenericReplicatedEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Consumes the given Generic Replicated Event (unsets it).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateNewInstanceOfAbility/index.html"><nobr><p>CreateNewInstanceOfAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Abilit...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates a new instance of an ability, storing it in the spec</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentMontageJumpToSection/index.html"><nobr><p>CurrentMontageJumpToSection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> SectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Jumps current montage to given section.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentMontageSe-/index.html"><nobr><p>CurrentMontageSetNextSectionName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> FromSectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> ToSectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets current montages next section name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentMontageStop/index.html"><nobr><p>CurrentMontageStop</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float OverrideBlendOutTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Stops whatever montage is currently playing.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ExecuteGameplayEffect/index.html"><nobr><p>ExecuteGameplayEffect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayEffectSpec/index.html" >FGameplayEffectSpec</a>&amp; Spec,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ExecutePeriodicEffect/index.html"><nobr><p>ExecutePeriodicEffect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FActiveGameplayEffectHandle/index.html" >FActiveGameplayEffectHandle</a> Handle<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Core/UObject/TWeakObjectPtr/index.html" >TWea</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAbilityActiveTasks/index.html"><nobr><p>GetAbilityActiveTasks</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../FActiveGameplayEffect/index.html" >FActiv</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetActiveGameplayEffect/index.html"><nobr><p>GetActiveGameplayEffect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FActiveGameplayEffectHandle/index.html" >FActiveGameplayEffectHandle</a> H...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>ENABLE_VISUAL_LOG.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAnimatingAbility/index.html"><nobr><p>GetAnimatingAbility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the current animating ability</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../UAttributeSet/index.html" >UAttri</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAttributeSubobject/index.html"><nobr><p>GetAttributeSubobject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../UAttributeSet/index.html" >UAttributeSet</a> > ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../UAttributeSet/index.html" >UAttri</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAttributeSubo-/index.html"><nobr><p>GetAttributeSubobjectChecked</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../UAttributeSet/index.html" >UAttributeSet</a> > ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMontage/index.html"><nobr><p>GetCurrentMontage()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns montage that is currently playing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMontageSectionID/index.html"><nobr><p>GetCurrentMontageSectionID()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get SectionID of currently playing AnimMontage</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMontag-_1/index.html"><nobr><p>GetCurrentMontageSectionLength()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get length in time of current section</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMontag-/index.html"><nobr><p>GetCurrentMontageSectionName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get SectionName of currently playing AnimMontage</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMontag-_2/index.html"><nobr><p>GetCurrentMontageSectionTimeLeft()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns amount of time left in current section</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../UAttributeSet/index.html" >UAttri</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOrCreateAttri-/index.html"><nobr><p>GetOrCreateAttributeSubobject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../UAttributeSet/index.html" >UAttributeSet</a> > Attrib...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetUserAbilityAc-/index.html"><nobr><p>GetUserAbilityActivationInhibited()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This is meant to be used to inhibit activating an ability from an input perspective.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandleGameplayEvent/index.html"><nobr><p>HandleGameplayEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> EventTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../Abilities/FGameplayEventData/index.html" >FGameplayEventData</a>&#42; Payl...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Executes a gameplay event.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasNetworkAuthor-/index.html"><nobr><p>HasNetworkAuthorityToActivateTriggeredAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the specified ability should be activated from an event in this network mode</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasNetworkAuthor-_1/index.html"><nobr><p>HasNetworkAuthorityToApplyGameplayEffect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitAbilityActorInfo/index.html"><nobr><p>InitAbilityActorInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; InOwnerActor,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; InAvatarActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initialized the Abilities' ActorInfo - the structure that holds information about who we are acting on and who controls us.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InternalServerTr-/index.html"><nobr><p>InternalServerTryActiveAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool InputPressed,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a>&amp; PredictionKe...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../Abilities/FGameplayEventData/index.html" >FGameplayEventData</a>&#42; Trig...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Implementation of ServerTryActivateAbility</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvokeReplicatedEvent/index.html"><nobr><p>InvokeReplicatedEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calls local callbacks that are registered with the given Generic Replicated Event</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsAnimatingAbility/index.html"><nobr><p>IsAnimatingAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the passed in ability is the current animating ability</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsGenericCancelInputBound/index.html"><nobr><p>IsGenericCancelInputBound</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InputID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsGenericConfirmInputBound/index.html"><nobr><p>IsGenericConfirmInputBound</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InputID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LocalInputCancel/index.html"><nobr><p>LocalInputCancel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LocalInputConfirm/index.html"><nobr><p>LocalInputConfirm()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MonitoredTagChanged/index.html"><nobr><p>MonitoredTagChanged</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> Tag,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NewCount<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Callback that is called when an owned tag bound to an ability changes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NotifyAbilityActivated/index.html"><nobr><p>NotifyAbilityActivated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NotifyAbilityCommit/index.html"><nobr><p>NotifyAbilityCommit</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NotifyAbilityFailed/index.html"><nobr><p>NotifyAbilityFailed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a> FailureReason<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NotifyTagMap_Sta-/index.html"><nobr><p>NotifyTagMap_StackCountChange</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&amp; Conta...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnAttributeGamep-/index.html"><nobr><p>OnAttributeGameplayEffectSpecExected</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAttribute/index.html" >FGameplayAttribute</a>&amp; Attribut...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayEffectSpec/index.html" >FGameplayEffectSpec</a>&amp; Spec,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayModifierEvaluatedData/index.html" >FGameplayModifierEvaluatedData</a>&amp; Da...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnClientActivate-/index.html"><nobr><p>OnClientActivateAbilityFailed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/KeyType/index.html" >FPredictionKey::KeyType</a> PredictionK...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by prediction system when an ability has failed to activate</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnGiveAbility/index.html"><nobr><p>OnGiveAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; AbilitySpec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Will be called from GiveAbility or from OnRep.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPredictiveMontageRejected/index.html"><nobr><p>OnPredictiveMontageRejected</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>&#42; PredictiveMontag...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a prediction key that played a montage is rejected</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRemoveAbility/index.html"><nobr><p>OnRemoveAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; AbilitySpec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Will be called from RemoveAbility or from OnRep. Unbinds inputs with the given ability</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRep_ActivateAbilities/index.html"><nobr><p>OnRep_ActivateAbilities()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRep_GameplayEffects/index.html"><nobr><p>OnRep_GameplayEffects()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRep_OwningActor/index.html"><nobr><p>OnRep_OwningActor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRep_ReplicatedAnimMontage/index.html"><nobr><p>OnRep_ReplicatedAnimMontage()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Replicated Event for AnimMontages</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTagUpdated/index.html"><nobr><p>OnTagUpdated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a>&amp; Tag,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool TagExists<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PlayMontage/index.html"><nobr><p>PlayMontage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; AnimatingAbi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>&#42; Montage,<br />&nbsp;&nbsp;&nbsp;&nbsp;float InPlayRate,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> StartSectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>ENABLE_VISUAL_LOG.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PlayMontageSimulated/index.html"><nobr><p>PlayMontageSimulated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>&#42; Montage,<br />&nbsp;&nbsp;&nbsp;&nbsp;float InPlayRate,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> StartSectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Plays a montage without updating replication/prediction structures.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RefreshAbilityActorInfo/index.html"><nobr><p>RefreshAbilityActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This will refresh the Ability's ActorInfo structure based on the current ActorInfo.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoteEndOrCancelAbility/index.html"><nobr><p>RemoteEndOrCancelAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bWasCanceled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This is only called when ending or canceling an ability in response to a remote instruction.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReplicateEndOrCancelAbility/index.html"><nobr><p>ReplicateEndOrCancelAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/UGameplayAbility/index.html" >UGameplayAbility</a>&#42; Ability,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bWasCanceled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Replicate that an ability has ended/canceled, to the client or server as appropriate</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerCancelAbility/index.html"><nobr><p>ServerCancelAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerCurrentMon-_1/index.html"><nobr><p>ServerCurrentMontageJumpToSectionName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>&#42; ClientAnimMontag...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> SectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>RPC function called from CurrentMontageJumpToSection, replicates to other clients</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerCurrentMon-/index.html"><nobr><p>ServerCurrentMontageSetNextSectionName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>&#42; ClientAnimMontag...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ClientPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> SectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> NextSectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>RPC function called from CurrentMontageSetNextSectopnName, replicates to other clients</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerEndAbility/index.html"><nobr><p>ServerEndAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInfo</a> Acti...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerSetInputPressed/index.html"><nobr><p>ServerSetInputPressed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Direct Input state replication. These will be called if bReplicateInputDirectly is true on the ability and is generally not a good thing to use. (Instead, prefer to use Generic Replicated Events).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerSetInputReleased/index.html"><nobr><p>ServerSetInputReleased</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerSetReplicatedEvent/index.html"><nobr><p>ServerSetReplicatedEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/EAbilityGenericReplicatedEvent__-/index.html" >EAbilityGenericReplicatedEvent::Typ</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> CurrentPredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>While these appear to be state, these are actually synchronization events w/ some payload dataReplicates the Generic Replicated Event to the server.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerSetReplica-/index.html"><nobr><p>ServerSetReplicatedTargetData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Re...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> ApplicationTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> CurrentPredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerSetReplica-_1/index.html"><nobr><p>ServerSetReplicatedTargetDataCancelled</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityH...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> AbilityOriginalPredi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> CurrentPredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Replicates to the server that targeting has been cancelled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerTryActivateAbility/index.html"><nobr><p>ServerTryActivateAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool InputPressed,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerTryActivat-/index.html"><nobr><p>ServerTryActivateAbilityWithEventData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> AbilityT...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool InputPressed,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPredictionKey/index.html" >FPredictionKey</a> PredictionKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/FGameplayEventData/index.html" >FGameplayEventData</a> TriggerEventData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetAvatarActor/index.html"><nobr><p>SetAvatarActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; InAvatarActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Changes the avatar actor, leaves the owner actor the same</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetBlockAbilityB-/index.html"><nobr><p>SetBlockAbilityBindingsArray</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Abilities/FGameplayAbiliyInputBinds/index.html" >FGameplayAbiliyInputBinds</a> BindInfo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetNumericAttrib-/index.html"><nobr><p>SetNumericAttribute_Internal</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAttribute/index.html" >FGameplayAttribute</a>&amp; Attribut...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float NewFloatValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Actually pushes the final attribute value to the attribute set's property.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetUserAbilityAc-/index.html"><nobr><p>SetUserAbilityActivationInhibited</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool NewInhibit<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Disable or Enable a local user from being able to activate abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TargetCancel/index.html"><nobr><p>TargetCancel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Any active targeting actors will be stopped and canceled, not returning any targeting data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TargetConfirm/index.html"><nobr><p>TargetConfirm()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Any active targeting actors will be told to stop and return current targeting data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateTagMap/1/index.html"><nobr><p>UpdateTagMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a>&amp; BaseTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 CountDelta<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>These are functionally redundant but are called by GEs and GameplayCues that add tags that are not 'loose' (but are handled the same way in practice)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateTagMap/2/index.html"><nobr><p>UpdateTagMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&amp; Conta...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 CountDelta<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from UActorComponent</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRegister/index.html"><nobr><p>OnRegister()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_7');">
+        <p>Overridden from IGameplayTaskOwnerInterface</p>
+    </div>
+<div id="functions_7">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAvatarActor/index.html"><nobr><p>GetAvatarActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&#42; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<ul><li><p><a id="content_link" href="../../GameplayTasks/UGameplayTasksComponent/index.html" >UGameplayTasksComponent</a>
+</p></li></ul>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'enums');">
+        <p>Enums</p>
+    </div>
+<div id="enums">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Private enum" title="Private enum" width="18" src="./../../../../../images/./api_enum_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="EAbilityExecutionState/index.html"><p>EAbilityExecutionState</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnGameplayEffec-/index.html"><p>FOnGameplayEffectAppliedDelegate</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >GameplayAbilities</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;GameplayAbilities&#47;Public&#47;AbilitySystemComponent.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

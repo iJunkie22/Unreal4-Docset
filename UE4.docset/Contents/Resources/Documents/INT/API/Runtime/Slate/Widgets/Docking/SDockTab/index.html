@@ -1,0 +1,1791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>SDockTab</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="SDockTab" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Slate, API\Runtime\Slate\Widgets, API\Runtime\Slate\Widgets\Docking" />
+<meta name="description" content="A tab widget that also holds on to some content that should be shown when this tab is selected." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Slate</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Widgets</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Docking</a></strong> &gt; <span id="crumbs_page_title">SDockTab</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">SDockTab</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../SlateCore/Widgets/FSlateControlledConstruction/index.html"><p>FSlateControlledConstruction</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Core/Templates/TSharedFromThis/index.html"><p>TSharedFromThis</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../SlateCore/Widgets/SWidget/index.html"><p>SWidget</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../SlateCore/Widgets/SCompoundWidget/index.html"><p>SCompoundWidget</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Layout/SBorder/index.html"><p>SBorder</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>SDockTab</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class SDockTab : public <a id="content_link" href="../../Layout/SBorder/index.html" >SBorder</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>A tab widget that also holds on to some content that should be shown when this tab is selected. Intended to be used in conjunction with SDockingTabStack.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bShouldAutosize</p>
+	</td>
+	<td class="desc-cell">
+		<p>Should this tab be auto-sized based on its content?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Content/index.html"><p>Content</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The stuff to show when this tab is selected</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; <a id="content_link" href="../../../../SlateCore/Layout/FMargin/index.html" >FMa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ContentAreaPadding/index.html"><p>ContentAreaPadding</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; SDo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DraggedOverDockingArea/index.html"><p>DraggedOverDockingArea</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The dock area this tab is currently being dragged over. Used in nomad tabs to change style</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Animation/FCurveSequence/index.html" >FCurveSequence</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>FlashTabCurve</p>
+	</td>
+	<td class="desc-cell">
+		<p>Animation that causes the tab to flash</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FDockTabStyle/index.html" >FDockTabS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GenericTabStyle/index.html"><p>GenericTabStyle</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../Images/SImage/index.html" >SIm</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IconWidget/index.html"><p>IconWidget</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Widget used to show the icon on the tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../Text/STextBlock/index.html" >STe</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LabelWidget/index.html"><p>LabelWidget</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Widget used to show the label on the tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>double</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LastActivationTime</p>
+	</td>
+	<td class="desc-cell">
+		<p>Time this tab was last activated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Framework/Docking/FTabId/index.html" >FTabId</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LayoutIdentifier</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tab's layout identifier</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FDockTabStyle/index.html" >FDockTabS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MajorTabStyle/index.html"><p>MajorTabStyle</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The styles used to draw the tab in its various states</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TWeakPtr/index.html" >TWeakPtr</a>&lt; <a id="content_link" href="../../../Framework/Docking/FTabManager/index.html" >FTabM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MyTabManager/index.html"><p>MyTabManager</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tab manager that created this tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="FCanCloseTab/index.html" >FCanCloseTab</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>OnCanCloseTab</p>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate to execute to determine if we can close this tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="FOnPersistVisualState/index.html" >FOnPersistVisua</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPersistVisualState/index.html"><p>OnPersistVisualState</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Invoked during the Save Visual State pass; gives this tab a chance to save misc info about visual state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="FOnTabActivatedCallback/index.html" >FOnTabActivated</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTabActivated/index.html"><p>OnTabActivated</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Callback to call when this tab is activated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="FOnTabClosedCallback/index.html" >FOnTabClosedCal</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTabClosed/index.html"><p>OnTabClosed</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Callback to call when this tab is destroyed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TWeakPtr/index.html" >TWeakPtr</a>&lt; SDock...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ParentPtr/index.html"><p>ParentPtr</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tab's parent tab well. Null if it is a floating tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Animation/FCurveSequence/index.html" >FCurveSequence</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SpawnAnimCurve</p>
+	</td>
+	<td class="desc-cell">
+		<p>Animation that shows the tab opening up</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>TabColorScale</p>
+	</td>
+	<td class="desc-cell">
+		<p>Color of this tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; con...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TabIcon/index.html"><p>TabIcon</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The icon on the tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; <a id="content_link" href="../../../../Core/Internationalization/FText/index.html" >FTe</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TabLabel/index.html"><p>TabLabel</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The label on the tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ETabRole</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>TabRole</p>
+	</td>
+	<td class="desc-cell">
+		<p>Is this an MajorTab? A tool panel tab?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TabWellContentBackground/index.html"><p>TabWellContentBackground</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TabWellContentLeft/index.html"><p>TabWellContentLeft</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TabWellContentRight/index.html"><p>TabWellContentRight</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>SDockTab()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Protected constructor; Widgets may only be constructed via a <a id="content_link" href="FArguments/index.html" >FArguments</a> (i.e.: SNew(SDockTab) )</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActivateInParent/index.html"><nobr><p>ActivateInParent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;ETabActivationCause InActivationCau...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Make this tab active in its tabwell</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanCloseTab/index.html"><nobr><p>CanCloseTab()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the tab can be closed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Construct/index.html"><nobr><p>Construct</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FArguments/index.html" >FArguments</a>&amp; InArgs<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Construct the widget from the declaration.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FlashTab/index.html"><nobr><p>FlashTab()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Flash the tab, used for drawing attention to it</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetActiveTabOverlayImageBrush/index.html"><nobr><p>GetActiveTabOverlayImageBrush()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The image brush for the tab's active state overlay</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAnimatedScale/index.html"><nobr><p>GetAnimatedScale()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The scaling of the tab based on the opening/closing animation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBackgrounfContent/index.html"><nobr><p>GetBackgrounfContent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Internationalization/FText/index.html" >FText</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCloseButtonToolTipText/index.html"><nobr><p>GetCloseButtonToolTipText()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The close button tooltip showing the appropriate close command shortcut</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetColorOverlayImageBrush/index.html"><nobr><p>GetColorOverlayImageBrush()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The image brush for the tab's color overlay</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetContent/index.html"><nobr><p>GetContent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The content associated with this tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetContentAreaBrush/index.html"><nobr><p>GetContentAreaBrush()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>What should the content area look like for this type of tab? Documents, Apps, and Tool Panels have different backgrounds.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Layout/FMargin/index.html" >FMargin</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetContentPadding/index.html"><nobr><p>GetContentPadding()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Padding around the content when it is presented by the SDockingTabStack</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FDockTabStyle/index.html" >FDockT</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentStyle/index.html"><nobr><p>GetCurrentStyle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The style currently applied to the dock tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDockArea/index.html"><nobr><p>GetDockArea()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the dock area that this resides in</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Styling/FSlateColor/index.html" >FSlateColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFlashColor/index.html"><nobr><p>GetFlashColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a color to flash the background of this tab with</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFlashOverlayImageBrush/index.html"><nobr><p>GetFlashOverlayImageBrush()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The image brush for the tab's flasher overlay</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFlashValue/index.html"><nobr><p>GetFlashValue()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the desired color of tab. These change during flashing.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetImageBrush/index.html"><nobr><p>GetImageBrush()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The image brush that best represents this tab's in its current state</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>double</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLastActivationTime/index.html"><nobr><p>GetLastActivationTime()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the time this tab was last activated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Framework/Docking/FTabId/index.html" >FTabId</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLayoutIdentifier/index.html"><nobr><p>GetLayoutIdentifier()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this tab's layout identifier</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLeftContent/index.html"><nobr><p>GetLeftContent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOverlapWidth/index.html"><nobr><p>GetOverlapWidth()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The width that this tab will overlap with side-by-side tabs.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetParent/index.html"><nobr><p>GetParent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the tab's tab well parent, or nothing, if it has none</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetParentDockTabStack/index.html"><nobr><p>GetParentDockTabStack()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the dock tab stack this dockable tab resides within, if any</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetParentWindow/index.html"><nobr><p>GetParentWindow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the window in which this tab's tabmanager has placed it</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRightContent/index.html"><nobr><p>GetRightContent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Styling/FSlateColor/index.html" >FSlateColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabColor/index.html"><nobr><p>GetTabColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a color to scale the background of this tab by</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabIcon/index.html"><nobr><p>GetTabIcon()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the tab icon</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Internationalization/FText/index.html" >FText</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabLabel/index.html"><nobr><p>GetTabLabel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The label on the tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabManager/index.html"><nobr><p>GetTabManager()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the tab manager currently managing this tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Layout/FMargin/index.html" >FMargin</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabPadding/index.html"><nobr><p>GetTabPadding()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The padding for the tab widget</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ETabRole</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabRole/index.html"><nobr><p>GetTabRole()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Is this an MajorTab? A tool panel tab?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabWellBrush/index.html"><nobr><p>GetTabWellBrush()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Depending on the tabs we put into the tab well, we want a different background brush.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ETabRole</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVisualTabRole/index.html"><nobr><p>GetVisualTabRole()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Similar to <a id="content_link" href="GetTabRole/index.html" >GetTabRole()</a> but returns the correct role for UI style and user input purposes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Layout/EVisibility/index.html" >EVisibility</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandleIsCloseButtonVisible/index.html"><nobr><p>HandleIsCloseButtonVisible()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If the close button should be visible.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasSiblingTab/index.html"><nobr><p>HasSiblingTab</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Framework/Docking/FTabId/index.html" >FTabId</a>&amp; SiblingTabId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool TreatIndexNoneAsWildcard<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Check to see whether this tab has a sibling tab with the given tab ID</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsActive/index.html"><nobr><p>IsActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if this tab is currently focused</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsForeground/index.html"><nobr><p>IsForeground()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if this tab appears active; False otherwise</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNomadTabWithMajorTabStyle/index.html"><nobr><p>IsNomadTabWithMajorTabStyle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the tab role is NomadTab, but is being visualized as a major tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnCloseButtonClicked/index.html"><nobr><p>OnCloseButtonClicked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the close button is clicked on the tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PersistVisualState/index.html"><nobr><p>PersistVisualState()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>A chance for the tab's content to save any internal layout info</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PlaySpawnAnim/index.html"><nobr><p>PlaySpawnAnim()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Play an animation showing this tab as opening</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProvideDefaultIcon/index.html"><nobr><p>ProvideDefaultIcon</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlateBrush</a>&#42; InDefaultIc...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Provide a default tab icon in case the spawner did not set one.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProvideDefaultLabel/index.html"><nobr><p>ProvideDefaultLabel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Internationalization/FText/index.html" >FText</a>&amp; InDefaultLabel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Provide a default tab label in case the spawner did not set one.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveTabFromParent/index.html"><nobr><p>RemoveTabFromParent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Pulls this tab out of it's parent tab stack and destroys it Note: This does not check if its safe to remove the tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestCloseTab/index.html"><nobr><p>RequestCloseTab()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Requests that the tab be closed. Tabs may prevent closing depending on their state</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetBackgroundContent/index.html"><nobr><p>SetBackgroundContent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWidget</a> > InContent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Content that appears in the TabWell behind the tabs</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCanCloseTab/index.html"><nobr><p>SetCanCloseTab</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FCanCloseTab/index.html" >FCanCloseTab</a>&amp; InOnTabClosing<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the handler to be invoked when the user requests that this tab be closed.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetDraggedOverDockArea/index.html"><nobr><p>SetDraggedOverDockArea</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; SDockingArea >&amp; ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used by the drag/drop operation to signal to this tab what it is dragging over.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetLabel/index.html"><nobr><p>SetLabel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; <a id="content_link" href="../../../../Core/Internationalization/FText/index.html" >FText</a> >&amp; InTabLa...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The label that appears on the tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetLayoutIdentifier/index.html"><nobr><p>SetLayoutIdentifier</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Framework/Docking/FTabId/index.html" >FTabId</a>&amp; TabId<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Specify the TabId that was used to spawn this tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetLeftContent/index.html"><nobr><p>SetLeftContent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWidget</a> > InContent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End of <a id="content_link" href="../../Layout/SBorder/index.html" >SBorder</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetOnPersistVisualState/index.html"><nobr><p>SetOnPersistVisualState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FOnPersistVisualState/index.html" >FOnPersistVisualState</a>&amp; Handl...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the custom code to execute for saving visual state in this tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetOnTabActivated/index.html"><nobr><p>SetOnTabActivated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FOnTabActivatedCallback/index.html" >FOnTabActivatedCallback</a>&amp; InD...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the handler that will be invoked when the tab is activated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetOnTabClosed/index.html"><nobr><p>SetOnTabClosed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FOnTabClosedCallback/index.html" >FOnTabClosedCallback</a>&amp; InDele...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the handler that will be invoked when the tab is closed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetParent/index.html"><nobr><p>SetParent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; SDockingTabWell > Paren...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the tab's tab well parent, or resets it if nothing is passed in</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetRightContent/index.html"><nobr><p>SetRightContent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWidget</a> > InContent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Content that appears in the TabWell to the right of the tabs</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTabIcon/index.html"><nobr><p>SetTabIcon</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; const <a id="content_link" href="../../../../SlateCore/Styling/FSlateBrush/index.html" >FSlateBrush</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the tab icon</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTabManager/index.html"><nobr><p>SetTabManager</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Framework/Docking/FTabManager/index.html" >FTabManager</a> >&amp; I...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the tab manager that is controlling this tab</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTabToolTipWidget/index.html"><nobr><p>SetTabToolTipWidget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../SToolTip/index.html" >SToolTip</a> > InTabToolTip...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The tooltip text that appears on the tab.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldAutosize/index.html"><nobr><p>ShouldAutosize()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Should this tab be sized based on its content.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateActivationTime/index.html"><nobr><p>UpdateActivationTime()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the 'last activated' time to the current time</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from SBorder</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetContent/index.html"><nobr><p>SetContent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWidget</a> > InContent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End of <a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWidget</a> interface.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_3');">
+        <p>Overridden from SWidget</p>
+    </div>
+<div id="functions_3">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDragDetected/index.html"><nobr><p>OnDragDetected</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when Slate detects that a widget started to be dragged.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDragEnter/index.html"><nobr><p>OnDragEnter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>DRAG AND DROP (DragDrop) Called during drag and drop when the drag enters a widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDragLeave/index.html"><nobr><p>OnDragLeave</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called during drag and drop when the drag leaves a widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDrop/index.html"><nobr><p>OnDrop</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the user is dropping something onto a widget; terminates drag and drop.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonDoubleClick/index.html"><nobr><p>OnMouseButtonDoubleClick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a mouse button is double clicked</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonDown/index.html"><nobr><p>OnMouseButtonDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../../SlateCore/Widgets/SWidget/index.html" >SWidget</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonUp/index.html"><nobr><p>OnMouseButtonUp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system calls this method to notify the widget that a mouse button was release within it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTouchEnded/index.html"><nobr><p>OnTouchEnded</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InTouchEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a touchpad touch is ended (finger lifted)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTouchStarted/index.html"><nobr><p>OnTouchStarted</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InTouchEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a touchpad touch is started (finger down)</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'classes');">
+        <p>Classes</p>
+    </div>
+<div id="classes">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public struct" title="Public struct" width="18" src="./../../../../../../../images/./api_struct_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="FArguments/index.html"><p>FArguments</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FCanCloseTab/index.html"><p>FCanCloseTab</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate called before a tab is closed. Returning false will prevent the tab from closing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnPersistVisualState/index.html"><p>FOnPersistVisualState</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Invoked when this tab should save some information about its content.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnTabActivatedCallback/index.html"><p>FOnTabActivatedCallback</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Invoked when a tab is activated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnTabClosedCallback/index.html"><p>FOnTabClosedCallback</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Invoked when a tab is closing</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../index.html" >Slate</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Slate&#47;Public&#47;Widgets&#47;Docking&#47;SDockTab.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

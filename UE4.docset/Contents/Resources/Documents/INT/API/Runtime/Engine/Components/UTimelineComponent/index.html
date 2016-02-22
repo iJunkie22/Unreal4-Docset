@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UTimelineComponent</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UTimelineComponent" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\Components" />
+<meta name="description" content="TimelineComponent holds a series of events, floats, vectors or colors with associated keyframes." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Components</a></strong> &gt; <span id="crumbs_page_title">UTimelineComponent</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UTimelineComponent</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UActorComponent/index.html"><p>UActorComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UTimelineComponent</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/MinimalAPI/index.html" >MinimalAPI</a>&#41;<br />class UTimelineComponent : public <a id="content_link" href="../UActorComponent/index.html" >UActorComponent</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>TimelineComponent holds a series of events, floats, vectors or colors with associated keyframes. Events can be triggered at keyframes along the timeline. Floats, vectors, and colors are interpolated between keyframes along the timeline.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddEvent/index.html"><nobr><p>AddEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float Time,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOnTimelineEvent/index.html" >FOnTimelineEvent</a> EventFunc<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add a callback event to the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddInterpFloat/index.html"><nobr><p>AddInterpFloat</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Curves/UCurveFloat/index.html" >UCurveFloat</a>&#42; FloatCurve,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOnTimelineFloat/index.html" >FOnTimelineFloat</a> InterpFunc,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> PropertyName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add a float interpolation to the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddInterpLinearColor/index.html"><nobr><p>AddInterpLinearColor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Curves/UCurveLinearColor/index.html" >UCurveLinearColor</a>&#42; LinearColor...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOnTimelineLinearColor/index.html" >FOnTimelineLinearColor</a> InterpFunc,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> PropertyName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add a linear color interpolation to the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddInterpVector/index.html"><nobr><p>AddInterpVector</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Curves/UCurveVector/index.html" >UCurveVector</a>&#42; VectorCurve,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOnTimelineVector/index.html" >FOnTimelineVector</a> InterpFunc,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> PropertyName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add a vector interpolation to the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAllCurves/index.html"><nobr><p>GetAllCurves</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TSet/index.html" >TSet</a>&lt; class <a id="content_link" href="../../Curves/UCurveBase/index.html" >UCurveBase</a>&#42; >&amp; In...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get all curves used by the Timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API f...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPlaybackPosition/index.html"><nobr><p>GetPlaybackPosition()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the current playback position of the Timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API f...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPlayRate/index.html"><nobr><p>GetPlayRate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the current play rate for this timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UF</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimelineEventSignature/index.html"><nobr><p>GetTimelineEventSignature()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End ActorComponent interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UF</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimelineFloatSignature/index.html"><nobr><p>GetTimelineFloatSignature()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the signature function for Timeline float functions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API f...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimelineLength/index.html"><nobr><p>GetTimelineLength()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get length of the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UF</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimelineLinearColorSignature/index.html"><nobr><p>GetTimelineLinearColorSignature()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the signature function for Timeline linear color functions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ETimelineSig...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimelineSignatureForFunction/index.html"><nobr><p>GetTimelineSignatureForFunction</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UFunction</a>&#42; InFunc<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the signature type for a specified function</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UF</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimelineVectorSignature/index.html"><nobr><p>GetTimelineVectorSignature()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the signature function for Timeline vector functions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsLooping/index.html"><nobr><p>IsLooping()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get whether we are looping or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPlaying/index.html"><nobr><p>IsPlaying()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get whether this timeline is playing or not.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsReversing/index.html"><nobr><p>IsReversing()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get whether we are reversing or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRep_Timeline/index.html"><nobr><p>OnRep_Timeline()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Play/index.html"><nobr><p>Play()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Start playback of timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PlayFromStart/index.html"><nobr><p>PlayFromStart()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Start playback of timeline from the start</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Reverse/index.html"><nobr><p>Reverse()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Start playback of timeline in reverse</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReverseFromEnd/index.html"><nobr><p>ReverseFromEnd()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Start playback of timeline in reverse from the end</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetDirectionPropertyName/index.html"><nobr><p>SetDirectionPropertyName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> DirectionPropertyName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the delegate to call when timeline is finished</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetLooping/index.html"><nobr><p>SetLooping</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bNewLooping<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True means we whould loop, false means we should not.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetNewTime/index.html"><nobr><p>SetNewTime</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float NewTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the new playback position time to use</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlaybackPosition/index.html"><nobr><p>SetPlaybackPosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float NewPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bFireEvents,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bFireUpdate<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Jump to a position in the timeline.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlayRate/index.html"><nobr><p>SetPlayRate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float NewRate<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the new play rate for this timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPropertySetObject/index.html"><nobr><p>SetPropertySetObject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; NewPropertySetObject<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Optionally provide an object to automatically update properties on</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTimelineFinishedFunc/index.html"><nobr><p>SetTimelineFinishedFunc</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOnTimelineEvent/index.html" >FOnTimelineEvent</a> NewTimelineFinishe...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the delegate to call when timeline is finished</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTimelineLength/index.html"><nobr><p>SetTimelineLength</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float NewLength<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set length of the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTimelineLengthMode/index.html"><nobr><p>SetTimelineLengthMode</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;ETimelineLengthMode NewLengthMode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the length mode of the timeline</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTimelinePostUpdateFunc/index.html"><nobr><p>SetTimelinePostUpdateFunc</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOnTimelineEvent/index.html" >FOnTimelineEvent</a> NewTimelinePostUpd...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the delegate to call after each timeline tick</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Stop/index.html"><nobr><p>Stop()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Stop playback of timeline</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from UActorComponent</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Activate/index.html"><nobr><p>Activate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bReset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Trigger/Activation interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Deactivate/index.html"><nobr><p>Deactivate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deactivates the SceneComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TickComponent/index.html"><nobr><p>TickComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;enum ELevelTick TickType,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponentTickFunction</a>&#42; T...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin ActorComponent interface.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;Components&#47;TimelineComponent.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

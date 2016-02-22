@@ -1,0 +1,2271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>USkinnedMeshComponent</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="USkinnedMeshComponent" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\Components" />
+<meta name="description" content="Skinned mesh component that supports bone skinned mesh rendering." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Components</a></strong> &gt; <span id="crumbs_page_title">USkinnedMeshComponent</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">USkinnedMeshComponent</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UActorComponent/index.html"><p>UActorComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../USceneComponent/index.html"><p>USceneComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UPrimitiveComponent/index.html"><p>UPrimitiveComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UMeshComponent/index.html"><p>UMeshComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>USkinnedMeshComponent</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UDestructibleComponent/index.html"><p>UDestructibleComponent</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UPoseableMeshComponent/index.html"><p>UPoseableMeshComponent</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_1_1_1_1_1_3');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_1_1_1_1_1_3_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../USkeletalMeshComponent/index.html"><p>USkeletalMeshComponent</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_1_1_1_1_1_3"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Editor/UnrealEd/Animation/UDebugSkelMeshComponent/index.html"><p>UDebugSkelMeshComponent</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Editor/PhAT/UPhATEdSkeletalMeshComponent/index.html"><p>UPhATEdSkeletalMeshComponent</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/HideCategories/index.html" >HideCategories&#61;Object</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Config/index.html" >Config&#61;Engine</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/EditInlineNew/index.html" >EditInlineNew</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Abstract/index.html" >Abstract</a>&#41;<br />class USkinnedMeshComponent : public <a id="content_link" href="../UMeshComponent/index.html" >UMeshComponent</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Skinned mesh component that supports bone skinned mesh rendering. This class does not support animation.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActiveVertexAnims/index.html"><p>ActiveVertexAnims</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Array indicating all active vertex animations.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/FAnimUpdateRateParameters/index.html" >FAnimUpdateRate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AnimUpdateRateParams/index.html"><p>AnimUpdateRateParams</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Animation update rate control.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCachedLocalBoundsUpToDate</p>
+	</td>
+	<td class="desc-cell">
+		<p>True when CachedLocalBounds is up to date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCanHighlightSelectedSections</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether or not we can highlight selected sections - this should really only be done in the editor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bChartDistanceFactor</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bComponentUseFixedSkelBounds/index.html"><p>bComponentUseFixedSkelBounds</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Misc.When true, skip using the physics asset etc.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bConsiderAllBodiesForBounds</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, when updating bounds from a PhysicsAsset, consider <em>all</em> BodySetups, not just those flagged with bConsiderForBounds.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bDisableMorphTarget</p>
+	</td>
+	<td class="desc-cell">
+		<p>Disable Morphtarget for this component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bDisplayBones</p>
+	</td>
+	<td class="desc-cell">
+		<p>Draw the skeleton hierarchy for this skel mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bDisplayDebugUpd-/index.html"><p>bDisplayDebugUpdateRateOptimizations</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Enable on screen debugging of update rate optimization.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bDoubleBufferedBlendSpaces</p>
+	</td>
+	<td class="desc-cell">
+		<p>Are we using double buffered blend spaces</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bEnableUpdateRat-/index.html"><p>bEnableUpdateRateOptimizations</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Update Rate.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bForceWireframe</p>
+	</td>
+	<td class="desc-cell">
+		<p>Forces the mesh to draw in wireframe mode.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHideSkin</p>
+	</td>
+	<td class="desc-cell">
+		<p>Don't bother rendering the skin.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bNeedToFlipSpaceBaseBuffers</p>
+	</td>
+	<td class="desc-cell">
+		<p>Track whether we still need to flip to recently modified buffer</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BoneVisibilityStates/index.html"><p>BoneVisibilityStates</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Array of bone visibilities (containing one of the values in EBoneVisibilityStatus for each bone).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bPerBoneMotionBlur</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, use per-bone motion blur on this skeletal mesh (requires additional rendering, can be disabled to save performance).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRecentlyRendered</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if mesh has been recently rendered, false otherwise</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bReInitAnimationOnSetSkeletalMeshCalls</p>
+	</td>
+	<td class="desc-cell">
+		<p>Are we using double buffered blend spaces</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bUseBoundsFromMa-/index.html"><p>bUseBoundsFromMasterPoseComponent</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>When true, we will just using the bounds from our MasterPoseComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBound</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedLocalBounds/index.html"><p>CachedLocalBounds</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>LocalBounds cached, so they're computed just once.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ChunkIndexPreview</p>
+	</td>
+	<td class="desc-cell">
+		<p>Index of the chunk to preview... If set to -1, all chunks will be rendered</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CustomSortAlternateIndexMode/index.html"><p>CustomSortAlternateIndexMode</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Editor only.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ForcedLodModel</p>
+	</td>
+	<td class="desc-cell">
+		<p>Level of detail.If 0, auto-select LOD level. if >0, force to (ForcedLodModel-1).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LODInfo/index.html"><p>LODInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>LOD array info. Each index will correspond to the LOD index</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; int32 ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MasterBoneMap/index.html"><p>MasterBoneMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Mapping between bone indices in this component and the parent one.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MaxDistanceFactor/index.html"><p>MaxDistanceFactor</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>High (best) DistanceFactor that was desired for rendering this <a id="content_link" href="../../Engine/USkeletalMesh/index.html" >USkeletalMesh</a> last frame.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TEnumAsByte/index.html" >TEnumAsByte</a>&lt; <a id="content_link" href="../EMeshComponentUpdateFlag__Type/index.html" >EM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MeshComponentUpdateFlag/index.html"><p>MeshComponentUpdateFlag</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This is update frequency flag even when our Owner has not been rendered recently</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FSkeletalMeshObject/index.html" >FSkeletalMeshOb</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MeshObject/index.html"><p>MeshObject</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Object responsible for sending bone transforms, vertex anim state etc. to render thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MinLodModel/index.html"><p>MinLodModel</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This is the min LOD that this component will use.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>OldPredictedLODLevel</p>
+	</td>
+	<td class="desc-cell">
+		<p>LOD level from previous frame, so we can detect changes in LOD to recalc required bones.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FOnAnimUpdateRa...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnAnimUpdateRateParamsCreated/index.html"><p>OnAnimUpdateRateParamsCreated</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate when AnimUpdateRateParams is created, to override its default settings.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../PhysicsEngine/UPhysicsAsset/index.html" >UPhysicsAsset</a> &amp;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PhysicsAssetOverride/index.html"><p>PhysicsAssetOverride</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITORONLY_DATA Physics.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PredictedLODLevel/index.html"><p>PredictedLODLevel</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Best LOD that was 'predicted' by UpdateSkelPose.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProgressiveDrawingFraction/index.html"><p>ProgressiveDrawingFraction</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Editor only.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SectionIndexPreview</p>
+	</td>
+	<td class="desc-cell">
+		<p>Index of the section to preview... If set to -1, all section will be rendered</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/UObject/TWeakObjectPtr/index.html" >TWeakOb</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SlavePoseComponents/index.html"><p>SlavePoseComponents</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If set, this component has slave pose components that are associated with this Note this is weak object ptr, so it will go away unless you have other strong reference</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StreamingDistanceMultiplier/index.html"><p>StreamingDistanceMultiplier</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Rendering options.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FColor/index.html" >FColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>WireframeColor</p>
+	</td>
+	<td class="desc-cell">
+		<p>Wireframe color</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AllocateTransformData/index.html"><nobr><p>AllocateTransformData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allocate Transform Data array including SpaceBases, BoneVisibilityStates</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AnimUpdateRateSetParams/index.html"><nobr><p>AnimUpdateRateSetParams</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 UpdateRateShift,<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool&amp; bInRecentlyRendered,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&amp; InMaxDistanceFactor,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool&amp; bPlayingRootMotion<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates AnimUpdateRateParams, used by SkinnedMeshComponents.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BoneIsChildOf/index.html"><nobr><p>BoneIsChildOf</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ParentBoneName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Tests if BoneName is child of (or equal to) ParentBoneName.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalcMeshBound/index.html"><nobr><p>CalcMeshBound</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; RootOffset,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool UsePhysicsAsset,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransform</a>&amp; Transform<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update Mesh Bound information based on input</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComputeSkinnedPositions/index.html"><nobr><p>ComputeSkinnedPositions</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> >&amp; OutPositions<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>CPU evaluation of the positions of all vertices (returned in component space)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DeallocateTransformData/index.html"><nobr><p>DeallocateTransformData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FinalizeBoneTransform/index.html"><nobr><p>FinalizeBoneTransform()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finalize bone transform of this current tick After this function, any query to bone transform should be latest of the data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindClosestBone/index.html"><nobr><p>FindClosestBone</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> TestLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&#42; BoneLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;float IgnoreScale<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the closest bone to the given location</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Animation/VertexAnim/UMorphTarget/index.html" >UMorphTarget</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindMorphTarget/index.html"><nobr><p>FindMorphTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> MorphTargetName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find a named MorphTarget from the current SkeletalMesh</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FlipEditableSpaceBases/index.html"><nobr><p>FlipEditableSpaceBases()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Flip the editable space base buffer</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneAxis/index.html"><nobr><p>GetBoneAxis</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/EAxis__Type/index.html" >EAxis::Type</a> Axis<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds a vector pointing along the given axis of the given bone</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneIndex/index.html"><nobr><p>GetBoneIndex</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find the index of bone by name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneLocation/index.html"><nobr><p>GetBoneLocation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EBoneSpaces__Type/index.html" >EBoneSpaces::Type</a> Space<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Bone Location
+</p><p>Vector of the bone</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FMatrix/index.html" >FMatrix</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneMatrix/index.html"><nobr><p>GetBoneMatrix</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Bone Matrix from index
+</p><p>the matrix of the bone at the specified index</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneName/index.html"><nobr><p>GetBoneName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Bone Name from index 
+</p><p>the name of the bone at the specified index</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneNames/index.html"><nobr><p>GetBoneNames</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> >&amp; BoneNames<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Fills the given array with the names of all the bones in this component's current SkeletalMesh</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneQuaternion/index.html"><nobr><p>GetBoneQuaternion</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EBoneSpaces__Type/index.html" >EBoneSpaces::Type</a> Space<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Bone Rotation in Quaternion
+</p><p>Quaternion of the bone</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransform</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneTransform/2/index.html"><nobr><p>GetBoneTransform</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransform</a>&amp; LocalToWorld<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get world space bone transform from bone index, also specifying the component transform to use</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransform</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBoneTransform/1/index.html"><nobr><p>GetBoneTransform</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Bone Transform from index
+</p><p>the transform of the bone at the specified index</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTra</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetEditableSpaceBases/1/index.html"><nobr><p>GetEditableSpaceBases()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Access to the current editable space bases</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetEditableSpaceBases/2/index.html"><nobr><p>GetEditableSpaceBases()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNumSpaceBases/index.html"><nobr><p>GetNumSpaceBases()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the number of space bases</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetParentBone/index.html"><nobr><p>GetParentBone</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get Parent Bone of the input bone</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../PhysicsEngine/UPhysicsAsset/index.html" >UPhysicsAsse</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPhysicsAsset/index.html"><nobr><p>GetPhysicsAsset()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return PhysicsAsset for this SkeletalMeshComponent It will return SkeletalMesh's PhysicsAsset unless PhysicsAssetOverride is set for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRefPosePosition/index.html"><nobr><p>GetRefPosePosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the local-space position of a bone in the reference pose.
+</p><p>Local space reference position</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FSkeletalMeshResource/index.html" >FSkeletalMes</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSkeletalMeshResource/index.html"><nobr><p>GetSkeletalMeshResource()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the skeletal mesh resource used for rendering the component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSkinnedVertexPosition/index.html"><nobr><p>GetSkinnedVertexPosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 VertexIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Simple, CPU evaluation of a vertex's skinned position (returned in component space)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSocketBoneName/index.html"><nobr><p>GetSocketBoneName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InSocketName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns bone name linked to a given named socket on the skeletal mesh component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/USkeletalMeshSocket/index.html" >USkeletalMes</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSocketByName/index.html"><nobr><p>GetSocketByName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InSocketName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>SkeletalMeshSocket of named socket on the skeletal mesh component, or NULL if not found.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSpaceBases/index.html"><nobr><p>GetSpaceBases()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Access Space Bases for reading</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FColor/index.html" >FColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVertexColor/index.html"><nobr><p>GetVertexColor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 VertexIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns color of the vertex.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HideBone/index.html"><nobr><p>HideBone</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;EPhysBodyOp PhysBodyOption<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Hides the specified bone. You can also set option for physics body.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HideBoneByName/index.html"><nobr><p>HideBoneByName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;EPhysBodyOp PhysBodyOption<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Hides the specified bone with name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitLODInfos/index.html"><nobr><p>InitLODInfos()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvalidateCachedBounds/index.html"><nobr><p>InvalidateCachedBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidate Cached Bounds, when Mesh Component has been updated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsBoneHidden/index.html"><nobr><p>IsBoneHidden</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Determines if the specified bone is hidden.
+</p><p>true if hidden</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsBoneHiddenByName/index.html"><nobr><p>IsBoneHiddenByName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Determines if the specified bone is hidden.
+</p><p>true if hidden</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPlayingRootMotion/index.html"><nobr><p>IsPlayingRootMotion()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPlayingRootMot-/index.html"><nobr><p>IsPlayingRootMotionFromEverything()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostInitMeshObject/index.html"><nobr><p>PostInitMeshObject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FSkeletalMeshObject/index.html" >FSkeletalMeshObject</a>&#42;<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function to operate on mesh object after its created, but before it's attached.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RebuildVisibilityArray/index.html"><nobr><p>RebuildVisibilityArray()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Rebuild BoneVisibilityStates array. Mostly refresh information of bones for BVS_HiddenByParent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RefreshBoneTransforms/index.html"><nobr><p>RefreshBoneTransforms</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponentTickFunction</a>&#42; T...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update functions Refresh Bone Transform (SpaceBases) Each class will need to implement this function Ideally this function should be atomic (not relying on Tick or any other update.)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RefreshSlaveComponents/index.html"><nobr><p>RefreshSlaveComponents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Refresh Slave Components if exists</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetForceWireframe/index.html"><nobr><p>SetForceWireframe</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool InForceWireframe<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../UPrimitiveComponent/index.html" >UPrimitiveComponent</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetMasterPoseComponent/index.html"><nobr><p>SetMasterPoseComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >USkinnedMeshComponent</a>&#42; NewMast...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set MasterPoseComponent for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPhysicsAsset/index.html"><nobr><p>SetPhysicsAsset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../PhysicsEngine/UPhysicsAsset/index.html" >UPhysicsAsset</a>&#42; NewPhysicsAsset,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bForceReInit<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Override the Physics Asset of the mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSkeletalMesh/index.html"><nobr><p>SetSkeletalMesh</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/USkeletalMesh/index.html" >USkeletalMesh</a>&#42; NewMesh<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Change the SkeletalMesh that is rendered for this Component.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSpaceBaseDoubleBuffering/index.html"><nobr><p>SetSpaceBaseDoubleBuffering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInDoubleBufferedBlendSpaces<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldCPUSkin/index.html"><nobr><p>ShouldCPUSkin()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function returns whether or not CPU skinning should be applied Allows the editor to override the skinning state for editor tools</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldTickPose/index.html"><nobr><p>ShouldTickPose()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Should tick pose (by calling TickPose) in Tick
+</p><p>: return true if should Tick. false otherwise.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldUpdateBoneVisibility/index.html"><nobr><p>ShouldUpdateBoneVisibility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if it needs update. Return false if not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldUpdateTransform/index.html"><nobr><p>ShouldUpdateTransform</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bLODHasChanged<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Should update transform in Tick
+</p><p>: return true if need transform update. false otherwise.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowMaterialSection/index.html"><nobr><p>ShowMaterialSection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 MaterialID,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bShow,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LODIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Show/Hide Material - technical correct name for this is Section, but seems Material is mostly used This disable rendering of certain Material ID (Section)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TickPose/index.html"><nobr><p>TickPose</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bNeedsValidRootMotion<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Tick Pose, this function ticks and do whatever it needs to do in this frame, should be called before RefreshBoneTransforms</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TransformFromBoneSpace/index.html"><nobr><p>TransformFromBoneSpace</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> InPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a> InRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; OutPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a>&amp; OutRotation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Transform a location/rotation in bone relative space to world space.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TransformToBoneSpace/index.html"><nobr><p>TransformToBoneSpace</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> InPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a> InRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; OutPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a>&amp; OutRotation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Transform a location/rotation from world space to bone relative space.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnHideBone/index.html"><nobr><p>UnHideBone</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BoneIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Unhides the specified bone.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnHideBoneByName/index.html"><nobr><p>UnHideBoneByName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> BoneName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>UnHide the specified bone with name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; stru...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateActiveVertexAnims/index.html"><nobr><p>UpdateActiveVertexAnims</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/USkeletalMesh/index.html" >USkeletalMesh</a>&#42; InSkeleta...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a>, float >&amp; InMorp...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FActiveVertexAnim/index.html" >FActiveVertexAnim</a> >&amp;...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Combine CurveKeys (that reference morph targets by name) and ActiveAnims (that reference vertex anims by reference) into the ActiveVertexAnims array.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateLODStatus/index.html"><nobr><p>UpdateLODStatus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update the PredictedLODLevel and MaxDistanceFactor in the component from its MeshObject.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateMasterBoneMap/index.html"><nobr><p>UpdateMasterBoneMap()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update MasterBoneMap for MasterPoseComponent and this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateMorphMater-/index.html"><nobr><p>UpdateMorphMaterialUsageOnProxy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Vertex anim Checks/updates material usage on proxy based on current morph target usage</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateSlaveComponent/index.html"><nobr><p>UpdateSlaveComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update Slave Component. This gets called when MasterPoseComponent&#33;=NULL</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from UPrimitiveComponent</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FPrimitiveSceneProxy/index.html" >FPrimitiveSc</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateSceneProxy/index.html"><nobr><p>CreateSceneProxy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates a proxy to represent the primitive to the scene manager in the rendering thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Materials/UMaterialInterface/index.html" >UMaterialInt</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMaterial/index.html"><nobr><p>GetMaterial</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 MaterialIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../USceneComponent/index.html" >USceneComponent</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNumMaterials/index.html"><nobr><p>GetNumMaterials()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This has to be skeletalmesh material. You can't have more than what SkeletalMesh materials have</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetStreamingTextureInfo/index.html"><nobr><p>GetStreamingTextureInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FStreamingTexturePrimitiveInfo/index.html" >FStreamingTexturePrimitiveI</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Enumerates the streaming textures used by the primitive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetUsedMaterials/index.html"><nobr><p>GetUsedMaterials</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Materials/UMaterialInterface/index.html" >UMaterialInterface</a>&#42; > ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the materials used in this component</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_3');">
+        <p>Overridden from USceneComponent</p>
+    </div>
+<div id="functions_3">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalcBounds/index.html"><nobr><p>CalcBounds</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransform</a>&amp; LocalToWorld<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../UActorComponent/index.html" >UActorComponent</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DoesSocketExist/index.html"><nobr><p>DoesSocketExist</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InSocketName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if socket with the given name exists </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FTransform/index.html" >FTransform</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSocketTransform/index.html"><nobr><p>GetSocketTransform</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InSocketName,<br />&nbsp;&nbsp;&nbsp;&nbsp;ERelativeTransformSpace TransformSp...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get world-space socket transform.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasAnySockets/index.html"><nobr><p>HasAnySockets()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if this component has any sockets</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="QuerySupportedSockets/index.html"><nobr><p>QuerySupportedSockets</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Engine/FComponentSocketDescription/index.html" >FComponentSocketDescription</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get a list of sockets this component contains</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateOverlaps/index.html"><nobr><p>UpdateOverlaps</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FOverlapInfo/index.html" >FOverlapInfo</a> > const&#42; ...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bDoNotifies,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FOverlapInfo/index.html" >FOverlapInfo</a> >&#42; ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Queries world and updates overlap tracking state for this component.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_4');">
+        <p>Overridden from UActorComponent</p>
+    </div>
+<div id="functions_4">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> cons...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AdditionalStatObject/index.html"><nobr><p>AdditionalStatObject()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Give a readable name for this component, including asset name if applicable</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateRenderState_Concurrent/index.html"><nobr><p>CreateRenderState_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End USceneComponentInterface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DestroyRenderState_Concurrent/index.html"><nobr><p>DestroyRenderState_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to shut down any rendering thread structure for this component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRegister/index.html"><nobr><p>OnRegister()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnUnregister/index.html"><nobr><p>OnUnregister()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a component is unregistered.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequiresGameThre-/index.html"><nobr><p>RequiresGameThreadEndOfFrameRecreate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if this component requires end of frame recreates to happen from the game thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SendRenderDynami-/index.html"><nobr><p>SendRenderDynamicData_Concurrent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to send dynamic data for this component to the rendering thread</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TickComponent/index.html"><nobr><p>TickComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;enum ELevelTick TickType,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponentTickFunction</a>&#42; T...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function called every frame on this ActorComponent.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_5');">
+        <p>Overridden from UObject</p>
+    </div>
+<div id="functions_5">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDetailedInfoInternal/index.html"><nobr><p>GetDetailedInfoInternal()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>========================================== <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>SIZE_T</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetResourceSize/index.html"><nobr><p>GetResourceSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/EResourceSizeMode__Type/index.html" >EResourceSizeMode::Type</a> Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the size of the object/ resource for display to artists/ LDs in the Editor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditChangeProperty/index.html"><nobr><p>PostEditChangeProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FPropertyChangedEvent/index.html" >FPropertyChangedEvent</a>&amp; PropertyCha...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a property on this object has been modified externally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Serialize/index.html"><nobr><p>Serialize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Serialization/FArchive/index.html" >FArchive</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> interface.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p><a id="content_link" href="../USkeletalMeshComponent/index.html" >USkeletalMeshComponent</a></p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;Components&#47;SkinnedMeshComponent.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

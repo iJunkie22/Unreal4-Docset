@@ -1,0 +1,975 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>TMapBase</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="TMapBase" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Core, API\Runtime\Core\Containers" />
+<meta name="description" content="The base class of maps from keys to values." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Core</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Containers</a></strong> &gt; <span id="crumbs_page_title">TMapBase</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">TMapBase</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>TMapBase</p><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1');"><img class="hierarchy-button-collapsed" id='hrch_1_1_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../TSortableMapBase/index.html"><p>TSortableMapBase</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../TMap/index.html"><p>TMap</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Misc/FConfigCacheIni/index.html"><p>FConfigCacheIni</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_2');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_2_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../../Misc/FConfigFile/index.html"><p>FConfigFile</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Editor/Localization/FLocalizationConfigurationScript/index.html"><p>FLocalizationConfigurationScript</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../OnlineSubsystem/FOnlineKeyValuePairs/index.html"><p>FOnlineKeyValuePairs</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_2');"><img class="hierarchy-button-collapsed" id='hrch_1_1_2_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../TMultiMap/index.html"><p>TMultiMap</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Editor/UnrealEd/Commandlets/FClassResourceMap/index.html"><p>FClassResourceMap</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Misc/FConfigSection/index.html"><p>FConfigSection</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/Serialization/TFindObjectReferencers/index.html"><p>TFindObjectReferencers</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>template&lt;typename KeyType, typename ValueType, typename SetAllocator, typename KeyFuncs&gt;<br />class TMapBase<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>The base class of maps from keys to values. Implemented using a <a id="content_link" href="../TSet/index.html" >TSet</a> of key-value pairs with a custom KeyFuncs, with the same O(1) addition, removal, and finding.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="PairSetType/index.html" >PairSetType</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>Pairs</p>
+	</td>
+	<td class="desc-cell">
+		<p>A set of the key-value pairs in the map.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/1/index.html"><nobr><p>TMapBase()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/2/index.html"><nobr><p>TMapBase</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >TMapBase</a>&amp;&amp;<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/3/index.html"><nobr><p>TMapBase</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >TMapBase</a>&amp;<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Add/1/index.html"><nobr><p>Add</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const KeyType&amp; InKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a default value associated with a key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Add/3/index.html"><nobr><p>Add</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const KeyType&amp; InKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;const ValueType&amp; InValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the value associated with a key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Add/4/index.html"><nobr><p>Add</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const KeyType&amp; InKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;ValueType&amp;&amp; InValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Add/5/index.html"><nobr><p>Add</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;KeyType&amp;&amp; InKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;const ValueType&amp; InValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Add/6/index.html"><nobr><p>Add</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;KeyType&amp;&amp; InKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;ValueType&amp;&amp; InValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Add/2/index.html"><nobr><p>Add</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;KeyType&amp;&amp; InKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Compact/index.html"><nobr><p>Compact()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compacts the pair set to remove holes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Contains/index.html"><nobr><p>Contains</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks if map contains the specified key. 
+</p><p>true if the map contains the key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CountBytes/index.html"><nobr><p>CountBytes</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Serialization/FArchive/index.html" >FArchive</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Tracks the container's memory use through an archive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="TConstIterator/index.html" >TConstIterat</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateConstIterator/index.html"><nobr><p>CreateConstIterator()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates a const iterator over all the pairs in this map</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="TConstKeyIterator/index.html" >TConstKeyIte</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateConstKeyIterator/index.html"><nobr><p>CreateConstKeyIterator</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyInitType/index.html" >KeyInitType</a> InKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates a const iterator over the values associated with a specified key in a map</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="TIterator/index.html" >TIterator</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateIterator/index.html"><nobr><p>CreateIterator()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates an iterator over all the pairs in this map</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="TKeyIterator/index.html" >TKeyIterator</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateKeyIterator/index.html"><nobr><p>CreateKeyIterator</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyInitType/index.html" >KeyInitType</a> InKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates an iterator over the values associated with a specified key in a map</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Dump/index.html"><nobr><p>Dump</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Misc/FOutputDevice/index.html" >FOutputDevice</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Describes the map's contents through an output device.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Emplace/2/index.html"><nobr><p>Emplace</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;InitKeyType&amp;&amp; InKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;InitValueType&amp;&amp; InValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the value associated with a key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Emplace/1/index.html"><nobr><p>Emplace</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;InitKeyType&amp;&amp; InKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a default value associated with a key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Empty/index.html"><nobr><p>Empty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ExpectedNumElements<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes all elements from the map, potentially leaving space allocated for an expected number of elements about to be added.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const ValueT...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Find/2/index.html"><nobr><p>Find</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;#...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Find/1/index.html"><nobr><p>Find</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the value associated with a specified key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const ValueT...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindChecked/1/index.html"><nobr><p>FindChecked</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the value associated with a specified key, or if none exists, adds a value using the key as the constructor parameter.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindChecked/2/index.html"><nobr><p>FindChecked</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a reference to the value associated with a specified key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const KeyTyp...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindKey/index.html"><nobr><p>FindKey</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="ValueInitType/index.html" >ValueInitType</a> Value<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the key associated with the specified value.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindOrAdd/2/index.html"><nobr><p>FindOrAdd</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;KeyType&amp;&amp; Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindOrAdd/1/index.html"><nobr><p>FindOrAdd</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const KeyType&amp; Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the value associated with a specified key, or if none exists, adds a value using the default constructor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ValueType</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindRef/index.html"><nobr><p>FindRef</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the value associated with a specified key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GenerateKeyArray/index.html"><nobr><p>GenerateKeyArray</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../TArray/index.html" >TArray</a>&lt; KeyType, Allocator >&amp; OutA...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Generates an array from the keys in this map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GenerateValueArray/index.html"><nobr><p>GenerateValueArray</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../TArray/index.html" >TArray</a>&lt; ValueType, Allocator >&amp; Ou...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Generates an array from the values in this map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAllocatedSize/index.html"><nobr><p>GetAllocatedSize()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Helper function to return the amount of memory allocated by this container </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetKeys/index.html"><nobr><p>GetKeys</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../TArray/index.html" >TArray</a>&lt; KeyType, Allocator >&amp; OutK...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the unique keys contained within this map 
+</p><p>The number of unique keys in the map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Num/index.html"><nobr><p>Num()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The number of elements in the map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OrderIndependentCompareEqual/index.html"><nobr><p>OrderIndependentCompareEqual</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >TMapBase</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compare this map with another for equality.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Remove/index.html"><nobr><p>Remove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="KeyConstPointerType/index.html" >KeyConstPointerType</a> InKey<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes all value associations for a key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Reserve/index.html"><nobr><p>Reserve</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Number<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Preallocates enough memory to contain Number elements</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Reset/index.html"><nobr><p>Reset()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Efficiently empties out the map but preserves all allocations and capacities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Shrink/index.html"><nobr><p>Shrink()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Shrinks the pair set to avoid slack.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'operators');">
+        <p>Operators</p>
+    </div>
+<div id="operators">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >TMapBase</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_assign/2/index.html"><nobr><p>operator=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >TMapBase</a>&amp;<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >TMapBase</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_assign/1/index.html"><nobr><p>operator=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >TMapBase</a>&amp;&amp;<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'classes');">
+        <p>Classes</p>
+    </div>
+<div id="classes">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected class" title="Protected class" width="18" src="./../../../../../../images/./api_class_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="TBaseIterator/index.html"><p>TBaseIterator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The base of <a id="content_link" href="index.html" >TMapBase</a> iterators.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected class" title="Protected class" width="18" src="./../../../../../../images/./api_class_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="TBaseKeyIterator/index.html"><p>TBaseKeyIterator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The base type of iterators that iterate over the values associated with a specified key.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public class" title="Public class" width="18" src="./../../../../../../images/./api_class_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="TConstIterator/index.html"><p>TConstIterator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Const map iterator.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public class" title="Public class" width="18" src="./../../../../../../images/./api_class_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="TConstKeyIterator/index.html"><p>TConstKeyIterator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Iterates over values associated with a specified key in a const map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public class" title="Public class" width="18" src="./../../../../../../images/./api_class_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="TIterator/index.html"><p>TIterator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Map iterator.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public class" title="Public class" width="18" src="./../../../../../../images/./api_class_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="TKeyIterator/index.html"><p>TKeyIterator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Iterates over values associated with a specified key in a map.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="KeyConstPointerType/index.html"><p>KeyConstPointerType</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="KeyInitType/index.html"><p>KeyInitType</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PairSetType/index.html"><p>PairSetType</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PairType/index.html"><p>PairType</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="ValueInitType/index.html"><p>ValueInitType</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Core</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Core&#47;Public&#47;Containers&#47;Map.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

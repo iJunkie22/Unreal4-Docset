@@ -1,0 +1,2447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FPrimitiveSceneProxy</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FPrimitiveSceneProxy" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine" />
+<meta name="description" content="Encapsulates the data which is mirrored to render a [UPrimitiveComponent](API\Runtime\Engine\Components\UPrimitiveComponent) parallel to the game thread." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Engine</a></strong> &gt; <span id="crumbs_page_title">FPrimitiveSceneProxy</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FPrimitiveSceneProxy</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FPrimitiveSceneProxy</p><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1');"><img class="hierarchy-button-collapsed" id='hrch_1_1_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../FDebugRenderSceneProxy/index.html"><p>FDebugRenderSceneProxy</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../AIModule/EnvironmentQuery/FEQSSceneProxy/index.html"><p>FEQSSceneProxy</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_2');"><img class="hierarchy-button-collapsed" id='hrch_1_2_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../../Landscape/FLandscapeComponentSceneProxy/index.html"><p>FLandscapeComponentSceneProxy</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Landscape/FLandscapeComponentSceneProxyMob-/index.html"><p>FLandscapeComponentSceneProxyMobile</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../AI/FNavLinkRenderingProxy/index.html"><p>FNavLinkRenderingProxy</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Niagara/FNiagaraSceneProxy/index.html"><p>FNiagaraSceneProxy</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_5');"><img class="hierarchy-button-collapsed" id='hrch_1_5_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../FParticleSystemSceneProxy/index.html"><p>FParticleSystemSceneProxy</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_5"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../FParticleSystemOcclusionScenePro-/index.html"><p>FParticleSystemOcclusionSceneProxy</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../FSkeletalMeshSceneProxy/index.html"><p>FSkeletalMeshSceneProxy</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_7');"><img class="hierarchy-button-collapsed" id='hrch_1_7_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../FStaticMeshSceneProxy/index.html"><p>FStaticMeshSceneProxy</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_7"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Landscape/FLandscapeMeshProxySceneProxy/index.html"><p>FLandscapeMeshProxySceneProxy</p></a></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FPrimitiveSceneProxy<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Encapsulates the data which is mirrored to render a <a id="content_link" href="../Components/UPrimitiveComponent/index.html" >UPrimitiveComponent</a> parallel to the game thread. This is intended to be subclassed to support different primitive types.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAffectDistanceFieldLighting</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAffectDynamicIndirectLighting</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive casts Reflective Shadow Map shadows (meaning it affects Light Propagation Volumes).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAlwaysHasVelocity</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the primitive should always be considered to have velocities, even if it hasn't moved.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bCastCinematicShadow/index.html"><p>bCastCinematicShadow</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this component should create a per-object shadow that gives higher effective shadow resolution.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCastDynamicShadow</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive casts dynamic shadows.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCastFarShadow</p>
+	</td>
+	<td class="desc-cell">
+		<p>When enabled, the component will be rendering into the distant shadow cascades (only for directional lights).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCastHiddenShadow</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive casts shadows even when hidden.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bCastInsetShadow/index.html"><p>bCastInsetShadow</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this component should create a per-object shadow that gives higher effective shadow resolution.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCastShadowAsTwoSided</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this primitive should cast dynamic shadows as if it were a two sided material.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bCastStaticShadow</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive casts static shadows.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bCastVolumetricTranslucentShadow/index.html"><p>bCastVolumetricTranslucentShadow</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the object should cast a volumetric translucent shadow.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasValidSettingsForStaticLighting</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive wants to use static lighting, but has invalid content settings to do so.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bLightAsIfStatic</p>
+	</td>
+	<td class="desc-cell">
+		<p>This has to be known by the rendering thread to avoid marking lighting dirty when new interactions are created, Which happens when a movable mesh with bLightAsIfStatic moves into the influence of a light it was not baked against.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bLightAttachmentsAsGroup/index.html"><p>bLightAttachmentsAsGroup</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether to light this component and any attachments as a group.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bNeedsLevelAddedToWorldNotification</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this primitive requires notification when its level is added to the world and made visible for the first time.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bNeedsUnbuiltPreviewLighting</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the primitive should be statically lit but has unbuilt lighting, and a preview should be used.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bSelfShadowOnly/index.html"><p>bSelfShadowOnly</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>When enabled, the component will only cast a shadow on itself and not other components in the world.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bStaticElementsA-/index.html"><p>bStaticElementsAlwaysUseProxyPrimitiveUniformBuffer</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this proxy always uses UniformBuffer and no other uniform buffers.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bSupportsDistanceFieldRepresenta-/index.html"><p>bSupportsDistanceFieldRepresentation</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the primitive type supports a distance field representation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bSupportsHeightfieldRepresentation</p>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the primitive implements <a id="content_link" href="GetHeightfieldRepresentation/index.html" >GetHeightfieldRepresentation()</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bUseEditorDepthTest/index.html"><p>bUseEditorDepthTest</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Whether editor compositing depth testing should be used for this primitive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bWillEverBeLit</p>
+	</td>
+	<td class="desc-cell">
+		<p>Can be set to false to skip some work only needed on lit primitives.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EIndirectLighti...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IndirectLightingCacheQuality/index.html"><p>IndirectLightingCacheQuality</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Quality of interpolated indirect lighting for Movable components.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LevelColor</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LpvBiasMultiplier</p>
+	</td>
+	<td class="desc-cell">
+		<p>The bias applied to LPV injection</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>PropertyColor</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>WireframeColor</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FPrimitiveSceneProxy</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../Components/UPrimitiveComponent/index.html" >UPrimitiveComponent</a>&#42; InC...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> ResourceName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FPrimitiveSceneProxy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Virtual destructor.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AcceptOcclusionResults/index.html"><nobr><p>AcceptOcclusionResults</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool&#42; Results,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NumResults<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gives the primitive the results of sub-occlusion-queries</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AffectsDistanceFieldLighting/index.html"><nobr><p>AffectsDistanceFieldLighting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AffectsDynamicIndirectLighting/index.html"><nobr><p>AffectsDynamicIndirectLighting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AllowApproximateOcclusion/index.html"><nobr><p>AllowApproximateOcclusion()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlwaysHasVelocity/index.html"><nobr><p>AlwaysHasVelocity()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyLateUpdateTransform/index.html"><nobr><p>ApplyLateUpdateTransform</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FMatrix/index.html" >FMatrix</a>&amp; LateUpdateTransform<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Applies a "late in the frame" adjustment to the proxy's existing transform</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyWorldOffset/index.html"><nobr><p>ApplyWorldOffset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> InOffset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Shifts primitive position and all relevant data by an arbitrary delta.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanBeOccluded/index.html"><nobr><p>CanBeOccluded()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the proxy can be culled when occluded by other primitives</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsCinematicShadow/index.html"><nobr><p>CastsCinematicShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsDynamicShadow/index.html"><nobr><p>CastsDynamicShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsFarShadow/index.html"><nobr><p>CastsFarShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsHiddenShadow/index.html"><nobr><p>CastsHiddenShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsInsetShadow/index.html"><nobr><p>CastsInsetShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsSelfShadowOnly/index.html"><nobr><p>CastsSelfShadowOnly()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsShadowAsTwoSided/index.html"><nobr><p>CastsShadowAsTwoSided()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsStaticShadow/index.html"><nobr><p>CastsStaticShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CastsVolumetricTranslucentShadow/index.html"><nobr><p>CastsVolumetricTranslucentShadow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../HHitProxy/index.html" >HH</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateHitProxies/index.html"><nobr><p>CreateHitProxies</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Components/UPrimitiveComponent/index.html" >UPrimitiveComponent</a>&#42; Component,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Core/Templates/TRefCountPtr/index.html" >TRefCountPtr</a>&lt; <a id="content_link" href="../HHitProxy/index.html" >HHitProxy</a> > >...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates the hit proxies are used when DrawDynamicElements is called.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateRenderThreadResources/index.html"><nobr><p>CreateRenderThreadResources()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the rendering thread adds the proxy to the scene.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawArc/index.html"><nobr><p>DrawArc</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPrimitiveDrawInterface/index.html" >FPrimitiveDrawInterface</a>&#42; PDI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; Start,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; End,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float Height,<br />&nbsp;&nbsp;&nbsp;&nbsp;const uint32 Segments,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a>&amp; Color,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 DepthPriorityGroup,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float Thickness,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bScreenSpace<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Drawing helper. Draws nice bouncy line.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawArrowHead/index.html"><nobr><p>DrawArrowHead</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPrimitiveDrawInterface/index.html" >FPrimitiveDrawInterface</a>&#42; PDI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; Tip,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float Size,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a>&amp; Color,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 DepthPriorityGroup,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float Thickness,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bScreenSpace<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawStaticElements/index.html"><nobr><p>DrawStaticElements</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FStaticPrimitiveDrawInterface/index.html" >FStaticPrimitiveDrawInterface</a>&#42;...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws the primitive's static elements.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GatherSimpleLights/index.html"><nobr><p>GatherSimpleLights</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneViewFamily/index.html" >FSceneViewFamily</a>&amp; ViewFamily,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FSimpleLightArray/index.html" >FSimpleLightArray</a>&amp; OutParticleLigh...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Callback from the renderer to gather simple lights that this proxy wants renderered.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVecto</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetActorPosition/index.html"><nobr><p>GetActorPosition()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAllocatedSize/index.html"><nobr><p>GetAllocatedSize()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Core/Math/FBoxSphereBounds/index.html" >FBoxSp</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetBounds/index.html"><nobr><p>GetBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCustomDepthStencilValue/index.html"><nobr><p>GetCustomDepthStencilValue()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCustomOcclusionBounds/index.html"><nobr><p>GetCustomOcclusionBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return the custom occlusion bounds for this scene proxy.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDepthPriorityGroup/index.html"><nobr><p>GetDepthPriorityGroup</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Determines the DPG to render the primitive in for the given view.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDistancefieldAtlasData/index.html"><nobr><p>GetDistancefieldAtlasData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FBox/index.html" >FBox</a>&amp; LocalVolumeBounds,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntVector/index.html" >FIntVector</a>&amp; OutBlockMin,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntVector/index.html" >FIntVector</a>&amp; OutBlockSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; bOutBuiltAsIfTwoSided,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; bMeshWasPlane,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Core/Math/FMatrix/index.html" >FMatrix</a> >&amp; ObjectLocalToWo...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDistanceFieldInstanceInfo/index.html"><nobr><p>GetDistanceFieldInstanceInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; NumInstances,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; BoundsSurfaceArea<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDynamicMeshElements/index.html"><nobr><p>GetDynamicMeshElements</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneViewFamily/index.html" >FSceneViewFamily</a>&amp; ViewFamily,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 VisibilityMap,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FMeshElementCollector/index.html" >FMeshElementCollector</a>&amp; Collector<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gathers the primitive's dynamic mesh elements.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetHeightfieldRepresentation/index.html"><nobr><p>GetHeightfieldRepresentation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Engine/UTexture2D/index.html" >UTexture2D</a>&#42;&amp; OutHeightmapTextu...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Engine/UTexture2D/index.html" >UTexture2D</a>&#42;&amp; OutDiffuseColorTe...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FHeightfieldComponentDescription/index.html" >FHeightfieldComponentDescription</a>&amp; ...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EIndirectLig...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetIndirectLightingCacheQuality/index.html"><nobr><p>GetIndirectLightingCacheQuality()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLevelColor/index.html"><nobr><p>GetLevelColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLevelName/index.html"><nobr><p>GetLevelName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLightRelevance/index.html"><nobr><p>GetLightRelevance</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FLightSceneProxy/index.html" >FLightSceneProxy</a>&#42; LightS...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; bDynamic,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; bRelevant,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; bLightMapped,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; bShadowMapped<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Determines the relevance of this primitive's elements to the given light.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Core/Math/FBoxSphereBounds/index.html" >FBoxSp</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLocalBounds/index.html"><nobr><p>GetLocalBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Core/Math/FMatrix/index.html" >FMatri</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLocalToWorld/index.html"><nobr><p>GetLocalToWorld()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLOD/index.html"><nobr><p>GetLOD</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the LOD that the primitive will render at for this view.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLpvBiasMultiplier/index.html"><nobr><p>GetLpvBiasMultiplier()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMaxDrawDistance/index.html"><nobr><p>GetMaxDrawDistance()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMemoryFootprint/index.html"><nobr><p>GetMemoryFootprint()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Every derived class should override these functions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMinDrawDistance/index.html"><nobr><p>GetMinDrawDistance()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNumUncachedStaticLightingInte-/index.html"><nobr><p>GetNumUncachedStaticLightingInteractions()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOcclusionQueries/index.html"><nobr><p>GetOcclusionQueries</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the boxes for sub occlusion queries </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwnerName/index.html"><nobr><p>GetOwnerName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FPrimitiveComponentId/index.html" >FPrimitiveCo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPrimitiveComponentId/index.html"><nobr><p>GetPrimitiveComponentId()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Renderer/FPrimitiveSceneInfo/index.html" >FPrimitiveSc</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPrimitiveSceneInfo/index.html"><nobr><p>GetPrimitiveSceneInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPropertyColor/index.html"><nobr><p>GetPropertyColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetResourceName/index.html"><nobr><p>GetResourceName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FSceneInterface/index.html" >FSceneInterf</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetScene/index.html"><nobr><p>GetScene()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Accessors.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetStaticDepthPriorityGroup/index.html"><nobr><p>GetStaticDepthPriorityGroup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Determines the DPG to render the primitive in regardless of view.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>TStatId</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetStatId/index.html"><nobr><p>GetStatId()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int16</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTranslucencySortPriority/index.html"><nobr><p>GetTranslucencySortPriority()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../RenderCore/TUniformBuffer/index.html" >TUnifo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetUniformBuffer/index.html"><nobr><p>GetUniformBuffer()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../FPrimitiveViewRelevance/index.html" >FP</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetViewRelevance/index.html"><nobr><p>GetViewRelevance</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Determines the relevance of this primitive's elements to the given view.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVisibilityId/index.html"><nobr><p>GetVisibilityId()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWireframeColor/index.html"><nobr><p>GetWireframeColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasCustomOcclusionBounds/index.html"><nobr><p>HasCustomOcclusionBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether the proxy utilizes custom occlusion bounds or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasDistanceFieldRepresentation/index.html"><nobr><p>HasDistanceFieldRepresentation()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasMotionBlurVelocityMeshes/index.html"><nobr><p>HasMotionBlurVelocityMeshes()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasPerInstanceHitProxies/index.html"><nobr><p>HasPerInstanceHitProxies()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasStaticLighting/index.html"><nobr><p>HasStaticLighting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasSubprimitiveOcclusionQueries/index.html"><nobr><p>HasSubprimitiveOcclusionQueries()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the proxy has custom occlusion queries</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasValidSettingsForStaticLightin-/index.html"><nobr><p>HasValidSettingsForStaticLighting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasViewDependentDPG/index.html"><nobr><p>HasViewDependentDPG()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsCollisionEnabled/index.html"><nobr><p>IsCollisionEnabled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsComponentLevelVisible/index.html"><nobr><p>IsComponentLevelVisible()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsDetailMesh/index.html"><nobr><p>IsDetailMesh()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether this proxy should be considered a "detail mesh".</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsHovered/index.html"><nobr><p>IsHovered()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsIndividuallySelected/index.html"><nobr><p>IsIndividuallySelected()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsLocalToWorldDeterminantNegativ-/index.html"><nobr><p>IsLocalToWorldDeterminantNegative()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsMovable/index.html"><nobr><p>IsMovable()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsOftenMoving/index.html"><nobr><p>IsOftenMoving()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsOwnedBy/index.html"><nobr><p>IsOwnedBy</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsParentSelected/index.html"><nobr><p>IsParentSelected()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSelectable/index.html"><nobr><p>IsSelectable()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSelected/index.html"><nobr><p>IsSelected()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsShadowCast/index.html"><nobr><p>IsShadowCast</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive is casting a shadow.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsShown/index.html"><nobr><p>IsShown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the primitive is visible in the given View.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsStatic/index.html"><nobr><p>IsStatic()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsStaticPathAvailable/index.html"><nobr><p>IsStaticPathAvailable()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LightAsIfStatic/index.html"><nobr><p>LightAsIfStatic()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LightAttachmentsAsGroup/index.html"><nobr><p>LightAttachmentsAsGroup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsLevelAddedToWorldNotificati-/index.html"><nobr><p>NeedsLevelAddedToWorldNotification()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NeedsUnbuiltPreviewLighting/index.html"><nobr><p>NeedsUnbuiltPreviewLighting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnActorPositionChanged/index.html"><nobr><p>OnActorPositionChanged()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to notify the proxy when its actor position has been updated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDetachLight/index.html"><nobr><p>OnDetachLight</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FLightSceneInfo&#42; Light<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the rendering thread to notify the proxy when a light is no longer associated with the proxy, so that it can clean up any cached resources.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnLevelAddedToWorld/index.html"><nobr><p>OnLevelAddedToWorld()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to notify the proxy that the level has been fully added to the world and the primitive will now be rendered.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTransformChanged/index.html"><nobr><p>OnTransformChanged()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to notify the proxy when its transform has been updated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OverrideOwnerName/index.html"><nobr><p>OverrideOwnerName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/UObject/FName/index.html" >FName</a> InOwnerName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allow subclasses to override the primitive name. Used primarily by BSP.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReceivesDecals/index.html"><nobr><p>ReceivesDecals()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RenderBounds/index.html"><nobr><p>RenderBounds</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPrimitiveDrawInterface/index.html" >FPrimitiveDrawInterface</a>&#42; PDI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FEngineShowFlags/index.html" >FEngineShowFlags</a>&amp; EngineShow...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FBoxSphereBounds/index.html" >FBoxSphereBounds</a>&amp; Bounds,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bRenderInEditor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Helper for components that want to render bounds.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCollisionEnabled_GameThread/index.html"><nobr><p>SetCollisionEnabled_GameThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bNewEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the collision flag on the scene proxy to enable/disable collision drawing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCollisionEnabled_RenderThread/index.html"><nobr><p>SetCollisionEnabled_RenderThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bNewEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the collision flag on the scene proxy to enable/disable collision drawing (RENDER THREAD)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetHiddenEdViews_GameThread/index.html"><nobr><p>SetHiddenEdViews_GameThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint64 InHiddenEditorViews<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the hidden editor view visibility map on the game thread which just enqueues a command on the render thread</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetHierarchicalLOD_GameThread/index.html"><nobr><p>SetHierarchicalLOD_GameThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 InLODLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetHierarchicalLOD_RenderThread/index.html"><nobr><p>SetHierarchicalLOD_RenderThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 InLODLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetHovered_GameThread/index.html"><nobr><p>SetHovered_GameThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bInHovered<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates hover state for the primitive proxy.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetHovered_RenderThread/index.html"><nobr><p>SetHovered_RenderThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bInHovered<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates hover state for the primitive proxy.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSelection_GameThread/index.html"><nobr><p>SetSelection_GameThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bInParentSelected,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bInIndividuallySelected<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates selection for the primitive proxy.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSelection_RenderThread/index.html"><nobr><p>SetSelection_RenderThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bInParentSelected,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bInIndividuallySelected<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates selection for the primitive proxy.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldRenderCustomDepth/index.html"><nobr><p>ShouldRenderCustomDepth()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldRenderInMainPass/index.html"><nobr><p>ShouldRenderInMainPass()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldUseAsOccluder/index.html"><nobr><p>ShouldUseAsOccluder()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowInBSPSplitViewmode/index.html"><nobr><p>ShowInBSPSplitViewmode()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StaticElementsAl-/index.html"><nobr><p>StaticElementsAlwaysUseProxyPrimitiveUniformBuffer()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SupportsDistanceFieldRepresentat-/index.html"><nobr><p>SupportsDistanceFieldRepresentation()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SupportsHeightfieldRepresentatio-/index.html"><nobr><p>SupportsHeightfieldRepresentation()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TreatAsBackgroundForOcclusion/index.html"><nobr><p>TreatAsBackgroundForOcclusion()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateUniformBuffer/index.html"><nobr><p>UpdateUniformBuffer()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the primitive proxy's uniform buffer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UseEditorCompositing/index.html"><nobr><p>UseEditorCompositing</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FSceneView/index.html" >FSceneView</a>&#42; View<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UseEditorDepthTest/index.html"><nobr><p>UseEditorDepthTest()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WillEverBeLit/index.html"><nobr><p>WillEverBeLit()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Public&#47;PrimitiveSceneProxy.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

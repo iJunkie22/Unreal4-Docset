@@ -1,0 +1,1094 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UWheeledVehicleMovementComponent</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UWheeledVehicleMovementComponent" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\Vehicles" />
+<meta name="description" content="Component to handle the vehicle simulation for an actor." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Vehicles</a></strong> &gt; <span id="crumbs_page_title">UWheeledVehicleMovementComponent</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UWheeledVehicleMovementComponent</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Components/UActorComponent/index.html"><p>UActorComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../GameFramework/UMovementComponent/index.html"><p>UMovementComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../GameFramework/UNavMovementComponent/index.html"><p>UNavMovementComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../GameFramework/UPawnMovementComponent/index.html"><p>UPawnMovementComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UWheeledVehicleMovementComponent</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UWheeledVehicleMovementComponent-/index.html"><p>UWheeledVehicleMovementComponent4W</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Abstract/index.html" >Abstract</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/HideCategories/index.html" >HideCategories&#61;&#40;PlanarMovement, &quot;Components&#124;Movement&#124;Planar&quot;, Activation, &quot;Components&#124;Activation&quot;&#41;</a>&#41;<br />class UWheeledVehicleMovementComponent :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../GameFramework/UPawnMovementComponent/index.html" >UPawnMovementComponent</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../AI/IRVOAvoidanceInterface/index.html" >IRVOAvoidanceInterface</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Component to handle the vehicle simulation for an actor.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AngErrorAccumulator</p>
+	</td>
+	<td class="desc-cell">
+		<p>Accumulator for RB replication errors</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AvoidanceLockTimer</p>
+	</td>
+	<td class="desc-cell">
+		<p>Remaining time of avoidance velocity lock</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AvoidanceLockVelocity</p>
+	</td>
+	<td class="desc-cell">
+		<p>Forced avoidance velocity, used when AvoidanceLockTimer is > 0</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AvoidanceVelocity</p>
+	</td>
+	<td class="desc-cell">
+		<p>Calculated avoidance velocity used to adjust steering and throttle</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>BrakeInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>Brake output to physics system. Range 0...1.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FVehicleInputRate/index.html" >FVehicleInputRa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BrakeInputRate/index.html"><p>BrakeInputRate</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Rate at which input brake can rise and fall.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRawGearDownInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the player is holding gear down.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRawGearUpInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the player is holding gear up.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRawHandbrakeInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the player is holding the handbrake.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bWasAvoidanceUpdated</p>
+	</td>
+	<td class="desc-cell">
+		<p>Was avoidance updated in this frame?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>HandbrakeInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>Handbrake output to physics system. Range 0...1.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FVehicleInputRate/index.html" >FVehicleInputRa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandbrakeInputRate/index.html"><p>HandbrakeInputRate</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Rate at which input handbrake can rise and fall.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>IdleBrakeInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>How much to press the brake when the player has release throttle.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>RawSteeringInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>What the player has the steering set to. Range -1...1.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>RawThrottleInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>What the player has the accelerator set to. Range -1...1.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient, Replicated" title="Transient, Replicated" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FReplicatedVehicleState/index.html" >FReplicatedVehi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReplicatedState/index.html"><p>ReplicatedState</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Replicated state of vehicle</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SteeringInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>Steering output to physics system. Range -1...1.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FVehicleInputRate/index.html" >FVehicleInputRa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SteeringInputRate/index.html"><p>SteeringInputRate</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Rate at which input steering can rise and fall.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>StopThreshold</p>
+	</td>
+	<td class="desc-cell">
+		<p>Auto-brake when absolute vehicle forward speed is less than this (cm/s)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ThrottleInput</p>
+	</td>
+	<td class="desc-cell">
+		<p>Accelerator output to physics system. Range 0...1.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, AdvancedDisplay" title="Category, EditAnywhere, AdvancedDisplay" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FVehicleInputRate/index.html" >FVehicleInputRa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ThrottleInputRate/index.html"><p>ThrottleInputRate</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Rate at which input throttle can rise and fall.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>WrongDirectionThreshold</p>
+	</td>
+	<td class="desc-cell">
+		<p>Auto-brake when vehicle forward speed is opposite of player input by at least this much (cm/s)</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalcBrakeInput/index.html"><nobr><p>CalcBrakeInput()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute brake input</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalcHandbrakeInput/index.html"><nobr><p>CalcHandbrakeInput()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute handbrake input</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalcSteeringInput/index.html"><nobr><p>CalcSteeringInput()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute steering input</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalcThrottleInput/index.html"><nobr><p>CalcThrottleInput()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute throttle input</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearInput/index.html"><nobr><p>ClearInput()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Clear all interpolated inputs to default values</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateWheels/index.html"><nobr><p>CreateWheels()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate and setup our wheel objects</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DestroyWheels/index.html"><nobr><p>DestroyWheels()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Release our wheel objects</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GearToPhysXGear/index.html"><nobr><p>GearToPhysXGear</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 Gear<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>END <a id="content_link" href="../../AI/IRVOAvoidanceInterface/index.html" >IRVOAvoidanceInterface</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLocalCOM/index.html"><nobr><p>GetLocalCOM()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the local COM</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Components/USkinnedMeshComponent/index.html" >USkinnedMesh</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMesh/index.html"><nobr><p>GetMesh()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the mesh this vehicle is tied to</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWheelRestingP-/index.html"><nobr><p>GetWheelRestingPosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FWheelSetup/index.html" >FWheelSetup</a>&amp; WheelSetup<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the local position of the wheel at rest</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PhysXGearToGear/index.html"><nobr><p>PhysXGearToGear</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 PhysXGear<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostSetupVehicle/index.html"><nobr><p>PostSetupVehicle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Do some final setup after the physx vehicle gets created</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Server, Reliable" title="Server, Reliable" width="18" src="./../../../../../../images/./api_function_meta_serialization.png" />
+<img alt="withvalidation" title="withvalidation" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ServerUpdateState/index.html"><nobr><p>ServerUpdateState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float InSteeringInput,<br />&nbsp;&nbsp;&nbsp;&nbsp;float InThrottleInput,<br />&nbsp;&nbsp;&nbsp;&nbsp;float InBrakeInput,<br />&nbsp;&nbsp;&nbsp;&nbsp;float InHandbrakeInput,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 CurrentGear<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Pass current state to server</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetAvoidanceVelo-/index.html"><nobr><p>SetAvoidanceVelocityLock</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../AI/Navigation/UAvoidanceManager/index.html" >UAvoidanceManager</a>&#42; Avoidance,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Duration<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Lock avoidance velocity</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetupVehicle/index.html"><nobr><p>SetupVehicle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allocate and setup the PhysX vehicle</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetupVehicleMass/index.html"><nobr><p>SetupVehicleMass()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adjust the PhysX actor's mass</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetupVehicleShapes/index.html"><nobr><p>SetupVehicleShapes()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set up the chassis and wheel shapes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetupWheels/index.html"><nobr><p>SetupWheels</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;physx::PxVehicleWheelsSimData&#42;...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set up the wheel data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateAvoidance/index.html"><nobr><p>UpdateAvoidance</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_VEHICLE.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateDefaultAvo-/index.html"><nobr><p>UpdateDefaultAvoidance()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called in Tick to update data in RVO avoidance manager</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateSimulation/index.html"><nobr><p>UpdateSimulation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Pass input values to vehicle simulation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateState/index.html"><nobr><p>UpdateState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the COMOffset on the actual body instance Read current state for simulation</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_9');">
+        <p>Overridden from IRVOAvoidanceInterface</p>
+    </div>
+<div id="functions_9">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAvoidanceGrou-/index.html"><nobr><p>GetAvoidanceGroupMask()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This actor's avoidance group mask</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGroupsToAvoidMask/index.html"><nobr><p>GetGroupsToAvoidMask()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Agent groups to avoid mask</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGroupsToIgnor-/index.html"><nobr><p>GetGroupsToIgnoreMask()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Agent groups to ignore</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRVOAvoidanceC-/index.html"><nobr><p>GetRVOAvoidanceConsiderationRadius()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The scaled collider radius to consider for RVO avoidance</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRVOAvoidanceH-/index.html"><nobr><p>GetRVOAvoidanceHeight()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The scaled collider height to consider for RVO avoidance</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRVOAvoidanceO-/index.html"><nobr><p>GetRVOAvoidanceOrigin()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the Location from where the RVO avoidance should originate</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRVOAvoidanceR-/index.html"><nobr><p>GetRVOAvoidanceRadius()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The scaled collider radius to consider for RVO avoidance</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRVOAvoidanceUID/index.html"><nobr><p>GetRVOAvoidanceUID()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return the AvoidanceUID assigned by the Avoidance Manager during registration</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRVOAvoidanceW-/index.html"><nobr><p>GetRVOAvoidanceWeight()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the AvoidanceWeight assigned by the Avoidance Manager during registration</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVelocityForRV-/index.html"><nobr><p>GetVelocityForRVOConsideration()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The velocity of the avoiding entity</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetRVOAvoidanceUID/index.html"><nobr><p>SetRVOAvoidanceUID</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 UID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>BEGIN <a id="content_link" href="../../AI/IRVOAvoidanceInterface/index.html" >IRVOAvoidanceInterface</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetRVOAvoidanceW-/index.html"><nobr><p>SetRVOAvoidanceWeight</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float Weight<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Store the AvoidanceWeight generated by the Avoidance Manager</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;Vehicles&#47;WheeledVehicleMovementComponent.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

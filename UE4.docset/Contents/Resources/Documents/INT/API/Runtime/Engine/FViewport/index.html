@@ -1,0 +1,1735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FViewport</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FViewport" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine" />
+<meta name="description" content="Encapsulates the I/O of a viewport." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Engine</a></strong> &gt; <span id="crumbs_page_title">FViewport</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FViewport</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../FRenderTarget/index.html"><p>FRenderTarget</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../RenderCore/FRenderResource/index.html"><p>FRenderResource</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FViewport</p><table class="hierarchy-table" cellspacing="0" id="hrch_2_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../FDummyViewport/index.html"><p>FDummyViewport</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../Slate/FSceneViewport/index.html"><p>FSceneViewport</p></a></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FViewport :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../FRenderTarget/index.html" >FRenderTarget</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;protected <a id="content_link" href="../../RenderCore/FRenderResource/index.html" >FRenderResource</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Encapsulates the I/O of a viewport. The viewport display is implemented using the platform independent RHI.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>AppVersionString</p>
+	</td>
+	<td class="desc-cell">
+		<p>The current version of the running instance</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasRequestedToggleFreeze</p>
+	</td>
+	<td class="desc-cell">
+		<p>If a toggle freeze request has been made</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHitProxiesCached</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the hit proxy buffer buffer has up to date hit proxies for this viewport.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsPlayInEditorViewport</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true this viewport is for play in editor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsSlateViewport</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true this viewport is an FSlateSceneViewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRequiresHitProxyStorage</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the viewport client requires hit proxy storage.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bTakeHighResScreenShot</p>
+	</td>
+	<td class="desc-cell">
+		<p>Triggers the taking of a high res screen shot for this viewport.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Core/Math/FColor/index.html" >FColor</a> ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedHitProxyData/index.html"><p>CachedHitProxyData</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Cached hit proxy data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="FHitProxyMap/index.html" >FHitProxyMap</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>HitProxyMap</p>
+	</td>
+	<td class="desc-cell">
+		<p>The viewport's hit proxy map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>HitProxySize</p>
+	</td>
+	<td class="desc-cell">
+		<p>The size of the region to check hit proxies</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../MovieSceneCapture/FMovieSceneCaptureHandle/index.html" >FMovieSceneCapt</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MovieSceneCaptureHandle/index.html"><p>MovieSceneCaptureHandle</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Movie scene capture implementation handle.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SizeX</p>
+	</td>
+	<td class="desc-cell">
+		<p>The width of the viewport.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>SizeY</p>
+	</td>
+	<td class="desc-cell">
+		<p>The height of the viewport.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FViewportClient/index.html" >FViewportClient</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ViewportClient/index.html"><p>ViewportClient</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The viewport's client.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FViewportRHIRef</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ViewportRHI</p>
+	</td>
+	<td class="desc-cell">
+		<p>The RHI viewport.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/GenericPlatform/EWindowMode__Type/index.html" >EWindowMode::Ty</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WindowMode/index.html"><p>WindowMode</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>What is the current window mode.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FViewportClient/index.html" >FViewportClient</a>&#42; InViewportCli...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Constructor.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FViewport()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Destructor.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginRenderFrame/index.html"><nobr><p>BeginRenderFrame</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Starts a new rendering frame. Called from the rendering thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../Core/Math/FIntRect/index.html" >FI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CalculateViewExtents/index.html"><nobr><p>CalculateViewExtents</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float AspectRatio,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FIntRect/index.html" >FIntRect</a>&amp; ViewRect<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates the view inside the viewport when the aspect ratio is locked.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CaptureMouse/index.html"><nobr><p>CaptureMouse</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCapture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DeferInvalidateHitProxy/index.html"><nobr><p>DeferInvalidateHitProxy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidates the viewport's cached hit proxies at the end of the frame.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Destroy/index.html"><nobr><p>Destroy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Draw/index.html"><nobr><p>Draw</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bShouldPresent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the viewport's displayed pixels with the results of calling ViewportClient->Draw.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawStatsHUD/index.html"><nobr><p>DrawStatsHUD</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FCanvas/index.html" >FCanvas</a>&#42; InCanvas,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 InX,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 InY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>First chance for viewports to render custom stats text 
+</p><ul><li><p>Y for next stat drawing
+</p></li></ul>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndRenderFrame/index.html"><nobr><p>EndRenderFrame</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandListImmediate/index.html" >FRHICommandListImmediate</a>&amp; RHICmdLi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bPresent,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bLockToVsync<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ends a rendering frame. Called from the rendering thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EnqueueBeginRenderFrame/index.html"><nobr><p>EnqueueBeginRenderFrame()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Starts a new rendering frame. Called from the game thread thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FViewportClient/index.html" >FViewportCli</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetClient/index.html"><nobr><p>GetClient()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Accessors.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FCanvas/index.html" >FCanvas</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDebugCanvas/index.html"><nobr><p>GetDebugCanvas()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>A canvas that can be used while this viewport is being drawn to render debug elements on top of everything else</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDesiredAspectRatio/index.html"><nobr><p>GetDesiredAspectRatio()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Aspect ratio that this viewport should be rendered at</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../HHitProxy/index.html" >HH</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetHitProxy/index.html"><nobr><p>GetHitProxy</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 X,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Y<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the dominant hit proxy at a given point.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetHitProxyMap/index.html"><nobr><p>GetHitProxyMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntRect/index.html" >FIntRect</a> InRect,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../HHitProxy/index.html" >HHitProxy</a>&#42; >&amp; OutMap<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Copies the hit proxies from an area of the screen into a buffer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMousePos/index.html"><nobr><p>GetMousePos</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntPoint/index.html" >FIntPoint</a>&amp; MousePosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bLocalPosition<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMouseX/index.html"><nobr><p>GetMouseX()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMouseY/index.html"><nobr><p>GetMouseY()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API<a id="content_link" href="../../MovieSceneCapture/IMovieSceneCaptureInterface/index.html" >IM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMovieSceneCapture/index.html"><nobr><p>GetMovieSceneCapture()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Access the current movie scene capture interface, if set.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API c...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRawHitProxyData/index.html"><nobr><p>GetRawHitProxyData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntRect/index.html" >FIntRect</a> InRect<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FIntPoint/index.html" >FIntPoint</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRenderTargetTextureSizeXY/index.html"><nobr><p>GetRenderTargetTextureSizeXY()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns dimensions of RenderTarget texture. Can be called on a game thread.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTabletPressure/index.html"><nobr><p>GetTabletPressure()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FViewportFrame/index.html" >FViewportFra</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetViewportFrame/index.html"><nobr><p>GetViewportFrame()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the interface to the viewport's frame, if it has one. 
+</p><p>The viewport's frame interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const FViewp...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetViewportRHI/index.html"><nobr><p>GetViewportRHI()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Accessors for RHI resources</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWindow/index.html"><nobr><p>GetWindow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="index.html" >FViewport</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasFocus/index.html"><nobr><p>HasFocus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasMouseCapture/index.html"><nobr><p>HasMouseCapture()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>New MouseCapture/MouseLock API.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasMovieSceneCapture/index.html"><nobr><p>HasMovieSceneCapture()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Check if this viewport has a movie scene capture implementation or not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HighResScreenshot/index.html"><nobr><p>HighResScreenshot()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Take a high-resolution screenshot and save to disk.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Invalidate/index.html"><nobr><p>Invalidate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidates cached hit proxies and the display.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvalidateDisplay/index.html"><nobr><p>InvalidateDisplay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidates the viewport's displayed pixels.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvalidateHitProxy/index.html"><nobr><p>InvalidateHitProxy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidates cached hit proxies</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsCursorVisible/index.html"><nobr><p>IsCursorVisible()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the mouse cursor is currently visible</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsForegroundWindow/index.html"><nobr><p>IsForegroundWindow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsFullscreen/index.html"><nobr><p>IsFullscreen()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsGameRenderingEnabled/index.html"><nobr><p>IsGameRenderingEnabled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether rendering is globally enabled or disabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsKeyboardAvailable/index.html"><nobr><p>IsKeyboardAvailable</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ControllerID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether or not this Controller has a keyboard available to be used</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsMouseAvailable/index.html"><nobr><p>IsMouseAvailable</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ControllerID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether or not this Controller has a mouse available to be used</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPenActive/index.html"><nobr><p>IsPenActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPlayInEditorViewport/index.html"><nobr><p>IsPlayInEditorViewport()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the viewport is for play in editor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSlateViewport/index.html"><nobr><p>IsSlateViewport()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if this is an FSlateSceneViewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSoftwareCursorVisible/index.html"><nobr><p>IsSoftwareCursorVisible()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsStereoRenderingAllowed/index.html"><nobr><p>IsStereoRenderingAllowed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Should return true, if stereo rendering is allowed in this viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="KeyState/index.html"><nobr><p>KeyState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../InputCore/FKey/index.html" >FKey</a> Key<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LockMouseToViewport/index.html"><nobr><p>LockMouseToViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bLock<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveWindow/index.html"><nobr><p>MoveWindow</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NewPosX,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NewPosY,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NewSizeX,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NewSizeY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProcessInput/index.html"><nobr><p>ProcessInput</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetGameRenderingEnabled/index.html"><nobr><p>SetGameRenderingEnabled</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bIsEnabled,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 PresentAndStopMovieDelay<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Globally enables/disables rendering</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetInitialSize/index.html"><nobr><p>SetInitialSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntPoint/index.html" >FIntPoint</a> InitialSizeXY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the initial size of this viewport. Will do nothing if the viewport has already been sized</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetMouse/index.html"><nobr><p>SetMouse</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 x,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 y<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetMovieSceneCapture/index.html"><nobr><p>SetMovieSceneCapture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../MovieSceneCapture/FMovieSceneCaptureHandle/index.html" >FMovieSceneCaptureHandle</a> Handle<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set this viewport's capture implementation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlayInEditorViewport/index.html"><nobr><p>SetPlayInEditorViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInPlayInEditorViewport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets this viewport as a play in editor viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPreCaptureMousePosFromSlateCu-/index.html"><nobr><p>SetPreCaptureMousePosFromSlateCursor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets PreCapture coordinates from the current position of the slate cursor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetRequiresVsync/index.html"><nobr><p>SetRequiresVsync</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bShouldVsync<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Indicate that the viewport should be block for vsync.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSoftwareCursorPosition/index.html"><nobr><p>SetSoftwareCursorPosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector2D/index.html" >FVector2D</a> Position<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetUserFocus/index.html"><nobr><p>SetUserFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bFocus<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetViewportClient/index.html"><nobr><p>SetViewportClient</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FViewportClient/index.html" >FViewportClient</a>&#42; InViewportCli...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a viewport client if one wasn't provided at construction time.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowCursor/index.html"><nobr><p>ShowCursor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bVisible<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowSoftwareCursor/index.html"><nobr><p>ShowSoftwareCursor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bVisible<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TakeHighResScreenShot/index.html"><nobr><p>TakeHighResScreenShot()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Trigger a high res screenshot.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateMouseCursor/index.html"><nobr><p>UpdateMouseCursor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSetCursor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateRenderTargetSurfaceRHIToCu-/index.html"><nobr><p>UpdateRenderTargetSurfaceRHIToCurrentBackBuffer()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update the render target surface RHI to the current back buffer</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateViewportRHI/index.html"><nobr><p>UpdateViewportRHI</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bDestroyed,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NewSizeX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NewSizeY,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/GenericPlatform/EWindowMode__Type/index.html" >EWindowMode::Type</a> NewWindowMode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the viewport RHI with the current viewport state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FIntPoint/index.html" >FIntPoint</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ViewportToVirtualDesktopPixel/index.html"><nobr><p>ViewportToVirtualDesktopPixel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector2D/index.html" >FVector2D</a> ViewportCoordinate<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Transforms a coordinate in the local space of this viewport into a virtual desktop pixel.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="VirtualDesktopPixelToViewport/index.html"><nobr><p>VirtualDesktopPixelToViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntPoint/index.html" >FIntPoint</a> VirtualDesktopPointPx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Transforms a virtual desktop pixel (the origin is in the primary screen's top left corner) to the local space of this viewport</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from FRenderTarget</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FIntPoint/index.html" >FIntPoint</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSizeXY/index.html"><nobr><p>GetSizeXY()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../FRenderTarget/index.html" >FRenderTarget</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasToggleFreezeCommand/index.html"><nobr><p>HasToggleFreezeCommand()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns if there is a command to freeze
+</p><p>Returns if there is a command to toggle freezing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProcessToggleFreezeCommand/index.html"><nobr><p>ProcessToggleFreezeCommand()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Handles freezing/unfreezing of rendering</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from FRenderResource</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitDynamicRHI/index.html"><nobr><p>InitDynamicRHI()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../RenderCore/FRenderResource/index.html" >FRenderResource</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitRHI/index.html"><nobr><p>InitRHI()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initializes the RHI resources used by this resource.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseDynamicRHI/index.html"><nobr><p>ReleaseDynamicRHI()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Releases the dynamic RHI resource and/or RHI render target resources used by this resource.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENGINE_API v...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseRHI/index.html"><nobr><p>ReleaseRHI()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Releases the RHI resources used by this resource.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'classes');">
+        <p>Classes</p>
+    </div>
+<div id="classes">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected class" title="Protected class" width="18" src="./../../../../../images/./api_class_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="FHitProxyMap/index.html"><p>FHitProxyMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>A map from 2D coordinates to cached hit proxies.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnViewportResized/index.html"><p>FOnViewportResized</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate type for viewport resize events ( Params: FViewport&#42; Viewport, uint32 )</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constants');">
+        <p>Constants</p>
+    </div>
+<div id="constants">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bIsGameRenderingEnabled/index.html"><p>bIsGameRenderingEnabled</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>True if we should draw game viewports (has no effect on Editor viewports)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PresentAndStopMovieDelay/index.html"><p>PresentAndStopMovieDelay</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Delay in frames to disable present (but still render scene) and stopping of a movie.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="ViewportResizedEvent/index.html"><p>ViewportResizedEvent</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Send when a viewport is resized</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Public&#47;UnrealClient.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

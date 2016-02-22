@@ -1,0 +1,753 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>ISlateViewport</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="ISlateViewport" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\SlateCore, API\Runtime\SlateCore\Rendering" />
+<meta name="description" content="Viewport implementation interface that is used by [SViewport](API\Runtime\Slate\Widgets\SViewport) when it needs to draw and processes input." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >SlateCore</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Rendering</a></strong> &gt; <span id="crumbs_page_title">ISlateViewport</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">ISlateViewport</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>ISlateViewport</p><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Editor/UnrealEd/FAssetThumbnail/index.html"><p>FAssetThumbnail</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../MoviePlayer/FMovieViewport/index.html"><p>FMovieViewport</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Engine/Slate/FSceneViewport/index.html"><p>FSceneViewport</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../WebBrowser/FWebBrowserViewport/index.html"><p>FWebBrowserViewport</p></a></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class ISlateViewport<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Viewport implementation interface that is used by <a id="content_link" href="../../../Slate/Widgets/SViewport/index.html" >SViewport</a> when it needs to draw and processes input.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~ISlateViewport()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AllowScaling/index.html"><nobr><p>AllowScaling()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether the viewport contents should be scaled or not. Defaults to true.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FIntPoint/index.html" >FIntPoint</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSize/index.html"><nobr><p>GetSize()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the size of the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSoftwareCursorPosition/index.html"><nobr><p>GetSoftwareCursorPosition()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the current position of the software cursor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Textures/FSlateShaderResource/index.html" >FSlateShader</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetViewportRenderTargetTexture/index.html"><nobr><p>GetViewportRenderTargetTexture()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a slate texture used to draw the rendered viewport in Slate.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSoftwareCursorVisible/index.html"><nobr><p>IsSoftwareCursorVisible()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether the software cursor is currently visible</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsViewportTextureAlphaOnly/index.html"><nobr><p>IsViewportTextureAlphaOnly()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Does the texture returned by GetViewportRenderTargetTexture only have an alpha channel?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnAnalogValueChanged/index.html"><nobr><p>OnAnalogValueChanged</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FAnalogInputEvent/index.html" >FAnalogInputEvent</a>&amp; InAnalogI...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when an analog value changes on a button that supports analog</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FCursorReply/index.html" >FCursorReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnCursorQuery/index.html"><nobr><p>OnCursorQuery</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; CursorEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when Slate needs to know what the mouse cursor should be.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDrawViewport/index.html"><nobr><p>OnDrawViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; AllottedGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FSlateRect/index.html" >FSlateRect</a>&amp; MyClippingRect,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FSlateWindowElementList/index.html" >FSlateWindowElementList</a>&amp; OutDrawEl...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LayerId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Styling/FWidgetStyle/index.html" >FWidgetStyle</a>&amp; InWidgetStyle,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bParentEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when the viewport widget is drawn Implementers of this interface can use this method to perform custom per draw functionality.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnFinishedPointerInput/index.html"><nobr><p>OnFinishedPointerInput()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after all input for this frame is processed.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnFocusLost/index.html"><nobr><p>OnFocusLost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FFocusEvent/index.html" >FFocusEvent</a>&amp; InFocusEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the viewport loses keyboard focus.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnFocusReceived/index.html"><nobr><p>OnFocusReceived</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FFocusEvent/index.html" >FFocusEvent</a>&amp; InFocusEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the viewport gains keyboard focus.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnKeyChar/index.html"><nobr><p>OnKeyChar</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FCharacterEvent/index.html" >FCharacterEvent</a>&amp; InCharacter...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when a character key is pressed while the viewport has focus</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnKeyDown/index.html"><nobr><p>OnKeyDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FKeyEvent/index.html" >FKeyEvent</a>&amp; InKeyEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when a key is pressed inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnKeyUp/index.html"><nobr><p>OnKeyUp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FKeyEvent/index.html" >FKeyEvent</a>&amp; InKeyEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when a key is released inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Misc/TOptional/index.html" >TOptional</a>&lt; <a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >T</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMapCursor/index.html"><nobr><p>OnMapCursor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FCursorReply/index.html" >FCursorReply</a>&amp; CursorReply<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>After OnCursorQuery has specified a cursor type the system asks each widget under the mouse to map that cursor to a widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMotionDetected/index.html"><nobr><p>OnMotionDetected</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FMotionEvent/index.html" >FMotionEvent</a>&amp; InMotionEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when motion is detected (controller or device) e.g. Someone tilts or shakes their controller.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonDoubleClick/index.html"><nobr><p>OnMouseButtonDoubleClick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; InMyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InMouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when the mouse wheel is used inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonDown/index.html"><nobr><p>OnMouseButtonDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when a mouse button is pressed inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonUp/index.html"><nobr><p>OnMouseButtonUp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when a mouse button is released inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseEnter/index.html"><nobr><p>OnMouseEnter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseLeave/index.html"><nobr><p>OnMouseLeave</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseMove/index.html"><nobr><p>OnMouseMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when a mouse button is released inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseWheel/index.html"><nobr><p>OnMouseWheel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by Slate when the mouse wheel is used inside the viewport</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FNavigationReply/index.html" >FNavigationR</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigation/index.html"><nobr><p>OnNavigation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FNavigationEvent/index.html" >FNavigationEvent</a>&amp; InNavigati...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when navigation is requested e.g. Left Joystick, Direction Pad, Arrow Keys can generate navigation events.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Misc/TOptional/index.html" >TOptional</a>&lt; E...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnQueryPopupMethod/index.html"><nobr><p>OnQueryPopupMethod()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to figure out whether we can make new windows for popups within this viewport.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Misc/TOptional/index.html" >TOptional</a>&lt; b...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnQueryShowFocus/index.html"><nobr><p>OnQueryShowFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const EFocusCause InFocusCause<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to determine if we should render the focus brush.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTouchEnded/index.html"><nobr><p>OnTouchEnded</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InTouchEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a touchpad touch is ended (finger lifted)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTouchGesture/index.html"><nobr><p>OnTouchGesture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InGestureEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on a touchpad gesture event</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTouchMoved/index.html"><nobr><p>OnTouchMoved</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InTouchEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a touchpad touch is moved (finger moved)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTouchStarted/index.html"><nobr><p>OnTouchStarted</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InTouchEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a touchpad touch is started (finger down)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnViewportClosed/index.html"><nobr><p>OnViewportClosed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the viewports top level window is being closed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequiresVsync/index.html"><nobr><p>RequiresVsync()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the viewport should be vsynced.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Tick/index.html"><nobr><p>Tick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Layout/FGeometry/index.html" >FGeometry</a>&amp; AllottedGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;double InCurrentTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Performs any ticking necessary by this handle</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >SlateCore</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;SlateCore&#47;Public&#47;Rendering&#47;RenderingCommon.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,1256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UMovementComponent</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UMovementComponent" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\GameFramework" />
+<meta name="description" content="MovementComponent is an abstract component class that defines functionality for moving a PrimitiveComponent (our UpdatedComponent) each tick." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >GameFramework</a></strong> &gt; <span id="crumbs_page_title">UMovementComponent</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UMovementComponent</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Components/UActorComponent/index.html"><p>UActorComponent</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UMovementComponent</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Components/UInterpToMovementComponent/index.html"><p>UInterpToMovementComponent</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_1_1_2');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_1_1_2_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../UNavMovementComponent/index.html"><p>UNavMovementComponent</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_1_1_2"><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_1_1_2_1');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_1_1_2_1_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../UPawnMovementComponent/index.html"><p>UPawnMovementComponent</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_1_1_2_1"><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_1_1_2_1_1');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_1_1_2_1_1_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../UCharacterMovementComponent/index.html"><p>UCharacterMovementComponent</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_1_1_2_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../Plugins/ArchVisCharacter/UArchVisCharMovementComponent/index.html"><p>UArchVisCharMovementComponent</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_1_1_2_1_2');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_1_1_2_1_2_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../UFloatingPawnMovement/index.html"><p>UFloatingPawnMovement</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_1_1_2_1_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../USpectatorPawnMovement/index.html"><p>USpectatorPawnMovement</p></a></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_1_1_1_1_1_2_1_3');"><img class="hierarchy-button-collapsed" id='hrch_1_1_1_1_1_2_1_3_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../../Vehicles/UWheeledVehicleMovementComponent/index.html"><p>UWheeledVehicleMovementComponent</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_1_1_1_1_1_2_1_3"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Vehicles/UWheeledVehicleMovementComponent-/index.html"><p>UWheeledVehicleMovementComponent4W</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UProjectileMovementComponent/index.html"><p>UProjectileMovementComponent</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../URotatingMovementComponent/index.html"><p>URotatingMovementComponent</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/ClassGroup/index.html" >ClassGroup&#61;Movement</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Abstract/index.html" >Abstract</a>, <a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/BlueprintType/index.html" >BlueprintType</a>&#41;<br />class UMovementComponent : public <a id="content_link" href="../../Components/UActorComponent/index.html" >UActorComponent</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>MovementComponent is an abstract component class that defines functionality for moving a PrimitiveComponent (our UpdatedComponent) each tick. Base functionality includes:
+</p><ul><li><p>Restricting movement to a plane or axis.
+</p></li><li><p>Utility functions for special handling of collision results (<a id="content_link" href="SlideAlongSurface/index.html" >SlideAlongSurface()</a>, <a id="content_link" href="ComputeSlideVector/index.html" >ComputeSlideVector()</a>, <a id="content_link" href="TwoWallAdjust/index.html" >TwoWallAdjust()</a>).
+</p></li><li><p>Utility functions for moving when there may be initial penetration (<a id="content_link" href="SafeMoveUpdatedComponent/1/index.html" >SafeMoveUpdatedComponent()</a>, <a id="content_link" href="ResolvePenetration/1/index.html" >ResolvePenetration()</a>).
+</p></li><li><p>Automatically registering the component tick and finding a component to move on the owning Actor. Normally the root component of the owning actor is moved, however another component may be selected (see <a id="content_link" href="SetUpdatedComponent/index.html" >SetUpdatedComponent()</a>). During swept (non-teleporting) movement only collision of UpdatedComponent is considered, attached components will teleport to the end location ignoring collision.
+</p></li></ul>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAutoRegisterUpdatedComponent</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, registers the owner's Root component as the UpdatedComponent if there is not one currently assigned.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bAutoUpdateTickRegistration/index.html"><p>bAutoUpdateTickRegistration</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If true, whenever the updated component is changed, this component will enable or disable its tick dependent on whether it has something to update.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bUpdateOnlyIfRendered</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, skips <a id="content_link" href="TickComponent/index.html" >TickComponent()</a> if UpdatedComponent was not recently rendered.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly, Meta" title="Category, EditDefaultsOnly, Meta" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PlaneConstraintNormal/index.html"><p>PlaneConstraintNormal</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The normal or axis of the plane that constrains movement, if bConstrainToPlane is enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly, Meta" title="Category, EditDefaultsOnly, Meta" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PlaneConstraintOrigin/index.html"><p>PlaneConstraintOrigin</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The origin of the plane that constrains movement, if plane constraint is enabled.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddRadialForce/index.html"><nobr><p>AddRadialForce</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Strength,<br />&nbsp;&nbsp;&nbsp;&nbsp;ERadialImpulseFalloff Falloff<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds force from radial force components.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddRadialImpulse/index.html"><nobr><p>AddRadialImpulse</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Strength,<br />&nbsp;&nbsp;&nbsp;&nbsp;ERadialImpulseFalloff Falloff,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bVelChange<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds impulse from radial force components.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComputeSlideVector/index.html"><nobr><p>ComputeSlideVector</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float Time,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Normal,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute a vector to slide along a surface, given an attempted move, time, and normal.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConstrainDirectionToPlane/index.html"><nobr><p>ConstrainDirectionToPlane</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Direction<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Constrain a direction vector to the plane constraint, if enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConstrainLocationToPlane/index.html"><nobr><p>ConstrainLocationToPlane</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Location<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Constrain a position vector to the plane constraint, if enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConstrainNormalToPlane/index.html"><nobr><p>ConstrainNormalToPlane</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Normal<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Constrain a normal vector (of unit length) to the plane constraint, if enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGravityZ/index.html"><nobr><p>GetGravityZ()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMaxSpeed/index.html"><nobr><p>GetMaxSpeed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Inlines.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMaxSpeedModifier/index.html"><nobr><p>GetMaxSpeedModifier()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>TODO: Deprecated, remove.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetModifiedMaxSpeed/index.html"><nobr><p>GetModifiedMaxSpeed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>TODO: Deprecated, remove.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPenetrationAdjustment/index.html"><nobr><p>GetPenetrationAdjustment</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculate a movement adjustment to try to move out of a penetration from a failed move.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../APhysicsVolume/index.html" >APhysicsVolu</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPhysicsVolume/index.html"><nobr><p>GetPhysicsVolume()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>PhysicsVolume this MovementComponent is using, or the world's default physics volume if none.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EPlaneConstr...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPlaneConstraintAxisSetting/index.html"><nobr><p>GetPlaneConstraintAxisSetting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the plane constraint axis setting.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVecto</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPlaneConstraintNormal/index.html"><nobr><p>GetPlaneConstraintNormal()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The normal of the plane that constrains movement, enforced if the plane constraint is enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPlaneConstrai-/index.html"><nobr><p>GetPlaneConstraintNormalFromAxisSetting</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EPlaneConstraintAxisSetting AxisSet...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Helper to compute the plane constraint axis from the current setting.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVecto</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPlaneConstraintOrigin/index.html"><nobr><p>GetPlaneConstraintOrigin()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the plane constraint origin.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandleImpact/index.html"><nobr><p>HandleImpact</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TimeSlice,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; MoveDelta<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called for Blocking impact</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitCollisionParams/index.html"><nobr><p>InitCollisionParams</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCollisionQueryParams/index.html" >FCollisionQueryParams</a>&amp; OutParams,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCollisionResponseParams/index.html" >FCollisionResponseParams</a>&amp; OutRespo...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initialize collision params appropriately based on our collision settings.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsExceedingMaxSpeed/index.html"><nobr><p>IsExceedingMaxSpeed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float MaxSpeed<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the current velocity is exceeding the given max speed (usually the result of <a id="content_link" href="GetMaxSpeed/index.html" >GetMaxSpeed()</a>), within a small error tolerance.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsInWater/index.html"><nobr><p>IsInWater()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if it's in PhysicsVolume with water flag</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_GetMaxSpeedModifier/index.html"><nobr><p>K2_GetMaxSpeedModifier()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>TODO: Deprecated, remove.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_GetModifiedMaxSpeed/index.html"><nobr><p>K2_GetModifiedMaxSpeed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>TODO: Deprecated, remove.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_MoveUpdatedComponent/index.html"><nobr><p>K2_MoveUpdatedComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a> NewRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; OutHit,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSweep,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bTeleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Moves our UpdatedComponent by the given Delta, and sets rotation to NewRotation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveUpdatedComponent/2/index.html"><nobr><p>MoveUpdatedComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a>&amp; NewRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSweep,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&#42; OutHit,<br />&nbsp;&nbsp;&nbsp;&nbsp;ETeleportType Teleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveUpdatedComponent/1/index.html"><nobr><p>MoveUpdatedComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a>&amp; NewRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSweep,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&#42; OutHit,<br />&nbsp;&nbsp;&nbsp;&nbsp;ETeleportType Teleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Moves our UpdatedComponent by the given Delta, and sets rotation to NewRotation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveUpdatedComponentImpl/index.html"><nobr><p>MoveUpdatedComponentImpl</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a>&amp; NewRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSweep,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&#42; OutHit,<br />&nbsp;&nbsp;&nbsp;&nbsp;ETeleportType Teleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTeleported/index.html"><nobr><p>OnTeleported()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by owning Actor upon successful teleport from <a id="content_link" href="../AActor/TeleportTo/index.html" >AActor::TeleportTo()</a>.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OverlapTest/index.html"><nobr><p>OverlapTest</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Location,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a>&amp; RotationQuat,<br />&nbsp;&nbsp;&nbsp;&nbsp;const ECollisionChannel CollisionCh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FCollisionShape/index.html" >FCollisionShape</a>&amp; CollisionSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../AActor/index.html" >AActor</a>&#42; IgnoreActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return true if the given collision shape overlaps other geometry at the given location and rotation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PhysicsLockedAxi-/index.html"><nobr><p>PhysicsLockedAxisSettingChanged()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PhysicsVolumeChanged/index.html"><nobr><p>PhysicsVolumeChanged</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../APhysicsVolume/index.html" >APhysicsVolume</a>&#42; NewVolume<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResolvePenetration/2/index.html"><nobr><p>ResolvePenetration</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Adjustment,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a>&amp; NewRotation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResolvePenetration/1/index.html"><nobr><p>ResolvePenetration</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Adjustment,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a>&amp; NewRotation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Try to move out of penetration in an object after a failed move.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResolvePenetrationImpl/index.html"><nobr><p>ResolvePenetrationImpl</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Adjustment,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a>&amp; NewRotation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SafeMoveUpdatedComponent/1/index.html"><nobr><p>SafeMoveUpdatedComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a>&amp; NewRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSweep,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; OutHit,<br />&nbsp;&nbsp;&nbsp;&nbsp;ETeleportType Teleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calls <a id="content_link" href="MoveUpdatedComponent/1/index.html" >MoveUpdatedComponent()</a>, handling initial penetrations by calling <a id="content_link" href="ResolvePenetration/1/index.html" >ResolvePenetration()</a>.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SafeMoveUpdatedComponent/2/index.html"><nobr><p>SafeMoveUpdatedComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FRotator/index.html" >FRotator</a>&amp; NewRotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSweep,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; OutHit,<br />&nbsp;&nbsp;&nbsp;&nbsp;ETeleportType Teleport<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlaneConstraintAxisSetting/index.html"><nobr><p>SetPlaneConstraintAxisSetting</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EPlaneConstraintAxisSetting NewAxis...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the plane constraint axis setting.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlaneConstraintEnabled/index.html"><nobr><p>SetPlaneConstraintEnabled</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets whether or not the plane constraint is enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlaneConstraintFromVectors/index.html"><nobr><p>SetPlaneConstraintFromVectors</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Forward,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Up<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Uses the Forward and Up vectors to compute the plane that constrains movement, enforced if the plane constraint is enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlaneConstraintNormal/index.html"><nobr><p>SetPlaneConstraintNormal</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> PlaneNormal<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the normal of the plane that constrains movement, enforced if the plane constraint is enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPlaneConstraintOrigin/index.html"><nobr><p>SetPlaneConstraintOrigin</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> PlaneOrigin<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the origin of the plane that constrains movement, enforced if the plane constraint is enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetUpdatedComponent/index.html"><nobr><p>SetUpdatedComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Components/USceneComponent/index.html" >USceneComponent</a>&#42; NewUpdatedCom...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Assign the component we move and update.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldSkipUpdate/index.html"><nobr><p>ShouldSkipUpdate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Possibly skip update if moved component is not rendered or can't move.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SkipUpdate/index.html"><nobr><p>SkipUpdate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SlideAlongSurface/index.html"><nobr><p>SlideAlongSurface</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Time,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Normal,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bHandleImpact<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Slide smoothly along a surface, and slide away from multiple impacts using TwoWallAdjust if necessary.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SnapUpdatedComponentToPlane/index.html"><nobr><p>SnapUpdatedComponentToPlane()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Snap the updated component to the plane constraint, if enabled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StopMovementImmediately/index.html"><nobr><p>StopMovementImmediately()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Stops movement immediately (zeroes velocity, usually zeros acceleration for components with acceleration).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TwoWallAdjust/index.html"><nobr><p>TwoWallAdjust</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; Delta,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FHitResult/index.html" >FHitResult</a>&amp; Hit,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; OldHitNormal<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute a movement direction when contacting two surfaces.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateComponentVelocity/index.html"><nobr><p>UpdateComponentVelocity()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update ComponentVelocity of UpdatedComponent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateTickRegistration/index.html"><nobr><p>UpdateTickRegistration()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update tick registration state, determined by bAutoUpdateTickRegistration.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from UActorComponent</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitializeComponent/index.html"><nobr><p>InitializeComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Overridden to auto-register the updated component if it starts NULL, and we can find a root component on our owner.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRegister/index.html"><nobr><p>OnRegister()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Overridden to update component properties that should be updated while being edited.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterComponen-/index.html"><nobr><p>RegisterComponentTickFunctions</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bRegister<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Virtual call chain to register all tick functions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TickComponent/index.html"><nobr><p>TickComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;enum ELevelTick TickType,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/FActorComponentTickFunction/index.html" >FActorComponentTickFunction</a>&#42; T...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin ActorComponent interface.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from UObject</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditChangeProperty/index.html"><nobr><p>PostEditChangeProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FPropertyChangedEvent/index.html" >FPropertyChangedEvent</a>&amp; PropertyCha...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a property on this object has been modified externally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostLoad/index.html"><nobr><p>PostLoad()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Do any object-specific cleanup required immediately after loading an object, and immediately after any undo/redo.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;GameFramework&#47;MovementComponent.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

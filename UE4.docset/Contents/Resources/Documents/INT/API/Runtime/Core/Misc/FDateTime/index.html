@@ -1,0 +1,1090 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FDateTime</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FDateTime" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Core, API\Runtime\Core\Misc" />
+<meta name="description" content="Implements a date and time." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Core</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Misc</a></strong> &gt; <span id="crumbs_page_title">FDateTime</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FDateTime</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>struct FDateTime<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Implements a date and time.
+</p><p>Values of this type represent dates and times between Midnight 00:00:00, January 1, 0001 and Midnight 23:59:59.9999999, December 31, 9999 in the Gregorian calendar. Internally, the time values are stored in ticks of 0.1 microseconds (= 100 nanoseconds) since January 1, 0001.
+</p><p>To retrieve the current local date and time, use the <a id="content_link" href="Now/index.html" >FDateTime.Now()</a> method. To retrieve the current UTC time, use the <a id="content_link" href="UtcNow/index.html" >FDateTime.UtcNow()</a> method instead.
+</p><p>This class also provides methods to convert dates and times from and to string representations, calculate the number of days in a given month and year, check for leap years and determine the time of day, day of week and month of year of a given date and time.
+</p><p>The companion struct <a id="content_link" href="../FTimespan/index.html" >FTimespan</a> is provided for enabling date and time based arithmetic, such as calculating the difference between two dates or adding a certain amount of time to a given date.
+</p><p>Ranges of dates and times can be represented by the <a id="content_link" href="../../Math/FDateRange/index.html" >FDateRange</a> class.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/1/index.html"><nobr><p>FDateTime()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Default constructor (no initialization).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/2/index.html"><nobr><p>FDateTime</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int64 InTicks<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates and initializes a new instance with the specified number of ticks.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/3/index.html"><nobr><p>FDateTime</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Year,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Month,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Day,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Hour,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Minute,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Second,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Millisecond<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates and initializes a new instance with the specified year, month, day, hour, minute, second and millisecond.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DaysInMonth/index.html"><nobr><p>DaysInMonth</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Year,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Month<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the number of days in the year and month.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DaysInYear/index.html"><nobr><p>DaysInYear</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Year<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the number of days in the given year.
+</p><p>The number of days.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ExportTextItem/index.html"><nobr><p>ExportTextItem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Containers/FString/index.html" >FString</a>&amp; ValueStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >FDateTime</a> const&amp; DefaultValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Parent,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 PortFlags,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; ExportRootScope<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Exports the date and time value to a string.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FromJulianDay/index.html"><nobr><p>FromJulianDay</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;double JulianDay<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the proleptic Gregorian date for the given Julian Day.
+</p><p>Gregorian date and time.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FromUnixTimestamp/index.html"><nobr><p>FromUnixTimestamp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int64 UnixTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the date from Unix time (seconds from midnight 1970-01-01)
+</p><p>Gregorian date and time.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDate/1/index.html"><nobr><p>GetDate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the date part of this date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API voi...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDate/2/index.html"><nobr><p>GetDate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; OutYear,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; OutMonth,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; OutDay<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the date components of this date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDay/index.html"><nobr><p>GetDay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's day part (1 to 31).
+</p><p>Day of the month.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIEDay...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDayOfWeek/index.html"><nobr><p>GetDayOfWeek()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates this date's day of the week (Sunday - Saturday).
+</p><p>The week day.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDayOfYear/index.html"><nobr><p>GetDayOfYear()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's day of the year.
+</p><p>The day of year.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetHour/index.html"><nobr><p>GetHour()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's hour part in 24-hour clock format (0 to 23).
+</p><p>The hour.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetHour12/index.html"><nobr><p>GetHour12()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's hour part in 12-hour clock format (1 to 12).
+</p><p>The hour in AM/PM format.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>double</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetJulianDay/index.html"><nobr><p>GetJulianDay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the Julian Day for this date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMillisecond/index.html"><nobr><p>GetMillisecond()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's millisecond part (0 to 999).
+</p><p>The millisecond.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMinute/index.html"><nobr><p>GetMinute()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's minute part (0 to 59).
+</p><p>The minute.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>double</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetModifiedJulianDay/index.html"><nobr><p>GetModifiedJulianDay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the Modified Julian day.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMonth/index.html"><nobr><p>GetMonth()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's the month part (1 to 12).
+</p><p>The month.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EMonthOfYear</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMonthOfYear/index.html"><nobr><p>GetMonthOfYear()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the date's month of the year (January to December).
+</p><p>Month of year.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSecond/index.html"><nobr><p>GetSecond()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's second part.
+</p><p>The second.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int64</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTicks/index.html"><nobr><p>GetTicks()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's representation as number of ticks.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FTimespan/index.html" >FTimespan</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimeOfDay/index.html"><nobr><p>GetTimeOfDay()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the time elapsed since midnight of this date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint3...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetYear/index.html"><nobr><p>GetYear()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets this date's year part.
+</p><p>The year.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ImportTextItem/index.html"><nobr><p>ImportTextItem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42;&amp; Buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 PortFlags,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Parent,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FOutputDevice/index.html" >FOutputDevice</a>&#42; ErrorText<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Imports a date and time value from a text buffer.
+</p><p>true on success, false otherwise.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsAfternoon/index.html"><nobr><p>IsAfternoon()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets whether this date's time is in the afternoon.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsLeapYear/index.html"><nobr><p>IsLeapYear</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Year<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks whether the given year is a leap year.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsMorning/index.html"><nobr><p>IsMorning()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets whether this date's time is in the morning.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MaxValue/index.html"><nobr><p>MaxValue()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the maximum date value.
+</p><p>The maximum date value is December 31, 9999, 23:59:59.9999999.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MinValue/index.html"><nobr><p>MinValue()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the minimum date value.
+</p><p>The minimum date value is January 1, 0001, 00:00:00.0.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API<a id="content_link" href="index.html" >FDat</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Now/index.html"><nobr><p>Now()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the local date and time on this computer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Parse/index.html"><nobr><p>Parse</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Containers/FString/index.html" >FString</a>&amp; DateTimeString,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >FDateTime</a>&amp; OutDateTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Converts a string to a date and time.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ParseIso8601/index.html"><nobr><p>ParseIso8601</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; DateTimeString,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >FDateTime</a>&amp; OutDateTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Parses a date string in ISO-8601 format.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Serialize/index.html"><nobr><p>Serialize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Serialization/FArchive/index.html" >FArchive</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Serializes this date and time from or into the specified archive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Today/index.html"><nobr><p>Today()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the local date on this computer.
+</p><p>The time component is set to 00:00:00
+</p><p>Current date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API<a id="content_link" href="../../Containers/FString/index.html" >FStr</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToIso8601/index.html"><nobr><p>ToIso8601()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the ISO-8601 string representation of the <a id="content_link" href="index.html" >FDateTime</a>.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API<a id="content_link" href="../../Containers/FString/index.html" >FStr</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToString/2/index.html"><nobr><p>ToString</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Format<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the string representation of this date.
+</p><p>String representation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API<a id="content_link" href="../../Containers/FString/index.html" >FStr</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToString/1/index.html"><nobr><p>ToString()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the string representation of this date using a default format.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_APIint6...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToUnixTimestamp/index.html"><nobr><p>ToUnixTimestamp()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns this date as the number of seconds since the Unix Epoch (January 1st of 1970).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API<a id="content_link" href="index.html" >FDat</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UtcNow/index.html"><nobr><p>UtcNow()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the UTC date and time on this computer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>CORE_API boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Validate/index.html"><nobr><p>Validate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Year,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Month,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Day,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Hour,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Minute,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Second,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Millisecond<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Validates the given components of a date and time value.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'operators');">
+        <p>Operators</p>
+    </div>
+<div id="operators">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_sub/2/index.html"><nobr><p>operator-</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FTimespan/index.html" >FTimespan</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns result of subtracting the given time span from this date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FTimespan/index.html" >FTimespan</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_sub/1/index.html"><nobr><p>operator-</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns time span between this date and the given date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_cmp_ne/index.html"><nobr><p>operator!=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compares this date with the given date for inequality.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_add/index.html"><nobr><p>operator+</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FTimespan/index.html" >FTimespan</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns result of adding the given time span to this date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_add_assign/index.html"><nobr><p>operator+=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FTimespan/index.html" >FTimespan</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds the given time span to this date.
+</p><p>This date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_cmp_lt/index.html"><nobr><p>operator&lt;</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks whether this date is less than the given date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_cmp_lte/index.html"><nobr><p>operator&lt;=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks whether this date is less than or equal to the given date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FDateTime</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_sub_assign/index.html"><nobr><p>operator-=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FTimespan/index.html" >FTimespan</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Subtracts the given time span from this date.
+</p><p>This date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_cmp_eq/index.html"><nobr><p>operator==</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compares this date with the given date for equality.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_cmp_gt/index.html"><nobr><p>operator></p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks whether this date is greater than the given date.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="op_cmp_gte/index.html"><nobr><p>operator>=</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="index.html" >FDateTime</a>&amp; Other<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks whether this date is greater than or equal to the date span.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constants');">
+        <p>Constants</p>
+    </div>
+<div id="constants">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="DaysPerMonth/index.html"><p>DaysPerMonth</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="DaysToMonth/index.html"><p>DaysToMonth</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Holds the cumulative days per month in a non-leap year.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p><a id="content_link" href="../../Math/FDateRange/index.html" >FDateRange</a>
+</p><p><a id="content_link" href="../FTimespan/index.html" >FTimespan</a></p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Core</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Core&#47;Public&#47;Misc&#47;DateTime.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

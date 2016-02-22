@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FBodyInstance::OverlapMulti</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FBodyInstance::OverlapMulti" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\PhysicsEngine, API\Runtime\Engine\PhysicsEngine\FBodyInstance, API\Runtime\Engine\PhysicsEngine\FBodyInstance\OverlapMulti" />
+<meta name="description" content="Determines the set of components that this body instance would overlap with at the supplied location/rotation " />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >PhysicsEngine</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >FBodyInstance</a></strong> &gt; <strong><a id="content_link" href="../index.html" >OverlapMulti</a></strong> &gt; <span id="crumbs_page_title">FBodyInstance::OverlapMulti</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FBodyInstance::OverlapMulti</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>bool OverlapMulti<br />&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct <a id="content_link" href="../../../../Engine/FOverlapResult/index.html" >FOverlapResult</a> > &amp; InOutOverlaps,<br />&nbsp;&nbsp;&nbsp;&nbsp;const class <a id="content_link" href="../../../../Engine/UWorld/index.html" >UWorld</a> &#42; World,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../../Core/Math/FTransform/index.html" >FTransform</a> &#42; pWorldToComponent,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../../Core/Math/FVector/index.html" >FVector</a> &amp; Pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../../Core/Math/FQuat/index.html" >FQuat</a> &amp; Rot,<br />&nbsp;&nbsp;&nbsp;&nbsp;ECollisionChannel TestChannel,<br />&nbsp;&nbsp;&nbsp;&nbsp;const struct <a id="content_link" href="../../../../FComponentQueryParams/index.html" >FComponentQueryParams</a> &amp; Params,<br />&nbsp;&nbsp;&nbsp;&nbsp;const struct <a id="content_link" href="../../../../FCollisionResponseParams/index.html" >FCollisionResponseParams</a> &amp; ResponseParams,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../FCollisionObjectQueryParams/index.html" >FCollisionObjectQueryParams</a> &amp; ObjectQueryParams<br />&#41;<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Determines the set of components that this body instance would overlap with at the supplied location/rotation 
+</p><p>The overload taking rotation as an <a id="content_link" href="../../../../../Core/Math/FQuat/index.html" >FQuat</a> is slightly faster than the version using <a id="content_link" href="../../../../../Core/Math/FRotator/index.html" >FRotator</a> (which will be converted to an <a id="content_link" href="../../../../../Core/Math/FQuat/index.html" >FQuat</a>).. 
+</p><p>TRUE if OutOverlaps contains any blocking results</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'returns');">
+        <p>Returns</p>
+    </div>
+<div id="returns">
+    <p>TRUE if OutOverlaps contains any blocking results </p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'params');">
+        <p>Parameters</p>
+    </div>
+<div id="params">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Parameter</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>InOutOverlaps</p>
+	</td>
+	<td class="desc-cell">
+		<p>Array of overlaps found between this component in specified pose and the world (new overlaps will be appended, the array is not cleared!) </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>World</p>
+	</td>
+	<td class="desc-cell">
+		<p>World to use for overlap test </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>pWorldToComponent</p>
+	</td>
+	<td class="desc-cell">
+		<p>Used to convert the body instance world space position into local space before teleporting it to (Pos, Rot) [optional, use when the body instance isn't centered on the component instance] </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Pos</p>
+	</td>
+	<td class="desc-cell">
+		<p>Location to place the component's geometry at to test against the world </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Rot</p>
+	</td>
+	<td class="desc-cell">
+		<p>Rotation to place components' geometry at to test against the world </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>TestChannel</p>
+	</td>
+	<td class="desc-cell">
+		<p>The 'channel' that this ray is in, used to determine which components to hit </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Params</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>ResponseParams</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>ObjectQueryParams</p>
+	</td>
+	<td class="desc-cell">
+		<p>List of object types it's looking for. When this enters, we do object query with component shape </p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;PhysicsEngine&#47;BodyInstance.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

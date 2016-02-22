@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FMovieSceneTrackEditor</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FMovieSceneTrackEditor" />
+<meta name="crumbs" content="%ROOT%, API, API\Editor, API\Editor\Sequencer" />
+<meta name="description" content="Base class for handling key and section drawing and manipulation of a [UMovieSceneTrack](API\Runtime\MovieScene\UMovieSceneTrack) class." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Editor</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Sequencer</a></strong> &gt; <span id="crumbs_page_title">FMovieSceneTrackEditor</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FMovieSceneTrackEditor</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Core/Templates/TSharedFromThis/index.html"><p>TSharedFromThis</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../ISequencerTrackEditor/index.html"><p>ISequencerTrackEditor</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FMovieSceneTrackEditor</p><table class="hierarchy-table" cellspacing="0" id="hrch_2_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../MovieSceneTools/FPropertyTrackEditor/index.html"><p>FPropertyTrackEditor</p></a></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FMovieSceneTrackEditor :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../../Runtime/Core/Templates/TSharedFromThis/index.html" >TSharedFromThis&lt; FMovieSceneTrackEditor ></a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../ISequencerTrackEditor/index.html" >ISequencerTrackEditor</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Base class for handling key and section drawing and manipulation of a <a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a> class.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FMovieSceneTrackEditor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../ISequencer/index.html" >ISequencer</a> > InSequence...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Constructor</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FMovieSceneTrackEditor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Destructor</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AnimatablePropertyChanged/index.html"><nobr><p>AnimatablePropertyChanged</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; class <a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FOnKeyProperty OnKeyProperty<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanKeyProperty/index.html"><nobr><p>CanKeyProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FCanKeyProperty InCanKeyProperty<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindOrCreateHandleToObject/index.html"><nobr><p>FindOrCreateHandleToObject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Object,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCreateHandleIfMissing<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds or creates a binding to an object</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneT</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMasterTrack/index.html"><nobr><p>GetMasterTrack</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a> > Tra...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneSequence/index.html" >UMovieSceneS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMovieSceneSequence/index.html"><nobr><p>GetMovieSceneSequence()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The current movie scene</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSequencer/index.html"><nobr><p>GetSequencer()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The sequencer bound to this handler</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTimeForKey/index.html"><nobr><p>GetTimeForKey</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneSequence/index.html" >UMovieSceneSequence</a>&#42; InMovieSc...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the movie scene that should be used for adding new keys/sections to and the time where new keys should be added</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneT</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTrackForObject/index.html"><nobr><p>GetTrackForObject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; ObjectHandle,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; class <a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/UObject/FName/index.html" >FName</a> UniqueTypeName,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCreateTrackIfMissing<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NotifyMovieSceneDataChanged/index.html"><nobr><p>NotifyMovieSceneDataChanged()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from ISequencerTrackEditor</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddKey/index.html"><nobr><p>AddKey</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; ObjectGuid,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; AdditionalAsset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../ISequencerTrackEditor/index.html" >ISequencerTrackEditor</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneT</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddTrack/index.html"><nobr><p>AddTrack</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/MovieScene/UMovieScene/index.html" >UMovieScene</a>&#42; FocusedMovieScene,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; ObjectHandle,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; class <a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/UObject/FName/index.html" >FName</a> UniqueTypeName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add a new track to the sequence.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BindCommands/index.html"><nobr><p>BindCommands</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandList/index.html" >FUICommandList</a> > Sequen...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allows the track editors to bind commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BuildAddTrackMenu/index.html"><nobr><p>BuildAddTrackMenu</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Slate/Framework/MultiBox/FMenuBuilder/index.html" >FMenuBuilder</a>&amp; MenuBuilder<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds up the sequencer's "Add Track" menu.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BuildObjectBindingEditButtons/index.html"><nobr><p>BuildObjectBindingEditButtons</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/SlateCore/Widgets/SHorizontalBox/index.html" >SHorizontalBox</a> > EditBo...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; ObjectBinding,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/CoreUObject/UObject/UClass/index.html" >UClass</a>&#42; ObjectClass<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds up the object binding edit buttons for the outliner.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BuildObjectBindingTrackMenu/index.html"><nobr><p>BuildObjectBindingTrackMenu</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Slate/Framework/MultiBox/FMenuBuilder/index.html" >FMenuBuilder</a>&amp; MenuBuilder,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; ObjectBinding,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/CoreUObject/UObject/UClass/index.html" >UClass</a>&#42; ObjectClass<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds up the object binding track menu for the outliner.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BuildOutlinerEditWidget/index.html"><nobr><p>BuildOutlinerEditWidget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; ObjectBinding,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a>&#42; Track<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds an edit widget for the outliner nodes which represent tracks which are edited by this editor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandleAssetAdded/index.html"><nobr><p>HandleAssetAdded</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Asset,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Misc/FGuid/index.html" >FGuid</a>&amp; TargetObjectGuid<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when an asset is dropped into Sequencer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsAllowedKeyAll/index.html"><nobr><p>IsAllowedKeyAll()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets whether the tool can key all</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsAllowedToAutoKey/index.html"><nobr><p>IsAllowedToAutoKey()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets whether the tool can legally autokey</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeSectionInterface/index.html"><nobr><p>MakeSectionInterface</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneSection/index.html" >UMovieSceneSection</a>&amp; SectionObject,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a>&amp; Track<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to generate a section layout for a particular section.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnRelease/index.html"><nobr><p>OnRelease()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the instance of this track editor is released</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SupportsType/index.html"><nobr><p>SupportsType</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; class <a id="content_link" href="../../../Runtime/MovieScene/UMovieSceneTrack/index.html" >UMovieSceneTrack</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether a track class is supported by this tool.
+</p><p>true if the type is supported.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Tick/index.html"><nobr><p>Tick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ticks this tool.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >Sequencer</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Editor&#47;Sequencer&#47;Public&#47;MovieSceneTrackEditor.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

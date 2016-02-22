@@ -1,0 +1,1736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>AAIController</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="AAIController" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\AIModule" />
+<meta name="description" content="=============================================================================" />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >AIModule</a></strong> &gt; <span id="crumbs_page_title">AAIController</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">AAIController</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Engine/GameFramework/AActor/index.html"><p>AActor</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Engine/GameFramework/AController/index.html"><p>AController</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>AAIController</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../ADetourCrowdAIController/index.html"><p>ADetourCrowdAIController</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/ClassGroup/index.html" >ClassGroup&#61;AI</a>, <a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/BlueprintType/index.html" >BlueprintType</a>, <a id="content_link" href="../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Blueprintable/index.html" >Blueprintable</a>&#41;<br />class AAIController :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../Engine/GameFramework/AController/index.html" >AController</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../Perception/IAIPerceptionListenerInterface/index.html" >IAIPerceptionListenerInterface</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../GameplayTasks/IGameplayTaskOwnerInterface/index.html" >IGameplayTaskOwnerInterface</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../IGenericTeamAgentInterface/index.html" >IGenericTeamAgentInterface</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>AIController is the base class of controllers for AI-controlled Pawns.
+</p><p>Controllers are non-physical actors that can be attached to a pawn to control its actions. AIControllers manage the artificial intelligence for the pawns they control. In networked games, they only exist on the server.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Category, Meta" title="Category, Meta" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Actions/UPawnActionsComponent/index.html" >UPawnActionsCom</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActionsComp/index.html"><p>ActionsComp</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAllowStrafe</p>
+	</td>
+	<td class="desc-cell">
+		<p>Is strafing allowed during movement?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Category, Meta" title="Category, Meta" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../BehaviorTree/UBlackboardComponent/index.html" >UBlackboardComp</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Blackboard/index.html"><p>Blackboard</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Blackboard</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bLOSflag</p>
+	</td>
+	<td class="desc-cell">
+		<p>Used for alternating LineOfSight traces</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadWrite" title="BlueprintReadWrite" width="18" src="./../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../UBrainComponent/index.html" >UBrainComponent</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BrainComponent/index.html"><p>BrainComponent</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Component responsible for behaviors.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bSkipExtraLOSChecks</p>
+	</td>
+	<td class="desc-cell">
+		<p>Skip extra line of sight traces to extremities of target being checked.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bWantsPlayerState</p>
+	</td>
+	<td class="desc-cell">
+		<p>Specifies if this AI wants its own PlayerState.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../GameplayTasks/UGameplayTasksComponent/index.html" >UGameplayTasksC</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedGameplayTasksComponent/index.html"><p>CachedGameplayTasksComponent</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FFocusKnowledge/index.html" >FFocusKnowledge</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>FocusInformation</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="visibledefaultsonly" title="visibledefaultsonly" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Navigation/UPathFollowingComponent/index.html" >UPathFollowingC</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PathFollowingComponent/index.html"><p>PathFollowingComponent</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Component used for moving along a path.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="visibledefaultsonly" title="visibledefaultsonly" width="18" src="./../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Perception/UAIPerceptionComponent/index.html" >UAIPerceptionCo</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PerceptionComponent/index.html"><p>PerceptionComponent</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../images/./api_variable_meta.png" />
+<img alt="Meta" title="Meta" width="18" src="./../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintAssignable" title="BlueprintAssignable" width="18" src="./../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FAIMoveCompletedSignature/index.html" >FAIMoveComplete</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReceiveMoveCompleted/index.html"><p>ReceiveMoveCompleted</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Blueprint notification that we've completed the current movement request</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>AAIController</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../CoreUObject/UObject/FObjectInitializer/index.html" >FObjectInitializer</a>&amp; ObjectIn...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActorsPerceptionUpdated/index.html"><nobr><p>ActorsPerceptionUpdated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; >&amp; Upda...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../Engine/GameFramework/AController/index.html" >AController</a> Interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AreAIIgnoringPlayers/index.html"><nobr><p>AreAIIgnoringPlayers()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearFocus/index.html"><nobr><p>ClearFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Type/index.html" >EAIFocusPriority::Type</a> InPriority<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Clears Focus for given priority, will also clear FocalPoint as a result</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Actions/UPawnActionsComponent/index.html" >UPawnActions</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetActionsComp/index.html"><nobr><p>GetActionsComp()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns ActionsComp subobject</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../Perception/UAIPerceptionComponent/index.html" >UAIPer</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAIPerceptionComponent/2/index.html"><nobr><p>GetAIPerceptionComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category" title="BlueprintPure, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Perception/UAIPerceptionComponent/index.html" >UAIPerceptio</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAIPerceptionComponent/1/index.html"><nobr><p>GetAIPerceptionComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMoveRequestID/index.html"><nobr><p>GetCurrentMoveRequestID()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the Move Request ID for the current move</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDebugIcon/index.html"><nobr><p>GetDebugIcon()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// debug/dev-time -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocalPoint/index.html"><nobr><p>GetFocalPoint()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieve the final position that controller should be looking at.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocalPointForPriority/index.html"><nobr><p>GetFocalPointForPriority</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Type/index.html" >EAIFocusPriority::Type</a> InPriority<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocalPointOnActor/index.html"><nobr><p>GetFocalPointOnActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieve the focal point this controller should focus to on given actor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocusActor/index.html"><nobr><p>GetFocusActor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the focused actor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocusActorForPriority/index.html"><nobr><p>GetFocusActorForPriority</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Type/index.html" >EAIFocusPriority::Type</a> InPriority<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../GameplayTasks/UGameplayTasksComponent/index.html" >UGameplayTas</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGameplayTasksComponent/1/index.html"><nobr><p>GetGameplayTasksComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// <a id="content_link" href="../../GameplayTasks/IGameplayTaskOwnerInterface/index.html" >IGameplayTaskOwnerInterface</a> -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetImmediateMoveDestination/index.html"><nobr><p>GetImmediateMoveDestination()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns position of current path segment's end.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Navigation/EPathFollowingStatus__Type/index.html" >EPathFollowi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMoveStatus/index.html"><nobr><p>GetMoveStatus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns status of path following</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Navigation/UPathFollowingComponent/index.html" >UPathFollowi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPathFollowingComponent/index.html"><nobr><p>GetPathFollowingComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns PathFollowingComponent subobject</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasPartialPath/index.html"><nobr><p>HasPartialPath()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the current PathFollowingComponent's path is partial (does not reach desired destination).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitializeBlackboard/index.html"><nobr><p>InitializeBlackboard</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBlackboardComponent/index.html" >UBlackboardComponent</a>&amp; BlackboardCo...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBlackboardData/index.html" >UBlackboardData</a>&amp; BlackboardAsset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ClearFocus/index.html"><nobr><p>K2_ClearFocus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Clears Focus, will also clear FocalPoint as a result</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_SetFocalPoint/index.html"><nobr><p>K2_SetFocalPoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> FP<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the position that controller should be looking at.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_SetFocus/index.html"><nobr><p>K2_SetFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; NewFocus<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set Focus for actor, will set FocalPoint as a result.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LineOfSightTo/index.html"><nobr><p>LineOfSightTo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; Other,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> ViewPoint,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bAlternateChecks<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks line to center and top of other actor 
+</p><p>true if controller's pawn can see Other actor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Navigation/EPathFollowingRequestResult__Typ-/index.html" >EPathFollowi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveTo/index.html"><nobr><p>MoveTo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FAIMoveRequest/index.html" >FAIMoveRequest</a>&amp; MoveRequest<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Makes AI go toward specified destination</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Navigation/EPathFollowingRequestResult__Typ-/index.html" >EPathFollowi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveToActor/index.html"><nobr><p>MoveToActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; Goal,<br />&nbsp;&nbsp;&nbsp;&nbsp;float AcceptanceRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bStopOnOverlap,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUsePathfinding,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCanStrafe,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../Engine/AI/Navigation/NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bAllowPartialPath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Makes AI go toward specified Goal actor (destination will be continuously updated) </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Navigation/EPathFollowingRequestResult__Typ-/index.html" >EPathFollowi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MoveToLocation/index.html"><nobr><p>MoveToLocation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; Dest,<br />&nbsp;&nbsp;&nbsp;&nbsp;float AcceptanceRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bStopOnOverlap,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUsePathfinding,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bProjectDestinationToNavigatio...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCanStrafe,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../Engine/AI/Navigation/NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bAllowPartialPath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Makes AI go toward specified Dest location </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnGameplayTaskResourcesClaimed/index.html"><nobr><p>OnGameplayTaskResourcesClaimed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTasks/FGameplayResourceSet/index.html" >FGameplayResourceSet</a> NewlyClaimed,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTasks/FGameplayResourceSet/index.html" >FGameplayResourceSet</a> FreshlyRelease...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Other GT tasks related</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMoveCompleted/index.html"><nobr><p>OnMoveCompleted</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a> RequestID,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Navigation/EPathFollowingResult__Type/index.html" >EPathFollowingResult::Type</a> Result<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on completing current movement request</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintImplementableEvent" title="BlueprintImplementableEvent" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPossess/index.html"><nobr><p>OnPossess</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/APawn/index.html" >APawn</a>&#42; PossessedPawn<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Event called when PossessedPawn is possessed by this controller.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintImplementableEvent" title="BlueprintImplementableEvent" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnUsingBlackBoard/index.html"><nobr><p>OnUsingBlackBoard</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBlackboardComponent/index.html" >UBlackboardComponent</a>&#42; Blackboa...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBlackboardData/index.html" >UBlackboardData</a>&#42; BlackboardAss...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PauseMove/index.html"><nobr><p>PauseMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a> RequestToPause<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If AI is currently moving due to request given by RequestToPause, then the move will be paused</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PerformAction/index.html"><nobr><p>PerformAction</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Actions/UPawnAction/index.html" >UPawnAction</a>&amp; Action,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EAIRequestPriority__Type/index.html" >EAIRequestPriority::Type</a> Priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42;const Instigator<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// Actions -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreparePathfinding/2/index.html"><nobr><p>PreparePathfinding</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/AI/Navigation/FPathFindingQuery/index.html" >FPathFindingQuery</a>&amp; Query,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; Dest,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; Goal,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUsePathfinding,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; class <a id="content_link" href="../../Engine/AI/Navigation/NavFilters/UNavigationQueryFilter/index.html" >UNavigationQuery</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deprecated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreparePathfinding/1/index.html"><nobr><p>PreparePathfinding</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FAIMoveRequest/index.html" >FAIMoveRequest</a>&amp; MoveRequest,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/AI/Navigation/FPathFindingQuery/index.html" >FPathFindingQuery</a>&amp; Query<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Fills pathfinding query for navigation system from given move request</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestMove/2/index.html"><nobr><p>RequestMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FNavPathSharedPtr Path,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; Goal,<br />&nbsp;&nbsp;&nbsp;&nbsp;float AcceptanceRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bStopOnOverlap,<br />&nbsp;&nbsp;&nbsp;&nbsp;FCustomMoveSharedPtr CustomData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deprecated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestMove/1/index.html"><nobr><p>RequestMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FAIMoveRequest/index.html" >FAIMoveRequest</a>&amp; MoveRequest,<br />&nbsp;&nbsp;&nbsp;&nbsp;FNavPathSharedPtr Path<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Handle move requests 
+</p><p>RequestID, or 0 when failed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestPathAndMove/1/index.html"><nobr><p>RequestPathAndMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FAIMoveRequest/index.html" >FAIMoveRequest</a>&amp; MoveRequest,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/AI/Navigation/FPathFindingQuery/index.html" >FPathFindingQuery</a>&amp; Query<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Executes pathfinding query and starts move request 
+</p><p>RequestID, or 0 when failed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestPathAndMove/2/index.html"><nobr><p>RequestPathAndMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/AI/Navigation/FPathFindingQuery/index.html" >FPathFindingQuery</a>&amp; Query,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; Goal,<br />&nbsp;&nbsp;&nbsp;&nbsp;float AcceptanceRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bStopOnOverlap,<br />&nbsp;&nbsp;&nbsp;&nbsp;FCustomMoveSharedPtr CustomData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deprecated</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResumeMove/index.html"><nobr><p>ResumeMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FAIRequestID/index.html" >FAIRequestID</a> RequestToResume<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Resumes last AI-performed, paused request provided it's ID was equivalent to RequestToResume</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RunBehaviorTree/index.html"><nobr><p>RunBehaviorTree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBehaviorTree/index.html" >UBehaviorTree</a>&#42; BTAsset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Starts executing behavior tree.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetFocalPoint/index.html"><nobr><p>SetFocalPoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> NewFocus,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Type/index.html" >EAIFocusPriority::Type</a> InPriority<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>ENABLE_VISUAL_LOG.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetFocus/index.html"><nobr><p>SetFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a>&#42; NewFocus,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Type/index.html" >EAIFocusPriority::Type</a> InPriority<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set Focus actor for given priority, will set FocalPoint as a result.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetMoveBlockDetection/index.html"><nobr><p>SetMoveBlockDetection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates state of movement block detection.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPerceptionComponent/index.html"><nobr><p>SetPerceptionComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Perception/UAIPerceptionComponent/index.html" >UAIPerceptionComponent</a>&amp; InPercepti...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldSyncBlackboardWith/index.html"><nobr><p>ShouldSyncBlackboardWith</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../BehaviorTree/UBlackboardComponent/index.html" >UBlackboardComponent</a>&amp; OtherB...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Does this AIController allow given <a id="content_link" href="../BehaviorTree/UBlackboardComponent/index.html" >UBlackboardComponent</a> sync data with it</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SuggestTossVelocity/index.html"><nobr><p>SuggestTossVelocity</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a>&amp; OutTossVelocity,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> Start,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FVector/index.html" >FVector</a> End,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TossSpeed,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bPreferHighArc,<br />&nbsp;&nbsp;&nbsp;&nbsp;float CollisionRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bOnlyTraceUp<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Computes a launch velocity vector to toss a projectile and hit the given destination.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToggleAIIgnorePlayers/index.html"><nobr><p>ToggleAIIgnorePlayers()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Cheat/debugging functions.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateControlRotation/index.html"><nobr><p>UpdateControlRotation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUpdatePawn<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update direction AI is looking based on FocalPoint</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UseBlackboard/index.html"><nobr><p>UseBlackboard</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBlackboardData/index.html" >UBlackboardData</a>&#42; BlackboardAss...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../BehaviorTree/UBlackboardComponent/index.html" >UBlackboardComponent</a>&#42;&amp; Blackbo...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Makes AI use the specified Blackboard asset &amp; creates a Blackboard Component if one does not already exist.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from AController</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DisplayDebug/index.html"><nobr><p>DisplayDebug</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/Engine/UCanvas/index.html" >UCanvas</a>&#42; Canvas,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Engine/FDebugDisplayInfo/index.html" >FDebugDisplayInfo</a>&amp; DebugDisp...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; YL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; YPos<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitNavigationControl/index.html"><nobr><p>InitNavigationControl</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../Navigation/UPathFollowingComponent/index.html" >UPathFollowingComponent</a>&#42;&amp; Path...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Prepares path finding and path following components.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Possess/index.html"><nobr><p>Possess</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/APawn/index.html" >APawn</a>&#42; InPawn<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> Interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPawn/index.html"><nobr><p>SetPawn</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/GameFramework/APawn/index.html" >APawn</a>&#42; InPawn<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Setter for Pawn. Normally should only be used internally when possessing/unpossessing a Pawn.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StopMovement/index.html"><nobr><p>StopMovement()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Aborts the move the controller is currently performing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnPossess/index.html"><nobr><p>UnPossess()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to unpossess our pawn for any reason that is not the pawn being destroyed (destruction handled by PawnDestroyed()).</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from AActor</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GrabDebugSnapshot/index.html"><nobr><p>GrabDebugSnapshot</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Engine/VisualLogger/FVisualLogEntry/index.html" >FVisualLogEntry</a>&#42; Snapshot<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Hook for Actors to supply visual logger with additional data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostInitializeComponents/index.html"><nobr><p>PostInitializeComponents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Overridden to create the player replication info and perform other mundane initialization tasks.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostRegisterAllComponents/index.html"><nobr><p>PostRegisterAllComponents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after all the components in the Components array are registered</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Reset/index.html"><nobr><p>Reset()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Reset actor to initial state - used when restarting level without reloading.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Tick/index.html"><nobr><p>Tick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin <a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> Interface.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_6');">
+        <p>Overridden from INavAgentInterface</p>
+    </div>
+<div id="functions_6">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsFollowingAPath/index.html"><nobr><p>IsFollowingAPath()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// <a id="content_link" href="../../Engine/AI/Navigation/INavAgentInterface/index.html" >INavAgentInterface</a> -------------------------------------------------------------------//</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_7');">
+        <p>Overridden from IAIPerceptionListenerInterface</p>
+    </div>
+<div id="functions_7">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../Perception/UAIPerceptionComponent/index.html" >UAIPerceptio</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPerceptionComponent/index.html"><nobr><p>GetPerceptionComponent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// <a id="content_link" href="../Perception/IAIPerceptionListenerInterface/index.html" >IAIPerceptionListenerInterface</a> -------------------------------------------------------------------//</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_8');">
+        <p>Overridden from IGameplayTaskOwnerInterface</p>
+    </div>
+<div id="functions_8">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAvatarActor/index.html"><nobr><p>GetAvatarActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&#42; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDefaultPriority/index.html"><nobr><p>GetDefaultPriority()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../GameplayTasks/UGameplayTasksComponent/index.html" >UGameplayTas</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGameplayTasksComponent/2/index.html"><nobr><p>GetGameplayTasksComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwnerActor/index.html"><nobr><p>GetOwnerActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&#42; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTaskActivated/index.html"><nobr><p>OnTaskActivated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This gets called both when task starts and when task gets resumed.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTaskDeactivated/index.html"><nobr><p>OnTaskDeactivated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This gets called both when task finished and when task gets paused.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTaskInitialized/index.html"><nobr><p>OnTaskInitialized</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_9');">
+        <p>Overridden from IGenericTeamAgentInterface</p>
+    </div>
+<div id="functions_9">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGenericTeamId/index.html" >FGenericTeam</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGenericTeamId/index.html"><nobr><p>GetGenericTeamId()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieve team identifier in form of <a id="content_link" href="../FGenericTeamId/index.html" >FGenericTeamId</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetGenericTeamId/index.html"><nobr><p>SetGenericTeamId</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGenericTeamId/index.html" >FGenericTeamId</a>&amp; NewTeamID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>----------------------------------------------------------------// <a id="content_link" href="../IGenericTeamAgentInterface/index.html" >IGenericTeamAgentInterface</a> ----------------------------------------------------------------//</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constants');">
+        <p>Constants</p>
+    </div>
+<div id="constants">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bAIIgnorePlayers/index.html"><p>bAIIgnorePlayers</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If true, AI controllers will ignore players.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p><a id="content_link" href="../../../../Gameplay/Framework/Controller/index.html" >Controller</a></p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >AIModule</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;AIModule&#47;Classes&#47;AIController.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,3855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UNavigationSystem</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UNavigationSystem" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\AI, API\Runtime\Engine\AI\Navigation" />
+<meta name="description" content="" />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >AI</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Navigation</a></strong> &gt; <span id="crumbs_page_title">UNavigationSystem</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UNavigationSystem</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Kismet/UBlueprintFunctionLibrary/index.html"><p>UBlueprintFunctionLibrary</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UNavigationSystem</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Within/index.html" >Within&#61;World</a>, <a id="content_link" href="../../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Config/index.html" >Config&#61;Engine</a>, defaultconfig&#41;<br />class UNavigationSystem : public <a id="content_link" href="../../../Kismet/UBlueprintFunctionLibrary/index.html" >UBlueprintFunctionLibrary</a><br /></p>
+</div>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere, Meta" title="Category, EditAnywhere, Meta" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ActiveTilesUpdateInterval</p>
+	</td>
+	<td class="desc-cell">
+		<p>Minimal time, in seconds, between active tiles set update</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TMap/index.html" >TMap</a>&lt; <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgent</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AgentToNavDataMap/index.html"><p>AgentToNavDataMap</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FAsyncPathFindingQuery/index.html" >FAsyncP</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AsyncPathFindingQueries/index.html"><p>AsyncPathFindingQueries</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAllowClientSideNavigation</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAsyncBuildPaused</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bAutoCreateNavigationData</p>
+	</td>
+	<td class="desc-cell">
+		<p>Should navigation system spawn default Navigation Data when there's none and there are navigation bounds present?</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bGenerateNavigat-/index.html"><p>bGenerateNavigationOnlyAroundNavigationInvokers</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If set to true navigation will be generated only around registered "navigation enforcers" This has a range of consequences (including how navigation octree operates) so it needs to be a conscious decision.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bInitialBuildingLocked/index.html"><p>bInitialBuildingLocked</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If set to true will result navigation system not rebuild navigation until a call to <a id="content_link" href="ReleaseInitialBuildingLock/index.html" >ReleaseInitialBuildingLock()</a> is called.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bInitialLevelsAdded</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bInitialSetupHasBeenPerformed</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bSkipAgentHeightCheckWhenPickingNavData</p>
+	</td>
+	<td class="desc-cell">
+		<p>False by default, if set to true will result in not caring about nav agent height when trying to match navigation data to passed in nav agent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32:  1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bSupportRebuilding/index.html"><p>bSupportRebuilding</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Gets set to true if gathering navigation data (like in navoctree) is required due to the need of navigation generation Is always true in Editor Mode.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32: 1</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bWholeWorldNavigable/index.html"><p>bWholeWorldNavigable</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If set to true (default) navigation will be generated only within special navigation bounds volumes (like <a id="content_link" href="../ANavMeshBoundsVolume/index.html" >ANavMeshBoundsVolume</a>).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>CurrentlyDrawnNavDataIndex</p>
+	</td>
+	<td class="desc-cell">
+		<p>Indicates which of multiple navigation data instances to draw</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TMap/index.html" >TMap</a>&lt; uint32, <a id="content_link" href="../FCustomLinkOwnerInfo/index.html" >F</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CustomLinksMap/index.html"><p>CustomLinksMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Map of all custom navigation links, that are relevant for path following</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>ENavDataGatheri...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DataGatheringMode/index.html"><p>DataGatheringMode</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FNavigationDirtyArea/index.html" >FNaviga</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DirtyAreas/index.html"><p>DirtyAreas</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Stores areas marked as dirty throughout the frame, processes them once a frame in Tick function</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>DirtyAreasUpdateFreq</p>
+	</td>
+	<td class="desc-cell">
+		<p>Update frequency for dirty areas on navmesh</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>DirtyAreasUpdateTime</p>
+	</td>
+	<td class="desc-cell">
+		<p>Temporary cumulative time to calculate when we need to update dirty areas</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Delegates/FDelegateHandle/index.html" >FDelegateHandle</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>HotReloadDelegateHandle</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>InitialNavBuildingLockFlags</p>
+	</td>
+	<td class="desc-cell">
+		<p>Set of locking flags applied on startup of navigation system</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>NavBuildingLockFlags</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FCriticalSectio...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NavDataRegistration/index.html"><p>NavDataRegistration</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../ANavigationData/index.html" >ANaviga</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NavDataRegistrationQueue/index.html"><p>NavDataRegistrationQueue</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FCriticalSectio...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NavDataRegistrationSection/index.html"><p>NavDataRegistrationSection</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Async queries</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../ANavigationData/index.html" >ANaviga</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NavDataSet/index.html"><p>NavDataSet</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>NavigableWorldBounds</p>
+	</td>
+	<td class="desc-cell">
+		<p>Cached navigable world bounding box</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../FNavigationOctree/index.html" >FNa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NavOctree/index.html"><p>NavOctree</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint8</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>NavUpdateLockFlags</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TMap/index.html" >TMap</a>&lt; const <a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UOb</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ObjectToOctreeId/index.html"><p>ObjectToOctreeId</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TMultiMap/index.html" >TMultiMap</a>&lt; <a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObj</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OctreeChildNodesMap/index.html"><p>OctreeChildNodesMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Map of all objects that are tied to indexed navigation parent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FOnNavDataGenerigEvent/index.html" >FOnNavDataGener</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavDataRegisteredEvent/index.html"><p>OnNavDataRegisteredEvent</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Meta" title="Meta" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintAssignable" title="BlueprintAssignable" width="18" src="./../../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="Transient" title="Transient" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FOnNavDataGenerigEvent/index.html" >FOnNavDataGener</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationGene-/index.html"><p>OnNavigationGenerationFinishedDelegate</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FOnNavigationIn...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationInitDone/index.html"><p>OnNavigationInitDone</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FNavigationSyst...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OperationMode/index.html"><p>OperationMode</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FNavigationBoundsUpdateRequest/index.html" >FNaviga</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PendingNavBoundsUpdates/index.html"><p>PendingNavBoundsUpdates</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>List of pending navigation bounds update requests (add, remove, update size)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TSet/index.html" >TSet</a>&lt; <a id="content_link" href="../FNavigationDirtyElement/index.html" >FNavigati</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PendingOctreeUpdates/index.html"><p>PendingOctreeUpdates</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditAnywhere" title="Category, EditAnywhere" width="18" src="./../../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="Config" title="Config" width="18" src="./../../../../../../../images/./api_variable_meta_serialization.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FNavDataConfig/index.html" >FNavDat</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SupportedAgents/index.html"><p>SupportedAgents</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructors');">
+        <p>Destructors</p>
+    </div>
+<div id="destructors">
+    <p>No destructors are accessible with public or protected access.</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbortAsyncFindPathRequest/index.html"><nobr><p>AbortAsyncFindPathRequest</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 AsynPathQueryID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes query indicated by given ID from queue of path finding requests to process.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddDirtyArea/index.html"><nobr><p>AddDirtyArea</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; NewArea,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Flags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddDirtyAreas/index.html"><nobr><p>AddDirtyAreas</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a> >&amp; NewAreas,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 Flags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddElementToNavOctree/index.html"><nobr><p>AddElementToNavOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavigationDirtyElement/index.html" >FNavigationDirtyElement</a>&amp; Dir...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds given element to NavOctree.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddLevelCollisionToOctree/index.html"><nobr><p>AddLevelCollisionToOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/ULevel/index.html" >ULevel</a>&#42; Level<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add BSP collision data to navigation octree</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddNavigationBuildLock/index.html"><nobr><p>AddNavigationBuildLock</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 Flags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddNavigationUpdateLock/index.html"><nobr><p>AddNavigationUpdateLock</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 Flags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddReferencedObjects/index.html"><nobr><p>AddReferencedObjects</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; InThis,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/FReferenceCollector/index.html" >FReferenceCollector</a>&amp; Collector<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyWorldOffset/index.html"><nobr><p>ApplyWorldOffset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; InOffset,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bWorldShift<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AreFakeComponent-/index.html"><nobr><p>AreFakeComponentChangesBeingApplied()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginFakeComponentChanges/index.html"><nobr><p>BeginFakeComponentChanges()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Build/index.html"><nobr><p>Build()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>----------------------------------------------------------------// building ----------------------------------------------------------------// Triggers navigation building on all eligible navigation data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanRebuildDirtyNavigation/index.html"><nobr><p>CanRebuildDirtyNavigation()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks if dirty navigation data can rebuild itself</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CleanUp/index.html"><nobr><p>CleanUp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="ECleanupMode/index.html" >ECleanupMode</a> Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_HOT_RELOAD.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearNavOctreeAll/index.html"><nobr><p>ClearNavOctreeAll</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes all navoctree entries for actor and its components</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConditionalPopulateNavOctree/index.html"><nobr><p>ConditionalPopulateNavOctree()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called in places where we need to spawn the NavOctree, but is checking additional conditions if we really want to do that depending on navigation data setup among others </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateCrowdManager/index.html"><nobr><p>CreateCrowdManager()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Spawn new crowd manager</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateDefaultQueryFilterCopy/index.html"><nobr><p>CreateDefaultQueryFilterCopy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >UNavigationS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateNavigationSystem/index.html"><nobr><p>CreateNavigationSystem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/UWorld/index.html" >UWorld</a>&#42; WorldOwner<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CycleNavigationDataDrawn/index.html"><nobr><p>CycleNavigationDataDrawn()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// debug -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DescribeFilterFlags/2/index.html"><nobr><p>DescribeFilterFlags</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../../Core/Containers/FString/index.html" >FString</a> >&amp; FlagsDesc<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Prepare descriptions of navigation flags in <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a> class: using array</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DescribeFilterFlags/1/index.html"><nobr><p>DescribeFilterFlags</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UEnum/index.html" >UEnum</a>&#42; FlagsEnum<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>----------------------------------------------------------------// Filters ----------------------------------------------------------------// prepare descriptions of navigation flags in <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a> class: using enum</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DoesPathIntersectBox/1/index.html"><nobr><p>DoesPathIntersectBox</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavigationPath/index.html" >FNavigationPath</a>&#42; Path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; Box,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 StartingIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&#42; AgentExtent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DoesPathIntersectBox/2/index.html"><nobr><p>DoesPathIntersectBox</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavigationPath/index.html" >FNavigationPath</a>&#42; Path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; Box,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; AgentLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 StartingIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&#42; AgentExtent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DoInitialSetup/index.html"><nobr><p>DoInitialSetup()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets up SuportedAgents and NavigationDataCreators.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EnableAllGenerators/index.html"><nobr><p>EnableAllGenerators</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bForce<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndFakeComponentChanges/index.html"><nobr><p>EndFakeComponentChanges()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindElementsInNavOctree/index.html"><nobr><p>FindElementsInNavOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; QueryBox,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FNavigationOctreeFilter/index.html" >FNavigationOctreeFilter</a>&amp; Fil...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; struct <a id="content_link" href="../../FNavigationOctreeElement/index.html" >FNavigationOctreeEle</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find all elements in navigation octree within given box (intersection)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindPathAsync/index.html"><nobr><p>FindPathAsync</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a>&amp; AgentPr...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPathFindingQuery/index.html" >FPathFindingQuery</a> Query,<br />&nbsp;&nbsp;&nbsp;&nbsp;const FNavPathQueryDelegate&amp; Resul...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EPathFindingMode__Type/index.html" >EPathFindingMode::Type</a> Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Asynchronously looks for a path from  to  for agent with properties .</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FPathFindingResult/index.html" >FPathFinding</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindPathSync/2/index.html"><nobr><p>FindPathSync</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a>&amp; AgentPr...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPathFindingQuery/index.html" >FPathFindingQuery</a> Query,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EPathFindingMode__Type/index.html" >EPathFindingMode::Type</a> Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FPathFindingResult/index.html" >FPathFinding</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindPathSync/1/index.html"><nobr><p>FindPathSync</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPathFindingQuery/index.html" >FPathFindingQuery</a> Query,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EPathFindingMode__Type/index.html" >EPathFindingMode::Type</a> Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Does a simple path finding from  to  on specified NavData.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../UNavigationPath/index.html" >UNavigationP</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindPathToActorSynchronously/index.html"><nobr><p>FindPathToActorSynchronously</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; GoalActor,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TetherDistance,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; PathfindingContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds path instantly, in a FindPath Synchronously.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../UNavigationPath/index.html" >UNavigationP</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindPathToLocati-/index.html"><nobr><p>FindPathToLocationSynchronously</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; PathfindingContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds path instantly, in a FindPath Synchronously.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GatherNavigationBounds/index.html"><nobr><p>GatherNavigationBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Searches for all valid navigation bounds in the world and stores them</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ANavigationData/index.html" >ANavigationD</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAbstractNavData/index.html"><nobr><p>GetAbstractNavData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../AIModule/Navigation/UCrowdManager/index.html" >UCrowdManage</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCrowdManager/index.html"><nobr><p>GetCrowdManager()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >UNavigationS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrent/2/index.html"><nobr><p>GetCurrent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContextObject<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >UNavigationS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrent/1/index.html"><nobr><p>GetCurrent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/UWorld/index.html" >UWorld</a>&#42; World<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCust</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCustomLink/index.html"><nobr><p>GetCustomLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 UniqueLinkId<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find custom link by unique ID</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../FNavigationRelevantData/index.html" >FNavig</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDataForObject/index.html"><nobr><p>GetDataForObject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&amp; Object<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDefaultObstacleArea/index.html"><nobr><p>GetDefaultObstacleArea()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Default obstacle area class</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../FNavDataConfig/index.html" >FNavDa</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDefaultSupportedAgentConfig/index.html"><nobr><p>GetDefaultSupportedAgentConfig()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDefaultWalkableArea/index.html"><nobr><p>GetDefaultWalkableArea()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Default walkable area class</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetIsNavigationA-/index.html"><nobr><p>GetIsNavigationAutoUpdateEnabled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Check whether seamless navigation building is enabled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLevelBounds/index.html"><nobr><p>GetLevelBounds</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/ULevel/index.html" >ULevel</a>&#42; InLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../ANavigationData/index.html" >ANavig</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMainNavData/1/index.html"><nobr><p>GetMainNavData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the world nav mesh object. Creates one if it doesn't exist.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ANavigationData/index.html" >ANavigationD</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMainNavData/2/index.html"><nobr><p>GetMainNavData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavigationSystem__ECreateIfEmpt-/index.html" >FNavigationSystem::ECreateIfEmpty</a> C...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the world nav mesh object. Creates one if it doesn't exist.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../ANavigationData/index.html" >ANavig</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMainNavDataChecked/index.html"><nobr><p>GetMainNavDataChecked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FNavigationOctree/index.html" >FNavigationO</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMutableNavOctree/index.html"><nobr><p>GetMutableNavOctree()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavAgentPropertiesArray/index.html"><nobr><p>GetNavAgentPropertiesArray</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a> >&amp; Out...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Fetch the array of all nav-agent properties.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../ANavigationData/index.html" >ANavig</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavDataForProps/2/index.html"><nobr><p>GetNavDataForProps</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a>&amp; AgentPr...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Looks for NavData generated for specified movement properties and returns it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ANavigationData/index.html" >ANavigationD</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavDataForProps/1/index.html"><nobr><p>GetNavDataForProps</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a>&amp; AgentPr...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Looks for NavData generated for specified movement properties and returns it. NULL if not found;</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ANavigationData/index.html" >ANavigationD</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavDataWithID/index.html"><nobr><p>GetNavDataWithID</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const uint16 NavDataID<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Pointer to <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a> instance of given ID, or NULL if it was not found.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../Core/Containers/TSet/index.html" >TSet</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavigationBounds/index.html"><nobr><p>GetNavigationBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >UNavigationS</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavigationSystem/index.html"><nobr><p>GetNavigationSystem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// Blueprint functions -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../FNavigationOctree/index.html" >FNavig</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavOctree/index.html"><nobr><p>GetNavOctree()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavOctreeElementData/index.html"><nobr><p>GetNavOctreeElementData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; NodeOwner,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; DirtyFlags,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; DirtyBounds<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Read element data from navigation octree</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNumRemainingBuildTasks/index.html"><nobr><p>GetNumRemainingBuildTasks()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to display "navigation building in progress" counter</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNumRunningBuildTasks/index.html"><nobr><p>GetNumRunningBuildTasks()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Number of currently running tasks</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../FOctreeElementId/index.html" >FOctre</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetObjectsNavOctreeId/index.html"><nobr><p>GetObjectsNavOctreeId</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Object<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ENavigationQueryResult__Type/index.html" >ENavigationQ</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPathCost/1/index.html"><nobr><p>GetPathCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; PathCost,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates a path from PathStart to PathEnd and retrieves its cost.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ENavigationQueryResult__Type/index.html" >ENavigationQ</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPathCost/2/index.html"><nobr><p>GetPathCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; PathCost,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Potentially expensive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ENavigationQueryResult__Type/index.html" >ENavigationQ</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPathLength/1/index.html"><nobr><p>GetPathLength</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; PathLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates a path from PathStart to PathEnd and retrieves its overestimated length.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ENavigationQueryResult__Type/index.html" >ENavigationQ</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPathLength/2/index.html"><nobr><p>GetPathLength</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; PathLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Potentially expensive. Use with caution</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ENavigationQueryResult__Type/index.html" >ENavigationQ</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPathLengthAndCost/index.html"><nobr><p>GetPathLengthAndCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; PathEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; PathLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; PathCost,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates a path from PathStart to PathEnd and retrieves its overestimated length and cost.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomPoint/2/index.html"><nobr><p>GetRandomPoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavLocation/index.html" >FNavLocation</a>&amp; ResultLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds random point in navigable space 
+</p><p>true if any location found, false otherwise</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomPoint/1/index.html"><nobr><p>GetRandomPoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomPointIn-/1/index.html"><nobr><p>GetRandomPointInNavigableRadius</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomPointIn-/2/index.html"><nobr><p>GetRandomPointInNavigableRadius</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavLocation/index.html" >FNavLocation</a>&amp; ResultLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds random, point in navigable space restricted to Radius around Origin.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomPointInRadius/1/index.html"><nobr><p>GetRandomPointInRadius</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomPointInRadius/2/index.html"><nobr><p>GetRandomPointInRadius</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavLocation/index.html" >FNavLocation</a>&amp; ResultLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomReachab-/1/index.html"><nobr><p>GetRandomReachablePointInRadius</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRandomReachab-/2/index.html"><nobr><p>GetRandomReachablePointInRadius</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Origin,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavLocation/index.html" >FNavLocation</a>&amp; ResultLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds random, reachable point in navigable space restricted to Radius around Origin </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSupportedAgentIndex/2/index.html"><nobr><p>GetSupportedAgentIndex</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a>&amp; NavAgen...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find index in SupportedAgents array for agent type</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSupportedAgentIndex/1/index.html"><nobr><p>GetSupportedAgentIndex</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find index in SupportedAgents array for given navigation data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSupportedAgents/index.html"><nobr><p>GetSupportedAgents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/UWorld/index.html" >UWorld</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWorld/index.html"><nobr><p>GetWorld()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWorldBounds/index.html"><nobr><p>GetWorldBounds()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandleCountNavMemCommand/index.html"><nobr><p>HandleCountNavMemCommand</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Cmd,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Misc/FOutputDevice/index.html" >FOutputDevice</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HandleCycleNavDrawnCommand/index.html"><nobr><p>HandleCycleNavDrawnCommand</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Cmd,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Misc/FOutputDevice/index.html" >FOutputDevice</a>&amp; Ar<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Exec command handlers</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasDirtyAreasQueued/index.html"><nobr><p>HasDirtyAreasQueued()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitializeForWorld/index.html"><nobr><p>InitializeForWorld</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/UWorld/index.html" >UWorld</a>&#42; World,<br />&nbsp;&nbsp;&nbsp;&nbsp;FNavigationSystemRunMode Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Try to create and setup navigation system</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitializeLevelCollisions/index.html"><nobr><p>InitializeLevelCollisions()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds BSP collisions of currently streamed in levels to octree</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsActiveTilesGenerationEnabled/index.html"><nobr><p>IsActiveTilesGenerationEnabled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationBeingBuilt/index.html"><nobr><p>IsNavigationBeingBuilt</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationBuildingLocked/index.html"><nobr><p>IsNavigationBuildingLocked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationBuil-/index.html"><nobr><p>IsNavigationBuildingPermanentlyLocked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Check if building is permanently locked to avoid showing navmesh building notify (due to queued dirty areas)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationBuildInProgress/index.html"><nobr><p>IsNavigationBuildInProgress</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCheckDirtyToo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to display "navigation building in progress" notify</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationBuilt/index.html"><nobr><p>IsNavigationBuilt</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameFramework/AWorldSettings/index.html" >AWorldSettings</a>&#42; Settings<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationDirty/index.html"><nobr><p>IsNavigationDirty()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks if navigation/navmesh is dirty and needs to be rebuilt</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationRegisterLocked/index.html"><nobr><p>IsNavigationRegisterLocked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationRelevant/index.html"><nobr><p>IsNavigationRelevant</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; TestActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationUnregisterLocked/index.html"><nobr><p>IsNavigationUnregisterLocked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationUpdateLocked/index.html"><nobr><p>IsNavigationUpdateLocked()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSetUpForLazyGe-/index.html"><nobr><p>IsSetUpForLazyGeometryExporting()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsThereAnywhereT-/index.html"><nobr><p>IsThereAnywhereToBuildNavigation()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NavigationRaycast/index.html"><nobr><p>NavigationRaycast</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; RayStart,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; RayEnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; HitLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AController/index.html" >AController</a>&#42; Querier<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Performs navigation raycast on NavigationData appropriate for given Querier.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnActorMoved/index.html"><nobr><p>OnActorMoved</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate handler for ActorMoved events</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnActorRegistered/index.html"><nobr><p>OnActorRegistered</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnActorUnregistered/index.html"><nobr><p>OnActorUnregistered</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnComponentRegistered/index.html"><nobr><p>OnComponentRegistered</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Components/UActorComponent/index.html" >UActorComponent</a>&#42; Comp<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// navigation octree related functions -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnComponentUnregistered/index.html"><nobr><p>OnComponentUnregistered</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Components/UActorComponent/index.html" >UActorComponent</a>&#42; Comp<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnEditorModeChanged/index.html"><nobr><p>OnEditorModeChanged</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../../Editor/UnrealEd/FEdMode/index.html" >FEdMode</a>&#42; Mode,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool IsEntering<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnHotReload/index.html"><nobr><p>OnHotReload</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bWasTriggeredAutomatically<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to notify NavigaitonSystem about finished hot reload</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnInitializeActors/index.html"><nobr><p>OnInitializeActors()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationAreaEvent/index.html"><nobr><p>OnNavigationAreaEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UClass/index.html" >UClass</a>&#42; AreaClass,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ENavAreaEvent__Type/index.html" >ENavAreaEvent::Type</a> Event<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationBoundsAdded/index.html"><nobr><p>OnNavigationBoundsAdded</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavMeshBoundsVolume/index.html" >ANavMeshBoundsVolume</a>&#42; NavVolum...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationBoundsRemoved/index.html"><nobr><p>OnNavigationBoundsRemoved</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavMeshBoundsVolume/index.html" >ANavMeshBoundsVolume</a>&#42; NavVolum...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationBoundsUpdated/index.html"><nobr><p>OnNavigationBoundsUpdated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavMeshBoundsVolume/index.html" >ANavMeshBoundsVolume</a>&#42; NavVolum...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationDirtied/index.html"><nobr><p>OnNavigationDirtied</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; Bounds<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnNavigationGenerationFinished/index.html"><nobr><p>OnNavigationGenerationFinished</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&amp; NavData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPIEEnd/index.html"><nobr><p>OnPIEEnd()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPIEStart/index.html"><nobr><p>OnPIEStart()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPostLoadMap/index.html"><nobr><p>OnPostLoadMap()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate handler for PostLoadMap event</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnWorldInitDone/index.html"><nobr><p>OnWorldInitDone</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FNavigationSystemRunMode Mode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PerformNavigationBoundsUpdate/index.html"><nobr><p>PerformNavigationBoundsUpdate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FNavigationBoundsUpdateRequest/index.html" >FNavigationBoundsUpda</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to apply updates of nav volumes in navigation system's tick</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProcessCustomLin-/index.html"><nobr><p>ProcessCustomLinkPendingRegistration()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Registers CustomLinks awaiting registration in PendingCustomLinkRegistration</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProcessNavAreaPe-/index.html"><nobr><p>ProcessNavAreaPendingRegistration()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Registers NavArea classes awaiting registration in PendingNavAreaRegistration</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProcessRegistrationCandidates/index.html"><nobr><p>ProcessRegistrationCandidates()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Processes registration of candidates queues via RequestRegistration and stored in NavDataRegistrationQueue</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProjectPointToNavigation/3/index.html"><nobr><p>ProjectPointToNavigation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Point,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavLocation/index.html" >FNavLocation</a>&amp; OutLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Extent,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProjectPointToNavigation/2/index.html"><nobr><p>ProjectPointToNavigation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Point,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FNavLocation/index.html" >FNavLocation</a>&amp; OutLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Extent,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FNavAgentProperties/index.html" >FNavAgentProperties</a>&#42; Age...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; const <a id="content_link" href="../NavFilters/FNavigationQueryFilter/index.html" >FNavigationQueryF</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ProjectPointToNavigation/1/index.html"><nobr><p>ProjectPointToNavigation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; WorldContext,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Point,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a> QueryExtent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Project a point onto the NavigationData</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterCustomLink/2/index.html"><nobr><p>RegisterCustomLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&#42; Custo...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// DEPRECATED -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterCustomLink/1/index.html"><nobr><p>RegisterCustomLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&amp; CustomLin...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// Custom navigation links -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterInvoker/index.html"><nobr><p>RegisterInvoker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&amp; Invoker,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TileGenerationRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TileRemovalRadius<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// Active tiles -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterNavAreaClass/index.html"><nobr><p>RegisterNavAreaClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UClass/index.html" >UClass</a>&#42; NavAreaClass<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Tries to register navigation area</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="ERegistrationResult/index.html" >ERegistratio</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterNavData/index.html"><nobr><p>RegisterNavData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_HOT_RELOAD.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterNavigati-/index.html"><nobr><p>RegisterNavigationDataInstances()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Processes all NavigationData instances in <a id="content_link" href="../../../Engine/UWorld/index.html" >UWorld</a> owning navigation system instance, and registers all previously unregistered</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterNavigationInvoker/1/index.html"><nobr><p>RegisterNavigationInvoker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&amp; Invoker,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TileGenerationRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TileRemovalRadius<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// Active tiles -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterNavigationInvoker/2/index.html"><nobr><p>RegisterNavigationInvoker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Invoker,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TileGenerationRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;float TileRemovalRadius<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Registers given actor as a "navigation enforcer" which means navigation system will make sure navigation is being generated in specified radius around it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../../Core/Containers/FSetElementId/index.html" >FSetElementI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterNavOctreeElement/index.html"><nobr><p>RegisterNavOctreeElement</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; ElementOwner,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavRelevantInterface/index.html" >INavRelevantInterface</a>&#42; Element...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 UpdateFlags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseInitialBuildingLock/index.html"><nobr><p>ReleaseInitialBuildingLock()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveLevelCollisionFromOctree/index.html"><nobr><p>RemoveLevelCollisionFromOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/ULevel/index.html" >ULevel</a>&#42; Level<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Remove BSP collision data from navigation octree</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveNavigationBuildLock/index.html"><nobr><p>RemoveNavigationBuildLock</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 Flags,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSkipRebuildInEditor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveNavigationUpdateLock/index.html"><nobr><p>RemoveNavigationUpdateLock</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 Flags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveNavOctreeElementId/index.html"><nobr><p>RemoveNavOctreeElementId</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../FOctreeElementId/index.html" >FOctreeElementId</a>&amp; ElementId,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 UpdateFlags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveObjectsNavOctreeId/index.html"><nobr><p>RemoveObjectsNavOctreeId</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Object<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestAreaRegistering/index.html"><nobr><p>RequestAreaRegistering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UClass/index.html" >UClass</a>&#42; NavAreaClass<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>-------------------------------------------------------------------// Areas -------------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestAreaUnregistering/index.html"><nobr><p>RequestAreaUnregistering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UClass/index.html" >UClass</a>&#42; NavAreaClass<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestCustomLinkRegistering/index.html"><nobr><p>RequestCustomLinkRegistering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&amp; CustomLin...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; OwnerOb<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestCustomLinkUnregistering/index.html"><nobr><p>RequestCustomLinkUnregistering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&amp; CustomLin...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; ObjectOb<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RequestRegistration/index.html"><nobr><p>RequestRegistration</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bTriggerRegistrationProcessing<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds NavData to registration candidates queue - NavDataRegistrationQueue</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResetCachedFilter/index.html"><nobr><p>ResetCachedFilter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../NavFilters/UNavigationQueryFilter/index.html" >UNavigationQueryFilter</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes cached filters from currently registered navigation data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResetMaxSimultan-/index.html"><nobr><p>ResetMaxSimultaneousTileGenerationJobsCount()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Brings limit of simultaneous navmesh tile generation jobs back to Project Setting's default value</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCrowdManager/index.html"><nobr><p>SetCrowdManager</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../AIModule/Navigation/UCrowdManager/index.html" >UCrowdManager</a>&#42; NewCrowdManager<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetGeometryGatheringMode/index.html"><nobr><p>SetGeometryGatheringMode</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;ENavDataGatheringModeConfig NewMode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetMaxSimultaneo-/index.html"><nobr><p>SetMaxSimultaneousTileGenerationJobsCount</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 MaxNumberOfJobs<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Will limit the number of simultaneously running navmesh tile generation jobs to specified number.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetNavigationAutoUpdateEnabled/index.html"><nobr><p>SetNavigationAutoUpdateEnabled</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bNewEnable,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >UNavigationSystem</a>&#42; InNavigatio...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allow editor to toggle whether seamless navigation building is enabled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetObjectsNavOctreeId/index.html"><nobr><p>SetObjectsNavOctreeId</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; Object,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../FOctreeElementId/index.html" >FOctreeElementId</a> Id<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSupportedAgen-/index.html"><nobr><p>SetSupportedAgentsNavigationClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 AgentIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a> > Navi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used to properly set navigation class for indicated agent and propagate information to other places (like project settings) that may need this information</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldGenerateNa-/index.html"><nobr><p>ShouldGenerateNavigationEverywhere()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldGeneratorRun/index.html"><nobr><p>ShouldGeneratorRun</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FNavDataGenerator/index.html" >FNavDataGenerator</a>&#42; Gener...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Super-hacky safety feature for threaded navmesh building.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldLoadNavigationOnClient/index.html"><nobr><p>ShouldLoadNavigationOnClient</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldUpdateNavO-/index.html"><nobr><p>ShouldUpdateNavOctreeOnComponentChange()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SimpleMoveToActor/index.html"><nobr><p>SimpleMoveToActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AController/index.html" >AController</a>&#42; Controller,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Goal<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SimpleMoveToLocation/index.html"><nobr><p>SimpleMoveToLocation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AController/index.html" >AController</a>&#42; Controller,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FVector/index.html" >FVector</a>&amp; Goal<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SupportsNavigationGeneration/index.html"><nobr><p>SupportsNavigationGeneration()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TestPathSync/index.html"><nobr><p>TestPathSync</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPathFindingQuery/index.html" >FPathFindingQuery</a> Query,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../EPathFindingMode__Type/index.html" >EPathFindingMode::Type</a> Mode,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&#42; NumVisitedNodes<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Synchronously check if path between two points exists Does not return path object, but will run faster (especially in hierarchical mode) </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Tick/index.html"><nobr><p>Tick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float DeltaSeconds<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End <a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a> Interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterCustomLink/1/index.html"><nobr><p>UnregisterCustomLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&amp; CustomLin...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterCustomLink/2/index.html"><nobr><p>UnregisterCustomLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&#42; Custo...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterInvoker/index.html"><nobr><p>UnregisterInvoker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&amp; Invoker<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterNavData/index.html"><nobr><p>UnregisterNavData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../ANavigationData/index.html" >ANavigationData</a>&#42; NavData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>----------------------------------------------------------------// Bookkeeping ----------------------------------------------------------------//</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterNavigationInvoker/1/index.html"><nobr><p>UnregisterNavigationInvoker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&amp; Invoker<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterNavigationInvoker/2/index.html"><nobr><p>UnregisterNavigationInvoker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Invoker<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes given actor from the list of active navigation enforcers.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UnregisterNavOctreeElement/index.html"><nobr><p>UnregisterNavOctreeElement</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; ElementOwner,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavRelevantInterface/index.html" >INavRelevantInterface</a>&#42; Element...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 UpdateFlags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateAbstractNavData/index.html"><nobr><p>UpdateAbstractNavData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Spawn new crowd manager</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../../images/./api_function_protected.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateAttachedAc-/index.html"><nobr><p>UpdateAttachedActorsInNavOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&amp; RootActor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates navoctree information on actors attached to RootActor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateCustomLink/index.html"><nobr><p>UpdateCustomLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../INavLinkCustomInterface/index.html" >INavLinkCustomInterface</a>&#42;...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates custom link for all active navigation data instances</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateLevelCollision/index.html"><nobr><p>UpdateLevelCollision</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/ULevel/index.html" >ULevel</a>&#42; InLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctree/2/index.html"><nobr><p>UpdateNavOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Components/UActorComponent/index.html" >UActorComponent</a>&#42; Comp<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctree/1/index.html"><nobr><p>UpdateNavOctree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update navoctree entry for specified actor/component</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctreeAfterMove/index.html"><nobr><p>UpdateNavOctreeAfterMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Components/USceneComponent/index.html" >USceneComponent</a>&#42; Comp<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update all navoctree entries for actor and its non scene components after root movement</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctreeAll/index.html"><nobr><p>UpdateNavOctreeAll</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bUpdateAttachedActors<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update all navoctree entries for actor and its components</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctreeBounds/index.html"><nobr><p>UpdateNavOctreeBounds</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameFramework/AActor/index.html" >AActor</a>&#42; Actor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates bounds of all components implementing <a id="content_link" href="../INavRelevantInterface/index.html" >INavRelevantInterface</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctreeElement/index.html"><nobr><p>UpdateNavOctreeElement</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; ElementOwner,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../INavRelevantInterface/index.html" >INavRelevantInterface</a>&#42; Element...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 UpdateFlags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update single element in navoctree</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctreeElementBounds/index.html"><nobr><p>UpdateNavOctreeElementBounds</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Components/UActorComponent/index.html" >UActorComponent</a>&#42; Comp,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; NewBounds,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; DirtyArea<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Update component bounds in navigation octree and mark only specified area as dirty, doesn't re-export component geometry</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateNavOctreeParentChain/index.html"><nobr><p>UpdateNavOctreeParentChain</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a>&#42; ElementOwner,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSkipElementOwnerUpdate<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Force updating parent node and all its children</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from UObject</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostEditChangeProperty/index.html"><nobr><p>PostEditChangeProperty</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../../CoreUObject/UObject/FPropertyChangedEvent/index.html" >FPropertyChangedEvent</a>&amp; PropertyCha...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a property on this object has been modified externally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostInitProperties/index.html"><nobr><p>PostInitProperties()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Begin <a id="content_link" href="../../../../CoreUObject/UObject/UObject/index.html" >UObject</a> Interface.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'enums');">
+        <p>Enums</p>
+    </div>
+<div id="enums">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public enum" title="Public enum" width="18" src="./../../../../../../../images/./api_enum_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="ECleanupMode/index.html"><p>ECleanupMode</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public enum" title="Public enum" width="18" src="./../../../../../../../images/./api_enum_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="EOctreeUpdateMode/index.html"><p>EOctreeUpdateMode</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public enum" title="Public enum" width="18" src="./../../../../../../../images/./api_enum_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="ERegistrationResult/index.html"><p>ERegistrationResult</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnNavigationDirty/index.html"><p>FOnNavigationDirty</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Delegate type for events that dirty the navigation data ( Params: const <a id="content_link" href="../../../../Core/Math/FBox/index.html" >FBox</a>&amp; DirtyBounds )</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constants');">
+        <p>Constants</p>
+    </div>
+<div id="constants">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bNavigationAutoUpdateEnabled/index.html"><p>bNavigationAutoUpdateEnabled</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>&#33;UE_BUILD_SHIPPING</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bUpdateNavOctree-/index.html"><p>bUpdateNavOctreeOnComponentChange</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="CustomLinkRegistrationSection/index.html"><p>CustomLinkRegistrationSection</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="DefaultObstacleArea/index.html"><p>DefaultObstacleArea</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="DefaultWalkableArea/index.html"><p>DefaultWalkableArea</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="ExecHandler/index.html"><p>ExecHandler</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Self-registering exec command to handle nav sys console commands</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="NavAreaClasses/index.html"><p>NavAreaClasses</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="NavAreaRegistrationSection/index.html"><p>NavAreaRegistrationSection</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="NavigationDirtyEvent/index.html"><p>NavigationDirtyEvent</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>&#33;UE_BUILD_SHIPPING</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PendingCustomLinkRegistration/index.html"><p>PendingCustomLinkRegistration</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PendingNavAreaRegistration/index.html"><p>PendingNavAreaRegistration</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;AI&#47;Navigation&#47;NavigationSystem.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,1020 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>dtCrowd</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="dtCrowd" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Navmesh, API\Runtime\Navmesh\DetourCrowd" />
+<meta name="description" content="Provides local steering behaviors for a group of agents." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Navmesh</a></strong> &gt; <strong><a id="content_link" href="../index.html" >DetourCrowd</a></strong> &gt; <span id="crumbs_page_title">dtCrowd</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">dtCrowd</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class dtCrowd<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Provides local steering behaviors for a group of agents.
+</p><p>This is the core class of the Crowd module. See the Crowd documentation for a summary of the crowd features.
+</p><p>A common method for setting up the crowd is as follows:
+</p><p>Allocate the crowd using dtAllocCrowd.
+</p><p>Initialize the crowd using <a id="content_link" href="init/index.html" >init()</a>.
+</p><p>Set the avoidance configurations using <a id="content_link" href="setObstacleAvoidanceParams/index.html" >setObstacleAvoidanceParams()</a>.
+</p><p>Add agents using <a id="content_link" href="addAgent/index.html" >addAgent()</a> and make an initial movement request using <a id="content_link" href="requestMoveTarget/index.html" >requestMoveTarget()</a>.
+</p><p>A common process for managing the crowd is as follows:
+</p><p>Call <a id="content_link" href="update/index.html" >update()</a> to allow the crowd to manage its agents.
+</p><p>Retrieve agent information using <a id="content_link" href="getActiveAgents/2/index.html" >getActiveAgents()</a>.
+</p><p>Make movement requests using <a id="content_link" href="requestMoveTarget/index.html" >requestMoveTarget()</a> when movement goal changes.
+</p><p>Repeat every frame.
+</p><p>Some agent configuration settings can be updated using <a id="content_link" href="updateAgentParameters/index.html" >updateAgentParameters()</a>. But the crowd owns the agent position. So it is not possible to update an active agent's position. If agent position must be fed back into the crowd, the agent must be removed and re-added.
+</p><p>Notes:
+</p><ul><li><p>Path related information is available for newly added agents only after an <a id="content_link" href="update/index.html" >update()</a> has been performed.
+</p></li><li><p>Agent objects are kept in a pool and re-used. So it is important when using agent objects to check the value of [dtCrowdAgent::active](API\Runtime\Navmesh\DetourCrowd\dtCrowdAgent\active) to determine if the agent is actually in use or not.
+</p></li><li><p>This class is meant to provide 'local' movement. There is a limit of 256 polygons in the path corridor. So it is not meant to provide automatic pathfinding services over long distances.
+</p></li></ul>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>dtCrowd()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~dtCrowd()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="addAgent/index.html"><nobr><p>addAgent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtCrowdAgentParams/index.html" >dtCrowdAgentParams</a>&amp; params,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Adds a new agent to the crowd.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="cacheActiveAgents/index.html"><nobr><p>cacheActiveAgents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Cache list of active agents 
+</p><p>The number of active agents</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtCrowdAgent/index.html" >dtCrowdAgent</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getActiveAgents/1/index.html"><nobr><p>getActiveAgents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets all cached active agents.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getActiveAgents/2/index.html"><nobr><p>getActiveAgents</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgent/index.html" >dtCrowdAgent</a>&#42;&#42; agents,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxAgents<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the active agents int the agent pool. 
+</p><p>The number of agents returned in `agents_.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtCrowdAgent/index.html" >dtCrow</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getAgent/index.html"><nobr><p>getAgent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the specified agent from the pool.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtCrowdAgentAnimation/index.html" >dtCrow</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getAgentAnims/index.html"><nobr><p>getAgentAnims()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets all agent animations.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getAgentCount/index.html"><nobr><p>getAgentCount()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The maximum number of agents that can be managed by the object. 
+</p><p>The maximum number of agents.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getAgentIndex/index.html"><nobr><p>getAgentIndex</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtCrowdAgent/index.html" >dtCrowdAgent</a>&#42; agent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilte</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getEditableFilter/index.html"><nobr><p>getEditableFilter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the filter used by the crowd. 
+</p><p>The filter used by the crowd.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQuer</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getFilter/index.html"><nobr><p>getFilter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the filter used by the crowd. 
+</p><p>The filter used by the crowd.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtProximityGrid/index.html" >dtProx</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getGrid/index.html"><nobr><p>getGrid()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the crowd's proximity grid. 
+</p><p>The crowd's proximity grid.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getNavMeshQuery/index.html"><nobr><p>getNavMeshQuery()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the query object used by the crowd.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getNumActiveAgents/index.html"><nobr><p>getNumActiveAgents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtObstacleAvoidanceParams/index.html" >dtObst</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getObstacleAvoidanceParams/index.html"><nobr><p>getObstacleAvoidanceParams</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the shared avoidance configuration for the specified index. 
+</p><p>The requested configuration.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getObstacleAvoidancePattern/index.html"><nobr><p>getObstacleAvoidancePattern</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; angles,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; radii,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; nsamples<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Gets the shared avoidance sampling pattern for the specified index.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtPathQueue/index.html" >dtPath</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPathQueue/index.html"><nobr><p>getPathQueue()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the crowd's path request queue. 
+</p><p>The crowd's path request queue.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const float ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getQueryExtents/index.html"><nobr><p>getQueryExtents()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the search extents [(x, y, z)] used by the crowd for query operations.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtSharedBoundary/index.html" >dtShar</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getSharedBoundary/index.html"><nobr><p>getSharedBoundary()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets shared boundary cache.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getVelocitySampleCount/index.html"><nobr><p>getVelocitySampleCount()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the velocity sample count. 
+</p><p>The velocity sample count.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="init/index.html"><nobr><p>init</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxAgents,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float maxAgentRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMesh/index.html" >dtNavMesh</a>&#42; nav<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initializes the crowd.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="initAvoidance/index.html"><nobr><p>initAvoidance</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxNeighbors,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxWalls,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxCustomPatterns<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Initializes the avoidance query. 
+</p><p>True if the initialization succeeded.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="isOutsideCorridor/index.html"><nobr><p>isOutsideCorridor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Check if agent moved away from its path corridor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="removeAgent/index.html"><nobr><p>removeAgent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Removes the agent from the crowd.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="requestMoveTarget/index.html"><nobr><p>requestMoveTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Submits a new move request for the specified agent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="requestMoveVelocity/index.html"><nobr><p>requestMoveVelocity</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; vel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Submits a new move request for the specified agent.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="resetAgentVelocity/index.html"><nobr><p>resetAgentVelocity</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Resets agent's velocity</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="resetMoveTarget/index.html"><nobr><p>resetMoveTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Resets any request for the specified agent. 
+</p><p>True if the request was successfully reseted.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setAgentBackOnLink/index.html"><nobr><p>setAgentBackOnLink</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Switch to offmesh link state</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setAgentCheckInterval/index.html"><nobr><p>setAgentCheckInterval</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float t<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Set time between attempts to restore agents state</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setAgentCorridor/index.html"><nobr><p>setAgentCorridor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;const dtPolyRef&#42; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int npath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Set agent corridor, works only just after requesting move target when agent didn't start any pathfinding operations yet Use with caution&#33;</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setAgentWaiting/index.html"><nobr><p>setAgentWaiting</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Switch to waiting state</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setEarlyReachTestOptimization/index.html"><nobr><p>setEarlyReachTestOptimization</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setObstacleAvoidanceParams/index.html"><nobr><p>setObstacleAvoidanceParams</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtObstacleAvoidanceParams/index.html" >dtObstacleAvoidanceParams</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the shared avoidance configuration for the specified index.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setObstacleAvoidancePattern/index.html"><nobr><p>setObstacleAvoidancePattern</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; angles,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; radii,<br />&nbsp;&nbsp;&nbsp;&nbsp;int nsamples<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Sets the shared avoidance sampling pattern for the specified index.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setPruneStartedOffmeshConnection-/index.html"><nobr><p>setPruneStartedOffmeshConnections</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bRemoveFromCorridor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Set offmesh connection pruning This will allow removing offmesh connection poly ref from corridor as soon as offmesh connection anim is triggered (default behavior)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setSingleAreaVisibilityOptimizat-/index.html"><nobr><p>setSingleAreaVisibilityOptimization</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Set visibility optimization to use single area raycasts This will prevent from cutting through polys marked as different area which could have been avoided in corridor's path</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="update/index.html"><nobr><p>update</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the steering and positions of all agents.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateAgentFilter/index.html"><nobr><p>updateAgentFilter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] multiple filter support</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateAgentParameters/index.html"><nobr><p>updateAgentParameters</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtCrowdAgentParams/index.html" >dtCrowdAgentParams</a>&amp; params<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the specified agent's configuration.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateAgentState/index.html"><nobr><p>updateAgentState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int idx,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool repath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Refresh state of agent, used after completing movement through offmesh links</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepAvoidance/index.html"><nobr><p>updateStepAvoidance</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: avoidance</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepCorridor/index.html"><nobr><p>updateStepCorridor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: corridor updates at new position</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepMove/index.html"><nobr><p>updateStepMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: integrate velocities and handle collisions</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepNextMovePoint/index.html"><nobr><p>updateStepNextMovePoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: next corner for move, trigger offmesh links</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepOffMeshAnim/index.html"><nobr><p>updateStepOffMeshAnim</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: offmesh anims</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepOffMeshVelocity/index.html"><nobr><p>updateStepOffMeshVelocity</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: offmesh link velocity (instead of playing animation)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepPaths/index.html"><nobr><p>updateStepPaths</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: path validity, path cache and path optimizations</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepProximityData/index.html"><nobr><p>updateStepProximityData</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: neighbors and boundaries</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateStepSteering/index.html"><nobr><p>updateStepSteering</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float dt,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtCrowdAgentDebugInfo/index.html" >dtCrowdAgentDebugInfo</a>&#42; debug<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Split update into several smaller components: steering</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p>dtAllocCrowd()
+</p><p>dtFreeCrowd()
+</p><p><a id="content_link" href="init/index.html" >init()</a>
+</p><p><a id="content_link" href="../dtCrowdAgent/index.html" >dtCrowdAgent</a></p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Navmesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Public&#47;DetourCrowd&#47;DetourCrowd.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,1282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>SGraphPin</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="SGraphPin" />
+<meta name="crumbs" content="%ROOT%, API, API\Editor, API\Editor\GraphEditor" />
+<meta name="description" content="Represents a pin on a node in the GraphEditor" />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Editor</a></strong> &gt; <strong><a id="content_link" href="../index.html" >GraphEditor</a></strong> &gt; <span id="crumbs_page_title">SGraphPin</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">SGraphPin</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/SlateCore/Widgets/FSlateControlledConstruction/index.html"><p>FSlateControlledConstruction</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Core/Templates/TSharedFromThis/index.html"><p>TSharedFromThis</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/SlateCore/Widgets/SWidget/index.html"><p>SWidget</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/SlateCore/Widgets/SCompoundWidget/index.html"><p>SCompoundWidget</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Slate/Widgets/Layout/SBorder/index.html"><p>SBorder</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>SGraphPin</p><table class="hierarchy-table" cellspacing="0" id="hrch_2_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../AIGraph/SGraphPinAI/index.html"><p>SGraphPinAI</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><a href="javascript:hierarchyOnClick('hrch_2_1_1_1_1_2');"><img class="hierarchy-button-collapsed" id='hrch_2_1_1_1_1_2_button' src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></span></a> </p></td><td class="hierarchy-label-cell"><a href="../SGraphPinNameList/index.html"><p>SGraphPinNameList</p></a><table class="hierarchy-table-collapsed" cellspacing="0" id="hrch_2_1_1_1_1_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../SGraphPinDataTableRowName/index.html"><p>SGraphPinDataTableRowName</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class SGraphPin : public <a id="content_link" href="../../../Runtime/Slate/Widgets/Layout/SBorder/index.html" >SBorder</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Represents a pin on a node in the GraphEditor</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsMovingLinks</p>
+	</td>
+	<td class="desc-cell">
+		<p>True when we're moving links between pins.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bShowLabel</p>
+	</td>
+	<td class="desc-cell">
+		<p>If we should draw the label on this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bUsePinColorForText</p>
+	</td>
+	<td class="desc-cell">
+		<p>TRUE if the pin should use the Pin's color for the text</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_ArrayPin_Connected/index.html"><p>CachedImg_ArrayPin_Connected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_ArrayPin_ConnectedHove-/index.html"><p>CachedImg_ArrayPin_ConnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>: Want to cache these once for all SGraphPins, but still handle slate style updates</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_ArrayPin_Disconnected/index.html"><p>CachedImg_ArrayPin_Disconnected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_ArrayPin_DisconnectedH-/index.html"><p>CachedImg_ArrayPin_DisconnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_DelegatePin_Connected/index.html"><p>CachedImg_DelegatePin_Connected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_DelegatePin_ConnectedH-/index.html"><p>CachedImg_DelegatePin_ConnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_DelegatePin_Disconnect-_1/index.html"><p>CachedImg_DelegatePin_Disconnected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_DelegatePin_Disconnect-/index.html"><p>CachedImg_DelegatePin_DisconnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_Pin_Background/index.html"><p>CachedImg_Pin_Background</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_Pin_BackgroundHovered/index.html"><p>CachedImg_Pin_BackgroundHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_Pin_Connected/index.html"><p>CachedImg_Pin_Connected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_Pin_ConnectedHovered/index.html"><p>CachedImg_Pin_ConnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_Pin_Disconnected/index.html"><p>CachedImg_Pin_Disconnected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_Pin_DisconnectedHovere-/index.html"><p>CachedImg_Pin_DisconnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_RefPin_Connected/index.html"><p>CachedImg_RefPin_Connected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_RefPin_ConnectedHovere-/index.html"><p>CachedImg_RefPin_ConnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_RefPin_Disconnected/index.html"><p>CachedImg_RefPin_Disconnected</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlateBru</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CachedImg_RefPin_DisconnectedHov-/index.html"><p>CachedImg_RefPin_DisconnectedHovered</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>CachedNodeOffset</p>
+	</td>
+	<td class="desc-cell">
+		<p>Cached offset from owning node to approximate position of culled pins</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Engine/EdGraph/UEdGraphPin/index.html" >UEdGraphPin</a> &#4...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GraphPinObj/index.html"><p>GraphPinObj</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The GraphPin that this widget represents.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Containers/TSet/index.html" >TSet</a>&lt; <a id="content_link" href="../../../Runtime/Core/UObject/TWeakObjectPtr/index.html" >TWeakObje</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HoverPinSet/index.html"><p>HoverPinSet</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; boo...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsEditable/index.html"><p>IsEditable</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Is this pin editable</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TWeakPtr/index.html" >TWeakPtr</a>&lt; <a id="content_link" href="../SGraphNode/index.html" >SGrap</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OwnerNodePtr/index.html"><p>OwnerNodePtr</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The GraphNode that owns this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Math/FLinearColor/index.html" >FLinearColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>PinColorModifier</p>
+	</td>
+	<td class="desc-cell">
+		<p>Color modifier for use by the connection drawing policy</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Widgets/Images/SImage/index.html" >SIm</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PinImage/index.html"><p>PinImage</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Image of pin</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>SGraphPin()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="index.html" >SGraphPin</a>.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClickedOnPinStatusIcon/index.html"><nobr><p>ClickedOnPinStatusIcon()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Toggle the watch pinning</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Construct/index.html"><nobr><p>Construct</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FArguments/index.html" >FArguments</a>&amp; InArgs,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Engine/EdGraph/UEdGraphPin/index.html" >UEdGraphPin</a>&#42; InPin<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Construct this widget</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Layout/EVisibility/index.html" >EVisibility</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDefaultValueVisibility/index.html"><nobr><p>GetDefaultValueVisibility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Visibility based on whether or not we should show the inline editable text field for this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDefaultValueWidget/index.html"><nobr><p>GetDefaultValueWidget()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the widget we should put into the 'default value' space, shown when nothing connected</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EEdGraphPinD...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDirection/index.html"><nobr><p>GetDirection()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is incoming or outgoing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNodeOffset/index.html"><nobr><p>GetNodeOffset()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets Node Offset</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinBorder/index.html"><nobr><p>GetPinBorder()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateColor/index.html" >FSlateColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinColor/index.html"><nobr><p>GetPinColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The color that we should use to draw this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Misc/TOptional/index.html" >TOptional</a>&lt; <a id="content_link" href="../../../Runtime/Core/GenericPlatform/EMouseCursor__Type/index.html" >E</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinCursor/index.html"><nobr><p>GetPinCursor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinIcon/index.html"><nobr><p>GetPinIcon()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The brush with which to pain this graph pin's incoming/outgoing bullet point</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Internationalization/FText/index.html" >FText</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinLabel/index.html"><nobr><p>GetPinLabel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Layout/EVisibility/index.html" >EVisibility</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinLabelVisibility/index.html"><nobr><p>GetPinLabelVisibility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If we should show the label on this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Engine/EdGraph/UEdGraphPin/index.html" >UEdGraphPin</a> ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinObj/index.html"><nobr><p>GetPinObj()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End of <a id="content_link" href="../../../Runtime/SlateCore/Widgets/SWidget/index.html" >SWidget</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateBrush/index.html" >FSlate</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinStatusIcon/index.html"><nobr><p>GetPinStatusIcon()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The status brush to show after/before the name (on an input/output)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Layout/EVisibility/index.html" >EVisibility</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinStatusIconVisibility/index.html"><nobr><p>GetPinStatusIconVisibility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Should we show a status brush after/before the name (on an input/output)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Styling/FSlateColor/index.html" >FSlateColor</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPinTextColor/index.html"><nobr><p>GetPinTextColor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The color that we should use to draw this pin's text</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Internationalization/FText/index.html" >FText</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetTooltipText/index.html"><nobr><p>GetTooltipText()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The tooltip to display for this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsArray/index.html"><nobr><p>IsArray()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is an array value</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsByConstRef/index.html"><nobr><p>IsByConstRef()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is passed by const ref</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsByMutableRef/index.html"><nobr><p>IsByMutableRef()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is passed by mutable ref</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsByRef/index.html"><nobr><p>IsByRef()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is passed by ref</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsConnected/index.html"><nobr><p>IsConnected()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is connected to another pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsDelegate/index.html"><nobr><p>IsDelegate()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether this pin is passed by mutable ref</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Layout/EVisibility/index.html" >EVisibility</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPinVisibleAsAdvanced/index.html"><nobr><p>IsPinVisibleAsAdvanced()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If pin in node is visible at all</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPinMouseDown/index.html"><nobr><p>OnPinMouseDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; SenderGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Handle clicking on the pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPinNameMouseDown/index.html"><nobr><p>OnPinNameMouseDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; SenderGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Handle clicking on the pin name</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetIsEditable/index.html"><nobr><p>SetIsEditable</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/Misc/TAttribute/index.html" >TAttribute</a>&lt; bool > InIsEditable<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set attribute for determining if pin is editable</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetOwner/index.html"><nobr><p>SetOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../SGraphNode/index.html" >SGraphNode</a> > Owne...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetPinColorModifier/index.html"><nobr><p>SetPinColorModifier</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/Math/FLinearColor/index.html" >FLinearColor</a> InColor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allows the connection drawing policy to control the pin color</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetShowLabel/index.html"><nobr><p>SetShowLabel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bNewDrawLabel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Control whether we draw the label on this pin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SpawnPinDragEvent/index.html"><nobr><p>SpawnPinDragEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; class SGraphPanel...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="index.html" >SGraphPin</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bShiftOperation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Spawns a FDragConnection or similar class for the pin drag event</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TryHandlePinConnection/index.html"><nobr><p>TryHandlePinConnection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="index.html" >SGraphPin</a>&amp; OtherSPin<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Tries to handle making a connection to another pin, depending on the schema and the pins it may do:</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_3');">
+        <p>Overridden from SWidget</p>
+    </div>
+<div id="functions_3">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDragEnter/index.html"><nobr><p>OnDragEnter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>DRAG AND DROP (DragDrop) Called during drag and drop when the drag enters a widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDragLeave/index.html"><nobr><p>OnDragLeave</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called during drag and drop when the drag leaves a widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDragOver/index.html"><nobr><p>OnDragOver</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called during drag and drop when the the mouse is being dragged over a widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnDrop/index.html"><nobr><p>OnDrop</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FDragDropEvent/index.html" >FDragDropEvent</a>&amp; DragDropEven...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the user is dropping something onto a widget; terminates drag and drop.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonUp/index.html"><nobr><p>OnMouseButtonUp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../Runtime/SlateCore/Widgets/SWidget/index.html" >SWidget</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseEnter/index.html"><nobr><p>OnMouseEnter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system will use this event to notify a widget that the cursor has entered it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseLeave/index.html"><nobr><p>OnMouseLeave</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system will use this event to notify a widget that the cursor has left it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseMove/index.html"><nobr><p>OnMouseMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system calls this method to notify the widget that a mouse moved within it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Tick/index.html"><nobr><p>Tick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; AllottedGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const double InCurrentTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float InDeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ticks this widget with Geometry.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'classes');">
+        <p>Classes</p>
+    </div>
+<div id="classes">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public struct" title="Public struct" width="18" src="./../../../../../images/./api_struct_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="FArguments/index.html"><p>FArguments</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >GraphEditor</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Editor&#47;GraphEditor&#47;Public&#47;SGraphPin.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

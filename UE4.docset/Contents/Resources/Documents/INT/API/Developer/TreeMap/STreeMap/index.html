@@ -1,0 +1,722 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>STreeMap</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="STreeMap" />
+<meta name="crumbs" content="%ROOT%, API, API\Developer, API\Developer\TreeMap" />
+<meta name="description" content="Copyright 1998-2013 Epic Games, Inc. All Rights Reserved." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Developer</a></strong> &gt; <strong><a id="content_link" href="../index.html" >TreeMap</a></strong> &gt; <span id="crumbs_page_title">STreeMap</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">STreeMap</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/SlateCore/Widgets/FSlateControlledConstruction/index.html"><p>FSlateControlledConstruction</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Core/Templates/TSharedFromThis/index.html"><p>TSharedFromThis</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/SlateCore/Widgets/SWidget/index.html"><p>SWidget</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/SlateCore/Widgets/SLeafWidget/index.html"><p>SLeafWidget</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>STreeMap</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class STreeMap : public <a id="content_link" href="../../../Runtime/SlateCore/Widgets/SLeafWidget/index.html" >SLeafWidget</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Graphical tree map widget with interactive controls</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyVisualizationToNodes/index.html"><nobr><p>ApplyVisualizationToNodes</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; Node<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called to apply the current 'size based on' and 'color based on' settings to the tree</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyVisualizationToNodesRecursi-/index.html"><nobr><p>ApplyVisualizationToNodesRecursively</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; Node,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Math/FLinearColor/index.html" >FLinearColor</a>&amp; DefaultColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 TreeDepth<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Recursively applies the active visualization to all nodes, such as size by attribute, or color by attribute</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Construct/index.html"><nobr><p>Construct</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="FArguments/index.html" >FArguments</a>&amp; InArgs,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; class <a id="content_link" href="../FTreeMapNodeData/index.html" >FTreeMapNod</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../ITreeMapCustomization/index.html" >ITreeMapCustomiza</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Construct the widget</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DeleteHoveredNode/index.html"><nobr><p>DeleteHoveredNode()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Deletes the node under the mouse cursor, if any (undoable&#33;)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FTreeMapNode...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindNodeInCopiedTree/index.html"><nobr><p>FindNodeInCopiedTree</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; NodeToF...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; Origina...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; CopiedR...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Searches for the specified node in an identical copy of the node tree.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FTreeMapNodeVisualInfo/index.html" >FTreeMapNode</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindNodeVisualUnderCursor/index.html"><nobr><p>FindNodeVisualUnderCursor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector2D</a>&amp; ScreenSpaceCursor...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the node visual that's under the cursor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InsertNewNodeAsChildOfHoveredNod-/index.html"><nobr><p>InsertNewNodeAsChildOfHoveredNode</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Insert a new node as a child of the node under the cursor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsNavigationTransitionActive/index.html"><nobr><p>IsNavigationTransitionActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if we're playing a transition after a navigation action (zoom&#33;)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeBlendedNodeVisual/index.html"><nobr><p>MakeBlendedNodeVisual</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 VisualIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float NavigationAlpha,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FTreeMapNodeVisualInfo/index.html" >FTreeMapNodeVisualInfo</a>&amp; OutVisual<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Blends between the current visual state and the state before the last navigation transition, by the specified amount</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RebuildTreeMap/index.html"><nobr><p>RebuildTreeMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bShouldPlayTransition<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Refreshes the tree map from its source data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Redo/index.html"><nobr><p>Redo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Redoes the last action</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RenamingNode_OnTextCommitted/index.html"><nobr><p>RenamingNode_OnTextCommitted</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Internationalization/FText/index.html" >FText</a>&amp; NewText,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/SlateCore/Types/ETextCommit__Type/index.html" >ETextCommit::Type</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../FTreeMapNodeData/index.html" >FTreeMapNodeData</a> > Node...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the user commits a rename change</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReparentNode/index.html"><nobr><p>ReparentNode</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef DroppedNo...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef NewParent...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Reparents DroppedNode to NewParentNode (undoable&#33;)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTreeRoot/index.html"><nobr><p>SetTreeRoot</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; NewRoot,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bShouldPlayTransition<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a new "active root" for the tree.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowOptionsMenuAt/1/index.html"><nobr><p>ShowOptionsMenuAt</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector2D</a>&amp; ScreenSpacePositi...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Displays a context menu at the specified location with options for configuring the tree display</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowOptionsMenuAt/2/index.html"><nobr><p>ShowOptionsMenuAt</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InMouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Displays a context menu at the specified location with options for configuring the tree display</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StartRenamingNode/index.html"><nobr><p>StartRenamingNode</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const FTreeMapNodeDataRef&amp; NodeDat...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector2D</a>&amp; RelativePosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool bIsNewNode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Pops up a box to allow the user to start renaming a node's title (undoable&#33;)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StopRenamingNode/index.html"><nobr><p>StopRenamingNode()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Stops renaming a node, committing whatever text was entered</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TakeUndoSnapshot/index.html"><nobr><p>TakeUndoSnapshot()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Grabs a snapshot of the current tree so we can restore it if the user performs an Undo action</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Undo/index.html"><nobr><p>Undo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Undoes the last action</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_2');">
+        <p>Overridden from SWidget</p>
+    </div>
+<div id="functions_2">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ComputeDesiredSize/index.html"><nobr><p>ComputeDesiredSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Overwritten from <a id="content_link" href="../../../Runtime/SlateCore/Widgets/SWidget/index.html" >SWidget</a>.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnKeyDown/index.html"><nobr><p>OnKeyDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FKeyEvent/index.html" >FKeyEvent</a>&amp; InKeyEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called after a key is pressed when this widget has focus (this event bubbles if not handled)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonDoubleClick/index.html"><nobr><p>OnMouseButtonDoubleClick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; InMyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; InMouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when a mouse button is double clicked.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonDown/index.html"><nobr><p>OnMouseButtonDown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>MOUSE INPUT The system calls this method to notify the widget that a mouse button was pressed within it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseButtonUp/index.html"><nobr><p>OnMouseButtonUp</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system calls this method to notify the widget that a mouse button was release within it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseLeave/index.html"><nobr><p>OnMouseLeave</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system will use this event to notify a widget that the cursor has left it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseMove/index.html"><nobr><p>OnMouseMove</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The system calls this method to notify the widget that a mouse moved within it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/SlateCore/Input/FReply/index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnMouseWheel/index.html"><nobr><p>OnMouseWheel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; MyGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Input/FPointerEvent/index.html" >FPointerEvent</a>&amp; MouseEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the mouse wheel is spun.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnPaint/index.html"><nobr><p>OnPaint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Types/FPaintArgs/index.html" >FPaintArgs</a>&amp; Args,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; AllottedGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FSlateRect/index.html" >FSlateRect</a>&amp; MyClippingRect,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Runtime/SlateCore/Rendering/FSlateWindowElementList/index.html" >FSlateWindowElementList</a>&amp; OutDrawEl...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 LayerId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Styling/FWidgetStyle/index.html" >FWidgetStyle</a>&amp; InWidgetStyle,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bParentEnabled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../Runtime/SlateCore/Widgets/SWidget/index.html" >SWidget</a> overrides</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SupportsKeyboardFocus/index.html"><nobr><p>SupportsKeyboardFocus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks to see if this widget supports keyboard focus.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Tick/index.html"><nobr><p>Tick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Runtime/SlateCore/Layout/FGeometry/index.html" >FGeometry</a>&amp; AllottedGeometry,<br />&nbsp;&nbsp;&nbsp;&nbsp;const double InCurrentTime,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float InDeltaTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ticks this widget with Geometry.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'classes');">
+        <p>Classes</p>
+    </div>
+<div id="classes">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public struct" title="Public struct" width="18" src="./../../../../../images/./api_struct_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="FArguments/index.html"><p>FArguments</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FOnTreeMapNodeDoubleClicked/index.html"><p>FOnTreeMapNodeDoubleClicked</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Optional delegate that fires when the node is double-clicked in the tree.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >TreeMap</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Developer&#47;TreeMap&#47;Public&#47;STreeMap.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

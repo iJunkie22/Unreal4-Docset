@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FReply</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FReply" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\SlateCore, API\Runtime\SlateCore\Input" />
+<meta name="description" content="A Reply is something that a Slate event returns to the system to notify it about certain aspect of how an event was handled." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >SlateCore</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Input</a></strong> &gt; <span id="crumbs_page_title">FReply</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FReply</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../FReplyBase/index.html"><p>FReplyBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../TReplyBase/index.html"><p>TReplyBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FReply</p></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FReply : public <a id="content_link" href="../TReplyBase/index.html" >TReplyBase&lt; FReply ></a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>A Reply is something that a Slate event returns to the system to notify it about certain aspect of how an event was handled. For example, a widget may handle an OnMouseDown event by asking the system to give mouse capture to a specific Widget. To do this, return FReply::CaptureMouse( NewMouseCapture ).</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <p>No constructors are accessible with public or protected access.</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AffectsAllUsers/index.html"><nobr><p>AffectsAllUsers()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If the event replied with a request to change the user focus whether it should do it for all users or just the current UserIndex</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BeginDragDrop/index.html"><nobr><p>BeginDragDrop</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../FDragDropOperation/index.html" >FDragDropOperation</a> > In...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.BeginDragDrop( Content ) to initiate a drag and drop operation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CaptureJoystick/index.html"><nobr><p>CaptureJoystick</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> > InJoystickCap...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInAllJoysticks<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CaptureMouse/index.html"><nobr><p>CaptureMouse</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> > InMouseCaptor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.CaptureMouse( SomeWidget ) as a means of asking the system to forward all mouse events to SomeWidget</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearUserFocus/1/index.html"><nobr><p>ClearUserFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInAllUsers<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.<a id="content_link" href="ClearUserFocus/1/index.html" >ClearUserFocus()</a> to ask the system to clear user focus</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClearUserFocus/2/index.html"><nobr><p>ClearUserFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EFocusCause ReasonFocusIsChanging,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInAllUsers<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.<a id="content_link" href="ClearUserFocus/1/index.html" >ClearUserFocus()</a> to ask the system to clear user focus</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DetectDrag/index.html"><nobr><p>DetectDrag</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> >&amp; Detec...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../InputCore/FKey/index.html" >FKey</a> MouseButton<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ask Slate to detect if a user started dragging in this widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndDragDrop/index.html"><nobr><p>EndDragDrop()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.<a id="content_link" href="EndDragDrop/index.html" >EndDragDrop()</a> to request that the current drag/drop operation be terminated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDetectDragRequest/index.html"><nobr><p>GetDetectDragRequest()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>A widget for which to detect a drag; Invalid SharedPtr if no drag detection requested</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../InputCore/FKey/index.html" >FKey</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDetectDragRequestButton/index.html"><nobr><p>GetDetectDragRequestButton()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The mouse button for which we are detecting a drag</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDragDropContent/index.html"><nobr><p>GetDragDropContent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The Content that we should use for the Drag and Drop operation; Invalid SharedPtr if a drag and drop operation is not requested</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EFocusCause</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocusCause/index.html"><nobr><p>GetFocusCause()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the reason that a focus change is being requested.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFocusRecepient/index.html"><nobr><p>GetFocusRecepient()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetJoystickCaptor/index.html"><nobr><p>GetJoystickCaptor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMouseCaptor/index.html"><nobr><p>GetMouseCaptor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If the event replied with a request to capture the mouse, this returns the desired mouse captor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetMouseLockWidget/index.html"><nobr><p>GetMouseLockWidget()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the widget that the mouse should be locked to (if any)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EUINavigatio...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNavigationType/index.html"><nobr><p>GetNavigationType()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the navigation type (Invalid if no navigation is requested).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Misc/TOptional/index.html" >TOptio</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRequestedMousePos/index.html"><nobr><p>GetRequestedMousePos()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The coordinates of the requested mouse position</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../Core/Templates/TSharedPtr/index.html" >TShare</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetUserFocusRecepient/index.html"><nobr><p>GetUserFocusRecepient()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>When not nullptr, user focus has been requested to be set on the FocusRecipient.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Handled/index.html"><nobr><p>Handled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Handled/index.html" >FReply::Handled()</a> to let the system know that an event was handled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LockMouseToWidget/index.html"><nobr><p>LockMouseToWidget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> > InWidget<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.LockMouseToWidget( SomeWidget ) as a means of asking the system to Lock the mouse so it cannot move out of the bounds of the widget.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreventThrottling/index.html"><nobr><p>PreventThrottling()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ensures throttling for Slate UI responsiveness is not done on mouse down</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseJoystickCapture/index.html"><nobr><p>ReleaseJoystickCapture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInAllJoysticks<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseMouseCapture/index.html"><nobr><p>ReleaseMouseCapture()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.ReleaseMouse() to ask the system to release mouse capture NOTE: Deactivates high precision mouse movement if activated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReleaseMouseLock/index.html"><nobr><p>ReleaseMouseLock()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.<a id="content_link" href="ReleaseMouseLock/index.html" >ReleaseMouseLock()</a> to ask the system to release mouse lock on a widget</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetKeyboardFocus/index.html"><nobr><p>SetKeyboardFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> > GiveMeFocus,<br />&nbsp;&nbsp;&nbsp;&nbsp;EFocusCause ReasonFocusIsChanging<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetMousePos/index.html"><nobr><p>SetMousePos</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FIntPoint/index.html" >FIntPoint</a>&amp; NewMousePos<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An even should return <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.SetMousePos to ask Slate to move the mouse cursor to a different location</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetNavigation/index.html"><nobr><p>SetNavigation</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EUINavigation InNavigationType<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.SetNavigation( NavigationType ) as a means of asking the system to attempt a navigation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetUserFocus/index.html"><nobr><p>SetUserFocus</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> > GiveMeFocus,<br />&nbsp;&nbsp;&nbsp;&nbsp;EFocusCause ReasonFocusIsChanging,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bInAllUsers<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return <a id="content_link" href="Handled/index.html" >FReply::Handled()</a>.SetUserFocus( SomeWidget ) as a means of asking the system to set users focus to the provided widget</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldEndDragDrop/index.html"><nobr><p>ShouldEndDragDrop()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the user has asked us to terminate the ongoing drag/drop operation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldReleaseJoystick/index.html"><nobr><p>ShouldReleaseJoystick()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldReleaseMouse/index.html"><nobr><p>ShouldReleaseMouse()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if this reply indicated that we should release mouse capture as a result of the event being handled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldReleaseMouseLock/index.html"><nobr><p>ShouldReleaseMouseLock()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if the reply indicated that we should release mouse lock</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldReleaseUserFocus/index.html"><nobr><p>ShouldReleaseUserFocus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if this reply indicated that we should release focus as a result of the event being handled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldSetUserFocus/index.html"><nobr><p>ShouldSetUserFocus()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if this reply indicated that we should set focus as a result of the event being handled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldThrottle/index.html"><nobr><p>ShouldThrottle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Whether or not we should throttle on mouse down</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldUseHighPrecisionMouse/index.html"><nobr><p>ShouldUseHighPrecisionMouse()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>True if this reply indicated that we should use high precision mouse movement</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Unhandled/index.html"><nobr><p>Unhandled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>An event should return a <a id="content_link" href="Unhandled/index.html" >FReply::Unhandled()</a> to let the system know that an event was unhandled.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FReply</a> &amp;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UseHighPrecisionMouseMovement/index.html"><nobr><p>UseHighPrecisionMouseMovement</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Templates/TSharedRef/index.html" >TSharedRef</a>&lt; <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a> > InMouseCaptor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Enables the use of high precision (raw input) mouse movement, for more accurate mouse movement without mouse ballistics NOTE: This implies mouse capture and hidden mouse movement.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >SlateCore</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;SlateCore&#47;Public&#47;Input&#47;Reply.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

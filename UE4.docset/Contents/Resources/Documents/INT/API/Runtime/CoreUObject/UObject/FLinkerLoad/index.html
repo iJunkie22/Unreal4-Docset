@@ -1,0 +1,1147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FLinkerLoad</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FLinkerLoad" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\CoreUObject, API\Runtime\CoreUObject\UObject" />
+<meta name="description" content="Handles loading Unreal package files, including reading [UObject](API\Runtime\CoreUObject\UObject\UObject) data from disk." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >CoreUObject</a></strong> &gt; <strong><a id="content_link" href="../index.html" >UObject</a></strong> &gt; <span id="crumbs_page_title">FLinkerLoad</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FLinkerLoad</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../FLinker/index.html"><p>FLinker</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../Serialization/FArchiveUObject/index.html"><p>FArchiveUObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_2"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FLinkerLoad</p></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FLinkerLoad :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../FLinker/index.html" >FLinker</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../Serialization/FArchiveUObject/index.html" >FArchiveUObject</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Handles loading Unreal package files, including reading <a id="content_link" href="../UObject/index.html" >UObject</a> data from disk.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../Serialization/FAsyncPackage/index.html" >FAsyncPackage</a> &amp;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AsyncRoot/index.html"><p>AsyncRoot</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The async package associated with this linker</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHaveImportsBeenVerified</p>
+	</td>
+	<td class="desc-cell">
+		<p>Indicates whether the imports for this loader have been verified</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../Serialization/FUntypedBulkData/index.html" >FUntype</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BulkDataLoaders/index.html"><p>BulkDataLoaders</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Bulk data that does not need to be loaded when the linker is loaded.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32[256]</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ExportHash</p>
+	</td>
+	<td class="desc-cell">
+		<p>Hash table for exports.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Serialization/FArchive/index.html" >FArchive</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Loader/index.html"><p>Loader</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>uint32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>LoadFlags</p>
+	</td>
+	<td class="desc-cell">
+		<p>Flags determining loading behavior.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <p>No constructors are accessible with public or protected access.</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FLinkerLoad()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddGameNameRedirect/index.html"><nobr><p>AddGameNameRedirect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> OldName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> NewName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add a new redirect from old game name to new game name for ImportMap</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AsyncPreloadPackage/index.html"><nobr><p>AsyncPreloadPackage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; PackageName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Kick off an async load of a package file into memory</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BuildPathName/index.html"><nobr><p>BuildPathName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; OutPathName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a> ExportIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Builds a string containing the full path for a resource in the export table.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../UObject/index.html" >UObject</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Create/index.html"><nobr><p>Create</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UClass/index.html" >UClass</a>&#42; ObjectClass,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ObjectName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UObject/index.html" >UObject</a>&#42; Outer,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 InLoadFlags,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool Checked<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function to create the instance of, or verify the presence of, an object as found in this Linker.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateActiveRedirectsMap/index.html"><nobr><p>CreateActiveRedirectsMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; GEngineIniName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add redirects to <a id="content_link" href="index.html" >FLinkerLoad</a> static map</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateImportClassAndPackage/index.html"><nobr><p>CreateImportClassAndPackage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ClassName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> PackageName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a>&amp; ClassIdx,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a>&amp; PackageIdx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Attempts to find the index for the given class object in the import list and adds it + its package if it does not exist</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateLinker/index.html"><nobr><p>CreateLinker</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UPackage/index.html" >UPackage</a>&#42; Parent,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Filename,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 LoadFlags<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates and returns a <a id="content_link" href="index.html" >FLinkerLoad</a> object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Detach/index.html"><nobr><p>Detach()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Detaches linker from bulk data/ exports and removes itself from array of loaders.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../UObject/index.html" >UObject</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindExistingExport/index.html"><nobr><p>FindExistingExport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ExportIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Before loading a persistent object from disk, this function can be used to discover the object in memory.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindExistingLinkerForPackage/index.html"><nobr><p>FindExistingLinkerForPackage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UPackage/index.html" >UPackage</a>&#42; Package<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Looks for an existing linker for the given package, without trying to make one if it doesn't exist</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindExportIndex/index.html"><nobr><p>FindExportIndex</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ClassName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ClassPackage,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ObjectName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a> ExportOuterIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Find the index of a specified object without regard to specific package.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindImportClassAndPackage/index.html"><nobr><p>FindImportClassAndPackage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ClassName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a>&amp; ClassIdx,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a>&amp; PackageIdx<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Locates the class adjusted index and its package adjusted index for a given class name in the import map</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindNewNameForClass/index.html"><nobr><p>FindNewNameForClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> OldClassName,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bIsInstance<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Utility functions to query the object name redirects list for the current name for a class </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindPreviousNamesForClass/index.html"><nobr><p>FindPreviousNamesForClass</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a> CurrentClassPath,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bIsInstance<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Utility functions to query the object name redirects list for previous names for a class </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindSubobjectRedirectName/index.html"><nobr><p>FindSubobjectRedirectName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a>&amp; Name<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Used by Matinee to fixup component renaming</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FixupExportMap/index.html"><nobr><p>FixupExportMap()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>WITH_EDITOR.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GatherExportDependencies/index.html"><nobr><p>GatherExportDependencies</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ExportIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TSet/index.html" >TSet</a>&lt; <a id="content_link" href="../FDependencyRef/index.html" >FDependencyRef</a> >&amp; Dependenci...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSkipLoadedObjects<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Recursively gathers the dependencies of a given export (the recursive chain of imports and their imports, and so on)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GatherImportDependencies/index.html"><nobr><p>GatherImportDependencies</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ImportIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TSet/index.html" >TSet</a>&lt; <a id="content_link" href="../FDependencyRef/index.html" >FDependencyRef</a> >&amp; Dependenci...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bSkipLoadedObjects<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Recursively gathers the dependencies of a given import (the recursive chain of imports and their imports, and so on)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetExportClassPackage/index.html"><nobr><p>GetExportClassPackage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 i<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetListOfPackagesInPackagePrecac-/index.html"><nobr><p>GetListOfPackagesInPackagePrecacheMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a> >&amp; ListOfPackages<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Fills in the passed in <a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a> with the packages that are in its PrecacheMap</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwnerThreadId/index.html"><nobr><p>GetOwnerThreadId()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns ID of the thread that created this linker</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasFinishedInitialization/index.html"><nobr><p>HasFinishedInitialization()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns whether linker has finished (potentially) async initialization.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InvalidateExport/index.html"><nobr><p>InvalidateExport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UObject/index.html" >UObject</a>&#42; OldObject<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Invalidates the future loading of a specific object, so that subsequent loads will fail This is used to invalidate sub objects of a replaced object that may no longer be valid</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsBlueprintFinalizationPending/index.html"><nobr><p>IsBlueprintFinalizationPending()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Query method to help handle recursive behavior.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LoadAllObjects/index.html"><nobr><p>LoadAllObjects</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bForcePreload<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Loads all objects in package.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LoadAndDetachAllBulkData/index.html"><nobr><p>LoadAndDetachAllBulkData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Detaches linker from bulk data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PRIVATE_ForceLoadAllDependencies/index.html"><nobr><p>PRIVATE_ForceLoadAllDependencies</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UPackage/index.html" >UPackage</a>&#42; Package<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Wraps a call to the package linker's ResolveAllImports().</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PRIVATE_PatchNewObjectIntoExport/index.html"><nobr><p>PRIVATE_PatchNewObjectIntoExport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UObject/index.html" >UObject</a>&#42; OldObject,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UObject/index.html" >UObject</a>&#42; NewObject<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Replaces OldObject's entry in its linker with NewObject, so that all subsequent loads of OldObject will return NewObject.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ResolveResourceName/index.html"><nobr><p>ResolveResourceName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FPackageIndex/index.html" >FPackageIndex</a> ResourceIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the ObjectName associated with the resource indicated.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SerializeGatherableTextDataMap/index.html"><nobr><p>SerializeGatherableTextDataMap</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bForceEnableForCommandlet<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Serializes the gatherable text data container.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SerializeThumbnails/index.html"><nobr><p>SerializeThumbnails</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bForceEnableForCommandlet<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Serializes thumbnails</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StaticInit/index.html"><nobr><p>StaticInit</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UClass/index.html" >UClass</a>&#42; InUTexture2DStaticClas...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initialize the static variables</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../ELinkerType__Type/index.html" >ELinkerType:</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StaticType/index.html"><nobr><p>StaticType()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Variables.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Verify/index.html"><nobr><p>Verify()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>EVerifyResul...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="VerifyImport/index.html"><nobr><p>VerifyImport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ImportIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>A wrapper around VerifyImportInner.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>COREUOBJECT_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WillTextureBeLoaded/index.html"><nobr><p>WillTextureBeLoaded</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UClass/index.html" >UClass</a>&#42; Class,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 ExportIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks if the specified export should be loaded or not.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_4');">
+        <p>Overridden from FArchive</p>
+    </div>
+<div id="functions_4">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FlushCache/index.html"><nobr><p>FlushCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Flush Loader Cache</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetArchiveName/index.html"><nobr><p>GetArchiveName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the name of the Archive.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FLinker/index.html" >FLinker</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLinker/index.html"><nobr><p>GetLinker()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>If this archive is a <a id="content_link" href="index.html" >FLinkerLoad</a> or <a id="content_link" href="../FLinkerSave/index.html" >FLinkerSave</a>, returns a pointer to the <a id="content_link" href="../FLinker/index.html" >FLinker</a> portion.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkScriptSerializationEnd/index.html"><nobr><p>MarkScriptSerializationEnd</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UObject/index.html" >UObject</a>&#42; Obj<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when an object stops serializing property data using script serialization.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MarkScriptSerializationStart/index.html"><nobr><p>MarkScriptSerializationStart</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UObject/index.html" >UObject</a>&#42; Obj<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when an object begins serializing property data using script serialization.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Preload/index.html"><nobr><p>Preload</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UObject/index.html" >UObject</a>&#42; Object<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Serialize the object data for the specified object from the unreal package file.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'classes');">
+        <p>Classes</p>
+    </div>
+<div id="classes">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public struct" title="Public struct" width="18" src="./../../../../../../images/./api_struct_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="FSubobjectRedirect/index.html"><p>FSubobjectRedirect</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Object name to required class and new name for load-time remapping</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'enums');">
+        <p>Enums</p>
+    </div>
+<div id="enums">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Private enum" title="Private enum" width="18" src="./../../../../../../images/./api_enum_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="ELinkerStatus/index.html"><p>ELinkerStatus</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Linker loading status.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Private enum" title="Private enum" width="18" src="./../../../../../../images/./api_enum_protected.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="EVerifyResult/index.html"><p>EVerifyResult</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Verify result.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constants');">
+        <p>Constants</p>
+    </div>
+<div id="constants">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bActiveRedirectsMapInitialized/index.html"><p>bActiveRedirectsMapInitialized</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Makes sure active redirects map has been initialized</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="GameNameRedirects/index.html"><p>GameNameRedirects</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Object name to NewClassName for export map.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="NAME_LoadErrors/index.html"><p>NAME_LoadErrors</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="ObjectNameRedirects/index.html"><p>ObjectNameRedirects</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>OldClassName to NewClassName for ImportMap</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="ObjectNameRedirectsInstanceOnly/index.html"><p>ObjectNameRedirectsInstanceOnly</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>OldClassName to NewClassName for ImportMap.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="ObjectNameRedirectsObjectOnly/index.html"><p>ObjectNameRedirectsObjectOnly</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>OldClassName to NewClassName for ExportMap.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PackagePrecacheMap/index.html"><p>PackagePrecacheMap</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Map that keeps track of any precached full package reads</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PluginNameRedirects/index.html"><p>PluginNameRedirects</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Old struct name to new struct name mapping.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="StructNameRedirects/index.html"><p>StructNameRedirects</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Game package name to new game package name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="SubobjectNameRedirects/index.html"><p>SubobjectNameRedirects</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Old plugin name to new plugin name mapping.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="UTexture2DStaticClass/index.html"><p>UTexture2DStaticClass</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Allows access to UTexture2D::StaticClass() without linking Core with Engine</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >CoreUObject</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;CoreUObject&#47;Public&#47;UObject&#47;Linker.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,1011 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FGraphEditorCommandsImpl</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FGraphEditorCommandsImpl" />
+<meta name="crumbs" content="%ROOT%, API, API\Editor, API\Editor\GraphEditor" />
+<meta name="description" content="Copyright 1998-2015 Epic Games, Inc. All Rights Reserved." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Editor</a></strong> &gt; <strong><a id="content_link" href="../index.html" >GraphEditor</a></strong> &gt; <span id="crumbs_page_title">FGraphEditorCommandsImpl</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FGraphEditorCommandsImpl</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Core/Templates/TSharedFromThis/index.html"><p>TSharedFromThis</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Slate/Framework/Commands/FBindingContext/index.html"><p>FBindingContext</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../Runtime/Slate/Framework/Commands/TCommands/index.html"><p>TCommands</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>FGraphEditorCommandsImpl</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FGraphEditorCommandsImpl : public <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/TCommands/index.html" >TCommands&lt; FGraphEditorCommandsImpl ></a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddBlendListPin/index.html"><p>AddBlendListPin</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Blend list options.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddBreakpoint/index.html"><p>AddBreakpoint</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddExecutionPin/index.html"><p>AddExecutionPin</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Execution sequence specific commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddOptionPin/index.html"><p>AddOptionPin</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Select node specific commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AddParentNode/index.html"><p>AddParentNode</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Event / Function Entry commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlignNodesBottom/index.html"><p>AlignNodesBottom</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlignNodesCenter/index.html"><p>AlignNodesCenter</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlignNodesLeft/index.html"><p>AlignNodesLeft</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlignNodesMiddle/index.html"><p>AlignNodesMiddle</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlignNodesRight/index.html"><p>AlignNodesRight</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AlignNodesTop/index.html"><p>AlignNodesTop</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Alignment commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AssignReferencedActor/index.html"><p>AssignReferencedActor</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BreakNodeLinks/index.html"><p>BreakNodeLinks</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BreakPinLinks/index.html"><p>BreakPinLinks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Pin-specific actions.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ChangePinType/index.html"><p>ChangePinType</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CollapseNodes/index.html"><p>CollapseNodes</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Encapsulation commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CollapseSelectionToFunction/index.html"><p>CollapseSelectionToFunction</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CollapseSelectionToMacro/index.html"><p>CollapseSelectionToMacro</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConvertToBSEvaluator/index.html"><p>ConvertToBSEvaluator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Options for blendspace sequence/evaluator converter</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConvertToBSPlayer/index.html"><p>ConvertToBSPlayer</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConvertToSeqEvaluator/index.html"><p>ConvertToSeqEvaluator</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Options for sequence/evaluator converter</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConvertToSeqPlayer/index.html"><p>ConvertToSeqPlayer</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateComment/index.html"><p>CreateComment</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Create a comment node</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DisableBreakpoint/index.html"><p>DisableBreakpoint</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DistributeNodesHorizontally/index.html"><p>DistributeNodesHorizontally</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DistributeNodesVertically/index.html"><p>DistributeNodesVertically</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EnableBreakpoint/index.html"><p>EnableBreakpoint</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ExpandNodes/index.html"><p>ExpandNodes</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="FindReferences/index.html"><p>FindReferences</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Find references.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GoToDefinition/index.html"><p>GoToDefinition</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Jumps to a call function node's graph.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GoToDocumentation/index.html"><p>GoToDocumentation</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Go to node documentation.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GotoNativeFunctionDefinition/index.html"><p>GotoNativeFunctionDefinition</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Goto native code actions.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GotoNativeVariableDefinition/index.html"><p>GotoNativeVariableDefinition</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HideNoConnectionNoDefaultPins/index.html"><p>HideNoConnectionNoDefaultPins</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HideNoConnectionPins/index.html"><p>HideNoConnectionPins</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OpenRelatedAsset/index.html"><p>OpenRelatedAsset</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Option for opening the asset related to the graph node</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PromoteSelectionToFunction/index.html"><p>PromoteSelectionToFunction</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PromoteSelectionToMacro/index.html"><p>PromoteSelectionToMacro</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PromoteToLocalVariable/index.html"><p>PromoteToLocalVariable</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PromoteToVariable/index.html"><p>PromoteToVariable</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RecombineStructPin/index.html"><p>RecombineStructPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReconstructNodes/index.html"><p>ReconstructNodes</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveBlendListPin/index.html"><p>RemoveBlendListPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveBreakpoint/index.html"><p>RemoveBreakpoint</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Debugging commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveExecutionPin/index.html"><p>RemoveExecutionPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveOptionPin/index.html"><p>RemoveOptionPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveOtherStructVarPins/index.html"><p>RemoveOtherStructVarPins</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveThisStructVarPin/index.html"><p>RemoveThisStructVarPin</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>SetFieldsInStruct specific commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RestoreAllStructVarPins/index.html"><p>RestoreAllStructVarPins</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SelectBone/index.html"><p>SelectBone</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>SkeletalControl specific commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SelectReferenceInLevel/index.html"><p>SelectReferenceInLevel</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShowAllPins/index.html"><p>ShowAllPins</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Pin visibility modes.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SplitStructPin/index.html"><p>SplitStructPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StartWatchingPin/index.html"><p>StartWatchingPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StopWatchingPin/index.html"><p>StopWatchingPin</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StraightenConnections/index.html"><p>StraightenConnections</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ToggleBreakpoint/index.html"><p>ToggleBreakpoint</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ZoomIn/index.html"><p>ZoomIn</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Zoom in and out on the graph editor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Runtime/Core/Templates/TSharedPtr/index.html" >TSharedPtr</a>&lt; <a id="content_link" href="../../../Runtime/Slate/Framework/Commands/FUICommandInfo/index.html" >FUI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ZoomOut/index.html"><p>ZoomOut</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FGraphEditorCommandsImpl()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FGraphEditorCommandsImpl()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from TCommands</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>GRAPHEDITOR_...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RegisterCommands/index.html"><nobr><p>RegisterCommands()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Pure virtual to override; describe and instantiate the commands in here by using the UI COMMAND macro.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >GraphEditor</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Editor&#47;GraphEditor&#47;Public&#47;GraphEditorActions.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

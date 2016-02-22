@@ -1,0 +1,2889 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UGameplayAbility</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UGameplayAbility" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\GameplayAbilities, API\Runtime\GameplayAbilities\Abilities" />
+<meta name="description" content="Abilities define custom gameplay logic that can be activated by players or external game logic." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >GameplayAbilities</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Abilities</a></strong> &gt; <span id="crumbs_page_title">UGameplayAbility</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UGameplayAbility</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UGameplayAbility</p><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UGameplayAbility_CharacterJump/index.html"><p>UGameplayAbility_CharacterJump</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../UGameplayAbility_Montage/index.html"><p>UGameplayAbility_Montage</p></a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Blueprintable/index.html" >Blueprintable</a>&#41;<br />class UGameplayAbility :<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;public <a id="content_link" href="../../../GameplayTasks/IGameplayTaskOwnerInterface/index.html" >IGameplayTaskOwnerInterface</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Abilities define custom gameplay logic that can be activated by players or external game logic.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityTags/index.html"><p>AbilityTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability has these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FAbilityTriggerData/index.html" >FAbilit</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AbilityTriggers/index.html"><p>AbilityTriggers</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Triggers to determine if this ability should execute in response to an event</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActivationBlockedTags/index.html"><p>ActivationBlockedTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability is blocked if the activating actor/component has any of these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActivationOwnedTags/index.html"><p>ActivationOwnedTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Tags to apply to activating owner while this ability is active</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActivationRequiredTags/index.html"><p>ActivationRequiredTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability can only be activated if the activating actor/component has all of these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/UObject/TWeakObjectPtr/index.html" >TWeakOb</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActiveTasks/index.html"><p>ActiveTasks</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Ability Tasks</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasBlueprintActivate</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasBlueprintActivateFromEvent</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasBlueprintCanUse</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bHasBlueprintShouldAbilityRespondToEvent</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsActive</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the ability is currently active. For instance per owner abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsBlockingOtherAbilities</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the ability block flags are currently enabled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bIsCancelable</p>
+	</td>
+	<td class="desc-cell">
+		<p>True if the ability is currently cancelable, if not will only be canceled by hard EndAbility calls</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BlockAbilitiesWithTag/index.html"><p>BlockAbilitiesWithTag</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Abilities with these tags are blocked while this ability is active</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bReplicateInputDirectly</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, this ability will always replicate input press/release events to the server.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bRetriggerInstancedAbility</p>
+	</td>
+	<td class="desc-cell">
+		<p>If true, and trying to activate an already active instanced ability, end it and re-trigger it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bServerRespectsR-/index.html"><p>bServerRespectsRemoteAbilityCancellation</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>If this is set, the server-side version of the ability can be canceled by the client-side version.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagQuery/index.html" >FGameplayTagQue</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CancelAbilitiesM-/index.html"><p>CancelAbilitiesMatchingTagQuery</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Ability exclusion / canceling</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CancelAbilitiesWithTag/index.html"><p>CancelAbilitiesWithTag</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Abilities with these tags are cancelled when this ability is executed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>CancelTaskInstanceNames</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" />
+<img alt="visibledefaultsonly" title="visibledefaultsonly" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagQuery/index.html" >FGameplayTagQue</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConstTagQuery/index.html"><p>ConstTagQuery</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="visibledefaultsonly" title="visibledefaultsonly" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CooldownGameplayEffect/index.html"><p>CooldownGameplayEffect</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Deprecated. Use CooldownGameplayEffectClass instead</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; cl...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CooldownGameplay-/index.html"><p>CooldownGameplayEffectClass</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Cooldowns </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="visibledefaultsonly" title="visibledefaultsonly" width="18" src="./../../../../../../images/./api_variable_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CostGameplayEffect/index.html"><p>CostGameplayEffect</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Deprecated. Use CostGameplayEffectClass instead</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; cl...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CostGameplayEffectClass/index.html"><p>CostGameplayEffectClass</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This GameplayEffect represents the cost (mana, stamina, etc) of the ability.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilit</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentActivationInfo/index.html"><p>CurrentActivationInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This is information specific to this instance of the ability.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentActorInfo/index.html"><p>CurrentActorInfo</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This is shared, cached information about the thing using us E.g, Actor&#42;, MovementComponent&#42;, AnimInstance, etc.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category" title="Category" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" />
+<img alt="BlueprintReadOnly" title="BlueprintReadOnly" width="18" src="./../../../../../../images/./api_variable_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventD</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentEventData/index.html"><p>CurrentEventData</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a> &amp;#...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentMontage/index.html"><p>CurrentMontage</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Active montage being played by this ability</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilit</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CurrentSpecHandle/index.html"><p>CurrentSpecHandle</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>EndTaskInstanceNames</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TEnumAsByte/index.html" >TEnumAsByte</a>&lt; <a id="content_link" href="../EGameplayAbilityInstancingPolicy-/index.html" >EG</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InstancingPolicy/index.html"><p>InstancingPolicy</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TEnumAsByte/index.html" >TEnumAsByte</a>&lt; <a id="content_link" href="../EGameplayAbilityNetExecutionPoli-/index.html" >EG</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="NetExecutionPolicy/index.html"><p>NetExecutionPolicy</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FGenericAbility...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnConfirmDelegate/index.html"><p>OnConfirmDelegate</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Callback for when this ability has been confirmed by the server</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FOnGameplayAbil...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnGameplayAbilit-/index.html"><p>OnGameplayAbilityCancelled</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Notification that the ability is being cancelled. Called before OnGameplayAbilityEnded.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FOnGameplayAbil...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnGameplayAbilityEnded/index.html"><p>OnGameplayAbilityEnded</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Notification that the ability has ended. Set using TryActivateAbility.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FOnGameplayAbil...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnGameplayAbilit-_1/index.html"><p>OnGameplayAbilityStateEnded</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Used by the ability state task to handle when a state is ended</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TEnumAsByte/index.html" >TEnumAsByte</a>&lt; <a id="content_link" href="../EGameplayAbilityReplicationPolic-/index.html" >EG</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ReplicationPolicy/index.html"><p>ReplicationPolicy</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SourceBlockedTags/index.html"><p>SourceBlockedTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability is blocked if the source actor/component has any of these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SourceRequiredTags/index.html"><p>SourceRequiredTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability can only be activated if the source actor/component has all of these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TargetBlockedTags/index.html"><p>TargetBlockedTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability is blocked if the target actor/component has any of these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" />
+<img alt="UProperty" title="UProperty" width="18" src="./../../../../../../images/./api_variable_meta.png" />
+<img alt="Category, EditDefaultsOnly" title="Category, EditDefaultsOnly" width="18" src="./../../../../../../images/./api_variable_meta_editor.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagCon</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TargetRequiredTags/index.html"><p>TargetRequiredTags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>This ability can only be activated if the target actor/component has all of these tags</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected variable" title="Protected variable" width="18" src="./../../../../../../images/./api_variable_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TSet/index.html" >TSet</a>&lt; <a id="content_link" href="../../../GameplayTags/FGameplayTag/index.html" >FGameplay</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TrackedGameplayCues/index.html"><p>TrackedGameplayCues</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>GameplayCues that were added during this ability that will get automatically removed when it ends</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ActivateAbility/index.html"><nobr><p>ActivateAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventData</a>&#42; Trig...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyAbilityTags-/index.html"><nobr><p>ApplyAbilityTagsToGameplayEffectSpec</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayEffectSpec/index.html" >FGameplayEffectSpec</a>&amp; Spec,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&#42; AbilityS...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add the Ability's tags to the given GameplayEffectSpec.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyCooldown/index.html"><nobr><p>ApplyCooldown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Applies CooldownGameplayEffect to the target</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyCost/index.html"><nobr><p>ApplyCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Applies the ability's cost to the target</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FActiveGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyGameplayEff-_1/index.html"><nobr><p>ApplyGameplayEffectSpecToOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ab...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEffectSpecHandle</a> Spe...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FAct</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyGameplayEff-_3/index.html"><nobr><p>ApplyGameplayEffectSpecToTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ab...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEffectSpecHandle</a> Spe...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Ta...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FActiveGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyGameplayEff-/index.html"><nobr><p>ApplyGameplayEffectToOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>&#42; Gamepla...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float GameplayEffectLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Non blueprintcallable, safe to call on CDO/NonInstance abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FAct</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplyGameplayEff-_2/index.html"><nobr><p>ApplyGameplayEffectToTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Ta...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a> > Game...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float GameplayEffectLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Non blueprintcallable, safe to call on CDO/NonInstance abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FActiveGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BP_ApplyGameplay-/index.html"><nobr><p>BP_ApplyGameplayEffectToOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a> > Game...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 GameplayEffectLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>GameplayEffects 
+</p><p>Apply Self</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FAct</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BP_ApplyGameplay-_1/index.html"><nobr><p>BP_ApplyGameplayEffectToTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Ta...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a> > Game...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 GameplayEffectLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Apply Target</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BP_RemoveGamepla-/index.html"><nobr><p>BP_RemoveGameplayEffectFromOwnerWithAssetTags</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a> WithAssetTags,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 StacksToRemove<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Remove Self 
+</p><p>Removes GAmeplayEffects from owner which match the given asset level tags.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="BP_RemoveGamepla-_1/index.html"><nobr><p>BP_RemoveGameplayEffectFromOwnerWithGrantedTags</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a> WithGrantedTa...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 StacksToRemove<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallActivateAbility/index.html"><nobr><p>CallActivateAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FOnGameplayAbilityEnded&#42; OnGam...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventData</a>&#42; Trig...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanActivateAbility/index.html"><nobr><p>CanActivateAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; S...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; T...,<br />&nbsp;&nbsp;&nbsp;&nbsp;OUT <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; Opt...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The important functions: CanActivateAbility()    - const function to see if ability is activatable.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanBeCanceled/index.html"><nobr><p>CanBeCanceled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if this ability can be canceled</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CancelAbility/index.html"><nobr><p>CancelAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bReplicateCancelAbility<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>CancelAbility </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CancelTaskByInstanceName/index.html"><nobr><p>CancelTaskByInstanceName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InstanceName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add any task with this instance name to a list to be canceled (not ended) next frame.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CheckCooldown/index.html"><nobr><p>CheckCooldown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;OUT <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; Opt...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks cooldown. returns true if we can be used again. False if not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CheckCost/index.html"><nobr><p>CheckCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;OUT <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; Opt...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks cost. returns true if we can pay for the ability. False if not</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CommitAbility/index.html"><nobr><p>CommitAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CommitAbilityCooldown/index.html"><nobr><p>CommitAbilityCooldown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CommitAbilityCost/index.html"><nobr><p>CommitAbilityCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CommitCheck/index.html"><nobr><p>CommitCheck</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The last chance to fail before commiting -This will usually be the same as CanActivateAbility.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CommitExecute/index.html"><nobr><p>CommitExecute</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Does the commit atomically (consume resources, do cooldowns, etc)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConfirmActivateSucceed/index.html"><nobr><p>ConfirmActivateSucceed()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called on a predictive ability when the server confirms its execution</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConfirmTaskByIns-/index.html"><nobr><p>ConfirmTaskByInstanceName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InstanceName,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEndTask<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Destroys instanced-per-execution abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ConvertDeprecate-/index.html"><nobr><p>ConvertDeprecatedGameplayEffectReferencesToBlueprintReferences</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>&#42; OldGE,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a> > NewG...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Temporary conversion code.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DoesAbilitySatis-/index.html"><nobr><p>DoesAbilitySatisfyTagRequirements</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../UAbilitySystemComponent/index.html" >UAbilitySystemComponent</a>&amp; Abi...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; S...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; T...,<br />&nbsp;&nbsp;&nbsp;&nbsp;OUT <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&#42; Opt...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if none of the ability's tags are blocked and if it doesn't have a "Blocking" tag and has all "Required" tags.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndAbility/index.html"><nobr><p>EndAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bReplicateEndAbility<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Native function, called if an ability ends normally or abnormally.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndAbilityState/index.html"><nobr><p>EndAbilityState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> OptionalStateNameToEnd<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ends any active ability state task with the given name.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndOrCancelTasks-/index.html"><nobr><p>EndOrCancelTasksByInstanceName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Internal function, cancels all the tasks we asked to cancel last frame (by instance name).</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndTaskByInstanceName/index.html"><nobr><p>EndTaskByInstanceName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InstanceName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Add any task with this instance name to a list to be ended (not canceled) next frame.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAbilityLevel/2/index.html"><nobr><p>GetAbilityLevel</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns current ability level for non instanced abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAbilityLevel/1/index.html"><nobr><p>GetAbilityLevel()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Ability Levels 
+Returns current level of the Ability</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetActorInfo/index.html"><nobr><p>GetActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the actor info associated with this ability, has cached pointers to useful objects</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAvatarActorFr-/index.html"><nobr><p>GetAvatarActorFromActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the physical actor that is executing this ability. May be null</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayEffectContextHandle/index.html" >FGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetContextFromOwner/index.html"><nobr><p>GetContextFromOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Op...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Generates a GameplayEffectContextHandle from our owner and an optional TargetData.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCooldownGamep-/index.html"><nobr><p>GetCooldownGameplayEffect()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the gameplay effect used to determine cooldown</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCooldownTags/index.html"><nobr><p>GetCooldownTags()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCooldownTimeRemaining/index.html"><nobr><p>GetCooldownTimeRemaining</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the time in seconds remaining on the currently active cooldown.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCooldownTimeR-/index.html"><nobr><p>GetCooldownTimeRemainingAndDuration</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; TimeRemaining,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; CooldownDuration<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the time in seconds remaining on the currently active cooldown and the original duration for this cooldown.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCostGameplayEffect/index.html"><nobr><p>GetCostGameplayEffect()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the gameplay effect used to apply cost</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayAbilitySpec/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentAbilitySpec/index.html"><nobr><p>GetCurrentAbilitySpec()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the actual AbilitySpec for this ability. Can only be called on instanced abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentAbilit-/index.html"><nobr><p>GetCurrentAbilitySpecHandle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the current AbilitySpecHandle- can only be called on instanced abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentActivationInfo/index.html"><nobr><p>GetCurrentActivationInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the current activation info bound to this ability - can only be called on instanced abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentActiva-/index.html"><nobr><p>GetCurrentActivationInfoRef()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentActorInfo/index.html"><nobr><p>GetCurrentActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the current actor info bound to this ability - can only be called on instanced abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentMontage/index.html"><nobr><p>GetCurrentMontage()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the currently playing montage for this ability, if any</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCurrentSourceObject/index.html"><nobr><p>GetCurrentSourceObject()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the SourceObject associated with this ability. Can only be called on instanced abilities.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayEffectContextHandle/index.html" >FGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetEffectContext/index.html"><nobr><p>GetEffectContext</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns an effect context, given a specified actor info</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../EGameplayAbilityInstancingPolicy-/index.html" >EGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetInstancingPolicy/index.html"><nobr><p>GetInstancingPolicy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../EGameplayAbilityNetExecutionPoli-/index.html" >EGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetNetExecutionPolicy/index.html"><nobr><p>GetNetExecutionPolicy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOutgoingGamep-/index.html"><nobr><p>GetOutgoingGameplayEffectSpec</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>&#42; Gamepla...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Level<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Convenience method for abilities to get outgoing gameplay effect specs (for example, to pass on to projectiles to apply to whoever they hit)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwningActorFr-/index.html"><nobr><p>GetOwningActorFromActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the actor that owns this ability, which may not have a physical location</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/Components/USkeletalMeshComponent/index.html" >USkeletalMes</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwningCompone-/index.html"><nobr><p>GetOwningComponentFromActorInfo()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Convenience method for abilities to get skeletal mesh component - useful for aiming abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../EGameplayAbilityReplicationPolic-/index.html" >EGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetReplicationPolicy/index.html"><nobr><p>GetReplicationPolicy()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetSourceObject/index.html"><nobr><p>GetSourceObject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Retrieves the SourceObject associated with this ability. Callable on non instanced</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/Engine/UWorld/index.html" >UWorld</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetWorld/index.html"><nobr><p>GetWorld()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasAuthority/index.html"><nobr><p>HasAuthority</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="HasAuthorityOrPr-/index.html"><nobr><p>HasAuthorityOrPredictionKey</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InputPressed/index.html"><nobr><p>InputPressed</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Input 
+</p><p>Input binding stub.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InputReleased/index.html"><nobr><p>InputReleased</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Input binding stub.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsActive/index.html"><nobr><p>IsActive()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the ability is currently active</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsBlockingOtherAbilities/index.html"><nobr><p>IsBlockingOtherAbilities()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if this ability is blocking other abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsEndAbilityValid/index.html"><nobr><p>IsEndAbilityValid</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Check if the ability can be ended</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsForRemoteClient/index.html"><nobr><p>IsForRemoteClient()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsInstantiated/index.html"><nobr><p>IsInstantiated()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsLocallyControlled/index.html"><nobr><p>IsLocallyControlled()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsPredictingClient/index.html"><nobr><p>IsPredictingClient()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsTriggered/index.html"><nobr><p>IsTriggered()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Is this ability triggered from TriggerData (or is it triggered explicitly through input/game code)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Category, BlueprintImplementableEvent" title="Category, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ActivateAbility/index.html"><nobr><p>K2_ActivateAbility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>ActivateAbility </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Category, BlueprintImplementableEvent" title="Category, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ActivateAbili-/index.html"><nobr><p>K2_ActivateAbilityFromEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventData</a>&amp; EventDat...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_AddGameplayCue/index.html"><nobr><p>K2_AddGameplayCue</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> GameplayCueTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayEffectContextHandle/index.html" >FGameplayEffectContextHandle</a> Contex...,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bRemoveOnAbilityEnd<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FActiveGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ApplyGameplay-_1/index.html"><nobr><p>K2_ApplyGameplayEffectSpecToOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEffectSpecHandle</a> Eff...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FAct</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ApplyGameplay-_3/index.html"><nobr><p>K2_ApplyGameplayEffectSpecToTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEffectSpecHandle</a> Eff...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Ta...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FActiveGamep</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ApplyGameplay-/index.html"><nobr><p>K2_ApplyGameplayEffectToOwner</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>&#42; Gamepla...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 GameplayEffectLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FActiveGameplayEffectHandle/index.html" >FAct</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ApplyGameplay-_2/index.html"><nobr><p>K2_ApplyGameplayEffectToTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityTargetDataHandle/index.html" >FGameplayAbilityTargetDataHandle</a> Ta...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a>&#42; Gamepla...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 GameplayEffectLevel<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Category, BlueprintImplementableEvent" title="Category, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CanActivateAbility/index.html"><nobr><p>K2_CanActivateAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a> ActorInfo,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTagContainer/index.html" >FGameplayTagContainer</a>&amp; RelevantTag...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>CanActivate 
+</p><p>Returns true if this ability can be activated right now. Has no side effects</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CheckAbilityCooldown/index.html"><nobr><p>K2_CheckAbilityCooldown()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks the ability's cooldown, but does not apply it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CheckAbilityCost/index.html"><nobr><p>K2_CheckAbilityCost()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks the ability's cost, but does not apply it.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CommitAbility/index.html"><nobr><p>K2_CommitAbility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>CommitAbility </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CommitAbilityCooldown/index.html"><nobr><p>K2_CommitAbilityCooldown</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool BroadcastCommitEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Attempts to commit the ability's cooldown only.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CommitAbilityCost/index.html"><nobr><p>K2_CommitAbilityCost</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool BroadcastCommitEvent<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Attempts to commit the ability's cost only.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Category, BlueprintImplementableEvent" title="Category, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_CommitExecute/index.html"><nobr><p>K2_CommitExecute()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>CommitExecute</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_EndAbility/index.html"><nobr><p>K2_EndAbility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>EndAbility 
+</p><p>Call from kismet to end the ability naturally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ExecuteGameplayCue/index.html"><nobr><p>K2_ExecuteGameplayCue</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> GameplayCueTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FGameplayEffectContextHandle/index.html" >FGameplayEffectContextHandle</a> Contex...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>GameplayCue Abilities can invoke GameplayCues without having to create GameplayEffects </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ExecuteGamepl-/index.html"><nobr><p>K2_ExecuteGameplayCueWithParams</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> GameplayCueTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayCueParameters/index.html" >FGameplayCueParameters</a>&amp; Game...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Category, BlueprintImplementableEvent" title="Category, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_OnEndAbility/index.html"><nobr><p>K2_OnEndAbility()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Kismet event, will be called if an ability ends normally or abnormally</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_RemoveGameplayCue/index.html"><nobr><p>K2_RemoveGameplayCue</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> GameplayCueTag<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="Category, BlueprintImplementableEvent" title="Category, BlueprintImplementableEvent" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" />
+<img alt="displayname" title="displayname" width="18" src="./../../../../../../images/./api_function_meta_other.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_ShouldAbility-/index.html"><nobr><p>K2_ShouldAbilityRespondToEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a> ActorInfo,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventData</a> Payload<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>ShouldAbilityRespondToEvent </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeOutgoingGame-/1/index.html"><nobr><p>MakeOutgoingGameplayEffectSpec</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a> > Game...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Level<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Convenience method for abilities to get outgoing gameplay effect specs (for example, to pass on to projectiles to apply to whoever they hit)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FGameplayEffectSpecHandle/index.html" >FGameplayEff</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeOutgoingGame-/2/index.html"><nobr><p>MakeOutgoingGameplayEffectSpec</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/TSubclassOf/index.html" >TSubclassOf</a>&lt; <a id="content_link" href="../../UGameplayEffect/index.html" >UGameplayEffect</a> > Game...,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Level<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayAbilityTargetingLocatio-/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeTargetLocati-/index.html"><nobr><p>MakeTargetLocationInfoFromOwnerActor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Target Data</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintPure, Category, Meta" title="BlueprintPure, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FGameplayAbilityTargetingLocatio-/index.html" >FGameplayAbi</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeTargetLocati-_1/index.html"><nobr><p>MakeTargetLocationInfoFromOwnerSkeletalMeshComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> SocketName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MontageJumpToSection/index.html"><nobr><p>MontageJumpToSection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> SectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Animation</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MontageSetNextSe-/index.html"><nobr><p>MontageSetNextSectionName</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> FromSectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> ToSectionName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MontageStop/index.html"><nobr><p>MontageStop</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float OverrideBlendOutTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Stops the current animation montage.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnAvatarSet/index.html"><nobr><p>OnAvatarSet</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the avatar actor is set/changes</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnGiveAbility/index.html"><nobr><p>OnGiveAbility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpec/index.html" >FGameplayAbilitySpec</a>&amp; Spec<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called when the ability is given to an AbilitySystemComponent</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PostNetInit/index.html"><nobr><p>PostNetInit()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreActivate/index.html"><nobr><p>PreActivate</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FOnGameplayAbilityEnded&#42; OnGam...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Do boilerplate init stuff and then call ActivateAbility</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SendGameplayEvent/index.html"><nobr><p>SendGameplayEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTags/FGameplayTag/index.html" >FGameplayTag</a> EventTag,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventData</a> Payload<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>TODO: polymorphic payload.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCanBeCanceled/index.html"><nobr><p>SetCanBeCanceled</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCanBeCanceled<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets whether the ability should ignore cancel requests. Only valid on instanced abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCurrentActivationInfo/index.html"><nobr><p>SetCurrentActivationInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCurrentActorInfo/index.html"><nobr><p>SetCurrentActorInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Protected function" title="Protected function" width="18" src="./../../../../../../images/./api_function_protected.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCurrentInfo/index.html"><nobr><p>SetCurrentInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilitySpecHandle/index.html" >FGameplayAbilitySpecHandle</a> Ha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../FGameplayAbilityActivationInfo/index.html" >FGameplayAbilityActivationInf</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetCurrentMontage/index.html"><nobr><p>SetCurrentMontage</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Engine/Animation/UAnimMontage/index.html" >UAnimMontage</a>&#42; InCurrentMontage<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Call to set/get the current montage from a montage task.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category" title="BlueprintCallable, Category" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetShouldBlockOt-/index.html"><nobr><p>SetShouldBlockOtherAbilities</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bShouldBlockAbilities<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets rather ability block flags are enabled or disabled. Only valid on instanced abilities</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShouldAbilityRes-/index.html"><nobr><p>ShouldAbilityRespondToEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayAbilityActorInfo/index.html" >FGameplayAbilityActorInfo</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FGameplayEventData/index.html" >FGameplayEventData</a>&#42; Payl...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if this ability can be triggered right now. Has no side effects</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_1');">
+        <p>Overridden from UObject</p>
+    </div>
+<div id="functions_1">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CallRemoteFunction/index.html"><nobr><p>CallRemoteFunction</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UFunction</a>&#42; Function,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42; Parms,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FOutParmRec/index.html" >FOutParmRec</a>&#42; OutParms,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FFrame/index.html" >FFrame</a>&#42; Stack<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Call the actor's function remotely</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetFunctionCallspace/index.html"><nobr><p>GetFunctionCallspace</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/UFunction/index.html" >UFunction</a>&#42; Function,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42; Parameters,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../CoreUObject/UObject/FFrame/index.html" >FFrame</a>&#42; Stack<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return the space this function should be called.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="IsSupportedForNetworking/index.html"><nobr><p>IsSupportedForNetworking()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>IsSupportedForNetworking means an object can be referenced over the network</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_4');">
+        <p>Overridden from IGameplayTaskOwnerInterface</p>
+    </div>
+<div id="functions_4">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetAvatarActor/index.html"><nobr><p>GetAvatarActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&#42; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../GameplayTasks/UGameplayTasksComponent/index.html" >UGameplayTas</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGameplayTasks-/index.html"><nobr><p>GetGameplayTasksComponent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Engine/GameFramework/AActor/index.html" >AActor</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetOwnerActor/index.html"><nobr><p>GetOwnerActor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&#42; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTaskActivated/index.html"><nobr><p>OnTaskActivated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by an ability task, originating from this ability, when it starts</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTaskDeactivated/index.html"><nobr><p>OnTaskDeactivated</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by an ability task, originating from this ability, when it ends</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="OnTaskInitialized/index.html"><nobr><p>OnTaskInitialized</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../GameplayTasks/UGameplayTask/index.html" >UGameplayTask</a>&amp; Task<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../../GameplayTasks/IGameplayTaskOwnerInterface/index.html" >IGameplayTaskOwnerInterface</a></p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >GameplayAbilities</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;GameplayAbilities&#47;Public&#47;Abilities&#47;GameplayAbility.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

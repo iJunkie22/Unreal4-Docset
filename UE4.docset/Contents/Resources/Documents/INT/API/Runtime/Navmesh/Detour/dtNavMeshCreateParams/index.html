@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>dtNavMeshCreateParams</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="dtNavMeshCreateParams" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Navmesh, API\Runtime\Navmesh\Detour" />
+<meta name="description" content="DETOURNAVMESHBUILDER_H." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Navmesh</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Detour</a></strong> &gt; <span id="crumbs_page_title">dtNavMeshCreateParams</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">dtNavMeshCreateParams</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>struct dtNavMeshCreateParams<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Represents the source data used to build an navigation mesh tile.
+</p><p>This section contains detailed documentation for members that don't have a source file. It reduces clutter in the main section of the header.
+</p><p>This structure is used to marshal data between the Recast mesh generation pipeline and Detour navigation components.
+</p><p>See the <a id="content_link" href="../../Recast/rcPolyMesh/index.html" >rcPolyMesh</a> and <a id="content_link" href="../../Recast/rcPolyMeshDetail/index.html" >rcPolyMeshDetail</a> documentation for detailed information related to mesh structure.
+</p><p>Units are usually in voxels (vx) or world units (wu). The units for voxels, grid size, and cell size are all based on the values of [cs](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\cs) and [ch](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\ch).
+</p><p>The standard navigation mesh build process is to create tile data using dtCreateNavMeshData, then add the tile to a navigation mesh using either the <a id="content_link" href="../dtNavMesh/index.html" >dtNavMesh</a> single tile `init()_ function or the <a id="content_link" href="../dtNavMesh/addTile/index.html" >dtNavMesh::addTile()</a> function.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float[3]</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bmax</p>
+	</td>
+	<td class="desc-cell">
+		<p>The maximum bounds of the tile. [(x, y, z)] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float[3]</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>bmin</p>
+	</td>
+	<td class="desc-cell">
+		<p>The minimum bounds of the tile. [(x, y, z)] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="buildBvTree/index.html"><p>buildBvTree</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>True if a bounding volume tree should be built for the tile.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ch</p>
+	</td>
+	<td class="desc-cell">
+		<p>The y-axis cell height of the polygon mesh. [Limit: > 0] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned short</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>clusterCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>Number of unique clusters.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>cs</p>
+	</td>
+	<td class="desc-cell">
+		<p>The xz-plane cell size of the polygon mesh. [Limit: > 0] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const unsigned ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="detailMeshes/index.html"><p>detailMeshes</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The height detail sub-mesh data. [Size: 4 &#42; [polyCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\polyCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>detailTriCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number of triangles in the detail mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const unsigned ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="detailTris/index.html"><p>detailTris</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The detail mesh triangles. [Size: 4 &#42; [detailTriCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\detailTriCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const float &#4...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="detailVerts/index.html"><p>detailVerts</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The detail mesh vertices. [Size: 3 &#42; [detailVertsCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\detailVertsCount)] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>detailVertsCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number of vertices in the detail mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>dynamicAreaCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number of dynamic areas. [Limit: >= 0].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtDynamicAreaCreateParams/index.html" >dtDynamic</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="dynamicAreas/index.html"><p>dynamicAreas</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Dynamic Area data. [Size: [dynamicAreaCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\dynamicAreaCount)] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>nvp</p>
+	</td>
+	<td class="desc-cell">
+		<p>Number maximum number of vertices per polygon. [Limit: >= 3].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>offMeshConCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number of off-mesh connections. [Limit: >= 0].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtOffMeshLinkCreateParams/index.html" >dtOffMesh</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="offMeshCons/index.html"><p>offMeshCons</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Off-mesh connection data. [Size: [offMeshConCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\offMeshConCount)] [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const unsigned ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="polyAreas/index.html"><p>polyAreas</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The user defined area ids assigned to each polygon. [Size: [polyCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\polyCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned short ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="polyClusters/index.html"><p>polyClusters</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Cluster Id for each polygon [Size: [polyCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\polyCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>polyCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>Number of polygons in the mesh. [Limit: >= 1].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const unsigned ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="polyFlags/index.html"><p>polyFlags</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The user defined flags assigned to each polygon. [Size: [polyCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\polyCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const unsigned ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="polys/index.html"><p>polys</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The polygon data. [Size: [polyCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\polyCount) &#42; 2 &#42; [nvp](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\nvp)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>tileLayer</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tile's layer within the layered destination mesh. (Along the y-axis.) [Limit: >= 0].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>tileX</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tile's x-grid location within the multi-tile destination mesh. (Along the x-axis.)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>tileY</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tile's y-grid location within the multi-tile desitation mesh. (Along the z-axis.)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>userId</p>
+	</td>
+	<td class="desc-cell">
+		<p>The user defined id of the tile.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>vertCount</p>
+	</td>
+	<td class="desc-cell">
+		<p>The number vertices in the polygon mesh. [Limit: >= 3].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const unsigned ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="verts/index.html"><p>verts</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The polygon mesh vertices. [(x, y, z) &#42; [vertCount](API\Runtime\Navmesh\Detour\dtNavMeshCreateParams\vertCount)] [Unit: vx].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>walkableClimb</p>
+	</td>
+	<td class="desc-cell">
+		<p>The agent maximum traversable ledge. (Up/Down) [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>walkableHeight</p>
+	</td>
+	<td class="desc-cell">
+		<p>The agent height. [Unit: wu].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>walkableRadius</p>
+	</td>
+	<td class="desc-cell">
+		<p>The agent radius. [Unit: wu].</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p>dtCreateNavMeshData</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Navmesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Public&#47;Detour&#47;DetourNavMeshBuilder.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

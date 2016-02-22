@@ -1,0 +1,1081 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>UCanvas</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="UCanvas" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Engine, API\Runtime\Engine\Engine" />
+<meta name="description" content="A drawing canvas." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Engine</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Engine</a></strong> &gt; <span id="crumbs_page_title">UCanvas</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">UCanvas</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBase/index.html"><p>UObjectBase</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObjectBaseUtility/index.html"><p>UObjectBaseUtility</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../../CoreUObject/UObject/UObject/index.html"><p>UObject</p></a><table class="hierarchy-table" cellspacing="0" id="hrch_1_1_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>UCanvas</p></td></tr></table></td></tr></table></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p><a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/index.html#classdeclaration" >UCLASS</a>&#40;<a id="content_link" href="../../../../../Programming/UnrealArchitecture/Reference/Classes/Specifiers/Transient/index.html" >Transient</a>&#41;<br />class UCanvas : public <a id="content_link" href="../../../CoreUObject/UObject/UObject/index.html" >UObject</a><br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>A drawing canvas.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FCanvas/index.html" >FCanvas</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>Canvas</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FQuat/index.html" >FQuat</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>HmdOrientation</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../FSceneView/index.html" >FSceneView</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SceneView/index.html"><p>SceneView</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FMatrix/index.html" >FMatrix</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>ViewProjectionMatrix</p>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ApplySafeZoneTransform/index.html"><nobr><p>ApplySafeZoneTransform()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Applies the current Platform's safe zone to the current Canvas position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CanvasStringSize/index.html"><nobr><p>CanvasStringSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FTextSizingParameters/index.html" >FTextSizingParameters</a>&amp; Parameters,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; pText<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates the size of the specified string.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ClippedStrLen/index.html"><nobr><p>ClippedStrLen</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; Font,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleX,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleY,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; XL,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; YL,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Text<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculate the length of a string.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FFontRenderInfo/index.html" >FFontRenderI</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="CreateFontRenderInfo/index.html"><nobr><p>CreateFontRenderInfo</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClipText,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnableShadow,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> GlowColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> GlowOuterRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> GlowInnerRadius<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Constructor for FontRenderInfo</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Deproject/index.html"><nobr><p>Deproject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; WorldOrigin,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; WorldDirection<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Transforms 2D screen coordinates into a 3D world-space origin and direction.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawDebugGraph/index.html"><nobr><p>DrawDebugGraph</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; Title,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ValueX,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ValueY,<br />&nbsp;&nbsp;&nbsp;&nbsp;float UL_X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float UL_Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;float W,<br />&nbsp;&nbsp;&nbsp;&nbsp;float H,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> RangeX,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> RangeY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a graph comparing 2 variables. Useful for visual debugging and tweaking.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawIcon/index.html"><nobr><p>DrawIcon</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FCanvasIcon/index.html" >FCanvasIcon</a> Icon,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Scale<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a CanvasIcon at the desired canvas position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawItem/3/index.html"><nobr><p>DrawItem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCanvasItem/index.html" >FCanvasItem</a>&amp; Item,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a CanvasItem at the given coordinates</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawItem/2/index.html"><nobr><p>DrawItem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCanvasItem/index.html" >FCanvasItem</a>&amp; Item,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a>&amp; InPosition<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a CanvasItem at the given coordinates</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawItem/1/index.html"><nobr><p>DrawItem</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCanvasItem/index.html" >FCanvasItem</a>&amp; Item<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a CanvasItem</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawScaledIcon/index.html"><nobr><p>DrawScaledIcon</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FCanvasIcon/index.html" >FCanvasIcon</a> Icon,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Scale<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a scaled CanvasIcon at the desired canvas position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawText/1/index.html"><nobr><p>DrawText</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; InFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; InText,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;float XScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;float YScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FFontRenderInfo/index.html" >FFontRenderInfo</a>&amp; RenderInfo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a string of text to the screen.
+</p><p>The Y extent of the rendered text.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawText/2/index.html"><nobr><p>DrawText</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; InFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Internationalization/FText/index.html" >FText</a>&amp; InText,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;float XScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;float YScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FFontRenderInfo/index.html" >FFontRenderInfo</a>&amp; RenderInfo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="DrawTile/index.html"><nobr><p>DrawTile</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; Tex,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;float XL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float YL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float U,<br />&nbsp;&nbsp;&nbsp;&nbsp;float V,<br />&nbsp;&nbsp;&nbsp;&nbsp;float UL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float VL,<br />&nbsp;&nbsp;&nbsp;&nbsp;EBlendMode BlendMode<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw arbitrary aligned rectangle.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetCenter/index.html"><nobr><p>GetCenter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; outX,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; outY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Return X,Y for center of the draw region.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/TWeakObjectPtr/index.html" >TWeakObjectP</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetReporterGraph/index.html"><nobr><p>GetReporterGraph()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Creates if necessary and returns ReporterGraph instance for 2d graph canvas drawing</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Init/index.html"><nobr><p>Init</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InSizeX,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InSizeY,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FSceneView/index.html" >FSceneView</a>&#42; InSceneView<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="index.html" >UCanvas</a> interface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_Deproject/index.html"><nobr><p>K2_Deproject</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; WorldOrigin,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a>&amp; WorldDirection<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Performs a deprojection of a screen space coordinate using the projection matrix set up for the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawBorder/index.html"><nobr><p>K2_DrawBorder</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; BorderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; BackgroundTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; LeftBorderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; RightBorderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; TopBorderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; BottomBorderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CoordinatePosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CoordinateSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> RenderColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> BorderScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> BackgroundScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Rotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> PivotPoint,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CornerSize<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a 3x3 grid border with tiled frame and tiled interior on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawBox/index.html"><nobr><p>K2_DrawBox</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Thickness<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws an unfilled box on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawLine/index.html"><nobr><p>K2_DrawLine</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPositionA,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPositionB,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Thickness,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> RenderColor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a line on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawMaterial/index.html"><nobr><p>K2_DrawMaterial</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Materials/UMaterialInterface/index.html" >UMaterialInterface</a>&#42; RenderMate...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CoordinatePosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CoordinateSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Rotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> PivotPoint<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a material on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawMaterialTriangle/index.html"><nobr><p>K2_DrawMaterialTriangle</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Materials/UMaterialInterface/index.html" >UMaterialInterface</a>&#42; RenderMate...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FCanvasUVTri/index.html" >FCanvasUVTri</a> > Triangles<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a set of triangles on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawPolygon/index.html"><nobr><p>K2_DrawPolygon</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; RenderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> Radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NumberOfSides,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> RenderColor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a polygon on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawText/index.html"><nobr><p>K2_DrawText</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UFont/index.html" >UFont</a>&#42; RenderFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; RenderText,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> RenderColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Kerning,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> ShadowColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ShadowOffset,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCentreX,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCentreY,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bOutlined,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> OutlineColor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws text on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawTexture/index.html"><nobr><p>K2_DrawTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; RenderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenPosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> ScreenSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CoordinatePosition,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> CoordinateSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> RenderColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;EBlendMode BlendMode,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Rotation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> PivotPoint<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a texture on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_DrawTriangle/index.html"><nobr><p>K2_DrawTriangle</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; RenderTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../FCanvasUVTri/index.html" >FCanvasUVTri</a> > Triangles<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draws a set of triangles on the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_Project/index.html"><nobr><p>K2_Project</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> WorldLocation<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Performs a projection of a world space coordinates using the projection matrix set up for the Canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_StrLen/index.html"><nobr><p>K2_StrLen</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UFont/index.html" >UFont</a>&#42; RenderFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; RenderText<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the wrapped text size in screen space coordinates.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="UFunction" title="UFunction" width="18" src="./../../../../../../images/./api_function_meta.png" />
+<img alt="BlueprintCallable, Category, Meta" title="BlueprintCallable, Category, Meta" width="18" src="./../../../../../../images/./api_function_meta_blueprint.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="K2_TextSize/index.html"><nobr><p>K2_TextSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UFont/index.html" >UFont</a>&#42; RenderFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; RenderText,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector2D/index.html" >FVector2D</a> Scale<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the clipped text size in screen space coordinates.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../FCanvasIcon/index.html" >FCanvasIcon</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MakeIcon/index.html"><nobr><p>MakeIcon</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../UTexture/index.html" >UTexture</a>&#42; Texture,<br />&nbsp;&nbsp;&nbsp;&nbsp;float U,<br />&nbsp;&nbsp;&nbsp;&nbsp;float V,<br />&nbsp;&nbsp;&nbsp;&nbsp;float UL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float VL<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Fake CanvasIcon constructor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="MeasureStringInternal/index.html"><nobr><p>MeasureStringInternal</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FTextSizingParameters/index.html" >FTextSizingParameters</a>&amp; Parameters,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42;const pText,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 TextLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int32 StopAfterHorizontalOffs...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="ELastCharacterIndexFormat/index.html" >ELastCharacterIndexFormat</a> Cha...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; OutLastCharacterIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Measures a string, optionally stopped after the specified horizontal offset in pixels is reached.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PopSafeZoneTransform/index.html"><nobr><p>PopSafeZoneTransform()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Project/index.html"><nobr><p>Project</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FVector/index.html" >FVector</a> Location<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Transforms a 3D world-space vector into 2D screen coordinates.
+</p><p>The transformed vector.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Reset/index.html"><nobr><p>Reset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bKeepOrigin<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Reset canvas parameters, optionally do not change the origin</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetClip/index.html"><nobr><p>SetClip</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the position of the lower-left corner of the clipping region of the Canvas</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetDrawColor/2/index.html"><nobr><p>SetDrawColor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 R,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 G,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 B,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 A<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set draw color. (R,G,B,A)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetDrawColor/1/index.html"><nobr><p>SetDrawColor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FColor/index.html" >FColor</a> const&amp; C<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set draw color. (<a id="content_link" href="../../../Core/Math/FColor/index.html" >FColor</a>)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetLinearDrawColor/index.html"><nobr><p>SetLinearDrawColor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> InColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;float OpacityOverride<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set DrawColor with a <a id="content_link" href="../../../Core/Math/FLinearColor/index.html" >FLinearColor</a> and optional opacity override</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetStereoDepth/index.html"><nobr><p>SetStereoDepth</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 depth<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Changes depth in game units . Used to render stereo projection</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetView/index.html"><nobr><p>SetView</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FSceneView/index.html" >FSceneView</a>&#42; InView<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Changes the view for the canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="StrLen/index.html"><nobr><p>StrLen</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; InFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; InText,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; XL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; YL<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculate the length of a string, taking text wrapping into account.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="TextSize/index.html"><nobr><p>TextSize</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; InFont,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../../Core/Containers/FString/index.html" >FString</a>&amp; InText,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; XL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; YL,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleX,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculates the horizontal and vertical size of a given string.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="Update/index.html"><nobr><p>Update()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates the canvas.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateAllCanvasSafeZoneData/index.html"><nobr><p>UpdateAllCanvasSafeZoneData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Function to go through all constructed canvas items and update their safe zone data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="UpdateSafeZoneData/index.html"><nobr><p>UpdateSafeZoneData()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates cached SafeZone data from the device. Call when main device is resized.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int32</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WrappedPrint/index.html"><nobr><p>WrappedPrint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool Draw,<br />&nbsp;&nbsp;&nbsp;&nbsp;float X,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Y,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; out_XL,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; out_YL,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; Font,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleX,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleY,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCenterTextX,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bCenterTextY,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Text,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FFontRenderInfo/index.html" >FFontRenderInfo</a>&amp; RenderInfo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Compute size and optionally print text with word wrap.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WrappedStrLenf/index.html"><nobr><p>WrappedStrLenf</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../UFont/index.html" >UFont</a>&#42; Font,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleX,<br />&nbsp;&nbsp;&nbsp;&nbsp;float ScaleY,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; XL,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32&amp; YL,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Fmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Calculate the size of a string built from a font, word wrapped to a specified region.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WrapString/1/index.html"><nobr><p>WrapString</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FTextSizingParameters/index.html" >FTextSizingParameters</a>&amp; Parameters,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float InCurX,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42;const pText,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FWrappedStringElement/index.html" >FWrappedStringElement</a> >&amp; o...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCanvasWordWrapper/FWrappedLineData/index.html" >FCanvasWordWrapper::FWrappedLineDat</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="WrapString/2/index.html"><nobr><p>WrapString</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCanvasWordWrapper/index.html" >FCanvasWordWrapper</a>&amp; Wrapper,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FTextSizingParameters/index.html" >FTextSizingParameters</a>&amp; Parameters,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float InCurX,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42;const pText,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/Containers/TArray/index.html" >TArray</a>&lt; <a id="content_link" href="../../FWrappedStringElement/index.html" >FWrappedStringElement</a> >&amp; o...,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../FCanvasWordWrapper/FWrappedLineData/index.html" >FCanvasWordWrapper::FWrappedLineDat</a>...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Parses a single string into an array of strings that will fit inside the specified bounding region.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'enums');">
+        <p>Enums</p>
+    </div>
+<div id="enums">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:15%">
+			</th>
+			<th class="name-cell" style="width:20%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:65%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public enum" title="Public enum" width="18" src="./../../../../../../images/./api_enum_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="ELastCharacterIndexFormat/index.html"><p>ELastCharacterIndexFormat</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Engine</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Engine&#47;Classes&#47;Engine&#47;Canvas.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

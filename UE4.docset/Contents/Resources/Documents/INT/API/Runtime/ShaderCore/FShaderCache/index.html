@@ -1,0 +1,909 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FShaderCache</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FShaderCache" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\ShaderCore" />
+<meta name="description" content="The [FShaderCache](API\Runtime\ShaderCore\FShaderCache) provides mechanisms for reducing shader hitching in-game:" />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >ShaderCore</a></strong> &gt; <span id="crumbs_page_title">FShaderCache</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FShaderCache</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FShaderCache<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>The <a id="content_link" href="index.html" >FShaderCache</a> provides mechanisms for reducing shader hitching in-game:
+</p><ul><li><p>Early submission during shader deserialisation rather than on-demand (r.UseShaderCaching 0/1).
+</p></li><li><p>Tracking of bound-shader-states so that they may be pre-bound during early submission (r.UseShaderCaching 0/1).
+</p></li><li><p>Tracking of RHI draw states so that each bound-shader-state can be predrawn (r.UseShaderDrawLog 0/1).
+</p></li><li><p>Predrawing of tracked RHI draw states to eliminate first-use hitches (r.UseShaderPredraw 0/1).
+</p></li><li><p>Control over time spent predrawing each frame to distribute over many frames if required (r.PredrawBatchTime Time (ms), -1 for all).
+</p></li></ul><p>The cache should be populated by enabling r.UseShaderCaching &amp; r.UseShaderDrawLog on a development machine. Users/players should then consume the cache by enabling r.UseShaderCaching &amp; r.UseShaderPredraw. Draw logging (r.UseShaderDrawLog) adds noticeable fixed overhead so should be avoided if possible. Since the caching is done via shader hashes it is also advisable to only use this as a final optimisation tool when content is largely complete as changes to shader hashes will result in unusued entries accumulating in the cache, increasing cache size without reducing hitches.
+</p><p>Cache locations:
+</p><ul><li><p>While populating: &lt;Game&gt;/Saved/ShaderCache.ushadercache
+</p></li><li><p>For distribution: &lt;Game&gt;/Content/ShaderCache.ushadercache The code will first try and load the writeable cache, then fallback to the distribution cache if needed.
+</p></li></ul><p>Handling Updates/Invalidation: When the cache needs to be updated &amp; writable caches invalidated the game should specify a new GameVersion. Call <a id="content_link" href="SetGameVersion/index.html" >FShaderCache::SetGameVersion</a> before initialisating the RHI (which initialises the cache), which will cause the contents of caches from previous version to be ignored. At present you cannot carry over cache entries from a previous version.
+</p><p>Region/Stream Batching: For streaming games, or where the cache becomes very large, calls to FShaderCache::SetStreamingKey should be added with unique values for the currently relevant game regions/streaming levels (as required). Logged draw states will be linked to the active streaming key. This limits predrawing to only those draw states required by the active streaming key on subsequent runs.
+</p><p>Supported RHIs:
+</p><ul><li><p>OpenGLDrv
+</p></li></ul>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FShaderCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FShaderCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FComputeShad...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetComputeShader/index.html"><nobr><p>GetComputeShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a compute shader from the cache for the provided code &amp; hash.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FDomainShade...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetDomainShader/index.html"><nobr><p>GetDomainShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Misc/FSHAHash/index.html" >FSHAHash</a> Hash,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a domain shader from the cache for the provided code &amp; hash.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FGeometrySha...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetGeometryShader/index.html"><nobr><p>GetGeometryShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Misc/FSHAHash/index.html" >FSHAHash</a> Hash,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a geometry shader from the cache for the provided code &amp; hash.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FHullShaderR...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetHullShader/index.html"><nobr><p>GetHullShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Misc/FSHAHash/index.html" >FSHAHash</a> Hash,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a hull shader from the cache for the provided code &amp; hash.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FPixelShader...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetPixelShader/index.html"><nobr><p>GetPixelShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Misc/FSHAHash/index.html" >FSHAHash</a> Hash,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a pixel shader from the cache for the provided code &amp; hash.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >FShaderCache</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetShaderCache/index.html"><nobr><p>GetShaderCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Get the global shader cache if it exists or nullptr otherwise.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FVertexDecla...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVertexDeclaration/index.html"><nobr><p>GetVertexDeclaration</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexDeclarationElementList&amp; Ver...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a vertex declaration from the cache for the provided layout.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>FVertexShade...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetVertexShader/index.html"><nobr><p>GetVertexShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Misc/FSHAHash/index.html" >FSHAHash</a> Hash,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Instantiate or retrieve a vertex shader from the cache for the provided code &amp; hash.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="InitShaderCache/index.html"><nobr><p>InitShaderCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Shader cache initialisation, called only by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogBlendState/index.html"><nobr><p>LogBlendState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FBlendStateInitializerRHI/index.html" >FBlendStateInitializerRHI</a> const&amp; I...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FBlendStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogBoundShaderState/index.html"><nobr><p>LogBoundShaderState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexDeclarationRHIParamRef Verte...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexShaderRHIParamRef VertexShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FPixelShaderRHIParamRef PixelShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;FHullShaderRHIParamRef HullShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;FDomainShaderRHIParamRef DomainShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FGeometryShaderRHIParamRef Geometry...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FBoundShaderStateRHIParamRef BoundS...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogDepthStencilState/index.html"><nobr><p>LogDepthStencilState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FDepthStencilStateInitializerRHI/index.html" >FDepthStencilStateInitializerRHI</a> co...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FDepthStencilStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogDraw/index.html"><nobr><p>LogDraw</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 IndexType<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogRasterizerState/index.html"><nobr><p>LogRasterizerState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRasterizerStateInitializerRHI/index.html" >FRasterizerStateInitializerRHI</a> cons...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FRasterizerStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogSamplerState/index.html"><nobr><p>LogSamplerState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FSamplerStateInitializerRHI/index.html" >FSamplerStateInitializerRHI</a> const&amp;...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogShader/index.html"><nobr><p>LogShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderPlatform Platform,<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderFrequency Frequency,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Misc/FSHAHash/index.html" >FSHAHash</a> Hash,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Containers/TArray/index.html" >TArray</a>&lt; uint8 > const&amp; Code<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the Engine/RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogSRV/2/index.html"><nobr><p>LogSRV</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef Texture,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 StartMip,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 NumMips,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 Format<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogSRV/1/index.html"><nobr><p>LogSRV</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexBufferRHIParamRef Vb,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Stride,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint8 Format<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogStreamingKey/index.html"><nobr><p>LogStreamingKey</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 StreamingKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool const bActive<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the game.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogTexture/index.html"><nobr><p>LogTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../FShaderTextureKey/index.html" >FShaderTextureKey</a> const&amp; Init,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="LogVertexDeclaration/index.html"><nobr><p>LogVertexDeclaration</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const FVertexDeclarationElementList...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexDeclarationRHIParamRef Verte...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="PreDrawShaders/index.html"><nobr><p>PreDrawShaders</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../RHI/FRHICommandList/index.html" >FRHICommandList</a>&amp; RHICmdList<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveSRV/index.html"><nobr><p>RemoveSRV</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RemoveTexture/index.html"><nobr><p>RemoveTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef Texture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetBlendState/index.html"><nobr><p>SetBlendState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FBlendStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetBoundShaderState/index.html"><nobr><p>SetBoundShaderState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FBoundShaderStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetDepthStencilState/index.html"><nobr><p>SetDepthStencilState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDepthStencilStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetGameVersion/index.html"><nobr><p>SetGameVersion</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 InGameVersion<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the game to set the game specific shader cache version, only caches of this version will be loaded.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetRasterizerState/index.html"><nobr><p>SetRasterizerState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FRasterizerStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetRenderTargets/index.html"><nobr><p>SetRenderTargets</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumSimultaneousRenderTargets,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../RHI/FRHIRenderTargetView/index.html" >FRHIRenderTargetView</a>&#42; Ne...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../RHI/FRHIDepthRenderTargetView/index.html" >FRHIDepthRenderTargetView</a>&#4...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSamplerState/index.html"><nobr><p>SetSamplerState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderFrequency Frequency,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Index,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetSRV/index.html"><nobr><p>SetSRV</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderFrequency Frequency,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Index,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetTexture/index.html"><nobr><p>SetTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EShaderFrequency Frequency,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Index,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef State<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="SetViewport/index.html"><nobr><p>SetViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinY,<br />&nbsp;&nbsp;&nbsp;&nbsp;float MinZ,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MaxX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MaxY,<br />&nbsp;&nbsp;&nbsp;&nbsp;float MaxZ<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Called by the RHI.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="ShutdownShaderCache/index.html"><nobr><p>ShutdownShaderCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Shader cache shutdown, called only by the RHI.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'typedefs');">
+        <p>Typedefs</p>
+    </div>
+<div id="typedefs">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="FShaderCaches/index.html"><p>FShaderCaches</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'constants');">
+        <p>Constants</p>
+    </div>
+<div id="constants">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="name-cell" style="width:15%">
+				<p>Name</p>
+			</th>
+			<th class="desc-cell" style="width:85%">
+				<p>Description</p>
+			</th>
+		</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bUseShaderCaching/index.html"><p>bUseShaderCaching</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Only the cooked Mac build defaults to using the shader cache for now, Editor is too likely to invalidate shader keys leading to ever growing cache.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bUseShaderDrawLog/index.html"><p>bUseShaderDrawLog</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The actual draw loggging is even more expensive as it has to cache all the RHI draw state &amp; is disabled by default.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="bUseShaderPredraw/index.html"><p>bUseShaderPredraw</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Predrawing takes an existing shader cache with draw log &amp; renders each shader + draw-state combination before use to avoid in-driver recompilation This requires plenty of setup &amp; is done in batches at frame-end.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="Cache/index.html"><p>Cache</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="CVarPredrawBatchTime/index.html"><p>CVarPredrawBatchTime</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="CVarUseShaderCaching/index.html"><p>CVarUseShaderCaching</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="CVarUseShaderDrawLog/index.html"><p>CVarUseShaderDrawLog</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="CVarUseShaderPredraw/index.html"><p>CVarUseShaderPredraw</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="GameVersion/index.html"><p>GameVersion</p></a>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<a href="PredrawBatchTime/index.html"><p>PredrawBatchTime</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>As predrawing can take significant time then batch the draws up into chunks defined by frame time.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >ShaderCore</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;ShaderCore&#47;Public&#47;ShaderCache.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

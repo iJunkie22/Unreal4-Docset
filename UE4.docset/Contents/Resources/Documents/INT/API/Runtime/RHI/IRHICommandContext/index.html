@@ -1,0 +1,1443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>IRHICommandContext</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="IRHICommandContext" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\RHI" />
+<meta name="description" content="The interface RHI command context." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../index.html" >RHI</a></strong> &gt; <span id="crumbs_page_title">IRHICommandContext</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">IRHICommandContext</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'hierarchy');">
+        <p>Inheritance Hierarchy</p>
+    </div>
+<div id="hierarchy">
+    <div class="hierarchy">
+	<table class="hierarchy-table" cellspacing="0" id="hrch"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><p>IRHICommandContext</p><table class="hierarchy-table" cellspacing="0" id="hrch_1"><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../NullDrv/FNullDynamicRHI/index.html"><p>FNullDynamicRHI</p></a></td></tr><tr><td class="hierarchy-button-cell"><p><img class="hierarchy-spacer" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="> </p></td><td class="hierarchy-label-cell"><a href="../../OpenGLDrv/FOpenGLDynamicRHI/index.html"><p>FOpenGLDynamicRHI</p></a></td></tr></table></td></tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class IRHICommandContext<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>The interface RHI command context. Sometimes the RHI handles these. On platforms that can processes command lists in parallel, it is a separate object.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~IRHICommandContext()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIAutomaticCacheFlushAfterCompu-/index.html"><nobr><p>RHIAutomaticCacheFlushAfterComputeShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginAsyncComputeJob_DrawThre-/index.html"><nobr><p>RHIBeginAsyncComputeJob_DrawThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;EAsyncComputePriority Priority<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Start AsyncCompute command stream recording (no effect if not supported)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginDrawIndexedPrimitiveUP/index.html"><nobr><p>RHIBeginDrawIndexedPrimitiveUP</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumPrimitives,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumVertices,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 VertexDataStride,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42;&amp; OutVertexData,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinVertexIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumIndices,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 IndexDataStride,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42;&amp; OutIndexData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Preallocate memory or get a direct command stream pointer to fill up for immediate rendering .</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginDrawingViewport/index.html"><nobr><p>RHIBeginDrawingViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FViewportRHIParamRef Viewport,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef RenderTargetRHI<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method is queued with an RHIThread, otherwise it will flush after it is queued; without an RHI thread there is no benefit to queuing this frame advance commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginDrawPrimitiveUP/index.html"><nobr><p>RHIBeginDrawPrimitiveUP</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumPrimitives,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumVertices,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 VertexDataStride,<br />&nbsp;&nbsp;&nbsp;&nbsp;void&#42;&amp; OutVertexData<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Preallocate memory or get a direct command stream pointer to fill up for immediate rendering .</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginFrame/index.html"><nobr><p>RHIBeginFrame()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method is queued with an RHIThread, otherwise it will flush after it is queued; without an RHI thread there is no benefit to queuing this frame advance commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginOcclusionQueryBatch/index.html"><nobr><p>RHIBeginOcclusionQueryBatch()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginRenderQuery/index.html"><nobr><p>RHIBeginRenderQuery</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FRenderQueryRHIParamRef RenderQuery<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBeginScene/index.html"><nobr><p>RHIBeginScene()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method is queued with an RHIThread, otherwise it will flush after it is queued; without an RHI thread there is no benefit to queuing this frame advance commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" />
+<img alt="Virtual" title="Virtual" width="18" src="./../../../../../images/./api_function_virtual.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIBindClearMRTValues/index.html"><nobr><p>RHIBindClearMRTValues</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearDepth,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearStencil<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Bind the clear state of the currently set rendertargets.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIClear/index.html"><nobr><p>RHIClear</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a>&amp; Color,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearDepth,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Depth,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearStencil,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Stencil,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntRect/index.html" >FIntRect</a> ExcludeRect<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method clears all MRT's, but to only one color value</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIClearMRT/index.html"><nobr><p>RHIClearMRT</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearColor,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 NumClearColors,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a>&#42; ColorArray,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearDepth,<br />&nbsp;&nbsp;&nbsp;&nbsp;float Depth,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bClearStencil,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Stencil,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Core/Math/FIntRect/index.html" >FIntRect</a> ExcludeRect<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method clears all MRT's to potentially different color values</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIClearUAV/index.html"><nobr><p>RHIClearUAV</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FUnorderedAccessViewRHIParamRef Uno...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const uint32&#42; Values<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Clears a UAV to the multi-component value provided.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHICopyToResolveTarget/index.html"><nobr><p>RHICopyToResolveTarget</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef SourceTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef DestTexture,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bKeepOriginalSurface,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FResolveParams/index.html" >FResolveParams</a>&amp; ResolveParam...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Resolves from one texture to another.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDispatchComputeShader/index.html"><nobr><p>RHIDispatchComputeShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 ThreadGroupCountX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 ThreadGroupCountY,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 ThreadGroupCountZ<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDispatchIndirectComputeShader/index.html"><nobr><p>RHIDispatchIndirectComputeShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexBufferRHIParamRef ArgumentBu...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 ArgumentOffset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDrawIndexedIndirect/index.html"><nobr><p>RHIDrawIndexedIndirect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FIndexBufferRHIParamRef IndexBuffer...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;FStructuredBufferRHIParamRef Argume...,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 DrawArgumentsIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumInstances<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDrawIndexedPrimitive/index.html"><nobr><p>RHIDrawIndexedPrimitive</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FIndexBufferRHIParamRef IndexBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;int32 BaseVertexIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 FirstInstance,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumVertices,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 StartIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumPrimitives,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumInstances<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDrawIndexedPrimitiveIndirect/index.html"><nobr><p>RHIDrawIndexedPrimitiveIndirect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;FIndexBufferRHIParamRef IndexBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexBufferRHIParamRef ArgumentBu...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 ArgumentOffset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDrawPrimitive/index.html"><nobr><p>RHIDrawPrimitive</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseVertexIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumPrimitives,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumInstances<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIDrawPrimitiveIndirect/index.html"><nobr><p>RHIDrawPrimitiveIndirect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 PrimitiveType,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexBufferRHIParamRef ArgumentBu...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 ArgumentOffset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEnableDepthBoundsTest/index.html"><nobr><p>RHIEnableDepthBoundsTest</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable,<br />&nbsp;&nbsp;&nbsp;&nbsp;float MinDepth,<br />&nbsp;&nbsp;&nbsp;&nbsp;float MaxDepth<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Enabled/Disables Depth Bounds Testing with the given min/max depth.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndAsyncComputeJob_DrawThread/index.html"><nobr><p>RHIEndAsyncComputeJob_DrawThread</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 FenceIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>End AsyncCompute command stream recording (no effect if not supported)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndDrawIndexedPrimitiveUP/index.html"><nobr><p>RHIEndDrawIndexedPrimitiveUP()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a primitive using the vertex and index data populated since RHIBeginDrawIndexedPrimitiveUP and clean up any memory as needed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndDrawingViewport/index.html"><nobr><p>RHIEndDrawingViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FViewportRHIParamRef Viewport,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bPresent,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bLockToVsync<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method is queued with an RHIThread, otherwise it will flush after it is queued; without an RHI thread there is no benefit to queuing this frame advance commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndDrawPrimitiveUP/index.html"><nobr><p>RHIEndDrawPrimitiveUP()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Draw a primitive using the vertex data populated since RHIBeginDrawPrimitiveUP and clean up any memory as needed</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndFrame/index.html"><nobr><p>RHIEndFrame()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method is queued with an RHIThread, otherwise it will flush after it is queued; without an RHI thread there is no benefit to queuing this frame advance commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndOcclusionQueryBatch/index.html"><nobr><p>RHIEndOcclusionQueryBatch()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndRenderQuery/index.html"><nobr><p>RHIEndRenderQuery</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FRenderQueryRHIParamRef RenderQuery<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIEndScene/index.html"><nobr><p>RHIEndScene()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>This method is queued with an RHIThread, otherwise it will flush after it is queued; without an RHI thread there is no benefit to queuing this frame advance commands.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIFlushComputeShaderCache/index.html"><nobr><p>RHIFlushComputeShaderCache()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIGraphicsWaitOnAsyncComputeJob/index.html"><nobr><p>RHIGraphicsWaitOnAsyncComputeJob</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 FenceIndex<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Wait for AsyncCompute command stream to finish (no effect if not supported)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIPopEvent/index.html"><nobr><p>RHIPopEvent()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIPushEvent/index.html"><nobr><p>RHIPushEvent</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const TCHAR&#42; Name<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetBlendState/index.html"><nobr><p>RHISetBlendState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FBlendStateRHIParamRef NewState,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Core/Math/FLinearColor/index.html" >FLinearColor</a>&amp; BlendFactor<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allows to set the blend state, parameter can be created with RHICreateBlendState()</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetBoundShaderState/index.html"><nobr><p>RHISetBoundShaderState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FBoundShaderStateRHIParamRef BoundS...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set bound shader state. This will set the vertex decl/shader, and pixel shader</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetComputeShader/index.html"><nobr><p>RHISetComputeShader</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets the current compute shader.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetDepthStencilState/index.html"><nobr><p>RHISetDepthStencilState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDepthStencilStateRHIParamRef NewSt...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 StencilRef<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetMultipleViewports/index.html"><nobr><p>RHISetMultipleViewports</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Count,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FViewportBounds/index.html" >FViewportBounds</a>&#42; Data<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Useful when used with geometry shader (emit polygons to different viewports), otherwise SetViewPort() is simpler</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetRasterizerState/index.html"><nobr><p>RHISetRasterizerState</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FRasterizerStateRHIParamRef NewStat...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetRenderTargets/index.html"><nobr><p>RHISetRenderTargets</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumSimultaneousRenderTargets,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FRHIRenderTargetView/index.html" >FRHIRenderTargetView</a>&#42; Ne...,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FRHIDepthRenderTargetView/index.html" >FRHIDepthRenderTargetView</a>&#4...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumUAVs,<br />&nbsp;&nbsp;&nbsp;&nbsp;const FUnorderedAccessViewRHIParamR...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetRenderTargetsAndClear/index.html"><nobr><p>RHISetRenderTargetsAndClear</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../FRHISetRenderTargetsInfo/index.html" >FRHISetRenderTargetsInfo</a>&amp; Re...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetScissorRect/index.html"><nobr><p>RHISetScissorRect</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bEnable,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinY,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MaxX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MaxY<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderParameter/1/index.html"><nobr><p>RHISetShaderParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexShaderRHIParamRef VertexShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumBytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;const void&#42; NewValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderParameter/2/index.html"><nobr><p>RHISetShaderParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FPixelShaderRHIParamRef PixelShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumBytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;const void&#42; NewValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderParameter/3/index.html"><nobr><p>RHISetShaderParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FHullShaderRHIParamRef HullShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumBytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;const void&#42; NewValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderParameter/4/index.html"><nobr><p>RHISetShaderParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDomainShaderRHIParamRef DomainShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumBytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;const void&#42; NewValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderParameter/5/index.html"><nobr><p>RHISetShaderParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FGeometryShaderRHIParamRef Geometry...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumBytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;const void&#42; NewValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderParameter/6/index.html"><nobr><p>RHISetShaderParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BaseIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 NumBytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;const void&#42; NewValue<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderResourceViewParamete-/5/index.html"><nobr><p>RHISetShaderResourceViewParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDomainShaderRHIParamRef DomainShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderResourceViewParamete-/4/index.html"><nobr><p>RHISetShaderResourceViewParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FHullShaderRHIParamRef HullShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderResourceViewParamete-/3/index.html"><nobr><p>RHISetShaderResourceViewParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderResourceViewParamete-/2/index.html"><nobr><p>RHISetShaderResourceViewParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexShaderRHIParamRef VertexShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderResourceViewParamete-/6/index.html"><nobr><p>RHISetShaderResourceViewParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FGeometryShaderRHIParamRef Geometry...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderResourceViewParamete-/1/index.html"><nobr><p>RHISetShaderResourceViewParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FPixelShaderRHIParamRef PixelShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FShaderResourceViewRHIParamRef SRV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderSampler/5/index.html"><nobr><p>RHISetShaderSampler</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FHullShaderRHIParamRef HullShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef NewState<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets sampler state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderSampler/1/index.html"><nobr><p>RHISetShaderSampler</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef NewState<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets sampler state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderSampler/2/index.html"><nobr><p>RHISetShaderSampler</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexShaderRHIParamRef VertexShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef NewState<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets sampler state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderSampler/3/index.html"><nobr><p>RHISetShaderSampler</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FGeometryShaderRHIParamRef Geometry...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef NewState<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets sampler state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderSampler/4/index.html"><nobr><p>RHISetShaderSampler</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDomainShaderRHIParamRef DomainShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef NewState<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets sampler state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderSampler/6/index.html"><nobr><p>RHISetShaderSampler</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FPixelShaderRHIParamRef PixelShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 SamplerIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FSamplerStateRHIParamRef NewState<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets sampler state.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderTexture/6/index.html"><nobr><p>RHISetShaderTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef PixelShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 TextureIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the shader resource view of a surface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderTexture/5/index.html"><nobr><p>RHISetShaderTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FPixelShaderRHIParamRef PixelShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 TextureIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the shader resource view of a surface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderTexture/4/index.html"><nobr><p>RHISetShaderTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FGeometryShaderRHIParamRef Geometry...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 TextureIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the shader resource view of a surface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderTexture/3/index.html"><nobr><p>RHISetShaderTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDomainShaderRHIParamRef DomainShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 TextureIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the shader resource view of a surface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderTexture/2/index.html"><nobr><p>RHISetShaderTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FHullShaderRHIParamRef HullShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 TextureIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the shader resource view of a surface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderTexture/1/index.html"><nobr><p>RHISetShaderTexture</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexShaderRHIParamRef VertexShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 TextureIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Set the shader resource view of a surface.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderUniformBuffer/2/index.html"><nobr><p>RHISetShaderUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FHullShaderRHIParamRef HullShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUniformBufferRHIParamRef Buffer<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderUniformBuffer/4/index.html"><nobr><p>RHISetShaderUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FGeometryShaderRHIParamRef Geometry...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUniformBufferRHIParamRef Buffer<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderUniformBuffer/5/index.html"><nobr><p>RHISetShaderUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FPixelShaderRHIParamRef PixelShader,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUniformBufferRHIParamRef Buffer<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderUniformBuffer/6/index.html"><nobr><p>RHISetShaderUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUniformBufferRHIParamRef Buffer<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderUniformBuffer/1/index.html"><nobr><p>RHISetShaderUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexShaderRHIParamRef VertexShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUniformBufferRHIParamRef Buffer<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetShaderUniformBuffer/3/index.html"><nobr><p>RHISetShaderUniformBuffer</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FDomainShaderRHIParamRef DomainShad...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 BufferIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUniformBufferRHIParamRef Buffer<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetStreamSource/index.html"><nobr><p>RHISetStreamSource</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 StreamIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FVertexBufferRHIParamRef VertexBuff...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Stride,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 Offset<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetUAVParameter/2/index.html"><nobr><p>RHISetUAVParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 UAVIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUnorderedAccessViewRHIParamRef UAV,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 InitialCount<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a compute shader UAV parameter and initial count</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetUAVParameter/1/index.html"><nobr><p>RHISetUAVParameter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FComputeShaderRHIParamRef ComputeSh...,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 UAVIndex,<br />&nbsp;&nbsp;&nbsp;&nbsp;FUnorderedAccessViewRHIParamRef UAV<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Sets a compute shader UAV parameter.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISetViewport/index.html"><nobr><p>RHISetViewport</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MinY,<br />&nbsp;&nbsp;&nbsp;&nbsp;float MinZ,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MaxX,<br />&nbsp;&nbsp;&nbsp;&nbsp;uint32 MaxY,<br />&nbsp;&nbsp;&nbsp;&nbsp;float MaxZ<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHISubmitCommandsHint/index.html"><nobr><p>RHISubmitCommandsHint()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="RHIUpdateTextureReference/index.html"><nobr><p>RHIUpdateTextureReference</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureReferenceRHIParamRef Textur...,<br />&nbsp;&nbsp;&nbsp;&nbsp;FTextureRHIParamRef NewTexture<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../index.html" >RHI</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;RHI&#47;Public&#47;DynamicRHI.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

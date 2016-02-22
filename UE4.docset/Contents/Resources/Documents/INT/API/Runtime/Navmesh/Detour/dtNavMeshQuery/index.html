@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>dtNavMeshQuery</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="dtNavMeshQuery" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Navmesh, API\Runtime\Navmesh\Detour" />
+<meta name="description" content="Provides the ability to perform pathfinding related queries against a navigation mesh." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Navmesh</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Detour</a></strong> &gt; <span id="crumbs_page_title">dtNavMeshQuery</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">dtNavMeshQuery</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class dtNavMeshQuery<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Provides the ability to perform pathfinding related queries against a navigation mesh.
+</p><p>For methods that support undersized buffers, if the buffer is too small to hold the entire result set the return status of the method will include the #DT_BUFFER_TOO_SMALL flag.
+</p><p>Constant member functions can be used by multiple clients without side effects. (E.g. No change to the closed list. No impact on an in-progress sliced path query. Etc.)
+</p><p>Walls and portals: A <em>wall</em> is a polygon segment that is considered impassable. A <em>portal</em> is a passable segment between polygons. A portal may be treated as a wall based on the <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a> used for a query.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>dtNavMeshQuery()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~dtNavMeshQuery()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="closestPointOnPoly/index.html"><nobr><p>closestPointOnPoly</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; closest<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the closest point on the specified polygon.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="closestPointOnPolyBoundary/index.html"><nobr><p>closestPointOnPolyBoundary</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; closest<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns a point on the boundary closest to the source point if the source point is outside the polygon's xz-bounds.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="finalizeSlicedFindPath/index.html"><nobr><p>finalizeSlicedFindPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; pathCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxPath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finalizes and returns the results of a sliced path query. 
+</p><p>The status flags for the query.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="finalizeSlicedFindPathPartial/index.html"><nobr><p>finalizeSlicedFindPathPartial</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const dtPolyRef&#42; existing,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int existingSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; pathCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxPath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finalizes and returns the results of an incomplete sliced path query, returning the path to the furthest polygon on the existing path that was visited during the search.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findDistanceToWall/index.html"><nobr><p>findDistanceToWall</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; centerPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float maxRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; hitDist,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; hitPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; hitNormal<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the distance from the specified position to the nearest polygon wall.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findLocalNeighbourhood/index.html"><nobr><p>findLocalNeighbourhood</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; centerPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultParent,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; resultCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxResult<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>END</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findNearestPoly/index.html"><nobr><p>findNearestPoly</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; center,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; extents,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; nearestRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; nearestPt<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the polygon nearest to the specified center point.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findPath/index.html"><nobr><p>findPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef endRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtQueryResult/index.html" >dtQueryResult</a>&amp; result,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; totalCost<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds a path from the start polygon to the end polygon.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findPolysAroundCircle/index.html"><nobr><p>findPolysAroundCircle</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; centerPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultParent,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; resultCost,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; resultCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxResult<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the polygons along the navigation graph that touch the specified circle.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findPolysAroundShape/index.html"><nobr><p>findPolysAroundShape</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; verts,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int nverts,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultParent,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; resultCost,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; resultCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxResult<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the polygons along the naviation graph that touch the specified convex polygon.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findPolysInPathDistance/index.html"><nobr><p>findPolysInPathDistance</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; centerPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float pathDistance,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; resultCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxResult<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>BEGIN Finds the polygons along the navigation graph that are no more than given path length away from centerPos.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findRandomPoint/index.html"><nobr><p>findRandomPoint</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float(&#42;)() frand,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; randomRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; randomPt<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns random location on navmesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findRandomPointAroundCircle/index.html"><nobr><p>findRandomPointAroundCircle</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; centerPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float maxRadius,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float(&#42;)() frand,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; randomRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; randomPt<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns random location on navmesh within the reach of specified location.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findRandomPointInCluster/index.html"><nobr><p>findRandomPointInCluster</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtClusterRef clusterRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;float(&#42;)() frand,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; randomRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; randomPt<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns random location on navmesh within specified cluster. 
+</p><p>The status flags for the query.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findStraightPath/index.html"><nobr><p>findStraightPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const dtPolyRef&#42; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int pathSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtQueryResult/index.html" >dtQueryResult</a>&amp; result,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int options<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the straight path from the start to the end position within the polygon corridor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findWallsInNeighbourhood/index.html"><nobr><p>findWallsInNeighbourhood</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; centerPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float radius,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; neiRefs,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; neiCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxNei,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; resultWalls,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; resultRefs,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; resultCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxResult<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] Finds the wall segments in local neighbourhood</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const <a id="content_link" href="../dtNavMesh/index.html" >dtNavM</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getAttachedNavMesh/index.html"><nobr><p>getAttachedNavMesh()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the navigation mesh the query object is using.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getCurrentBestResult/index.html"><nobr><p>getCurrentBestResult</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtNode/index.html" >dtNode</a>&#42;&amp; bestNode,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&amp; bestCost<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets best node ref and cost from sliced pathfinding data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtNodePool/index.html" >dtNodePool</a> &amp;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getNodePool/index.html"><nobr><p>getNodePool()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the node pool. 
+</p><p>The node pool.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPolyCluster/index.html"><nobr><p>getPolyCluster</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef polyRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtClusterRef&amp; clusterRef<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the cluster containing given polygon 
+</p><p>The status flags for the query.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPolyHeight/index.html"><nobr><p>getPolyHeight</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; height<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the height of the polygon at the provided position using the height detail.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPolyWallSegments/index.html"><nobr><p>getPolyWallSegments</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; segmentVerts,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; segmentRefs,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; segmentCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxSegments<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns the segments for the specified polygon, optionally including portals.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPortalPoints/1/index.html"><nobr><p>getPortalPoints</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef from,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef to,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; left,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; right,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char&amp; fromType,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char&amp; toType<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns portal points between two polygons.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getQueryNodes/index.html"><nobr><p>getQueryNodes()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getQueryTime/index.html"><nobr><p>getQueryTime()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="init/index.html"><nobr><p>init</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtNavMesh/index.html" >dtNavMesh</a>&#42; nav,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxNodes,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtQuerySpecialLinkFilter/index.html" >dtQuerySpecialLinkFilter</a>&#42; link...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Initializes the query object.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="initSlicedFindPath/index.html"><nobr><p>initSlicedFindPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef endRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Intializes a sliced path query.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="isInClosedList/index.html"><nobr><p>isInClosedList</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the polygon reference is in the closed list.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="isPointInsidePoly/index.html"><nobr><p>isPointInsidePoly</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool&amp; result<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks if specified pos is inside given polygon specified by ref </p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="isValidPolyRef/index.html"><nobr><p>isValidPolyRef</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the polygon reference is valid and passes the filter restrictions.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="moveAlongSurface/index.html"><nobr><p>moveAlongSurface</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; resultPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; visited,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; visitedCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxVisitedSize<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Moves from the start to the end position constrained to the navigation mesh.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="projectedPointOnPoly/index.html"><nobr><p>projectedPointOnPoly</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; projected<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the point's projection on the specified polygon.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="queryPolygons/index.html"><nobr><p>queryPolygons</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; center,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; extents,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; polys,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; polyCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxPolys<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds polygons that overlap the search box.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="raycast/index.html"><nobr><p>raycast</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; hitNormal,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; pathCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxPath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Casts a 'walkability' ray along the surface of the navigation mesh from the start position toward the end position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="testClusterPath/index.html"><nobr><p>testClusterPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef startRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef endRef<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Check if there is a path from start polygon to the end polygon using cluster graph (cheap, does not care about link costs)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateLinkFilter/index.html"><nobr><p>updateLinkFilter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../dtQuerySpecialLinkFilter/index.html" >dtQuerySpecialLinkFilter</a>&#42; link...<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>UE4: updates special link filter for this query.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtStatus</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="updateSlicedFindPath/index.html"><nobr><p>updateSlicedFindPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxIter,<br />&nbsp;&nbsp;&nbsp;&nbsp;int&#42; doneIters<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Updates an in-progress sliced path query. 
+</p><p>The status flags for the query.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="wasClusterLinkSearched/index.html"><nobr><p>wasClusterLinkSearched</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef cFrom,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef cTo<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Returns true if the cluster link was used in previous search.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'seealso');">
+        <p>See Also</p>
+    </div>
+<div id="seealso">
+    <p><a id="content_link" href="../dtNavMesh/index.html" >dtNavMesh</a>
+</p><p><a id="content_link" href="../dtQueryFilter/index.html" >dtQueryFilter</a>
+</p><p>dtAllocNavMeshQuery()
+</p><p>dtAllocNavMeshQuery()</p>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Navmesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Public&#47;Detour&#47;DetourNavMeshQuery.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

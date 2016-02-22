@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>dtPathCorridor</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="dtPathCorridor" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Navmesh, API\Runtime\Navmesh\DetourCrowd" />
+<meta name="description" content="Copyright 1998-2015 Epic Games, Inc." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Navmesh</a></strong> &gt; <strong><a id="content_link" href="../index.html" >DetourCrowd</a></strong> &gt; <span id="crumbs_page_title">dtPathCorridor</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">dtPathCorridor</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class dtPathCorridor<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Copyright 1998-2015 Epic Games, Inc. All Rights Reserved. Modified version of Recast/Detour's source file Copyright (c) 2009-2010 Mikko Mononen <a id="content_link" href="mailto:memon@inside.org" >memon@inside.org</a>
+</p><p>This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software. Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+</p><p>The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+</p><p>Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+</p><p>This notice may not be removed or altered from any source distribution.Represents a dynamic polygon corridor used to plan agent movement. ,
+</p><p>The corridor is loaded with a path, usually obtained from a <a id="content_link" href="../../Detour/dtNavMeshQuery/findPath/index.html" >dtNavMeshQuery::findPath()</a> query. The corridor is then used to plan local movement, with the corridor automatically updating as needed to deal with inaccurate agent locomotion.
+</p><p>Example of a common use case:
+</p><p>Construct the corridor object and call <a id="content_link" href="init/index.html" >init()</a> to allocate its path buffer.
+</p><p>Obtain a path from a <a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a> object.
+</p><p>Use <a id="content_link" href="reset/index.html" >reset()</a> to set the agent's current position. (At the beginning of the path.)
+</p><p>Use <a id="content_link" href="setCorridor/index.html" >setCorridor()</a> to load the path and target.
+</p><p>Use <a id="content_link" href="findCorners/index.html" >findCorners()</a> to plan movement. (This handles dynamic path straightening.)
+</p><p>Use <a id="content_link" href="movePosition/index.html" >movePosition()</a> to feed agent movement back into the corridor. (The corridor will automatically adjust as needed.)
+</p><p>If the target is moving, use <a id="content_link" href="moveTargetPosition/index.html" >moveTargetPosition()</a> to update the end of the corridor. (The corridor will automatically adjust as needed.)
+</p><p>Repeat the previous 3 steps to continue to move the agent.
+</p><p>The corridor position and target are always constrained to the navigation mesh.
+</p><p>One of the difficulties in maintaining a path is that floating point errors, locomotion inaccuracies, and/or local steering can result in the agent crossing the boundary of the path corridor, temporarily invalidating the path. This class uses local mesh queries to detect and update the corridor as needed to handle these types of issues.
+</p><p>The fact that local mesh queries are used to move the position and target locations results in two beahviors that need to be considered:
+</p><p>Every time a move function is used there is a chance that the path will become non-optimial. Basically, the further the target is moved from its original location, and the further the position is moved outside the original corridor, the more likely the path will become non-optimal. This issue can be addressed by periodically running the <a id="content_link" href="optimizePathTopology/index.html" >optimizePathTopology()</a> and <a id="content_link" href="optimizePathVisibility/index.html" >optimizePathVisibility()</a> methods.
+</p><p>All local mesh queries have distance limitations. (Review the <a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a> methods for details.) So the most accurate use case is to move the position and target in small increments. If a large increment is used, then the corridor may not be able to accurately find the new location. Because of this limiation, if a position is moved in a large increment, then compare the desired and resulting polygon references. If the two do not match, then path replanning may be needed. E.g. If you move the target, check <a id="content_link" href="getLastPoly/index.html" >getLastPoly()</a> to see if it is the expected polygon.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>dtPathCorridor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~dtPathCorridor()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="canMoveOverOffmeshConnection/index.html"><nobr><p>canMoveOverOffmeshConnection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef offMeshConRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; refs,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; agentPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] check if offmesh connection can be traversed, but don't modify corridor yet</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="findCorners/index.html"><nobr><p>findCorners</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; cornerVerts,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char&#42; cornerFlags,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; cornerPolys,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxCorners,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter,<br />&nbsp;&nbsp;&nbsp;&nbsp;float radius<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Finds the corners in the corridor from the position toward the target.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="fixPathStart/index.html"><nobr><p>fixPathStart</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef safeRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; safePos<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtPolyRef</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getFirstPoly/index.html"><nobr><p>getFirstPoly()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The polygon reference id of the first polygon in the corridor, the polygon containing the position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>dtPolyRef</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getLastPoly/index.html"><nobr><p>getLastPoly()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The polygon reference id of the last polygon in the corridor, the polygon containing the target.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const float ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getNextFixedCorner/index.html"><nobr><p>getNextFixedCorner()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const float ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getNextFixedCorner2/index.html"><nobr><p>getNextFixedCorner2()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const dtPoly...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPath/index.html"><nobr><p>getPath()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The corridor's path.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPathCount/index.html"><nobr><p>getPathCount()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>The number of polygons in the current corridor path.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const float ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getPos/index.html"><nobr><p>getPos()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the current position within the corridor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getSegmentAngle/index.html"><nobr><p>getSegmentAngle()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>const float ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="getTarget/index.html"><nobr><p>getTarget()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Gets the current target within the corridor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="hasNextFixedCorner/index.html"><nobr><p>hasNextFixedCorner()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="hasNextFixedCorner2/index.html"><nobr><p>hasNextFixedCorner2()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="init/index.html"><nobr><p>init</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxPath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Allocates the corridor's path buffer.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="isValid/index.html"><nobr><p>isValid</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const int maxLookAhead,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Checks the current corridor path to see if its polygon references remain valid.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="moveOverOffmeshConnection/index.html"><nobr><p>moveOverOffmeshConnection</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef offMeshConRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef&#42; refs,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; agentPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; startPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;float&#42; endPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="movePosition/index.html"><nobr><p>movePosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; npos,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Moves the position from the current location to the desired location, adjusting the corridor as needed to reflect the change.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="moveTargetPosition/index.html"><nobr><p>moveTargetPosition</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; npos,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Moves the target from the curent location to the desired location, adjusting the corridor as needed to reflect the change.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="optimizePathTopology/index.html"><nobr><p>optimizePathTopology</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Attempts to optimize the path using a local area search.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="optimizePathVisibility/index.html"><nobr><p>optimizePathVisibility</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; next,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float pathOptimizationRange,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Attempts to optimize the path if the specified point is visible from the current position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="pruneOffmeshConenction/index.html"><nobr><p>pruneOffmeshConenction</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef offMeshConRef<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>[UE4] remove offmesh connection from corridor</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="reset/index.html"><nobr><p>reset</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef ref,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; pos<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Resets the path corridor to the specified position.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setCorridor/index.html"><nobr><p>setCorridor</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; target,<br />&nbsp;&nbsp;&nbsp;&nbsp;const dtPolyRef&#42; polys,<br />&nbsp;&nbsp;&nbsp;&nbsp;const int npath<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Loads a new path and target into the corridor.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>void</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="setEarlyReachTest/index.html"><nobr><p>setEarlyReachTest</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;bool enable<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>bool</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="trimInvalidPath/index.html"><nobr><p>trimInvalidPath</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;dtPolyRef safeRef,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float&#42; safePos,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../Detour/dtNavMeshQuery/index.html" >dtNavMeshQuery</a>&#42; navquery,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a id="content_link" href="../../Detour/dtQueryFilter/index.html" >dtQueryFilter</a>&#42; filter<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Navmesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Public&#47;DetourCrowd&#47;DetourPathCorridor.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

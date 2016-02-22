@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>FSlateStatCycleCounter</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="FSlateStatCycleCounter" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\SlateCore, API\Runtime\SlateCore\Stats" />
+<meta name="description" content="Slate Stats System Motivation " />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >SlateCore</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Stats</a></strong> &gt; <span id="crumbs_page_title">FSlateStatCycleCounter</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">FSlateStatCycleCounter</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>class FSlateStatCycleCounter<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Slate Stats System Motivation 
+</p><p>Slate uses it's own stats system to gather performance metrics. There are a few reasons it does not use the builtin UE4 stats system:
+</p><p>UE4 stats are threadsafe, thus heavier weight. Slate is single-threaded by nature due to UI constraints.
+</p><p>Slate stats can optionally carry additional context (like class or debug info) used to provide more info when digesting the profile.
+</p><p>Using a lighter weight system allows us to add more tracking by default.
+</p><p>Slate uses a custom hierarchical system that allows it to spit out a CSV containing a complete hierarchical inclusive/exclusive profile.
+</p><p>Slate Stats System Overview 
+</p><p>You need to declare your stat globally somewhere. It should generally be a static variable:
+</p><p>SLATE_DECLARE_CYCLE_COUNTER(GSlateOnPaint, "OnPaint");
+</p><p>Next you go the scope of code to provide and add a scope counter (the types will be explained below).
+</p><p>SLATE_CYCLE_COUNTER_SCOPE(GSlateOnPaint);
+</p><p>This enables the Slate Stats system to track this scope of code and associate it with the "OnPaint" stat. If you want to track the OnPaint call of each type of widget separately, you would use the _CUSTOM version of the macro and provide it with an <a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> to track along with the stat like so (assuming "this" is an <a id="content_link" href="../../Widgets/SWidget/index.html" >SWidget</a>):
+</p><p>SLATE_CYCLE_COUNTER_SCOPE_CUSTOM(GSlateOnPaint, GetType());
+</p><p>However, note that custom info is only available when doing a full hierarchical capture (as explained below).
+</p><p>Slate supports two modes of stats - flat and hierarchical. Stats are hierarchical by default. Use the _FLAT form of the macro to declare a stat that is only used for flattened tracking. This is faster when you don't need this stat for a full hierarchical profile.
+</p><p>Flat 
+</p><p>Flat view is a standard inclusive sum of cycles. Each scope simply records a start and end time and adds it to the global stat accumulator. This happens until the system is told to display the values, at which point it averages the cycle accumulators over the number of frames since the last summary. The resultant view is essentially a list of all declared stats along with the average inclusive time spent in that stat's scope.
+</p><p>The system handles re-entrant stats. So if you are processing a hierarchy (as Slate widgets essentially are), re-entering the same stat will do nothing until the last scope is exited.
+</p><p>Hierarchical 
+</p><p>Hierarchical capture essentially creates a complete hierarchical profile of a frame. Since it has to track EACH stat entry that frame, it can have a non-trivial performance and memory impact on the application. However, the result is similar to the data from a fully instrumented profile of your application, with a few notable details:
+</p><p>You are instrumenting sections of code, not functions. This allows for finer-grained classification of your code.
+</p><p>each entry also carries any context you passed it at runtime, allowing for even better context than an instrumented profiler can give you.
+</p><p>Stats are not subject to the whims of inlining, etc, since they are injected at compile-time. While Slate goes out of its way to make this capture as cheap as possible, there is a lot of data being gathered each frame. Therefore, Slate does NOT do a hierarchical capture continually. Instead, the stats system must be triggered (programmatically) to enable hierarchical capture right before a frame is started. This is done when calling <a id="content_link" href="EndFrame/index.html" >EndFrame()</a> on the <a id="content_link" href="../FSlateStatHierarchy/index.html" >FSlateStatHierarchy</a> singleton:
+</p><p><a id="content_link" href="../FSlateStatHierarchy/Get/index.html" >FSlateStatHierarchy::Get()</a>.EndFrame(true|false);
+</p><p>This can be triggered by end users through the Slate.Stats.Hierarchy.Trigger cvar.
+</p><p>Since there is no guarantee that the stat call stack will be equivalent from one frame to the next, we can only accumulate ONE frame.
+</p><p>When a hierarchical capture frame ends, Slate does some additional work to gather up all instances, derive "full paths" to each entry, and derive the exclusive time for that instance. Again, Slate tries to do this as fast as possible, but there can be 100,000s of entries in a frame, so that can only be as fast as those entries can be traversed. When finished, Slate spits out a CSV into the Saved/ folder containing the following fields:
+</p><p>Path - full path to the entry.
+</p><p>Stat Description
+</p><p>Stat additional context (Custom info)
+</p><p>Inclusive time
+</p><p>Exclusive time
+</p><p>Path is essentially a pathway through the hierarchy of samples to the entry (a stat call-stack if you will). This allows analysis tools to understand the capture hierarchy so they can do things like restrict to subtrees of the capture, create caller-callee views, etc. Essentially typical instrumented profiler things.
+</p><p><a id="content_link" href="index.html" >FSlateStatCycleCounter</a> - Global storage of a cycle stat. This should be declared as a global using the SLATE_DECLARE_CYCLE_COUNTER macro. Counters don't update themselves, they rely on the scope classes to update their values. All the methods of this class are essentially internal and there is no need for an end-user to call them directly.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'constructor');">
+        <p>Constructors</p>
+    </div>
+<div id="constructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__ctor/index.html"><nobr><p>FSlateStatCycleCounter</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;<a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a> InCounterName<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Default ctor.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'destructor');">
+        <p>Destructors</p>
+    </div>
+<div id="destructor">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell">
+		<a href="__dtor/index.html"><nobr><p>~FSlateStatCycleCounter()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Unregisteres the counter from the global list.</p>
+	</td>
+</tr></table>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'functions_0');">
+        <p>Functions</p>
+    </div>
+<div id="functions_0">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:8%;">
+			</th>
+			<th class="name-cell" style="width:15%;">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>SLATECORE_AP...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="AverageInclusive-/index.html"><nobr><p>AverageInclusiveTimesWereUpdatedThisFrame()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>SLATECORE_AP...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="EndFrame/index.html"><nobr><p>EndFrame</p></nobr></a>
+		<div class="name-cell-arguments">
+			<p>&#40;<br />&nbsp;&nbsp;&nbsp;&nbsp;double CurrentTime<br />&#41;  </p>
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Perform all end-frame work.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>double</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetLastComputedA-/index.html"><nobr><p>GetLastComputedAverageInclusiveTime()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Public access to report on a stat. Time is pre-converted to milliseconds.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../../../Core/UObject/FName/index.html" >FName</a></p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetName/index.html"><nobr><p>GetName()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Public access to report on a stat.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public function" title="Public function" width="18" src="./../../../../../../images/./api_function_public.png" />
+<img alt="Static" title="Static" width="18" src="./../../../../../../images/./api_function_static.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>SLATECORE_AP...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="GetRegisteredCounters/index.html"><nobr><p>GetRegisteredCounters()</p></nobr></a>
+		<div class="name-cell-arguments">
+			
+		</div>
+	</td>
+	<td class="desc-cell">
+		<p>Access to the global list of counters to iterate over.</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >SlateCore</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;SlateCore&#47;Public&#47;Stats&#47;SlateStats.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>dtMeshTile</title>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="dtMeshTile" />
+<meta name="crumbs" content="%ROOT%, API, API\Runtime, API\Runtime\Navmesh, API\Runtime\Navmesh\Detour" />
+<meta name="description" content="Defines a navigation mesh tile." />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../../../../index.html" >Unreal Engine API Reference</a></strong> &gt; <strong><a id="content_link" href="../../../index.html" >Runtime</a></strong> &gt; <strong><a id="content_link" href="../../index.html" >Navmesh</a></strong> &gt; <strong><a id="content_link" href="../index.html" >Detour</a></strong> &gt; <span id="crumbs_page_title">dtMeshTile</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">dtMeshTile</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <div class="heading expanded" onclick="sectionOnClick(this, 'syntax');">
+        <p>Syntax</p>
+    </div>
+<div id="syntax">
+    <div class="simplecode_api">
+	<p>struct dtMeshTile<br /></p>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'description');">
+        <p>Remarks</p>
+    </div>
+<div id="description">
+    <p>Defines a navigation mesh tile.
+</p><p>Tiles generally only exist within the context of a <a id="content_link" href="../dtNavMesh/index.html" >dtNavMesh</a> object.
+</p><p>Some tile content is optional. For example, a tile may not contain any off-mesh connections. In this case the associated pointer will be null.
+</p><p>If a detail mesh exists it will share vertices with the base polygon mesh. Only the vertices unique to the detail mesh will be stored in [detailVerts](API\Runtime\Navmesh\Detour\dtMeshTile\detailVerts).
+</p><p>Tiles returned by a <a id="content_link" href="../dtNavMesh/index.html" >dtNavMesh</a> object are not guarenteed to be populated. For example: The tile at a location might not have been loaded yet, or may have been removed. In this case, pointers will be null. So if in doubt, check the polygon count in the tile's header to determine if a tile has polygons defined.</p>
+</div><div class="syntax">
+	<div class="heading expanded" onclick="sectionOnClick(this, 'variables');">
+        <p>Variables</p>
+    </div>
+<div id="variables">
+    <div class="member-list">
+	<table cellspacing="0">
+		<tr class="header-row">
+			<th class="icon-cell" style="width:8%">
+			</th>
+			<th class="type-cell" style="width:10%">
+			</th>
+			<th class="name-cell" style="width:15%">
+				Name
+			</th>
+			<th class="desc-cell">
+				Description
+			</th>
+		</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtBVNode/index.html" >dtBVNode</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="bvTree/index.html"><p>bvTree</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tile bounding volume nodes.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtCluster/index.html" >dtCluster</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>clusters</p>
+	</td>
+	<td class="desc-cell">
+		<p>Cluster data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned char &amp;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="data/index.html"><p>data</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tile data. (Not directly accessed under normal situations.)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>dataSize</p>
+	</td>
+	<td class="desc-cell">
+		<p>Size of the tile data.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtPolyDetail/index.html" >dtPolyDetail</a> &amp;#...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="detailMeshes/index.html"><p>detailMeshes</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tile's detail sub-meshes. [Size: [dtMeshHeader::detailMeshCount](API\Runtime\Navmesh\Detour\dtMeshHeader\detailMeshCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned char &amp;...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="detailTris/index.html"><p>detailTris</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The detail mesh's triangles. [(vertA, vertB, vertC) &#42; [dtMeshHeader::detailTriCount](API\Runtime\Navmesh\Detour\dtMeshHeader\detailTriCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>detailVerts</p>
+	</td>
+	<td class="desc-cell">
+		<p>The detail mesh's unique vertices. [(x, y, z) &#42; [dtMeshHeader::detailVertCount](API\Runtime\Navmesh\Detour\dtMeshHeader\detailVertCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>dynamicFreeListC</p>
+	</td>
+	<td class="desc-cell">
+		<p>Index of the next free dynamic link.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>dynamicFreeListO</p>
+	</td>
+	<td class="desc-cell">
+		<p>Index of the next free dynamic link.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtChunkArray/index.html" >dtChunkArray</a>&lt; <a id="content_link" href="../dtClusterLink/index.html" >d</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="dynamicLinksC/index.html"><p>dynamicLinksC</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Dynamic links array (indices starting from DT_CLINK_FIRST)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtChunkArray/index.html" >dtChunkArray</a>&lt; <a id="content_link" href="../dtLink/index.html" >d</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="dynamicLinksO/index.html"><p>dynamicLinksO</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Dynamic links array (indices starting from [dtMeshHeader::maxLinkCount](API\Runtime\Navmesh\Detour\dtMeshHeader\maxLinkCount))</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>flags</p>
+	</td>
+	<td class="desc-cell">
+		<p>Tile flags. (See: dtTileFlags)</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtMeshHeader/index.html" >dtMeshHeader</a> &amp;#...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="header/index.html"><p>header</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tile header.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtLink/index.html" >dtLink</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>links</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tile links. [Size: [dtMeshHeader::maxLinkCount](API\Runtime\Navmesh\Detour\dtMeshHeader\maxLinkCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>linksFreeList</p>
+	</td>
+	<td class="desc-cell">
+		<p>Index to the next free link.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="index.html" >dtMeshTile</a> &#42...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="next/index.html"><p>next</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The next free tile, or the next tile in the spatial grid.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtOffMeshConnection/index.html" >dtOffMeshConnec</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="offMeshCons/index.html"><p>offMeshCons</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tile off-mesh connections. [Size: [dtMeshHeader::offMeshConCount](API\Runtime\Navmesh\Detour\dtMeshHeader\offMeshConCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtOffMeshSegmentConnection/index.html" >dtOffMeshSegmen</a>...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="offMeshSeg/index.html"><p>offMeshSeg</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>The tile off-mesh connections. [Size: [dtMeshHeader::offMeshSegConCount](API\Runtime\Navmesh\Detour\dtMeshHeader\offMeshSegConCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned short ...</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<a href="polyClusters/index.html"><p>polyClusters</p></a>
+	</td>
+	<td class="desc-cell">
+		<p>Cluster Id for each ground type polygon [Size: [dtMeshHeader::polyCount](API\Runtime\Navmesh\Detour\dtMeshHeader\polyCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p><a id="content_link" href="../dtPoly/index.html" >dtPoly</a> &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>polys</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tile polygons. [Size: [dtMeshHeader::polyCount](API\Runtime\Navmesh\Detour\dtMeshHeader\polyCount)].</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>unsigned int</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>salt</p>
+	</td>
+	<td class="desc-cell">
+		<p>Counter describing modifications to the tile.</p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="icon-cell">
+		<p><img alt="Public variable" title="Public variable" width="18" src="./../../../../../../images/./api_variable_public.png" /></p>
+	</td>
+	<td class="name-cell" align="right">
+		<span class="type-span"><p>float &#42;</p></span>&nbsp;
+	</td>
+	<td class="name-cell">
+		<p>verts</p>
+	</td>
+	<td class="desc-cell">
+		<p>The tile vertices. [Size: [dtMeshHeader::vertCount](API\Runtime\Navmesh\Detour\dtMeshHeader\vertCount)].</p>
+	</td>
+</tr></table>
+</div>
+</div>
+</div><div class="heading expanded" onclick="sectionOnClick(this, 'references');">
+        <p>References</p>
+    </div>
+<div id="references">
+    <div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Module</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../../index.html" >Navmesh</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Header</p>
+	</td>
+	<td class="desc-cell">
+		<p>Runtime&#47;Navmesh&#47;Public&#47;Detour&#47;DetourNavMesh.h</p>
+	</td>
+</tr></table>
+</div>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<title>Getting started with the Unreal Engine API</title>
+<link rel="stylesheet" type="text/css" href="./../../../Include/CSS/udn_public.css">
+<link rel="stylesheet" type="text/css" href="./../../../Include/CSS/udn_public_nosidebar.css" />
+<link rel="stylesheet" type="text/css" href="./../../../Include/CSS/jquery-ui-1.10.3.custom.css">
+<style type="text/css">
+#jumplink
+{
+	visibility:hidden;
+}
+</style>
+<Script src="./../../../Include/Javascript/jquery-1.7.1.min.js" type="text/javascript"></Script>
+<Script src="./../../../Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></Script>
+<Script src="./../../../Include/Javascript/udn.js" type="text/javascript"></Script>
+<Script src="./../../../Include/Javascript/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></Script>
+<link rel="stylesheet" type="text/css" href="./../../../Include/CSS/jquery.fancybox-1.3.4.css">
+
+<link rel="icon" href="./../../../Include/Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./../../../Include/Images/favicon.ico" type="image/x-icon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="Getting started with the Unreal Engine API" />
+<meta name="crumbs" content="%ROOT%, API" />
+<meta name="description" content="Getting started with the Unreal Engine API" />
+<meta name="availability" content="Public" />
+
+
+</head>
+<body id="webbgThree">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KWRD6D"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWRD6D');</script>
+    <!-- End Google Tag Manager -->
+    
+    <div id="webThree">
+        
+        <div id="contentContainer">
+            <div id="pagedefault">
+                <div id="pagecontainer">
+                    <div id="pagenav">
+                        <div style="clear:both;">
+                            <!-- Start of crumbs links -->
+                            <div class="crumbs">
+    <div id="jumplink" onclick="$('#sidebar').toggle();">
+        Jump To
+    </div>
+    <p> <strong><a id="content_link" href="../index.html" >Unreal Engine API Reference</a></strong> &gt; <span id="crumbs_page_title">Getting started with the Unreal Engine API</span></p>
+</div>
+                            <!-- End of crumbs links -->
+                        </div>
+                    </div>
+                    <div id="maincol">
+                        <!-- Start of H1 -->
+                        <h1 id="H1TitleId">Getting started with the Unreal Engine API</h1>
+                        <!-- End of H1 -->
+                        <!-- Start of Markdown converted page content -->
+                        <h2 id="orientation">Orientation</h2><p>Games, programs and the Unreal Editor are all <em>targets</em> built by UnrealBuildTool. Each target is compiled from C++ <em>modules</em>, each implementing a particular area of functionality. Your game is a target, and your game code is implemented in one or more modules.
+</p><p>Code in each module can use other modules by referencing them in their <em>build rules</em>. Build rules for each module are given by C# scripts with the .build.cs extension. <em>Target rules</em> are given by C# scripts with the .target.cs extension.
+</p><p>Modules supplied with the Unreal Engine are divided into three categories; the Runtime, functionality for the Editor, and Developer utilities.
+Most gameplay programming just uses runtime modules, and the three most commonly encountered are <a id="content_link" href="../Runtime/Core/index.html" >Core</a>, <a id="content_link" href="../Runtime/CoreUObject/index.html" >CoreUObject</a> and <a id="content_link" href="../Runtime/Engine/index.html" >Engine</a>.
+</p><h2 id="core">Core</h2><p>The <strong><a id="content_link" href="../Runtime/Core/index.html" >Core</a></strong> module provides a common framework for Unreal modules to communicate; a standard set of types, a <a id="content_link" href="../Runtime/Core/Math/index.html" >math library</a>, a <a id="content_link" href="../Runtime/Core/Containers/index.html" >container</a> library, and a lot of the hardware abstraction that allows Unreal to run on so many platforms.
+Some common topics are listed below; full documentation is available <a id="content_link" href="../Runtime/Core/index.html" >here</a>.
+</p><div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Basic types:</p>
+	</td>
+	<td class="desc-cell">
+		<p>bool &middot; float/double &middot; int8/int16/int32/int64 &middot; uint8/uint16/uint32/uint64 &middot; ANSICHAR &middot; TCHAR &middot; <a id="content_link" href="../Runtime/Core/Containers/FString/index.html" >FString</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Math:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Core/Math/FMath/index.html" >FMath</a> &middot; <a id="content_link" href="../Runtime/Core/Math/FVector/index.html" >FVector</a> &middot; <a id="content_link" href="../Runtime/Core/Math/FRotator/index.html" >FRotator</a> &middot; <a id="content_link" href="../Runtime/Core/Math/FTransform/index.html" >FTransform</a> &middot; <a id="content_link" href="../Runtime/Core/Math/FMatrix/index.html" >FMatrix</a> &middot; <a id="content_link" href="../Runtime/Core/Math/index.html" >More...</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Containers:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Core/Containers/TArray/index.html" >TArray</a> &middot; <a id="content_link" href="../Runtime/Core/Containers/TList/index.html" >TList</a> &middot; <a id="content_link" href="../Runtime/Core/Containers/TMap/index.html" >TMap</a> &middot; <a id="content_link" href="../Runtime/Core/Containers/index.html" >More...</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Other:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Core/UObject/FName/index.html" >FName</a> &middot; <a id="content_link" href="../Runtime/Core/Serialization/FArchive/index.html" >FArchive</a> &middot; <a id="content_link" href="../Runtime/Core/Misc/FOutputDevice/index.html" >FOutputDevice</a></p>
+	</td>
+</tr></table>
+</div><h2 id="coreuobject">CoreUObject</h2><p>The <strong><a id="content_link" href="../Runtime/CoreUObject/index.html" >CoreUObject</a></strong> module defines UObject, the base class for all managed objects in Unreal. Managed objects are key to integrating with the editor, for serialization, network replication, and runtime type information. UObject derived classes are garbage collected.
+Some common topics are listed below; full documentation is available <a id="content_link" href="../Runtime/CoreUObject/index.html" >here</a>.
+</p><div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Classes:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/CoreUObject/UObject/UObject/index.html" >UObject</a> &middot; <a id="content_link" href="../Runtime/CoreUObject/UObject/UClass/index.html" >UClass</a> &middot; <a id="content_link" href="../Runtime/CoreUObject/UObject/UProperty/index.html" >UProperty</a> &middot; <a id="content_link" href="../Runtime/CoreUObject/UObject/UPackage/index.html" >UPackage</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Functions:</p>
+	</td>
+	<td class="desc-cell">
+		<p>ConstructObject &middot; FindObject &middot; Cast &middot; CastChecked</p>
+	</td>
+</tr></table>
+</div><h2 id="engine">Engine</h2><p>The <strong><a id="content_link" href="../Runtime/Engine/index.html" >Engine</a></strong> module contains functionality you’d associate with a game. The game world, actors, characters, physics and special effects are all defined here.
+Some common topics are listed below; full documentation is available <a id="content_link" href="../Runtime/Engine/index.html" >here</a>.
+</p><div class="member-list">
+	<table cellspacing="0"><tr class="normal-row">
+	<td class="name-cell">
+		<p>Actors:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Engine/GameFramework/AActor/index.html" >AActor</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/AVolume/index.html" >AVolume</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/AGameMode/index.html" >AGameMode</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/AHUD/index.html" >AHUD</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/AActor/AActorHierarchy/index.html" >More...</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Pawns:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Engine/GameFramework/APawn/index.html" >APawn</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/ACharacter/index.html" >ACharacter</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/AWheeledVehicle/index.html" >AWheeledVehicle</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Controllers:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Engine/GameFramework/AController/index.html" >AController</a> &middot; <a id="content_link" href="../Runtime/AIModule/AAIController/index.html" >AAIController</a> &middot; <a id="content_link" href="../Runtime/Engine/GameFramework/APlayerController/index.html" >APlayerController</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Components:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Engine/Components/UActorComponent/index.html" >UActorComponent</a> &middot; <a id="content_link" href="../Runtime/AIModule/UBrainComponent/index.html" >UBrainComponent</a> &middot; <a id="content_link" href="../Runtime/Engine/Components/UInputComponent/index.html" >UInputComponent</a> &middot; <a id="content_link" href="../Runtime/Engine/Components/USkeletalMeshComponent/index.html" >USkeletalMeshComponent</a> &middot; <a id="content_link" href="../Runtime/Engine/Particles/UParticleSystemComponent/index.html" >UParticleSystemComponent</a> &middot; <a id="content_link" href="../Runtime/Engine/Components/UActorComponent/UActorComponentHierarchy/index.html" >More...</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Gameplay:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Engine/Engine/UPlayer/index.html" >UPlayer</a> &middot; <a id="content_link" href="../Runtime/Engine/Engine/ULocalPlayer/index.html" >ULocalPlayer</a> &middot; <a id="content_link" href="../Runtime/Engine/Engine/UWorld/index.html" >UWorld</a> &middot; <a id="content_link" href="../Runtime/Engine/Engine/ULevel/index.html" >ULevel</a></p>
+	</td>
+</tr><tr class="normal-row">
+	<td class="name-cell">
+		<p>Assets:</p>
+	</td>
+	<td class="desc-cell">
+		<p><a id="content_link" href="../Runtime/Engine/Engine/UTexture/index.html" >UTexture</a> &middot; <a id="content_link" href="../Runtime/Engine/Materials/UMaterial/index.html" >UMaterial</a> &middot; <a id="content_link" href="../Runtime/Engine/Engine/UStaticMesh/index.html" >UStaticMesh</a> &middot; <a id="content_link" href="../Runtime/Engine/Engine/USkeletalMesh/index.html" >USkeletalMesh</a> &middot; <a id="content_link" href="../Runtime/Engine/Particles/UParticleSystem/index.html" >UParticleSystem</a></p>
+	</td>
+</tr></table>
+</div>
+                        <!-- End of Markdown converted page content -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div style="BACKGROUND-COLOR: transparent; margin: 0; padding: 0; width: 100%;border-top:1px solid #000000;">
+                    <div style="text-align: center; vertical-align: bottom; width: 100%;">
+                        Copyright &copy; 2001-2015 <a href="http://www.epicgames.com" target="_top">Epic Games, Inc.</a> | <a href="./../../../INT/DevelopmentRoles/BusinessAndLegal/TermsAndConditions/index.html" class="twikiLink">Terms and Conditions</a> | <a href="http://epicgames.com/privacynotice" target="_top">Privacy Notice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+</html>
